@@ -1,5 +1,5 @@
 pkgname=argvus-splash
-pkgver=0.1.1
+pkgver=0.1.3
 pkgrel=1
 pkgdesc="Argvus boot splash theme for Plymouth"
 arch=('any')
@@ -27,6 +27,7 @@ source=(
     "progress-bar-track.png"
     "bullet.png"
     "entry-box.png"
+	"argvus-uki-splash.bmp"
 )
 
 sha256sums=(
@@ -38,6 +39,7 @@ sha256sums=(
     'SKIP'
     'SKIP'
     'SKIP'
+	'SKIP'
 )
 
 package() {
@@ -66,4 +68,9 @@ package() {
 
     install -Dm644 entry-box.png \
         "${dest}/entry-box.png"
+
+	install -Dm644 entry-box.png \
+        "${dest}/argvus-uki-splash.bmp"
+
+
 }
