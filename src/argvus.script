@@ -50,7 +50,7 @@ progress_bar.original_image =
     Image("progress-bar.png");
 
 entry.image =
-    Image("entry-line.png");
+    Image("entry-box.png");
 
 bullet.image =
     Image("bullet.png");
@@ -247,10 +247,8 @@ password.entry.x =
     Window.GetWidth() / 2 -
     entry.image.GetWidth() / 2;
 
-password.entry.y =
-    Window.GetY() +
-    Window.GetHeight() / 2 +
-    30;
+# Position is calculated once the dynamic prompt is available.
+password.entry.y = 0;
 
 
 password.entry.sprite.SetPosition(
@@ -277,8 +275,8 @@ fun display_password_callback(prompt, bullets)
     logo.sprite.SetOpacity(0.15);
     text.sprite.SetOpacity(0.15);
 
-    progress_track.sprite.SetOpacity(0);
-    progress_bar.sprite.SetOpacity(0);
+    progress_track.sprite.SetOpacity(1);
+    progress_bar.sprite.SetOpacity(1);
 
 
     # Prompt text.
@@ -304,9 +302,9 @@ fun display_password_callback(prompt, bullets)
 
 
     password.prompt.y =
-        Window.GetY() +
-        Window.GetHeight() / 2 -
-        25;
+        progress_track.y +
+        progress_track.image.GetHeight() +
+        24;
 
 
     password.prompt.sprite.SetPosition(
@@ -319,6 +317,17 @@ fun display_password_callback(prompt, bullets)
 
 
     # Password entry.
+
+    password.entry.y =
+        password.prompt.y +
+        password.prompt.image.GetHeight() +
+        14;
+
+    password.entry.sprite.SetPosition(
+        password.entry.x,
+        password.entry.y,
+        200
+    );
 
     password.entry.sprite.SetOpacity(1);
 
@@ -343,6 +352,7 @@ fun display_password_callback(prompt, bullets)
 
         password.bullet[index].x =
             password.entry.x +
+            16 +
             index *
             password.bullet_image.GetWidth();
 
