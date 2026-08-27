@@ -1,0 +1,25 @@
+post_install() {
+    echo "==> Setting Argvus as the default Plymouth theme..."
+
+    /usr/bin/plymouth-set-default-theme argvus
+
+    if command -v mkinitcpio >/dev/null 2>&1; then
+        echo "==> Rebuilding initramfs with mkinitcpio..."
+        /usr/bin/mkinitcpio -P
+    elif command -v dracut >/dev/null 2>&1; then
+        echo "==> Rebuilding initramfs with dracut..."
+        /usr/bin/dracut --regenerate-all
+    else
+        echo "==> WARNING: No supported initramfs generator found."
+        echo "==> Rebuild your initramfs manually."
+    fi
+}
+
+post_upgrade() {
+    post_install
+}
+
+post_remove() {
+    echo "==> Argvus Plymouth theme removed."
+    echo "==> Select another Plymouth theme and rebuild your initramfs."
+}

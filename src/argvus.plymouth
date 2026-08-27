@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Argvus
+Description=Argvus boot splash theme
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/argvus
+ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script

@@ -1,0 +1,11 @@
+# Build artifacts
+/tmp
+src/pkg/
+src/src/
+src/*.tar.zst
+src/*.tar.zst.sig
+src/src/
+src/.MTREE
+src/.PKGINFO
+src/.BUILDINFO
+src/.INSTALL

@@ -1,0 +1,447 @@
+# =============================================================================
+# Argvus Plymouth Theme
+# =============================================================================
+#
+# Argvus — Dark Aether
+#
+# Components:
+#   - background
+#   - logo
+#   - wordmark
+#   - progress track
+#   - boot progress
+#   - LUKS password dialog
+#   - fade-in
+#
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Background
+# -----------------------------------------------------------------------------
+
+Window.SetBackgroundTopColor(
+    0.0667,
+    0.0745,
+    0.0863
+);
+
+Window.SetBackgroundBottomColor(
+    0.0667,
+    0.0745,
+    0.0863
+);
+
+
+# -----------------------------------------------------------------------------
+# Assets
+# -----------------------------------------------------------------------------
+
+logo.image =
+    Image("argvus-logo.png");
+
+text.image =
+    Image("argvus-text.png");
+
+progress_track.image =
+    Image("progress-bar-track.png");
+
+progress_bar.original_image =
+    Image("progress-bar.png");
+
+entry.image =
+    Image("entry-line.png");
+
+bullet.image =
+    Image("bullet.png");
+
+
+# -----------------------------------------------------------------------------
+# Main logo
+# -----------------------------------------------------------------------------
+
+logo.sprite = Sprite();
+
+logo.sprite.SetImage(
+    logo.image
+);
+
+
+logo.x =
+    Window.GetX() +
+    Window.GetWidth() / 2 -
+    logo.image.GetWidth() / 2;
+
+logo.y =
+    Window.GetY() +
+    Window.GetHeight() / 2 -
+    logo.image.GetHeight() / 2 -
+    35;
+
+
+logo.sprite.SetPosition(
+    logo.x,
+    logo.y,
+    100
+);
+
+logo.sprite.SetOpacity(1);
+
+
+# -----------------------------------------------------------------------------
+# Wordmark
+# -----------------------------------------------------------------------------
+
+text.sprite = Sprite();
+
+text.sprite.SetImage(
+    text.image
+);
+
+
+text.x =
+    Window.GetX() +
+    Window.GetWidth() / 2 -
+    text.image.GetWidth() / 2;
+
+text.y =
+    logo.y +
+    logo.image.GetHeight() +
+    16;
+
+
+text.sprite.SetPosition(
+    text.x,
+    text.y,
+    100
+);
+
+text.sprite.SetOpacity(1);
+
+
+# -----------------------------------------------------------------------------
+# Progress track
+# -----------------------------------------------------------------------------
+
+progress_track.sprite = Sprite();
+
+progress_track.sprite.SetImage(
+    progress_track.image
+);
+
+
+progress_track.x =
+    Window.GetX() +
+    Window.GetWidth() / 2 -
+    progress_track.image.GetWidth() / 2;
+
+progress_track.y =
+    text.y +
+    text.image.GetHeight() +
+    28;
+
+
+progress_track.sprite.SetPosition(
+    progress_track.x,
+    progress_track.y,
+    100
+);
+
+progress_track.sprite.SetOpacity(1);
+
+
+# -----------------------------------------------------------------------------
+# Progress bar
+# -----------------------------------------------------------------------------
+
+progress_bar.sprite = Sprite();
+
+
+progress_bar.x =
+    Window.GetX() +
+    Window.GetWidth() / 2 -
+    progress_bar.original_image.GetWidth() / 2;
+
+progress_bar.y =
+    progress_track.y;
+
+
+progress_bar.image =
+    ImageScale(
+        progress_bar.original_image,
+        1,
+        progress_bar.original_image.GetHeight()
+    );
+
+
+progress_bar.sprite.SetImage(
+    progress_bar.image
+);
+
+progress_bar.sprite.SetPosition(
+    progress_bar.x,
+    progress_bar.y,
+    101
+);
+
+progress_bar.sprite.SetOpacity(1);
+
+
+# -----------------------------------------------------------------------------
+# Boot progress
+# -----------------------------------------------------------------------------
+
+fun progress_callback(duration, progress)
+{
+    width =
+        MathInt(
+            progress_bar.original_image.GetWidth() * progress
+        );
+
+    if (width < 1)
+        width = 1;
+
+    if (
+        width >
+        progress_bar.original_image.GetWidth()
+    )
+        width =
+            progress_bar.original_image.GetWidth();
+
+
+    progress_bar.image =
+        ImageScale(
+            progress_bar.original_image,
+            width,
+            progress_bar.original_image.GetHeight()
+        );
+
+
+    progress_bar.sprite.SetImage(
+        progress_bar.image
+    );
+}
+
+
+PlymouthSetBootProgressFunction(
+    progress_callback
+);
+
+
+# -----------------------------------------------------------------------------
+# Password dialog
+# -----------------------------------------------------------------------------
+
+password.prompt.image = null;
+password.prompt.sprite = Sprite();
+
+password.entry.sprite = Sprite();
+
+password.entry.sprite.SetImage(
+    entry.image
+);
+
+
+password.entry.x =
+    Window.GetX() +
+    Window.GetWidth() / 2 -
+    entry.image.GetWidth() / 2;
+
+password.entry.y =
+    Window.GetY() +
+    Window.GetHeight() / 2 +
+    30;
+
+
+password.entry.sprite.SetPosition(
+    password.entry.x,
+    password.entry.y,
+    200
+);
+
+password.entry.sprite.SetOpacity(0);
+
+
+password.bullet_image =
+    bullet.image;
+
+
+# -----------------------------------------------------------------------------
+# Password display
+# -----------------------------------------------------------------------------
+
+fun display_password_callback(prompt, bullets)
+{
+    # Dim normal splash.
+
+    logo.sprite.SetOpacity(0.15);
+    text.sprite.SetOpacity(0.15);
+
+    progress_track.sprite.SetOpacity(0);
+    progress_bar.sprite.SetOpacity(0);
+
+
+    # Prompt text.
+
+    password.prompt.image =
+        Image.Text(
+            prompt,
+            0.875,
+            0.90,
+            0.92
+        );
+
+
+    password.prompt.sprite.SetImage(
+        password.prompt.image
+    );
+
+
+    password.prompt.x =
+        Window.GetX() +
+        Window.GetWidth() / 2 -
+        password.prompt.image.GetWidth() / 2;
+
+
+    password.prompt.y =
+        Window.GetY() +
+        Window.GetHeight() / 2 -
+        25;
+
+
+    password.prompt.sprite.SetPosition(
+        password.prompt.x,
+        password.prompt.y,
+        201
+    );
+
+    password.prompt.sprite.SetOpacity(1);
+
+
+    # Password entry.
+
+    password.entry.sprite.SetOpacity(1);
+
+
+    # Create/update bullets.
+
+    for (
+        index = 0;
+        password.bullet[index] || index < bullets;
+        index++
+    )
+    {
+        if (!password.bullet[index])
+        {
+            password.bullet[index].sprite = Sprite();
+
+            password.bullet[index].sprite.SetImage(
+                password.bullet_image
+            );
+        }
+
+
+        password.bullet[index].x =
+            password.entry.x +
+            index *
+            password.bullet_image.GetWidth();
+
+
+        password.bullet[index].y =
+            password.entry.y +
+            entry.image.GetHeight() / 2 -
+            password.bullet_image.GetHeight() / 2;
+
+
+        password.bullet[index].sprite.SetPosition(
+            password.bullet[index].x,
+            password.bullet[index].y,
+            202
+        );
+
+
+        if (index < bullets)
+            password.bullet[index].sprite.SetOpacity(1);
+        else
+            password.bullet[index].sprite.SetOpacity(0);
+    }
+}
+
+
+# -----------------------------------------------------------------------------
+# Return to normal splash
+# -----------------------------------------------------------------------------
+
+fun display_normal_callback()
+{
+    logo.sprite.SetOpacity(1);
+    text.sprite.SetOpacity(1);
+
+    progress_track.sprite.SetOpacity(1);
+    progress_bar.sprite.SetOpacity(1);
+
+
+    password.prompt.sprite.SetOpacity(0);
+    password.entry.sprite.SetOpacity(0);
+
+
+    for (
+        index = 0;
+        password.bullet[index];
+        index++
+    )
+    {
+        password.bullet[index].sprite.SetOpacity(0);
+    }
+}
+
+
+PlymouthSetDisplayPasswordFunction(
+    display_password_callback
+);
+
+PlymouthSetDisplayNormalFunction(
+    display_normal_callback
+);
+
+
+# -----------------------------------------------------------------------------
+# Fade-in
+# -----------------------------------------------------------------------------
+
+fade.frame = 0;
+fade.complete = 0;
+
+
+fun refresh_callback()
+{
+    if (fade.complete)
+        return;
+
+
+    fade.frame += 1;
+
+
+    opacity =
+        fade.frame / 20;
+
+
+    if (opacity > 1)
+        opacity = 1;
+
+
+    logo.sprite.SetOpacity(opacity);
+    text.sprite.SetOpacity(opacity);
+
+    progress_track.sprite.SetOpacity(opacity);
+    progress_bar.sprite.SetOpacity(opacity);
+
+
+    if (fade.frame >= 20)
+        fade.complete = 1;
+}
+
+
+PlymouthSetRefreshFunction(
+    refresh_callback
+);
