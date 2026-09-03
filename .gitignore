@@ -2,8 +2,9 @@
 /tmp
 src/pkg/
 src/src/
-src/*.tar.zst
-src/*.tar.zst.sig
+*.tar.zst
+*.tar.zst.sig
+argvus*.tar.gz
 src/src/
 src/.MTREE
 src/.PKGINFO
