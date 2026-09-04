@@ -30,4 +30,12 @@ rebuild:
 build:
 	@echo "Building package..."
 	cd $(SRC) && makepkg -d --skipchecksums --skippgpcheck -f
-	@echo "Done. Package in $(SRC)/"
+	@mkdir -p dist
+	@pkg="$$(find "$(SRC)" -maxdepth 1 -type f -name 'argvus-splash-*.pkg.tar.zst' -printf '%T@ %p\n' | sort -n | tail -n 1 | cut -d' ' -f2-)"; \
+	if [ -n "$$pkg" ]; then \
+		mv -f "$$pkg" dist/; \
+		echo "Done. Package in dist/"; \
+	else \
+		echo "No package artifact was created."; \
+		exit 1; \
+	fi
