@@ -37,8 +37,26 @@ Window.SetBackgroundBottomColor(
 # Assets
 # -----------------------------------------------------------------------------
 
-logo.image =
+logo.original_image =
     Image("argvus-logo.png");
+
+logo.base_scale = 0.88;
+logo.base_width =
+    MathInt(
+        logo.original_image.GetWidth() * logo.base_scale
+    );
+logo.base_height =
+    MathInt(
+        logo.original_image.GetHeight() * logo.base_scale
+    );
+logo.frame[logo.base_width] =
+    ImageScale(
+        logo.original_image,
+        logo.base_width,
+        logo.base_height
+    );
+logo.image =
+    logo.frame[logo.base_width];
 
 text.image =
     Image("argvus-text.png");
@@ -85,7 +103,8 @@ logo.sprite.SetPosition(
     100
 );
 
-logo.sprite.SetOpacity(1);
+logo.opacity = 1;
+logo.sprite.SetOpacity(logo.opacity);
 
 
 # -----------------------------------------------------------------------------
@@ -272,7 +291,8 @@ fun display_password_callback(prompt, bullets)
 {
     # Dim normal splash.
 
-    logo.sprite.SetOpacity(0.15);
+    logo.opacity = 0.15;
+    logo.sprite.SetOpacity(logo.opacity);
     text.sprite.SetOpacity(0.15);
 
     progress_track.sprite.SetOpacity(1);
@@ -384,7 +404,8 @@ fun display_password_callback(prompt, bullets)
 
 fun display_normal_callback()
 {
-    logo.sprite.SetOpacity(1);
+    logo.opacity = 1;
+    logo.sprite.SetOpacity(logo.opacity);
     text.sprite.SetOpacity(1);
 
     progress_track.sprite.SetOpacity(1);
@@ -416,39 +437,91 @@ PlymouthSetDisplayNormalFunction(
 
 
 # -----------------------------------------------------------------------------
-# Fade-in
+# Fade-in and logo pulse
 # -----------------------------------------------------------------------------
 
 fade.frame = 0;
 fade.complete = 0;
+fade.opacity = 0;
+
+logo.pulse_frame = 0;
+logo.current_width = logo.base_width;
+
+
+Plymouth.SetRefreshRate(20);
 
 
 fun refresh_callback()
 {
-    if (fade.complete)
-        return;
+    if (!fade.complete)
+    {
+        fade.frame += 1;
+        fade.opacity = fade.frame / 20;
+
+        if (fade.opacity > 1)
+            fade.opacity = 1;
+
+        text.sprite.SetOpacity(fade.opacity);
+        progress_track.sprite.SetOpacity(fade.opacity);
+        progress_bar.sprite.SetOpacity(fade.opacity);
+
+        if (fade.frame >= 20)
+            fade.complete = 1;
+    }
 
 
-    fade.frame += 1;
+    # Use a cached, proportionally scaled frame for the subtle breathing effect.
+    # The 0.99..1.02 range is relative to the already reduced base logo.
+    angle =
+        logo.pulse_frame * MathPi / 32;
+    pulse_scale =
+        1.005 + 0.015 * MathSin(angle);
+    width =
+        MathInt(
+            logo.original_image.GetWidth() *
+            logo.base_scale *
+            pulse_scale
+        );
 
+    if (width != logo.current_width)
+    {
+        if (!logo.frame[width])
+        {
+            height =
+                MathInt(
+                    logo.original_image.GetHeight() *
+                    width /
+                    logo.original_image.GetWidth()
+                );
+            logo.frame[width] =
+                ImageScale(
+                    logo.original_image,
+                    width,
+                    height
+                );
+        }
 
-    opacity =
-        fade.frame / 20;
+        logo.image = logo.frame[width];
+        logo.sprite.SetImage(logo.image);
+        logo.current_width = width;
 
+        logo.x =
+            Window.GetX() +
+            Window.GetWidth() / 2 -
+            logo.image.GetWidth() / 2;
+        logo.y =
+            Window.GetY() +
+            Window.GetHeight() / 2 -
+            logo.image.GetHeight() / 2 -
+            35;
+        logo.sprite.SetPosition(logo.x, logo.y, 100);
+    }
 
-    if (opacity > 1)
-        opacity = 1;
+    logo.sprite.SetOpacity(logo.opacity * fade.opacity);
+    logo.pulse_frame += 1;
 
-
-    logo.sprite.SetOpacity(opacity);
-    text.sprite.SetOpacity(opacity);
-
-    progress_track.sprite.SetOpacity(opacity);
-    progress_bar.sprite.SetOpacity(opacity);
-
-
-    if (fade.frame >= 20)
-        fade.complete = 1;
+    if (logo.pulse_frame >= 64)
+        logo.pulse_frame = 0;
 }
 
 

@@ -16,9 +16,14 @@ Boot splash theme for Plymouth based on the Argvus Dark Aether visual identity.
 argvus-splash/
 ├── Makefile
 ├── README.md
+├── tools/
+│   └── build-local-package.sh
+├── packaging/
+│   └── arch/
+│       ├── PKGBUILD
+│       ├── PKGBUILD.local
+│       └── argvus-splash.install
 └── src/
-    ├── PKGBUILD
-    ├── argvus-splash.install
     ├── argvus.plymouth
     ├── argvus.script
     ├── argvus-logo.png
@@ -38,8 +43,13 @@ sudo make set-theme
 sudo make rebuild
 
 # Arch Linux package
-cd src && makepkg -si
+make build
+
+# Or build directly from the Arch packaging directory
+cd packaging/arch && makepkg -si
 ```
+
+The local package created by `make build` is moved to `dist/`.
 
 ## Preview
 

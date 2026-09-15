@@ -45,8 +45,14 @@ jobs:
             exit 1
           fi
 
-          sed -i "s/^pkgver=.*/pkgver=${version}/" src/PKGBUILD
+          sed -i "s/^pkgver=.*/pkgver=${version}/" packaging/arch/PKGBUILD
           echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Validate repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          make validate
 
       - name: Build package
         shell: bash
@@ -54,9 +60,9 @@ jobs:
           set -euo pipefail
 
           sudo -u builder env GITHUB_WORKSPACE="$GITHUB_WORKSPACE" bash -lc \
-            'cd "$GITHUB_WORKSPACE/src" && makepkg --syncdeps --noconfirm --needed --cleanbuild --clean'
+            'cd "$GITHUB_WORKSPACE/packaging/arch" && makepkg --syncdeps --noconfirm --needed --cleanbuild --clean'
 
-          pkg_file="$(find src -maxdepth 1 -type f -name 'argvus-splash-*.pkg.tar.zst' -print -quit)"
+          pkg_file="$(find packaging/arch -maxdepth 1 -type f -name 'argvus-splash-*.pkg.tar.zst' -print -quit)"
           if [[ -z "$pkg_file" ]]; then
             echo "Package file was not created." >&2
             exit 1
@@ -81,12 +87,10 @@ jobs:
           export GNUPGHOME
           GNUPGHOME="$(mktemp -d)"
           chmod 700 "$GNUPGHOME"
-
           printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
           GPG_KEY_ID="$(gpg --batch --list-secret-keys --with-colons | awk -F: '/^sec:/ { print $5; exit }')"
           [ -n "$GPG_KEY_ID" ] || { echo "::error::No secret GPG key was imported"; exit 1; }
 
-          rm -f "${pkg_file}.sig"
           if [ -n "${GPG_PASSPHRASE:-}" ]; then
             gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" \
               --local-user "$GPG_KEY_ID" --detach-sign "$pkg_file"
@@ -119,8 +123,6 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           set -euo pipefail
-
-          [ -n "${GPG_PRIVATE_KEY:-}" ] || { echo "::error::GPG_PRIVATE_KEY secret is not set"; exit 1; }
 
           export GNUPGHOME
           GNUPGHOME="$(mktemp -d)"
@@ -155,7 +157,6 @@ jobs:
 
           cd "$GITHUB_WORKSPACE/packages-repo"
           git config --global --add safe.directory "$PWD"
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/arch/x86_64
