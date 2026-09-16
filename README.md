@@ -1,56 +1,42 @@
-# Argvus Plymouth Theme
+# Argvus Splash
 
-Boot splash theme for Plymouth based on the Argvus Dark Aether visual identity.
+Plymouth boot splash theme for the Argvus desktop ecosystem.
 
-## Colors
+The package installs the theme under
+`/usr/share/plymouth/themes/argvus/`, including the boot logo, progress bar,
+password prompt assets, and UKI splash bitmap.
 
-| Element  | Color     |
-|----------|-----------|
-| Background | `#111316` |
-| Accent   | `#3590BD`  |
-| Bar track | `#262933` |
+## Repository layout
 
-## Structure
-
-```
-argvus-splash/
-├── Makefile
-├── README.md
-├── tools/
-│   └── build-local-package.sh
-├── packaging/
-│   └── arch/
-│       ├── PKGBUILD
-│       ├── PKGBUILD.local
-│       └── argvus-splash.install
-└── src/
-    ├── argvus.plymouth
-    ├── argvus.script
-    ├── argvus-logo.png
-    ├── argvus-text.png
-    ├── progress-bar.png
-    ├── progress-bar-track.png
-    ├── bullet.png          # bolinhas do campo de senha (LUKS)
-    └── entry-line.png      # linha do campo de senha (LUKS)
+```text
+src/usr/share/plymouth/themes/argvus/  package payload
+packaging/arch/ci/PKGBUILD             release package metadata
+packaging/arch/local/PKGBUILD          local package metadata
+packaging/arch/common/                 shared packaging functions
+tools/sh/pkgbuild_local.sh             local source archive and package build
+tools/sh/validate.sh                   repository and metadata validation
+build/                                 ignored build artifacts
 ```
 
-## Installation
+## Build and validate
 
-```bash
-# Direct install
-sudo make install
-sudo make set-theme
-sudo make rebuild
+On Arch Linux, install the package prerequisites and run:
 
-# Arch Linux package
+```sh
+make validate
 make build
-
-# Or build directly from the Arch packaging directory
-cd packaging/arch && makepkg -si
 ```
 
-The local package created by `make build` is moved to `dist/`.
+The package is written to `build/dist/`. Install it with `make install`.
 
-## Preview
+For a direct Plymouth preview, use `make test` from an environment where a
+Plymouth daemon and graphical display are available. The preview may require
+polkit authentication when run as an unprivileged user.
 
-Use `plymouthd --mode=boot; plymouth --show-splash` to preview without rebooting.
+## Theme colors
+
+| Element | Color |
+| --- | --- |
+| Background | `#111316` |
+| Accent | `#3590BD` |
+| Progress track | `#262933` |

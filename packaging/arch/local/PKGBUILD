@@ -1,0 +1,36 @@
+# Maintainer: William C. Canin
+pkgname=argvus-splash
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Argvus boot splash theme for Plymouth"
+arch=('any')
+url="https://github.com/argvus/argvus-splash"
+license=('GPL-3.0-or-later')
+depends=('plymouth')
+optdepends=(
+  'mkinitcpio: rebuild initramfs (Arch Linux)'
+  'dracut: rebuild initramfs (alternative)'
+)
+options=('!debug')
+conflicts=('argvus-plymouth')
+replaces=('argvus-plymouth')
+install="${pkgname}.install"
+
+source=("${pkgname}-${pkgver}.tar.gz")
+sha256sums=()
+
+# shellcheck disable=SC1091
+_functions_file="${startdir:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)}/../common/functions.sh"
+. "$_functions_file"
+
+prepare() {
+  arch_normalize_source_tree
+}
+
+check() {
+  arch_check_splash_payload
+}
+
+package() {
+  arch_package_splash_payload
+}
