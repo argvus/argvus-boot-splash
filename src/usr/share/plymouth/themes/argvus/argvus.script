@@ -40,7 +40,7 @@ Window.SetBackgroundBottomColor(
 logo.original_image =
     Image("argvus-logo.png");
 
-logo.base_scale = 0.88;
+logo.base_scale = 0.72;
 logo.base_width =
     MathInt(
         logo.original_image.GetWidth() * logo.base_scale
@@ -58,20 +58,45 @@ logo.frame[logo.base_width] =
 logo.image =
     logo.frame[logo.base_width];
 
-text.image =
+text.original_image =
     Image("argvus-text.png");
 
-progress_track.image =
+text.scale = 0.80;
+text.image =
+    ImageScale(
+        text.original_image,
+        MathInt(text.original_image.GetWidth() * text.scale),
+        MathInt(text.original_image.GetHeight() * text.scale)
+    );
+
+progress_track.original_image =
     Image("progress-bar-track.png");
 
-progress_bar.original_image =
+progress_bar.source_image =
     Image("progress-bar.png");
+
+progress_track.image =
+    ImageScale(
+        progress_track.original_image,
+        text.image.GetWidth(),
+        progress_track.original_image.GetHeight()
+    );
+
+progress_bar.original_image =
+    ImageScale(
+        progress_bar.source_image,
+        text.image.GetWidth(),
+        progress_bar.source_image.GetHeight()
+    );
 
 entry.image =
     Image("entry-box.png");
 
 bullet.image =
     Image("bullet.png");
+
+logo.glow.image =
+    Image("logo-glow.png");
 
 
 # -----------------------------------------------------------------------------
@@ -105,6 +130,22 @@ logo.sprite.SetPosition(
 
 logo.opacity = 1;
 logo.sprite.SetOpacity(logo.opacity);
+
+logo.glow.sprite = Sprite();
+logo.glow.sprite.SetImage(logo.glow.image);
+logo.glow.x =
+    Window.GetX() +
+    Window.GetWidth() / 2 -
+    logo.glow.image.GetWidth() / 2;
+logo.glow.start_y =
+    logo.y +
+    logo.image.GetHeight() +
+    28;
+logo.glow.y = logo.glow.start_y;
+logo.glow.sprite.SetPosition(logo.glow.x, logo.glow.y, 99);
+logo.glow.sprite.SetOpacity(0);
+logo.glow.active = 0;
+logo.glow.frame = 0;
 
 
 # -----------------------------------------------------------------------------
@@ -239,6 +280,12 @@ fun progress_callback(duration, progress)
     progress_bar.sprite.SetImage(
         progress_bar.image
     );
+
+    if (progress >= 1 && !logo.glow.active)
+    {
+        logo.glow.active = 1;
+        logo.glow.frame = 0;
+    }
 }
 
 
@@ -304,9 +351,9 @@ fun display_password_callback(prompt, bullets)
     password.prompt.image =
         Image.Text(
             prompt,
-            0.875,
-            0.90,
-            0.92
+            0.72,
+            0.77,
+            0.81
         );
 
 
@@ -437,16 +484,12 @@ PlymouthSetDisplayNormalFunction(
 
 
 # -----------------------------------------------------------------------------
-# Fade-in and logo pulse
+# Fade-in and completion glow
 # -----------------------------------------------------------------------------
 
 fade.frame = 0;
 fade.complete = 0;
 fade.opacity = 0;
-
-logo.pulse_frame = 0;
-logo.current_width = logo.base_width;
-
 
 Plymouth.SetRefreshRate(20);
 
@@ -470,58 +513,46 @@ fun refresh_callback()
     }
 
 
-    # Use a cached, proportionally scaled frame for the subtle breathing effect.
-    # The 0.99..1.02 range is relative to the already reduced base logo.
-    angle =
-        logo.pulse_frame * MathPi / 32;
-    pulse_scale =
-        1.005 + 0.015 * MathSin(angle);
-    width =
-        MathInt(
-            logo.original_image.GetWidth() *
-            logo.base_scale *
-            pulse_scale
+    if (logo.glow.active)
+    {
+        logo.glow.frame += 1;
+
+        glow_progress = logo.glow.frame / 48;
+        if (glow_progress > 1)
+            glow_progress = 1;
+
+        logo.glow.y =
+            logo.glow.start_y -
+            MathInt(
+                (logo.glow.image.GetHeight() + 56) *
+                glow_progress
+            );
+        logo.glow.sprite.SetPosition(
+            logo.glow.x,
+            logo.glow.y,
+            99
         );
 
-    if (width != logo.current_width)
-    {
-        if (!logo.frame[width])
+        if (logo.glow.frame < 38)
+            glow_opacity = 0.42;
+        else
+            glow_opacity =
+                0.42 *
+                (1 - (logo.glow.frame - 38) / 22);
+
+        if (glow_opacity < 0)
+            glow_opacity = 0;
+
+        logo.glow.sprite.SetOpacity(glow_opacity);
+
+        if (logo.glow.frame >= 60)
         {
-            height =
-                MathInt(
-                    logo.original_image.GetHeight() *
-                    width /
-                    logo.original_image.GetWidth()
-                );
-            logo.frame[width] =
-                ImageScale(
-                    logo.original_image,
-                    width,
-                    height
-                );
+            logo.glow.active = 0;
+            logo.glow.sprite.SetOpacity(0);
         }
-
-        logo.image = logo.frame[width];
-        logo.sprite.SetImage(logo.image);
-        logo.current_width = width;
-
-        logo.x =
-            Window.GetX() +
-            Window.GetWidth() / 2 -
-            logo.image.GetWidth() / 2;
-        logo.y =
-            Window.GetY() +
-            Window.GetHeight() / 2 -
-            logo.image.GetHeight() / 2 -
-            35;
-        logo.sprite.SetPosition(logo.x, logo.y, 100);
     }
 
     logo.sprite.SetOpacity(logo.opacity * fade.opacity);
-    logo.pulse_frame += 1;
-
-    if (logo.pulse_frame >= 64)
-        logo.pulse_frame = 0;
 }
 
 
