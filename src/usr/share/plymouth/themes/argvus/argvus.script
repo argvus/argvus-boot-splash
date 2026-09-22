@@ -95,10 +95,6 @@ entry.image =
 bullet.image =
     Image("bullet.png");
 
-logo.glow.image =
-    Image("logo-glow.png");
-
-
 # -----------------------------------------------------------------------------
 # Main logo
 # -----------------------------------------------------------------------------
@@ -130,23 +126,6 @@ logo.sprite.SetPosition(
 
 logo.opacity = 1;
 logo.sprite.SetOpacity(logo.opacity);
-
-logo.glow.sprite = Sprite();
-logo.glow.sprite.SetImage(logo.glow.image);
-logo.glow.x =
-    Window.GetX() +
-    Window.GetWidth() / 2 -
-    logo.glow.image.GetWidth() / 2;
-logo.glow.start_y =
-    logo.y +
-    logo.image.GetHeight() +
-    28;
-logo.glow.y = logo.glow.start_y;
-logo.glow.sprite.SetPosition(logo.glow.x, logo.glow.y, 99);
-logo.glow.sprite.SetOpacity(0);
-logo.glow.active = 0;
-logo.glow.frame = 0;
-
 
 # -----------------------------------------------------------------------------
 # Wordmark
@@ -281,11 +260,6 @@ fun progress_callback(duration, progress)
         progress_bar.image
     );
 
-    if (progress >= 1 && !logo.glow.active)
-    {
-        logo.glow.active = 1;
-        logo.glow.frame = 0;
-    }
 }
 
 
@@ -484,7 +458,7 @@ PlymouthSetDisplayNormalFunction(
 
 
 # -----------------------------------------------------------------------------
-# Fade-in and completion glow
+# Fade-in
 # -----------------------------------------------------------------------------
 
 fade.frame = 0;
@@ -510,46 +484,6 @@ fun refresh_callback()
 
         if (fade.frame >= 20)
             fade.complete = 1;
-    }
-
-
-    if (logo.glow.active)
-    {
-        logo.glow.frame += 1;
-
-        glow_progress = logo.glow.frame / 48;
-        if (glow_progress > 1)
-            glow_progress = 1;
-
-        logo.glow.y =
-            logo.glow.start_y -
-            MathInt(
-                (logo.glow.image.GetHeight() + 56) *
-                glow_progress
-            );
-        logo.glow.sprite.SetPosition(
-            logo.glow.x,
-            logo.glow.y,
-            99
-        );
-
-        if (logo.glow.frame < 38)
-            glow_opacity = 0.42;
-        else
-            glow_opacity =
-                0.42 *
-                (1 - (logo.glow.frame - 38) / 22);
-
-        if (glow_opacity < 0)
-            glow_opacity = 0;
-
-        logo.glow.sprite.SetOpacity(glow_opacity);
-
-        if (logo.glow.frame >= 60)
-        {
-            logo.glow.active = 0;
-            logo.glow.sprite.SetOpacity(0);
-        }
     }
 
     logo.sprite.SetOpacity(logo.opacity * fade.opacity);
