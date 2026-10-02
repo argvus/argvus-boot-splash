@@ -25,8 +25,8 @@ terms to `.cspell/custom-dictionary-workspace.txt` or the spellcheck job fails.
 
 If you only want to *use* the theme, read the [user guide](user-guide.md). For
 the process-oriented counterpart of this file (git flow, secrets, changelog
-discipline) see [DEVELOPMENT.md](../DEVELOPMENT.md) and
-[CONTRIBUTING.md](../CONTRIBUTING.md).
+discipline) see [DEVELOPMENT.md](../../DEVELOPMENT.md) and
+[CONTRIBUTING.md](../../CONTRIBUTING.md).
 
 ## Guides
 
@@ -50,9 +50,10 @@ discipline) see [DEVELOPMENT.md](../DEVELOPMENT.md) and
 
 ## Elsewhere
 
-- Repository root: [README.md](../README.md)
+- Repository root: [README.md](../../README.md)
 - User-facing docs: [user guide](user-guide.md)
-- Development process: [DEVELOPMENT.md](../DEVELOPMENT.md)
-- Contributing: [CONTRIBUTING.md](../CONTRIBUTING.md)
-- Security policy: [SECURITY.md](../SECURITY.md)
-- License: [GPL-3.0-or-later](../LICENSE)
+- Development process: [DEVELOPMENT.md](../../DEVELOPMENT.md)
+- Contributing: [CONTRIBUTING.md](../../CONTRIBUTING.md)
+- Security policy: [SECURITY.md](../../SECURITY.md)
+- License: [GPL-3.0-or-later](../../LICENSE)
+- Portuguese version: [Guia do desenvolvedor](../pt-br/developer-guide.md)

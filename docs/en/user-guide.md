@@ -37,8 +37,9 @@ package, read the [developer guide](developer-guide.md) instead.
 
 ## Elsewhere
 
-- Repository root: [README.md](../README.md) — overview and layout
-- Development process: [DEVELOPMENT.md](../DEVELOPMENT.md) — builds, signing, releases
-- Contributing: [CONTRIBUTING.md](../CONTRIBUTING.md)
-- Security policy: [SECURITY.md](../SECURITY.md)
-- License: [GPL-3.0-or-later](../LICENSE)
+- Repository root: [README.md](../../README.md) — overview and layout
+- Development process: [DEVELOPMENT.md](../../DEVELOPMENT.md) — builds, signing, releases
+- Contributing: [CONTRIBUTING.md](../../CONTRIBUTING.md)
+- Security policy: [SECURITY.md](../../SECURITY.md)
+- License: [GPL-3.0-or-later](../../LICENSE)
+- Portuguese version: [Guia do usuário](../pt-br/user-guide.md)

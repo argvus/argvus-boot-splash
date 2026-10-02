@@ -23,7 +23,24 @@ build/         build outputs (git-ignored)
 .github/workflows/
   ci.yml       validates PKGBUILDs (push/PR)
   release.yml  build + signing + publish to argvus/packages (tags v*)
+docs/
+  en/          documentation in English
+    user-guide.md          installation, usage, troubleshooting
+    developer-guide.md     theme architecture, packaging, CI and releases
+  pt-br/       documentação em português (mesma estrutura de en/)
 ```
+
+## Documentation
+
+This file covers the release process. For the technical reference, see the
+split guides:
+
+- [Developer guide (en)](docs/en/developer-guide.md) ·
+  [Guia do desenvolvedor (pt-br)](docs/pt-br/developer-guide.md)
+- [User guide (en)](docs/en/user-guide.md) ·
+  [Guia do usuário (pt-br)](docs/pt-br/user-guide.md)
+
+Keep both in sync with this file when changing the packaging or release flow.
 
 ## Prerequisites (development machine)
 

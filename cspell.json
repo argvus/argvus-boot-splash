@@ -17,6 +17,7 @@
     "AUTHORS.md",
     "TODO.txt",
     "cliff.toml",
+    "docs/pt-br",
     "**/PKGBUILD*"
   ]
 }

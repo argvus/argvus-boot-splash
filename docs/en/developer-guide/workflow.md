@@ -24,15 +24,15 @@ For the technical reference see [theme architecture](theme.md),
 - Branch naming: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
 - One reviewer approval before merge, squash-merge.
 - License: GPL-3.0-or-later. Shipped as `/usr/share/licenses/argvus-boot-splash/LICENSE`.
-- Follow the process in [CONTRIBUTING.md](../../CONTRIBUTING.md) and
-  [DEVELOPMENT.md](../../DEVELOPMENT.md).
+- Follow the process in [CONTRIBUTING.md](../../../CONTRIBUTING.md) and
+  [DEVELOPMENT.md](../../../DEVELOPMENT.md).
 
 ## Known gaps
 
 Documented inconsistencies found while auditing the repository:
 
 - `README.md` advertises `make test` for a direct Plymouth preview, but no such
-  target exists in the [Makefile](../../Makefile). The real commands are
+  target exists in the [Makefile](../../../Makefile). The real commands are
   `sudo plymouth --show-splash` / `sudo plymouthquit`.
 - `entry-line.png` and `logo-glow.png` ship in the payload and are required by
   `arch_check_splash_payload()`, but `argvus.script` never loads them. Either

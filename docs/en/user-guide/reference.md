@@ -67,11 +67,11 @@ auto-switches between light and dark variants.
 ## Getting help
 
 - Report bugs and request features in the project's issue tracker.
-- Security issues: follow [SECURITY.md](../../SECURITY.md) — do not open a public
+- Security issues: follow [SECURITY.md](../../../SECURITY.md) — do not open a public
   issue for vulnerabilities.
-- Source, builds and releases: the repository root ([README](../../README.md)).
-- Contribute: [CONTRIBUTING.md](../../CONTRIBUTING.md).
-- License: [GPL-3.0-or-later](../../LICENSE).
+- Source, builds and releases: the repository root ([README](../../../README.md)).
+- Contribute: [CONTRIBUTING.md](../../../CONTRIBUTING.md).
+- License: [GPL-3.0-or-later](../../../LICENSE).
 
 ## Next steps
 

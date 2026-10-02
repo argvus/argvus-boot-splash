@@ -16,7 +16,18 @@ packaging/arch/common/                 shared packaging functions
 tools/sh/pkgbuild_local.sh             local source archive and package build
 tools/sh/validate.sh                   repository and metadata validation
 build/                                 ignored build artifacts
+docs/en/                               documentation in English
+docs/pt-br/                            documentação em português
 ```
+
+## Documentation
+
+- [User guide (en)](docs/en/user-guide.md) ·
+  [Guia do usuário (pt-br)](docs/pt-br/user-guide.md) — installation, usage,
+  troubleshooting
+- [Developer guide (en)](docs/en/developer-guide.md) ·
+  [Guia do desenvolvedor (pt-br)](docs/pt-br/developer-guide.md) — theme
+  architecture, packaging, CI and releases
 
 ## Build and validate
 
