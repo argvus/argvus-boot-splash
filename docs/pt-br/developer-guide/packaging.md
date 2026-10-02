@@ -9,8 +9,8 @@ Como o pacote Arch é definido e produzido: os dois PKGBUILDs, as funções
 compartilhadas, os hooks de instalação, o pipeline de build local e os alvos do
 Make.
 
-Para o tema em si, veja [arquitetura do tema](theme.md); para validação, CI e
-lançamentos, veja [CI e lançamentos](ci-releases.md).
+Para o tema em si, veja [arquitetura do tema](/pt/docs/argvus-boot-splash/developer-guide/theme/); para validação, CI e
+lançamentos, veja [CI e lançamentos](/pt/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Dois PKGBUILDs, um payload
 
@@ -55,7 +55,7 @@ PKGBUILDs:
 - `arch_check_splash_payload` (`check()`) — garante que todo asset do tema exista
   no código-fonte extraído. Esta é a única "suíte de testes" do pacote; a lista
   de arquivos obrigatórios está no
-  [inventário de assets](theme.md#inventário-de-assets).
+  [inventário de assets](/pt/docs/argvus-boot-splash/developer-guide/theme/#inventário-de-assets).
 - `arch_package_splash_payload` (`package()`) — percorre `src/usr` com
   `find -print0` e instala cada arquivo com `install -Dm644` no `$pkgdir`
   (seguro com NUL, funciona com espaços nos nomes) e depois instala o `LICENSE`
@@ -125,7 +125,7 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            diretórios de trabalho
 | `make help` | lista de alvos (alvo padrão) |
 
 A CI roda `make validate` e `make build`; nada na CI roda `make install` ou
-`make changelog` (veja [lacunas conhecidas](workflow.md#lacunas-conhecidas)).
+`make changelog` (veja [lacunas conhecidas](/pt/docs/argvus-boot-splash/developer-guide/workflow/#lacunas-conhecidas)).
 
 ## Pré-requisitos
 

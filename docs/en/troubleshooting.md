@@ -51,5 +51,5 @@ another virtual terminal (`Ctrl+Alt+F2`) — your session is intact.
 
 ## Next steps
 
-- [Installation](installation.md) — retry with a different method.
-- [Usage](usage.md) — commands cheat sheet.
+- [Installation](/docs/argvus-boot-splash/installation/) — retry with a different method.
+- [Usage](/docs/argvus-boot-splash/usage/) — commands cheat sheet.

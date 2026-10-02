@@ -55,5 +55,5 @@ para outro terminal virtual (`Ctrl+Alt+F2`) — a sua sessão está intacta.
 
 ## Próximos passos
 
-- [Instalação](installation.md) — tentar outro método.
-- [Uso](usage.md) — tabela rápida de comandos.
+- [Instalação](/pt/docs/argvus-boot-splash/installation/) — tentar outro método.
+- [Uso](/pt/docs/argvus-boot-splash/usage/) — tabela rápida de comandos.

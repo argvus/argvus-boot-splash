@@ -8,8 +8,8 @@ description: Validação, integração contínua, assinatura e fluxo de lançame
 O gate de validação, os jobs de integração contínua, o pipeline de lançamento e
 as regras de versionamento.
 
-Para o pacote em si, veja [empacotamento](packaging.md); para o tema, veja
-[arquitetura do tema](theme.md).
+Para o pacote em si, veja [empacotamento](/pt/docs/argvus-boot-splash/developer-guide/packaging/); para o tema, veja
+[arquitetura do tema](/pt/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Validação
 

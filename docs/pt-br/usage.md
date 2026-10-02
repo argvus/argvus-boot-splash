@@ -7,7 +7,7 @@ description: Verificar a instalação, pré-visualizar sem reiniciar e trocar te
 
 Como verificar o tema, pré-visualizá-lo sem reiniciar a máquina e trocar por
 outro quando quiser. Para a instalação, veja
-[instalação](installation.md).
+[instalação](/pt/docs/argvus-boot-splash/installation/).
 
 ## Verificando a instalação
 
@@ -83,6 +83,6 @@ Arquivos de configuração úteis:
 
 ## Próximos passos
 
-- [Splash em UKI e systemd-boot](uki-splash.md)
-- [Desinstalação](uninstallation.md)
-- [Solução de problemas](troubleshooting.md)
+- [Splash em UKI e systemd-boot](/pt/docs/argvus-boot-splash/uki-splash/)
+- [Desinstalação](/pt/docs/argvus-boot-splash/uninstallation/)
+- [Solução de problemas](/pt/docs/argvus-boot-splash/troubleshooting/)

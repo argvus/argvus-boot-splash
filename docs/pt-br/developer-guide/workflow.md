@@ -8,8 +8,8 @@ description: Regras da casa, mapa da documentação e achados da auditoria do re
 As regras deste repositório, mais as inconsistências encontradas durante a
 auditoria — vale corrigir em vez de copiar.
 
-Para a referência técnica, veja [arquitetura do tema](theme.md),
-[empacotamento](packaging.md) e [CI e lançamentos](ci-releases.md).
+Para a referência técnica, veja [arquitetura do tema](/pt/docs/argvus-boot-splash/developer-guide/theme/),
+[empacotamento](/pt/docs/argvus-boot-splash/developer-guide/packaging/) e [CI e lançamentos](/pt/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Convenções
 
@@ -26,8 +26,8 @@ Para a referência técnica, veja [arquitetura do tema](theme.md),
 - Licença: GPL-3.0-or-later. Instalada em
   `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 - Siga o processo descrito em
-  [CONTRIBUTING.md](../../../CONTRIBUTING.md) e
-  [DEVELOPMENT.md](../../../DEVELOPMENT.md).
+  [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md) e
+  [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 
 ## Lacunas conhecidas
 
@@ -41,7 +41,7 @@ Inconsistências documentadas encontradas na auditoria do repositório:
   conecte-os ao script, ou remova-os do payload e da lista de verificação.
 - `src/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp` é instalado, mas
   nunca registrado em lugar nenhum; o
-  [guia do usuário](../user-guide/uki-splash.md) documenta o passo manual com
+  [guia do usuário](/pt/docs/argvus-boot-splash/uki-splash/) documenta o passo manual com
   `bootctl`/`ukify`.
 - A documentação canônica fica na raiz do repositório (`README.md`,
   `DEVELOPMENT.md`, `CONTRIBUTING.md`) e se sobrepõe aos guias em `docs/`. Mantenha
@@ -54,13 +54,13 @@ Inconsistências documentadas encontradas na auditoria do repositório:
 | `README.md` | todos | visão geral em um parágrafo e estrutura |
 | `DEVELOPMENT.md` | mantenedores | processo de build, assinatura e lançamento |
 | `CONTRIBUTING.md` | contribuidores | fluxo git, regras de PR, política de segredos |
-| [`docs/user-guide.md`](../user-guide.md) | usuário final | instalação, uso, solução de problemas |
-| [`docs/developer-guide.md`](../developer-guide.md) | desenvolvedores | internals do tema, empacotamento, CI |
-| [`docs/en/`](../../en/) | falantes de inglês | estas mesmas páginas em inglês |
-| [`docs/pt-br/`](.) | falantes de português | estas mesmas páginas em português |
+| [`docs/user-guide.md`](/pt/docs/argvus-boot-splash/) | usuário final | instalação, uso, solução de problemas |
+| [`docs/developer-guide.md`](/pt/docs/argvus-boot-splash/developer-guide/) | desenvolvedores | internals do tema, empacotamento, CI |
+| [`docs/en/`](/docs/argvus-boot-splash/) | falantes de inglês | estas mesmas páginas em inglês |
+| [`docs/pt-br/`](/pt/docs/argvus-boot-splash/) | falantes de português | estas mesmas páginas em português |
 
 ## Próximos passos
 
-- [Arquitetura do tema](theme.md)
-- [Empacotamento](packaging.md)
-- [CI e lançamentos](ci-releases.md)
+- [Arquitetura do tema](/pt/docs/argvus-boot-splash/developer-guide/theme/)
+- [Empacotamento](/pt/docs/argvus-boot-splash/developer-guide/packaging/)
+- [CI e lançamentos](/pt/docs/argvus-boot-splash/developer-guide/ci-releases/)

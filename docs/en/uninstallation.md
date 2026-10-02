@@ -26,5 +26,5 @@ you want instead, and it does not touch your initramfs.
 
 ## Next steps
 
-- [Troubleshooting](troubleshooting.md) — restoring the previous splash.
-- [Installation](installation.md) — reinstalling later.
+- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/) — restoring the previous splash.
+- [Installation](/docs/argvus-boot-splash/installation/) — reinstalling later.

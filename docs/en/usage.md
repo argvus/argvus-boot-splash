@@ -6,7 +6,7 @@ description: Verify the install, preview without rebooting, and switch themes.
 # Usage
 
 How to verify the theme, preview it without rebooting, and switch away from it.
-For installation, see [installation](installation.md).
+For installation, see [installation](/docs/argvus-boot-splash/installation/).
 
 ## Verifying the installation
 
@@ -81,6 +81,6 @@ Useful configuration files:
 
 ## Next steps
 
-- [UKI and systemd-boot splash](uki-splash.md)
-- [Uninstallation](uninstallation.md)
-- [Troubleshooting](troubleshooting.md)
+- [UKI and systemd-boot splash](/docs/argvus-boot-splash/uki-splash/)
+- [Uninstallation](/docs/argvus-boot-splash/uninstallation/)
+- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)

@@ -67,16 +67,16 @@ automaticamente entre variantes clara e escura.
 ## Onde encontrar ajuda
 
 - Relate bugs e peça recursos no rastreador de issues do projeto.
-- Problemas de segurança: siga o [SECURITY.md](../../../SECURITY.md) — não abra
+- Problemas de segurança: siga o [SECURITY.md](https://github.com/argvus/argvus-boot-splash/blob/main/SECURITY.md) — não abra
   issue pública para vulnerabilidades.
 - Código-fonte, builds e lançamentos: a raiz do repositório
-  ([README](../../../README.md)).
-- Contribuição: [CONTRIBUTING.md](../../../CONTRIBUTING.md).
-- Licença: [GPL-3.0-or-later](../../../LICENSE).
-- Versão em inglês: [English reference](../../en/user-guide/reference.md).
+  ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
+- Contribuição: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
+- Licença: [GPL-3.0-or-later](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
+- Versão em inglês: [English reference](/docs/argvus-boot-splash/reference/).
 
 ## Próximos passos
 
-- [Instalação](installation.md)
-- [Uso](usage.md)
-- [Solução de problemas](troubleshooting.md)
+- [Instalação](/pt/docs/argvus-boot-splash/installation/)
+- [Uso](/pt/docs/argvus-boot-splash/usage/)
+- [Solução de problemas](/pt/docs/argvus-boot-splash/troubleshooting/)

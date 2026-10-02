@@ -11,27 +11,31 @@ Argvus boot splash is a [Plymouth](https://www.freedesktop.org/wiki/Software/Ply
 
 This documentation is organized in two main sections:
 
-### [User Guide](user-guide/)
+### User Guide
 Installation and usage guides for end users and system administrators.
 
-- [Installation](user-guide/installation.md) — System requirements and installation methods
-- [Usage](user-guide/usage.md) — Verification, preview, and theme management
-- [Troubleshooting](user-guide/troubleshooting.md) — Common issues and solutions
-- [Uninstallation](user-guide/uninstallation.md) — Removing the package
+| Guide | Contents |
+| --- | --- |
+| [Installation](/docs/argvus-boot-splash/installation/) | Requirements, the three install options, what the package hooks do |
+| [Usage](/docs/argvus-boot-splash/usage/) | Verify the install, preview without rebooting, switch or revert themes, command cheat sheet |
+| [UKI and systemd-boot splash](/docs/argvus-boot-splash/uki-splash/) | Using `argvus-uki-splash.bmp` in a UKI boot flow |
+| [Uninstallation](/docs/argvus-boot-splash/uninstallation/) | Removing the package and restoring the previous theme |
+| [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/) | Common symptoms and their causes |
+| [Reference](/docs/argvus-boot-splash/reference/) | Installed files, package metadata, color values |
 
-### [Developer Guide](developer-guide/)
+### [Developer Guide](/docs/argvus-boot-splash/developer-guide/)
 Technical documentation for contributors and maintainers.
 
-- [Theme Architecture](developer-guide/theme.md) — Plymouth descriptor, rendering model, and customization
-- [Packaging](developer-guide/packaging.md) — Build pipeline and package recipes
-- [CI and Releases](developer-guide/ci-releases.md) — Validation, testing, and release workflow
+- [Theme Architecture](/docs/argvus-boot-splash/developer-guide/theme/) — Plymouth descriptor, rendering model, and customization
+- [Packaging](/docs/argvus-boot-splash/developer-guide/packaging/) — Build pipeline and package recipes
+- [CI and Releases](/docs/argvus-boot-splash/developer-guide/ci-releases/) — Validation, testing, and release workflow
 
 ## Quick Start
 
 For Arch-based systems:
 
 ```sh
-sudo pacman -S argvus-boot-splash
+sudo pacman -S argvus-boot-splash   # or: sudo pacman -U ./argvus-boot-splash-<version>-1-any.pkg.tar.zst
 ```
 
 The installer sets the theme as default and regenerates your initramfs automatically.

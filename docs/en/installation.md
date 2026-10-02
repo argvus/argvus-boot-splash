@@ -8,8 +8,8 @@ description: Requirements, install options, and what the package hooks do.
 Everything you need to get the Argvus boot splash on an Arch-based system.
 
 For what the theme looks like and what it contains, see the
-[reference](reference.md). To rebuild it from source instead, see the
-[developer guide](../developer-guide.md).
+[reference](/docs/argvus-boot-splash/reference/). To rebuild it from source instead, see the
+[developer guide](/docs/argvus-boot-splash/developer-guide/).
 
 ## Requirements
 
@@ -103,11 +103,11 @@ common reason for "the splash did not change".
 
 On removal the package only prints a reminder: choosing a different theme and
 rebuilding the initramfs is left to you. See
-[uninstallation](uninstallation.md).
+[uninstallation](/docs/argvus-boot-splash/uninstallation/).
 
 ## Next steps
 
-- [Usage](usage.md) — verify the installation, preview without rebooting, switch
+- [Usage](/docs/argvus-boot-splash/usage/) — verify the installation, preview without rebooting, switch
   themes.
-- [UKI and systemd-boot splash](uki-splash.md) — use the bitmap in a UKI.
-- [Troubleshooting](troubleshooting.md) — if the splash did not change.
+- [UKI and systemd-boot splash](/docs/argvus-boot-splash/uki-splash/) — use the bitmap in a UKI.
+- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/) — if the splash did not change.

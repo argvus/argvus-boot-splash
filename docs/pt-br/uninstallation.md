@@ -26,5 +26,5 @@ tema você quer no lugar e não mexe no seu initramfs.
 
 ## Próximos passos
 
-- [Solução de problemas](troubleshooting.md) — recuperar a tela anterior.
-- [Instalação](installation.md) — reinstalar mais tarde.
+- [Solução de problemas](/pt/docs/argvus-boot-splash/troubleshooting/) — recuperar a tela anterior.
+- [Instalação](/pt/docs/argvus-boot-splash/installation/) — reinstalar mais tarde.

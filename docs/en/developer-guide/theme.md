@@ -8,9 +8,9 @@ description: How the Plymouth descriptor, assets, and script are put together.
 How the Plymouth theme is put together: the descriptor, the asset set, and what
 `argvus.script` does, section by section.
 
-For packaging and releases see [packaging](packaging.md) and
-[CI and releases](ci-releases.md). For usage, see the
-[user guide](../user-guide.md).
+For packaging and releases see [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) and
+[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/). For usage, see the
+[user guide](/docs/argvus-boot-splash/).
 
 ## Descriptor
 
@@ -72,8 +72,8 @@ All assets live in `src/usr/share/plymouth/themes/argvus/`.
 | `progress-bar-track.png` | 400x4 | 1-bit palette | unfilled track | yes |
 | `entry-box.png` | 400x48 | RGB 16-bit | password entry field | yes |
 | `bullet.png` | 12x12 | 4-bit palette | one masked character | yes |
-| `entry-line.png` | 300x2 | 1-bit palette | entry rule/underline | no (see [known gaps](workflow.md#known-gaps)) |
-| `logo-glow.png` | 260x300 | 8-bit palette | logo glow artwork | no (see [known gaps](workflow.md#known-gaps)) |
+| `entry-line.png` | 300x2 | 1-bit palette | entry rule/underline | no (see [known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
+| `logo-glow.png` | 260x300 | 8-bit palette | logo glow artwork | no (see [known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `argvus-uki-splash.bmp` | 400x400 | BMP 32-bit | UKI / systemd-boot splash | no (consumed by the boot loader) |
 
 Image width is used as the layout unit: the wordmark is the reference width
@@ -83,7 +83,7 @@ wordmark asset is re-exported.
 
 `arch_check_splash_payload()` in `packaging/arch/common/functions.sh` requires
 **all** files above to exist; adding an asset means adding it to that list. See
-[packaging](packaging.md#shared-functions).
+[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
 
 ## Script walkthrough
 
@@ -271,7 +271,7 @@ The theme is dark-only and has no light variant.
 (`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`). It is a
 standalone asset: the Plymouth script never loads it, and the Arch package does
 not register it anywhere — embedding it into a UKI is the user's step (see the
-[user guide](../user-guide/uki-splash.md)).
+[user guide](/docs/argvus-boot-splash/uki-splash/)).
 
 If you replace it, keep it a plain uncompressed 32-bit BMP of comparable size;
 systemd-boot and `ukify` do not scale arbitrary formats and large images are

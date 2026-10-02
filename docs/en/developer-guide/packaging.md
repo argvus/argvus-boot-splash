@@ -8,8 +8,8 @@ description: Arch package metadata, build pipeline, and Make targets.
 How the Arch package is defined and produced: the two PKGBUILDs, the shared
 functions, the install hooks, the local build pipeline and the Make targets.
 
-For the theme itself see [theme architecture](theme.md); for validation, CI and
-releases see [CI and releases](ci-releases.md).
+For the theme itself see [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/); for validation, CI and
+releases see [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Two PKGBUILDs, one payload
 
@@ -53,7 +53,7 @@ PKGBUILDs:
   missing, ambiguous, or the destination already exists.
 - `arch_check_splash_payload` (`check()`) — asserts every theme asset exists in
   the extracted source. This is the package's only "test suite"; the list of
-  required files is in the [asset inventory](theme.md#asset-inventory).
+  required files is in the [asset inventory](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory).
 - `arch_package_splash_payload` (`package()`) — walks `src/usr` with
   `find -print0` and installs each file with `install -Dm644` into `$pkgdir`
   (NUL-safe, works with spaces in names), then installs `LICENSE` to
@@ -123,7 +123,7 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 | `make help` | target list (default goal) |
 
 CI runs `make validate` and `make build`; nothing in CI runs `make install` or
-`make changelog` (see [known gaps](workflow.md#known-gaps)).
+`make changelog` (see [known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
 ## Prerequisites
 

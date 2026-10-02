@@ -9,8 +9,8 @@ Tudo o que é preciso para colocar o boot splash do Argvus em um sistema baseado
 em Arch.
 
 Para ver o que o tema contém, consulte a
-[referência](reference.md). Para compilá-lo a partir do código-fonte, veja o
-[guia do desenvolvedor](../developer-guide.md).
+[referência](/pt/docs/argvus-boot-splash/reference/). Para compilá-lo a partir do código-fonte, veja o
+[guia do desenvolvedor](/pt/docs/argvus-boot-splash/developer-guide/).
 
 ## Requisitos
 
@@ -93,7 +93,7 @@ No Plymouth também é possível habilitar a opção em `/etc/default/grub`, com
 mínimo.
 
 Se preferir compilar o pacote a partir do repositório, veja o
-[guia do desenvolvedor](../developer-guide.md).
+[guia do desenvolvedor](/pt/docs/argvus-boot-splash/developer-guide/).
 
 ## O que o instalador faz
 
@@ -111,11 +111,11 @@ número um de "a tela de boot não mudou".
 
 Na remoção, o pacote apenas imprime um lembrete: escolher outro tema e
 reconstruir o initramfs fica por sua conta. Veja
-[desinstalação](uninstallation.md).
+[desinstalação](/pt/docs/argvus-boot-splash/uninstallation/).
 
 ## Próximos passos
 
-- [Uso](usage.md) — verificar a instalação, pré-visualizar sem reiniciar, trocar
+- [Uso](/pt/docs/argvus-boot-splash/usage/) — verificar a instalação, pré-visualizar sem reiniciar, trocar
   de tema.
-- [Splash em UKI e systemd-boot](uki-splash.md) — usar o bitmap em uma UKI.
-- [Solução de problemas](troubleshooting.md) — se a tela de boot não mudou.
+- [Splash em UKI e systemd-boot](/pt/docs/argvus-boot-splash/uki-splash/) — usar o bitmap em uma UKI.
+- [Solução de problemas](/pt/docs/argvus-boot-splash/troubleshooting/) — se a tela de boot não mudou.

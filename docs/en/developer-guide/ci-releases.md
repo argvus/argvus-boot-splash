@@ -8,8 +8,8 @@ description: Validation, continuous integration, signing, and release workflow.
 The validation gate, the continuous integration jobs, the release pipeline and
 the versioning rules.
 
-For the package itself see [packaging](packaging.md); for the theme see
-[theme architecture](theme.md).
+For the package itself see [packaging](/docs/argvus-boot-splash/developer-guide/packaging/); for the theme see
+[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Validation
 

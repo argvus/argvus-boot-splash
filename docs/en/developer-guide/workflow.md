@@ -8,8 +8,8 @@ description: House rules, documentation map, and repository audit findings.
 House rules for changes in this repository, plus the inconsistencies found while
 auditing it — worth fixing rather than copying.
 
-For the technical reference see [theme architecture](theme.md),
-[packaging](packaging.md) and [CI and releases](ci-releases.md).
+For the technical reference see [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/),
+[packaging](/docs/argvus-boot-splash/developer-guide/packaging/) and [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Conventions
 
@@ -24,8 +24,8 @@ For the technical reference see [theme architecture](theme.md),
 - Branch naming: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
 - One reviewer approval before merge, squash-merge.
 - License: GPL-3.0-or-later. Shipped as `/usr/share/licenses/argvus-boot-splash/LICENSE`.
-- Follow the process in [CONTRIBUTING.md](../../../CONTRIBUTING.md) and
-  [DEVELOPMENT.md](../../../DEVELOPMENT.md).
+- Follow the process in [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md) and
+  [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 
 ## Known gaps
 
@@ -39,7 +39,7 @@ Documented inconsistencies found while auditing the repository:
   wire them into the script or drop them from the payload and the check list.
 - `src/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp` is installed but
   never registered with anything; the
-  [user guide](../user-guide/uki-splash.md) documents the manual
+  [user guide](/docs/argvus-boot-splash/uki-splash/) documents the manual
   `bootctl`/`ukify` step.
 - The canonical docs live at the repository root (`README.md`,
   `DEVELOPMENT.md`, `CONTRIBUTING.md`) and overlap with the guides in `docs/`.
@@ -52,5 +52,5 @@ Documented inconsistencies found while auditing the repository:
 | `README.md` | everyone | one-paragraph overview and layout |
 | `DEVELOPMENT.md` | maintainers | build, signing, release process |
 | `CONTRIBUTING.md` | contributors | git flow, PR rules, secrets policy |
-| [`docs/user-guide.md`](../user-guide.md) | end users | installation, usage, troubleshooting |
-| [`docs/developer-guide.md`](../developer-guide.md) | developers | theme internals, packaging, CI |
+| [`docs/user-guide.md`](/docs/argvus-boot-splash/) | end users | installation, usage, troubleshooting |
+| [`docs/developer-guide.md`](/docs/argvus-boot-splash/developer-guide/) | developers | theme internals, packaging, CI |

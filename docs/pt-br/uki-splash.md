@@ -28,9 +28,9 @@ systemd-boot escala o bitmap para o console, então uma imagem quadrada aparece
 centralizada.
 
 Se você usa apenas mkinitcpio ou dracut, pode ignorar este arquivo: a
-[instalação](installation.md) comum já cobre esse caminho.
+[instalação](/pt/docs/argvus-boot-splash/installation/) comum já cobre esse caminho.
 
 ## Próximos passos
 
-- [Uso](usage.md)
-- [Solução de problemas](troubleshooting.md)
+- [Uso](/pt/docs/argvus-boot-splash/usage/)
+- [Solução de problemas](/pt/docs/argvus-boot-splash/troubleshooting/)
