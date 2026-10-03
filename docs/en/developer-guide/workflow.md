@@ -32,7 +32,7 @@ For the technical reference see [theme architecture](/docs/argvus-boot-splash/de
 Documented inconsistencies found while auditing the repository:
 
 - `README.md` advertises `make test` for a direct Plymouth preview, but no such
-  target exists in the [Makefile](../../../Makefile). The real commands are
+  target exists in the [Makefile](https://github.com/argvus/argvus-boot-splash/blob/main/Makefile). The real commands are
   `sudo plymouth --show-splash` / `sudo plymouthquit`.
 - `entry-line.png` and `logo-glow.png` ship in the payload and are required by
   `arch_check_splash_payload()`, but `argvus.script` never loads them. Either
