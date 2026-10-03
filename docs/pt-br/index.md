@@ -43,5 +43,5 @@ O instalador define o tema como padrão e regenera seu initramfs automaticamente
 ---
 
 - **Repositório:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
-- **Licença:** GPL-3.0-or-later
+- **Licença:** GPL-3.0-only
 - **Relatórios de Bugs:** [Problemas do GitHub](https://github.com/argvus/argvus-boot-splash/issues)

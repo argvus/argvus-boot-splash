@@ -23,7 +23,7 @@ For the technical reference see [theme architecture](/docs/argvus-boot-splash/de
   `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
 - Branch naming: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
 - One reviewer approval before merge, squash-merge.
-- License: GPL-3.0-or-later. Shipped as `/usr/share/licenses/argvus-boot-splash/LICENSE`.
+- License: GPL-3.0-only. Shipped as `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 - Follow the process in [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md) and
   [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 

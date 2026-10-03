@@ -56,5 +56,5 @@ git, segredos, disciplina do changelog), veja
 - Processo de desenvolvimento: [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)
 - Contribuição: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md)
 - Política de segurança: [SECURITY.md](https://github.com/argvus/argvus-boot-splash/blob/main/SECURITY.md)
-- Licença: [GPL-3.0-or-later](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)
+- Licença: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)
 - Versão em inglês: [English developer guide](/docs/argvus-boot-splash/developer-guide/)

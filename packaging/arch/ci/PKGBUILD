@@ -5,7 +5,7 @@ pkgrel=1
 pkgdesc="Argvus boot splash theme for Plymouth"
 arch=('any')
 url="https://github.com/argvus/argvus-boot-splash"
-license=('GPL-3.0-or-later')
+license=('GPL-3.0-only')
 depends=('plymouth')
 optdepends=(
   'mkinitcpio: rebuild initramfs (Arch Linux)'

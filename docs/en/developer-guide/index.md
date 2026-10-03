@@ -55,5 +55,5 @@ discipline) see [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/bl
 - Development process: [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)
 - Contributing: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md)
 - Security policy: [SECURITY.md](https://github.com/argvus/argvus-boot-splash/blob/main/SECURITY.md)
-- License: [GPL-3.0-or-later](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)
+- License: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)
 - Portuguese version: [Guia do desenvolvedor](/pt/docs/argvus-boot-splash/developer-guide/)

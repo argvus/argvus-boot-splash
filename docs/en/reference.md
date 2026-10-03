@@ -50,7 +50,7 @@ Plus the license at `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 | Depends | `plymouth` |
 | Optional depends | `mkinitcpio`, `dracut` |
 | Conflicts / replaces | `argvus-plymouth` |
-| License | GPL-3.0-or-later |
+| License | GPL-3.0-only |
 
 ## Colors
 
@@ -71,7 +71,7 @@ auto-switches between light and dark variants.
   issue for vulnerabilities.
 - Source, builds and releases: the repository root ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
 - Contribute: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
-- License: [GPL-3.0-or-later](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
+- License: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
 
 ## Next steps
 

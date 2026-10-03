@@ -50,7 +50,7 @@ Mais a licença em `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 | Dependências | `plymouth` |
 | Dependências opcionais | `mkinitcpio`, `dracut` |
 | Conflitos / substitui | `argvus-plymouth` |
-| Licença | GPL-3.0-or-later |
+| Licença | GPL-3.0-only |
 
 ## Cores
 
@@ -72,7 +72,7 @@ automaticamente entre variantes clara e escura.
 - Código-fonte, builds e lançamentos: a raiz do repositório
   ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
 - Contribuição: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
-- Licença: [GPL-3.0-or-later](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
+- Licença: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
 - Versão em inglês: [English reference](/docs/argvus-boot-splash/reference/).
 
 ## Próximos passos
