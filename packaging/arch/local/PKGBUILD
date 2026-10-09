@@ -1,8 +1,8 @@
 # Maintainer: William C. Canin
 pkgname=argvus-boot-splash
-pkgver=0.2.0
+pkgver=0.1.0
 pkgrel=1
-pkgdesc="Argvus boot splash theme for Plymouth"
+pkgdesc="ARGVUS boot splash theme for Plymouth"
 arch=('any')
 url="https://github.com/argvus/argvus-boot-splash"
 license=('GPL-3.0-only')
