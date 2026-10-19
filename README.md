@@ -22,11 +22,11 @@ docs/pt-br/                            documentação em português
 
 ## Documentation
 
-- [User guide (en)](docs/en/user-guide.md) ·
-  [Guia do usuário (pt-br)](docs/pt-br/user-guide.md) — installation, usage,
+- [User guide (en)](docs/en/index.md) ·
+  [Guia do usuário (pt-br)](docs/pt-br/index.md) — installation, usage,
   troubleshooting
-- [Developer guide (en)](docs/en/developer-guide.md) ·
-  [Guia do desenvolvedor (pt-br)](docs/pt-br/developer-guide.md) — theme
+- [Developer guide (en)](docs/en/developer-guide/index.md) ·
+  [Guia do desenvolvedor (pt-br)](docs/pt-br/developer-guide/index.md) — theme
   architecture, packaging, CI and releases
 
 ## Build and validate
@@ -40,9 +40,9 @@ make build
 
 The package is written to `build/dist/`. Install it with `make install`.
 
-For a direct Plymouth preview, use `make test` from an environment where a
-Plymouth daemon and graphical display are available. The preview may require
-polkit authentication when run as an unprivileged user.
+To preview the splash without rebooting, run `sudo plymouth --show-splash` and
+then `sudo plymouthquit`; see the usage guide for details. There is no `make test`
+target.
 
 ## Theme colors
 
