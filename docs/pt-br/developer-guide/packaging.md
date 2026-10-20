@@ -14,7 +14,7 @@ lançamentos, veja [CI e lançamentos](/pt/docs/argvus-boot-splash/developer-gui
 
 ## Dois PKGBUILDs, um payload
 
-`packaging/arch/ci/PKGBUILD` e `packaging/arch/local/PKGBUILD` são idênticos
+`packaging/arch/remote/PKGBUILD` e `packaging/arch/local/PKGBUILD` são idênticos
 exceto por `source=`:
 
 | | `local` | `ci` |
@@ -120,12 +120,11 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            diretórios de trabalho
 | `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + sincronia de metadados dos PKGBUILD + `makepkg --printsrcinfo` em cada PKGBUILD + `git diff --check` |
 | `make lint` (apelido `make lint-shell`) | shellcheck em `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` desativados), `bash -n`, `git diff --check` |
 | `make spellcheck` | `cspell --config cspell.json .` se o `cspell` estiver instalado, senão é pulado |
-| `make changelog` | `git-cliff -o CHANGELOG.md` |
 | `make clean` | `rm -rf build/` |
 | `make help` | lista de alvos (alvo padrão) |
 
-A CI roda `make validate` e `make build`; nada na CI roda `make install` ou
-`make changelog` (veja [lacunas conhecidas](/pt/docs/argvus-boot-splash/developer-guide/workflow/#lacunas-conhecidas)).
+A CI roda `make validate` e `make build`; nada na CI roda `make install`
+(veja [lacunas conhecidas](/pt/docs/argvus-boot-splash/developer-guide/workflow/#lacunas-conhecidas)).
 
 ## Pré-requisitos
 
@@ -138,5 +137,5 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 - `pacman-contrib` fornece o `updpkgsums` (regera os checksums do PKGBUILD).
 - `shellcheck` valida os scripts shell do repositório e as funções de
   empacotamento Arch compartilhadas.
-- Opcional: `git-cliff` (changelog, `make changelog`), `namcap` (lint de pacote) e
+- Opcional: `namcap` (lint de pacote) e
   cspell (spellcheck local). A CI instala todos.

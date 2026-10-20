@@ -51,7 +51,7 @@ Etapas:
 1. **Checkout** da tag (no dispatch usa `inputs.tag`).
 2. **Etapa de versão**: valida a tag contra
    `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`, falha se `url` estiver vazio em
-   `packaging/arch/ci/PKGBUILD` e então reescreve o `pkgver` a partir da tag.
+   `packaging/arch/remote/PKGBUILD` e então reescreve o `pkgver` a partir da tag.
 3. **Validação**: `make validate`.
 4. **Build** como `builder` sem privilégio: `updpkgsums` (resolve e valida o
    `sha256sums` real) e depois
@@ -104,17 +104,15 @@ Em **Settings → Secrets and variables → Actions** do repositório:
 
 Antes de criar a tag:
 
-1. Preencha `url` em `packaging/arch/ci/PKGBUILD` com o repositório real:
+1. Preencha `url` em `packaging/arch/remote/PKGBUILD` com o repositório real:
    - GitHub: `url="https://github.com/argvus/argvus-boot-splash"` (o source usa
      `${url}/archive/refs/tags/v${pkgver}.tar.gz`);
    - GitLab: ajuste o `source=` para
      `https://gitlab.com/argvus/argvus-boot-splash/-/archive/v${pkgver}/argvus-boot-splash-v${pkgver}.tar.gz`;
    - sem `url`, o lançamento **falha de propósito** com uma mensagem clara.
 2. Sincronize versões/metadados em `packaging/arch/local/PKGBUILD` e
-   `packaging/arch/ci/PKGBUILD`.
-3. Regenere e commite o `CHANGELOG.md` (veja
-   [versionamento](#versionamento-e-changelog)).
-4. Crie e envie a tag:
+   `packaging/arch/remote/PKGBUILD`.
+3. Crie e envie a tag:
 
    ```sh
    git tag v0.1.0
@@ -124,31 +122,9 @@ Antes de criar a tag:
    O workflow também pode ser iniciado manualmente com uma tag `v*` existente no
    campo `tag`, o que é útil para um rebuild controlado.
 
-## Versionamento e changelog
+## Versionamento
 
-- SemVer no `pkgver`, contador de release no `pkgrel`.
-- O `CHANGELOG.md` é gerado pelo `git-cliff` a partir de Conventional Commits,
-  usando `cliff.toml`: grupos `feat`, `fix`, `docs`, `refactor`, `test`, `ci`,
-  `perf`, `build`; commits `chore` são ignorados; commits são ordenados do mais
-  antigo para o mais novo.
-- Gere **antes** de taguear, commite o resultado e só então crie a tag — do
-  contrário os commits já ficam atribuídos à nova versão e a seção datada só se
-  resolve na próxima execução.
-
-  ```sh
-  make changelog
-  git add CHANGELOG.md
-  git commit -m "docs(changelog): update for v0.1.0"
-  git tag v0.1.0
-  git push origin v0.1.0
-  ```
-
-- As entradas pendentes aparecem em `## [Unreleased]`; `[Unreleased]` vira
-  `## [X.Y.Z] - <data>` assim que existir uma tag.
-- `git-cliff --unreleased --strip header` mostra as mudanças pendentes,
-  `git-cliff --bump` sugere a próxima versão.
-- Um repositório sem nenhum commit faz `make changelog` falhar
-  (`reference 'refs/heads/main' not found`).
+- SemVer em `pkgver`, contagem de lançamentos em `pkgrel`.
 
 ## Solução de problemas do desenvolvedor
 
@@ -160,7 +136,7 @@ GitHub vs GitLab). O workflow valida o padrão da tag e falha cedo com `url` vaz
 enviada antes do job de release; disparar com uma tag que só existe localmente
 falha aqui.
 
-**`make validate` reclama que "CI and local PKGBUILD metadata is out of sync".**
+**`make validate` reclama que "remote and local PKGBUILD metadata is out of sync".**
 Copie os campos de metadados (não o `source=`) de um PKGBUILD para o outro.
 
 **O spellcheck falha em um termo novo.** Adicione-o ao

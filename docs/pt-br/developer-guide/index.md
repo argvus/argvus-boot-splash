@@ -26,7 +26,7 @@ spellcheck falha.
 
 Se você só quer *usar* o tema, leia o
 [guia do usuário](/pt/docs/argvus-boot-splash/). Para o complemento ligado ao processo (fluxo
-git, segredos, disciplina do changelog), veja
+git, segredos, processo de lançamento), veja
 [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) e [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
 
 ## Guias
@@ -35,7 +35,7 @@ git, segredos, disciplina do changelog), veja
 | --- | --- |
 | [Arquitetura do tema](/pt/docs/argvus-boot-splash/developer-guide/theme/) | Descritor, modelo de renderização, inventário de assets, walkthrough do script, constantes de layout, tokens de cor, bitmap de UKI, como modificar o tema |
 | [Empacotamento](/pt/docs/argvus-boot-splash/developer-guide/packaging/) | Os dois PKGBUILDs, `functions.sh` compartilhado, hooks de instalação, pipeline de build local, alvos do Make, pré-requisitos |
-| [CI e lançamentos](/pt/docs/argvus-boot-splash/developer-guide/ci-releases/) | `validate.sh`, `ci.yml`, `release.yml` passo a passo, checksums, assinatura, segredos, publicação, versionamento e changelog |
+| [CI e lançamentos](/pt/docs/argvus-boot-splash/developer-guide/ci-releases/) | `validate.sh`, `ci.yml`, `release.yml` passo a passo, checksums, assinatura, segredos, publicação e versionamento |
 | [Convenções e lacunas conhecidas](/pt/docs/argvus-boot-splash/developer-guide/workflow/) | Regras da casa, mapa da documentação e inconsistências encontradas na auditoria do repositório |
 
 ## Referência rápida

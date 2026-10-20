@@ -10,7 +10,7 @@ password prompt assets, and UKI splash bitmap.
 
 ```text
 src/usr/share/plymouth/themes/argvus/  package payload
-packaging/arch/ci/PKGBUILD             release package metadata
+packaging/arch/remote/PKGBUILD             release package metadata
 packaging/arch/local/PKGBUILD          local package metadata
 packaging/arch/common/                 shared packaging functions
 tools/sh/pkgbuild_local.sh             local source archive and package build

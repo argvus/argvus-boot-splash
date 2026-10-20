@@ -24,8 +24,8 @@ Before committing a change: `make validate && make build`, and add new technical
 terms to `.cspell/custom-dictionary-workspace.txt` or the spellcheck job fails.
 
 If you only want to *use* the theme, read the [user guide](/docs/argvus-boot-splash/). For
-the process-oriented counterpart of this file (git flow, secrets, changelog
-discipline) see [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) and
+the process-oriented counterpart of this file (git flow, secrets, release
+process) see [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) and
 [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
 
 ## Guides
@@ -34,7 +34,7 @@ discipline) see [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/bl
 | --- | --- |
 | [Theme architecture](/docs/argvus-boot-splash/developer-guide/theme/) | Descriptor, rendering model, asset inventory, script walkthrough, layout constants, design tokens, UKI bitmap, how to modify the theme |
 | [Packaging](/docs/argvus-boot-splash/developer-guide/packaging/) | The two PKGBUILDs, shared `functions.sh`, install hooks, local build pipeline, Make targets, prerequisites |
-| [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/) | `validate.sh`, `ci.yml`, `release.yml` step by step, checksums, signing, secrets, publishing, versioning and changelog |
+| [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/) | `validate.sh`, `ci.yml`, `release.yml` step by step, checksums, signing, secrets, publishing and versioning |
 | [Conventions and known gaps](/docs/argvus-boot-splash/developer-guide/workflow/) | House rules, documentation map, and inconsistencies found while auditing the repository |
 
 ## Quick reference
