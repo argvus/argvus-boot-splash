@@ -2,7 +2,7 @@
 
 This directory contains the release and local Arch Linux package metadata.
 
-- `ci/PKGBUILD` fetches the tagged `argvus-boot-splash` source archive.
+- `remote/PKGBUILD` fetches the tagged `argvus-boot-splash` source archive.
 - `local/PKGBUILD` consumes the deterministic archive created by `make build`.
 - `common/functions.sh` normalizes extracted source directories and installs
   the Plymouth payload.
