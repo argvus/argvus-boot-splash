@@ -67,10 +67,10 @@ auto-switches between light and dark variants.
 ## Getting help
 
 - Report bugs and request features in the project's issue tracker.
-- Security issues: follow [SECURITY.md](https://github.com/argvus/argvus-boot-splash/blob/main/SECURITY.md) — do not open a public
+- Security issues: follow [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md) — do not open a public
   issue for vulnerabilities.
 - Source, builds and releases: the repository root ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
-- Contribute: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
+- Contribute: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 - License: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
 
 ## Next steps

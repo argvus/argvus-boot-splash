@@ -26,7 +26,7 @@ terms to `.cspell/custom-dictionary-workspace.txt` or the spellcheck job fails.
 If you only want to *use* the theme, read the [user guide](/docs/argvus-boot-splash/). For
 the process-oriented counterpart of this file (git flow, secrets, release
 process) see [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) and
-[CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
+[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 
 ## Guides
 
@@ -53,7 +53,7 @@ process) see [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/
 - Repository root: [README.md](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)
 - User-facing docs: [user guide](/docs/argvus-boot-splash/)
 - Development process: [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)
-- Contributing: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md)
-- Security policy: [SECURITY.md](https://github.com/argvus/argvus-boot-splash/blob/main/SECURITY.md)
+- Contributing: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)
+- Security policy: [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md)
 - License: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)
 - Portuguese version: [Guia do desenvolvedor](/pt/docs/argvus-boot-splash/developer-guide/)

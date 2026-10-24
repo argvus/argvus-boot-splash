@@ -26,7 +26,7 @@ Para a referência técnica, veja [arquitetura do tema](/pt/docs/argvus-boot-spl
 - Licença: GPL-3.0-only. Instalada em
   `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 - Siga o processo descrito em
-  [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md) e
+  [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) e
   [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 
 ## Lacunas conhecidas
@@ -44,8 +44,9 @@ Inconsistências documentadas encontradas na auditoria do repositório:
   [guia do usuário](/pt/docs/argvus-boot-splash/uki-splash/) documenta o passo manual com
   `bootctl`/`ukify`.
 - A documentação canônica fica na raiz do repositório (`README.md`,
-  `DEVELOPMENT.md`, `CONTRIBUTING.md`) e se sobrepõe aos guias em `docs/`. Mantenha
-  os dois lados coerentes ao alterar qualquer um deles.
+  `DEVELOPMENT.md`) e se sobrepõe aos guias em `docs/`. Mantenha os dois lados
+  coerentes ao alterar qualquer um deles. As políticas de contribuição
+  (`CONTRIBUTING.md`, `SECURITY.md`) ficam no repositório `.github` da organização.
 
 ## Mapa da documentação
 
@@ -53,7 +54,7 @@ Inconsistências documentadas encontradas na auditoria do repositório:
 | --- | --- | --- |
 | `README.md` | todos | visão geral em um parágrafo e estrutura |
 | `DEVELOPMENT.md` | mantenedores | processo de build, assinatura e lançamento |
-| `CONTRIBUTING.md` | contribuidores | fluxo git, regras de PR, política de segredos |
+| [`CONTRIBUTING.md`](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) (`.github` da organização) | contribuidores | fluxo git, regras de PR, política de segredos |
 | [`docs/user-guide.md`](/pt/docs/argvus-boot-splash/) | usuário final | instalação, uso, solução de problemas |
 | [`docs/developer-guide.md`](/pt/docs/argvus-boot-splash/developer-guide/) | desenvolvedores | internals do tema, empacotamento, CI |
 | [`docs/en/`](/docs/argvus-boot-splash/) | falantes de inglês | estas mesmas páginas em inglês |

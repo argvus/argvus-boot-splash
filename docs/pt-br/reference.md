@@ -67,11 +67,11 @@ automaticamente entre variantes clara e escura.
 ## Onde encontrar ajuda
 
 - Relate bugs e peça recursos no rastreador de issues do projeto.
-- Problemas de segurança: siga o [SECURITY.md](https://github.com/argvus/argvus-boot-splash/blob/main/SECURITY.md) — não abra
+- Problemas de segurança: siga o [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md) — não abra
   issue pública para vulnerabilidades.
 - Código-fonte, builds e lançamentos: a raiz do repositório
   ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
-- Contribuição: [CONTRIBUTING.md](https://github.com/argvus/argvus-boot-splash/blob/main/CONTRIBUTING.md).
+- Contribuição: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 - Licença: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
 - Versão em inglês: [English reference](/docs/argvus-boot-splash/reference/).
 
