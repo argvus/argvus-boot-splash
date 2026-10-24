@@ -1,5 +1,18 @@
 # Argvus Splash
 
+<div align="center">
+
+[![CI](https://github.com/argvus/argvus-boot-splash/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/argvus/argvus-boot-splash/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/argvus/argvus-boot-splash)](./LICENSE)
+[![Language: Shell](https://img.shields.io/badge/Shell-POSIX-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Platform: Arch Linux | Wayland](https://img.shields.io/badge/platform-Arch%20Linux%20%7C%20Wayland-1793D1?logo=archlinux&logoColor=white)](https://archlinux.org/)
+[![Pull requests](https://img.shields.io/github/issues-pr/argvus/argvus-boot-splash)](https://github.com/argvus/argvus-boot-splash/pulls)
+[![Issues](https://img.shields.io/github/issues/argvus/argvus-boot-splash)](https://github.com/argvus/argvus-boot-splash/issues)
+[![Last commit](https://img.shields.io/github/last-commit/argvus/argvus-boot-splash)](https://github.com/argvus/argvus-boot-splash/commits/main)
+[![Docs](https://img.shields.io/badge/docs-project-blue)](./docs/)
+
+</div>
+
 Plymouth boot splash theme for the Argvus desktop ecosystem.
 
 The package installs the theme under
