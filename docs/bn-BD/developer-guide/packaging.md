@@ -1,9 +1,9 @@
 ---
-title: Packaging
+title: প্যাকেজিং
 description: আর্ক প্যাকেজ মেটাডেটা, বিল্ড পাইপলাইন, এবং মেক টার্গেট।
 ---
 
-# Packaging
+# প্যাকেজিং
 
 আর্ক প্যাকেজটি কীভাবে সংজ্ঞায়িত এবং উৎপন্ন হয়: দুটি PKGBUILD, শেয়ার করা
 ফাংশন, ইনস্টল হুক, স্থানীয় বিল্ড পাইপলাইন এবং Make টার্গেট।
@@ -14,19 +14,19 @@ description: আর্ক প্যাকেজ মেটাডেটা, বি
 ## দুটি PKGBUILD, একটি পে-লোড
 
 `packaging/arch/remote/PKGBUILD` এবং `packaging/arch/local/PKGBUILD` একই।
-except for `source=`:
+`source=` ছাড়া:
 
 | | `local` | `ci` |
 | --- | --- | --- |
-| source | `${pkgname}-${pkgver}.tar.gz` (built by `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
-| used by | developers, `make build` | GitHub Actions release |
+| উৎস | `${pkgname}-${pkgver}.tar.gz` (`make build` দ্বারা নির্মিত) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
+| দ্বারা ব্যবহৃত | বিকাশকারী, `make build` | GitHub অ্যাকশন রিলিজ |
 
 উভয়ই `packaging/arch/common/functions.sh` থেকে একই ফাংশনগুলি কল করে, এবং
 `tools/sh/validate.sh` তাদের মেটাডেটা (`pkgname`, `pkgver`, `pkgrel`,
 `pkgdesc`, `arch`, `license`, `depends`, `makedepends`, `options`) একই হওয়া দাবি করে,
 সুতরাং দুইটি চুপচাপ তলিয়ে যেতে পারে না।
 
-Shared metadata:
+ভাগ করা মেটাডেটা:
 
 ```bash
 pkgname=argvus-boot-splash
@@ -84,11 +84,11 @@ PKGBUILDs:
 
  for the name, a dotted version
 সংস্করণের জন্য প্যাটার্ন)।
-2. Builds 
+2. Builds
 
  with
 
-   and 
+   and
 
  — a deterministic,
 পুনরায় প্রজননযোগ্য আর্কাইভ। এটি  --transform "s#^\./#${pkgname}-${pkgver}/#"  tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner  build/artifacts/${pkgname}-${pkgver}.tar.gz  `^[a-z0-9@._+-]+$`  `build/artifacts/${pkgname}-${pkgver}.tar.gz`  `tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner`  `--transform "s#^\./#${pkgname}-${pkgver}/#"` `.git`, `build/`, `dist/`, `target/`,
@@ -97,7 +97,7 @@ PKGBUILDs:
 3. আর্কাইভের `sha256` গণনা করে এবং স্থানীয় PKGBUILD-এর একটি **অস্থায়ী
 কপি**-তে `sed` এর মাধ্যমে ইনজেক্ট করে (`.PKGBUILD.local.XXXXXX`, একটি `EXIT`
 ট্র্যাপ দ্বারা মুছে ফেলা হয়েছে)। রিপোজিটরি সর্বদা `sha256sums=()` খালি রাখে; `SKIP` কখনও
-   used.
+   ব্যবহৃত
 4. হয় না। পূর্বে বিদ্যমান যে কোনও `${pkgname}-${pkgver}-*.pkg.tar.zst` কে
 `build/dist/` তাই একটি পুরনো প্যাকেজকে এই বিল্ডের সাথে বিভ্রান্ত করা যাবে না।
 5. `makepkg -p <generated PKGBUILD> --nodeps --noconfirm --needed
@@ -105,7 +105,7 @@ PKGBUILDs:
 এবং `PKGDEST` `build/dist/`-তে। অতিরিক্ত আর্গুমেন্ট গুলি `makepkg`-তে ফরওয়ার্ড করা হয়;
 `MAKEPKG_FLAGS` ডিফল্ট ফ্ল্যাগ সেটকে ওভাররাইড করে (উদ্দেশ্যপুর্ণভাবে শব্দ-বিভাজন)।
 6. ব্যর্থ হয় যদি একদম একটিই `.pkg.tar.zst` মেলে, তারপর `namcap`-এ এটি চালায় যদি
-   installed.
+   ইনস্টল করা
 
 Outputs:
 
@@ -117,20 +117,20 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 
 ## মেক টার্গেটগুলি
 
-| Target | Effect |
+| লক্ষ্য | প্রভাব |
 | --- | --- |
-| `make build` (alias `make package`) | run `tools/sh/pkgbuild_local.sh` → `build/` |
+| `make build` (ওরফে `make package`) | `tools/sh/pkgbuild_local.sh` চালান → `build/` |
 | `make install` (alias `make install-package`) | `sudo pacman -U`একটি প্যাকেজে`build/dist/`; যদি সংখ্যা ঠিক 1 না হয় তবে ত্রুটি |
-| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD metadata sync + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
+| `make validate` | `tools/sh/validate.sh`: শেলচেক + `bash -n` + PKGBUILD মেটাডেটা সিঙ্ক + `makepkg --printsrcinfo` প্রতি PKGBUILD + `git diff --check` |
 | `make lint` (alias `make lint-shell`) | shellcheck over `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` disabled), `bash -n`, `git diff --check` |
-| `make spellcheck` | `cspell --config cspell.json .` if `cspell` is installed, otherwise skipped |
+| `make spellcheck` | `cspell --config cspell.json .` যদি `cspell` ইনস্টল করা থাকে, অন্যথায় এড়িয়ে যায় |
 | `make clean` | `rm -rf build/` |
-| `make help` | target list (default goal) |
+| `make help` | লক্ষ্য তালিকা (ডিফল্ট লক্ষ্য) |
 
 CI চালায় `make validate` এবং `make build`; CI তে কিছুই চালায় না `make install`
 (দেখুন [প্রচলিত ফাঁক](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
-## Prerequisites
+## পূর্বশর্ত
 
 একটি আর্ক-ভিত্তিক সিস্টেম যার মধ্যে রয়েছে `make`, `git`, `gnupg` এবং `base-devel` গ্রুপ:
 
@@ -140,6 +140,6 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 
 - `pacman-contrib` `updpkgsums` প্রদান করে (PKGBUILD চেকসাম পুনরায় তৈরি করে)।
 - `shellcheck` রিপোজিটরি শেল স্ক্রিপ্ট এবং শেয়ার করা আর্ক
-  packaging functions.
-- Optional: `namcap` (package
+  প্যাকেজিং ফাংশন।
+- ঐচ্ছিক: `namcap` (প্যাকেজ
 লিন্টিং) এবং cspell (লোকাল বানান পরীক্ষা) যাচাই করে। CI এদের সকলকেই ইনস্টল করে।

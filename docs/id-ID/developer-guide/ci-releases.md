@@ -1,24 +1,24 @@
 ---
-title: CI and Releases
+title: CI dan Rilis
 description: Validasi, integrasi berkelanjutan, penandatanganan, dan alur kerja rilis.
 ---
 
 # CI dan rilis
 
 Gerbang validasi, pekerjaan integrasi berkelanjutan, pipeline rilis dan
-the versioning rules.
+aturan pembuatan versi.
 
 Untuk paket itu sendiri lihat [packaging](/docs/argvus-boot-splash/developer-guide/packaging/); untuk tema lihat
 [arsitektur tema](/docs/argvus-boot-splash/developer-guide/theme/).
 
-## Validation
+## Validasi
 
 `tools/sh/validate.sh` adalah gerbang yang diperlukan:
 
 - memerlukan `bash`, `makepkg`, `shellcheck`;
 - `shellcheck` + `bash -n` pada `tools/sh/*.sh` dan `packaging/arch/common/*.sh`;
 - sumber baik PKGBUILD dan membandingkan metadata yang diekstrak — remote dan lokal harus
-  match;
+  cocok;
 - `makepkg -p PKGBUILD --printsrcinfo` di dalam `ci/` dan `local/` (mengurai file
 seperti yang dilakukan makepkg);
 - `git diff --check` (spasi/penanda konflik).
@@ -45,13 +45,13 @@ di `.cspell/custom-dictionary-workspace.txt` — istilah teknis baru
 `workflow_dispatch` dengan tag yang sudah ada (rebuild terkontrol). Grup konkurensi
 `release-<ref>`, tanpa pembatalan.
 
-Steps:
+Langkah-langkah:
 
 1. **Periksa** tag (dispatch menggunakan `inputs.tag`).
 2. **Langkah versi**: memvalidasi tag terhadap
 `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`, gagal jika `url` kosong di
 `packaging/arch/remote/PKGBUILD`, kemudian menulis ulang `pkgver` dari tag.
-3. **Validate**: `make validate`.
+3. **Validasi**: `make validate`.
 4. **Bangun** sebagai `builder` tanpa hak istimewa: `updpkgsums` (menyelesaikan dan memvalidasi
 nyata `sha256sums`) lalu
 `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`.
@@ -82,7 +82,7 @@ waktu (lokal) atau melalui `updpkgsums` (rilis CI).
 `argvus.files.tar.gz`, `argvus.db`, `argvus.files`).
 - `GPG_PASSPHRASE` harus tidak kosong; alur kerja menolak passphrase yang kosong.
 
-Prepare the key:
+Siapkan kuncinya:
 
 ```sh
 gpg --full-generate-key            # RSA 4096, no expiry recommended
@@ -92,16 +92,16 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
 Di **Pengaturan → Rahasia dan variabel → Aksi** dari repositori:
 
-| Secret | Value |
+| Rahasia | Nilai |
 | --- | --- |
-| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
-| `GPG_KEY_ID` | expected key ID or fingerprint |
-| `GPG_PASSPHRASE` | non-empty passphrase of the signing key |
-| `PACKAGES_REPO_TOKEN` | PAT with `contents:write` on `argvus/packages` |
+| `GPG_PRIVATE_KEY` | Keluaran `gpg --armor --export-secret-keys KEY_ID` |
+| `GPG_KEY_ID` | ID kunci atau sidik jari yang diharapkan |
+| `GPG_PASSPHRASE` | frasa sandi yang tidak kosong dari kunci penandatanganan |
+| `PACKAGES_REPO_TOKEN` | PAT dengan `contents:write` pada `argvus/packages` |
 
 ## Mempublikasikan rilisan
 
-Before tagging:
+Sebelum memberi tag:
 
 1. Isi `url` di `packaging/arch/remote/PKGBUILD` dengan repositori yang sebenarnya:
    - GitHub: `url="https://github.com/argvus/argvus-boot-splash"` (sumber
@@ -111,7 +111,7 @@ menggunakan `${url}/archive/refs/tags/v${pkgver}.tar.gz`);
    - tanpa `url`, rilis **gagal dengan sengaja** dengan pesan yang jelas.
 2. Sinkronkan versi/metadata di `packaging/arch/local/PKGBUILD` dan
 `packaging/arch/remote/PKGBUILD`.
-3. Tag and push:
+3. Tandai dan dorong:
 
    ```sh
    git tag v0.1.0
@@ -121,7 +121,7 @@ menggunakan `${url}/archive/refs/tags/v${pkgver}.tar.gz`);
 Alur kerja juga dapat dimulai secara manual dengan tag `v*` yang ada sebagai input
 `tag`-nya, yang berguna untuk membangun ulang secara terkendali.
 
-## Versioning
+## Pembuatan versi
 
 - SemVer dalam `pkgver`, jumlah rilis dalam `pkgrel`.
 

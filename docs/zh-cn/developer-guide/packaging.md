@@ -6,7 +6,7 @@ description: Arch 包元数据、构建管道和 Make 目标。
 
 Arch 包的定义和生成方式：两个 PKGBUILDs、共享函数、安装钩子、本地构建管道和 Make 目标。
 
-有关主题本身，请参见 [主题架构](/docs/argvus-boot-splash/developer-guide/theme/)]；有关验证、CI 和发布，请参见 [CI 和发布](/docs/argvus-boot-splash/developer-guide/ci-releases/)]。
+有关主题本身，请参见 [主题架构](/docs/argvus-boot-splash/developer-guide/theme/)；有关验证、CI 和发布，请参见 [CI 和发布](/docs/argvus-boot-splash/developer-guide/ci-releases/)。
 
 ## 两个 PKGBUILDs，一个负载
 

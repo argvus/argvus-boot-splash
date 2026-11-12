@@ -27,7 +27,7 @@ Para a referência técnica, veja [arquitetura do tema](/pt/docs/argvus-boot-spl
   `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 - Siga o processo descrito em
   [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) e
-  [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
+  [DESENVOLVIMENTO.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 
 ## Lacunas conhecidas
 

@@ -1,5 +1,5 @@
 ---
-title: Developer Guide
+title: Hướng dẫn dành cho nhà phát triển
 description: Hướng dẫn kiến trúc và phát triển cho các đóng góp viên ARGVUS.
 ---
 
@@ -7,11 +7,11 @@ description: Hướng dẫn kiến trúc và phát triển cho các đóng góp 
 
 Tài liệu kỹ thuật cho kho `argvus-boot-splash`: cách mà chủ đề Plymouth
 được cấu thành, cách gói Arch được xây dựng, và cách các phiên bản được
-signed and published.
+đã ký và công bố.
 
 . Không có bước biên dịch nào ở đây — chủ đề là dữ liệu (một mô tả `.plymouth`,
 một `.script`, và hình ảnh) cộng với công thức gói Arch. "Xây dựng" có nghĩa là tạo ra
-a reproducible package:
+một gói có thể tái tạo:
 
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
@@ -26,11 +26,11 @@ vào `.cspell/custom-dictionary-workspace.txt` nếu không công việc kiểm 
 Nếu bạn chỉ muốn *sử dụng* chủ đề, hãy đọc [hướng dẫn người dùng](/docs/argvus-boot-splash/). Đối với
 bản tương ứng theo quy trình của tệp này (git flow, secrets, phát hành
 quy trình) xem [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) và
-[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
+[ĐÓNG GÓP.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 
-## Guides
+## Hướng dẫn
 
-| Guide | Contents |
+| Hướng dẫn | Nội dung |
 | --- | --- |
 | [Kiến trúc chủ đề](/docs/argvus-boot-splash/developer-guide/theme/)| Bộ mô tả, mô hình kết xuất, kho tài sản, hướng dẫn kịch bản, hằng số bố cục, token thiết kế, bitmap UKI, cách sửa đổi chủ đề |
 | [Bao bì](/docs/argvus-boot-splash/developer-guide/packaging/)| Hai PKGBUILD, được chia sẻ`functions.sh`, cài đặt hooks, quy trình xây dựng cục bộ, mục tiêu Make, các yêu cầu trước |
@@ -39,16 +39,16 @@ quy trình) xem [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/bl
 
 ## Tham khảo nhanh
 
-| Path | What it is |
+| Đường dẫn | Nó là gì |
 | --- | --- |
-| `src/usr/share/plymouth/themes/argvus/` | theme payload installed under `/usr` |
-| `packaging/arch/{ci,local}/PKGBUILD` | release and local package recipes |
-| `packaging/arch/common/functions.sh` | shared `prepare`/`check`/`package` |
-| `tools/sh/pkgbuild_local.sh` | deterministic tarball + `makepkg` driver |
-| `tools/sh/validate.sh` | required validation gate |
-| `.github/workflows/` | `ci.yml` (validate, build, spellcheck), `release.yml` (tags `v*`) |
+| `src/usr/share/plymouth/themes/argvus/` | tải trọng chủ đề được cài đặt trong `/usr` |
+| `packaging/arch/{ci,local}/PKGBUILD` | công thức nấu ăn gói phát hành và địa phương |
+| `packaging/arch/common/functions.sh` | chia sẻ `prepare`/`check`/`package` |
+| `tools/sh/pkgbuild_local.sh` | tarball xác định + trình điều khiển `makepkg` |
+| `tools/sh/validate.sh` | cổng xác nhận bắt buộc |
+| `.github/workflows/` | `ci.yml` (xác thực, xây dựng, kiểm tra chính tả), `release.yml` (thẻ `v*`) |
 
-## Elsewhere
+## Ở nơi khác
 
 - Thư mục gốc kho lưu trữ: [README.md](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)
 - Tài liệu hướng dẫn người dùng: [hướng dẫn người dùng](/docs/argvus-boot-splash/)

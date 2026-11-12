@@ -5,7 +5,7 @@ description: インストールを確認し、再起動せずにプレビュー�
 # 使用方法
 
 テーマの確認方法、再起動せずにプレビューする方法、およびテーマの切り替え方法。
-インストールについては、[installation](/docs/argvus-boot-splash/installation/)] を参照してください。
+インストールについては、[installation](/docs/argvus-boot-splash/installation/) を参照してください。
 
 ## インストールの確認
 

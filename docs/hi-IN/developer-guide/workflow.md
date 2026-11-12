@@ -11,14 +11,14 @@ description: हाउस रूल्स, दस्तावेज़ मान
 तकनीकी संदर्भ के लिए देखें [थीम आर्किटेक्चर](/docs/argvus-boot-splash/developer-guide/theme/),
 [पैकेजिंग](/docs/argvus-boot-splash/developer-guide/packaging/)और [सीआई और रिलीज़](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
-## Conventions
+## कन्वेंशन
 
 - शेल: `set -euo pipefail`, इंडेंटेशन के लिए टैब्स, `printf`/`error` संदेशों को
 stderr, `command -v` क्षमता जांच, shellcheck साफ़ (देखें
   `.editorconfig`).
 - कभी भी `sha256sums=('SKIP')` न लिखें; git में `sha256sums=()` खाली रखें।
 - build आउटपुट (`build/`), पैकेज फ़ाइलें, या उत्पन्न फ़ाइलें कमिट न करें
-  `.PKGBUILD.local.*` copies.
+  `.PKGBUILD.local.*` प्रतियां।
 - इतिहास में प्रयुक्त स्कोप के साथ Conventional Commits: `splash`, `layout`,
 `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
 - शाखा नामकरण: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
@@ -40,7 +40,7 @@ stderr, `command -v` क्षमता जांच, shellcheck साफ़ (�
 - `src/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp` स्थापित है लेकिन
 कभी किसी चीज़ के साथ पंजीकरण नहीं हुआ;
 [यूज़र गाइड](/docs/argvus-boot-splash/uki-splash/) मैनुअल को दस्तावेज़ित करता है।
-  `bootctl`/`ukify` step.
+  `bootctl`/`ukify` चरण।
 - कैनोनिकल दस्तावेज़ रिपॉजिटरी रूट पर रहते हैं (`README.md`,
 `DEVELOPMENT.md`) और `docs/` में गाइड्स के साथ ओवरलैप करें। किसी एक को बदलते समय उन्हें सुसंगत रखें
 । योगदान नीतियाँ (`CONTRIBUTING.md`, `SECURITY.md`)
@@ -48,10 +48,10 @@ stderr, `command -v` क्षमता जांच, shellcheck साफ़ (�
 
 ## दस्तावेज़ीकरण मानचित्र
 
-| Document | Audience | Scope |
+| दस्तावेज़ | श्रोतागण | दायरा |
 | --- | --- | --- |
-| `README.md` | everyone | one-paragraph overview and layout |
-| `DEVELOPMENT.md` | maintainers | build, signing, release process |
+| `README.md` | हर कोई | एक पैराग्राफ सिंहावलोकन और लेआउट |
+| `DEVELOPMENT.md` | रखवाले | निर्माण, हस्ताक्षर, रिलीज़ प्रक्रिया |
 | [`CONTRIBUTING.md`](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)(संगठन `.github`) | योगदानकर्ता | गिट फ्लो, पीआर नियम, सीक्रेट्स नीति |
 | [`docs/user-guide.md`](/docs/argvus-boot-splash/)| एंड यूज़र्स | इंस्टॉलेशन, उपयोग, समस्या निवारण |
 | [`docs/developer-guide.md`](/docs/argvus-boot-splash/developer-guide/)(/docs/argvus-boot-splash/developer-guide/) | developers | theme internals, packaging, CI |

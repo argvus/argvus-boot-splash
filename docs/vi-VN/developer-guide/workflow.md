@@ -11,14 +11,14 @@ kiểm toán nó — đáng sửa hơn là sao chép.
 Đối với tham chiếu kỹ thuật xem [kiến trúc chủ đề](/docs/argvus-boot-splash/developer-guide/theme/),
 [bao bì](/docs/argvus-boot-splash/developer-guide/packaging/)và [CI và các bản phát hành](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
-## Conventions
+## Công ước
 
 - Shell: `set -euo pipefail`, tab cho việc thụt lề, `printf`/`error` thông điệp tới
 stderr, kiểm tra khả năng `command -v`, dọn dẹp shellcheck (xem
   `.editorconfig`).
 - Không bao giờ viết `sha256sums=('SKIP')`; giữ `sha256sums=()` trống trong git.
 - Không commit các đầu ra build (`build/`), các tệp gói, hoặc
-  `.PKGBUILD.local.*` copies.
+  Bản sao `.PKGBUILD.local.*`.
 - Commits theo quy ước với các phạm vi được sử dụng trong lịch sử: `splash`, `layout`,
 `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
 - Đặt tên nhánh: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
@@ -40,7 +40,7 @@ kết nối chúng vào kịch bản hoặc loại chúng ra khỏi gói và dan
 - `src/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp` đã được cài đặt nhưng
 chưa từng đăng ký với bất kỳ thứ gì; hướng dẫn [người dùng](/docs/argvus-boot-splash/uki-splash/)
 ghi lại cách thủ công
-  `bootctl`/`ukify` step.
+  Bước `bootctl`/`ukify`.
 - Các tài liệu chuẩn nằm tại gốc kho lưu trữ (`README.md`,
 `DEVELOPMENT.md`) và trùng khớp với các hướng dẫn trong `docs/`. Giữ chúng nhất quán
 khi thay đổi bất kỳ cái nào. Chính sách đóng góp (`CONTRIBUTING.md`, `SECURITY.md`)
@@ -48,10 +48,10 @@ tồn tại trong kho tổ chức `.github`.
 
 ## Sơ đồ tài liệu
 
-| Document | Audience | Scope |
+| Tài liệu | Khán giả | Phạm vi |
 | --- | --- | --- |
-| `README.md` | everyone | one-paragraph overview and layout |
-| `DEVELOPMENT.md` | maintainers | build, signing, release process |
+| `README.md` | mọi người | tổng quan và bố cục một đoạn |
+| `DEVELOPMENT.md` | người bảo trì | quá trình xây dựng, ký kết, phát hành |
 | [`CONTRIBUTING.md`](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)(tổ chức `.github`) | những người đóng góp | quy trình git, quy tắc PR, chính sách bảo mật |
 | [`docs/user-guide.md`](/docs/argvus-boot-splash/)| người dùng cuối | cài đặt, sử dụng, khắc phục sự cố |
 | [`docs/developer-guide.md`](/docs/argvus-boot-splash/developer-guide/)(/docs/argvus-boot-splash/developer-guide/) | developers | theme internals, packaging, CI |

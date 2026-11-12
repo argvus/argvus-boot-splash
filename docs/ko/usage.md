@@ -6,7 +6,7 @@ description: 설치를 확인하고, 재부팅 없이 미리 보고, 테마를 �
 # 사용법
 
 테마를 확인하고, 재부팅 없이 미리 보고, 다른 테마로 전환하는 방법.
-설치에 대해서는 [installation](/docs/argvus-boot-splash/installation/)]를 참조하십시오.
+설치에 대해서는 [installation](/docs/argvus-boot-splash/installation/)를 참조하십시오.
 
 ## 설치 확인
 
@@ -33,7 +33,7 @@ sudo plymouth --show-details   # verbose boot messages instead of the splash
 sudo plymouth --show-splash    # back to the splash
 ```
 스플래시 화면이 표시되는 동안, 다음 화면으로 전환하려면 <kbd>Esc</kbd>를 누르세요
-(스플래시 → 세부 정보 → 스플래시). 
+(스플래시 → 세부 정보 → 스플래시).
 
 ## 스플래시 화면이 보여주는 내용
 

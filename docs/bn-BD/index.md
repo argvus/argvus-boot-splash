@@ -1,5 +1,5 @@
 ---
-title: ARGVUS Boot Splash
+title: ARGVUS বুট স্প্ল্যাশ
 description: ARGVUS ডেস্কটপ পরিবেশের জন্য প্লাইমাউথ থিম এবং ইনস্টলেশন গাইড
 ---
 
@@ -7,21 +7,21 @@ description: ARGVUS ডেস্কটপ পরিবেশের জন্য 
 
 Argvus বুট স্প্ল্যাশ হল Argvus ডেস্কটপ ইকোসিস্টেমের জন্য একটি [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) থিম। এটি আপনি যেটি দেখেন মেশিন চালু করার মুহূর্ত থেকে আপনার গ্রাফিকাল সেশন শুরু হওয়ার সময় পর্যন্ত।
 
-## Documentation
+## ডকুমেন্টেশন
 
 এই ডকুমেন্টেশনটি দুইটি প্রধান অংশে সংগঠিত:
 
 ### ব্যবহারকারী গাইড
 শেষ ব্যবহারকারী এবং সিস্টেম প্রশাসকদের জন্য ইনস্টলেশন এবং ব্যবহার নির্দেশিকা।
 
-| Guide | Contents |
+| গাইড | বিষয়বস্তু |
 | --- | --- |
 | [ইনস্টলেশন](/docs/argvus-boot-splash/installation/)| প্রয়োজনীয়তা, তিনটি ইনস্টলেশন বিকল্প, প্যাকেজ হুকগুলি কী করে |
 | [ব্যবহার](/docs/argvus-boot-splash/usage/)| ইনস্টলেশন যাচাই করুন, রিবুট না করেই প্রিভিউ করুন, থিম পরিবর্তন বা পূর্বাবস্থায় ফিরিয়ে আনুন, কমান্ড চিট শিট |
 | [ইউকিআই এবং systemd-boot স্প্ল্যাশ](/docs/argvus-boot-splash/uki-splash/)| ব্যবহার করে `argvus-uki-splash.bmp`একটি UKI বুট ফ্লোতে |
 | [অপসারণ](/docs/argvus-boot-splash/uninstallation/)| প্যাকেজটি সরানো এবং পূর্ববর্তী থিমটি পুনরায় স্থাপন করা |
 | [সমস্যা সমাধান](/docs/argvus-boot-splash/troubleshooting/)| সাধারণ লক্ষণ এবং তাদের কারণ |
-| [Reference](/docs/argvus-boot-splash/reference/) for the installed and user paths.
+| [Reference](/docs/argvus-boot-splash/reference/) ইনস্টল করা এবং ব্যবহারকারীর পথের জন্য।
 
 ### [ডেভেলপার গাইড](/docs/argvus-boot-splash/developer-guide/)
 অবদানকারীরা এবং রক্ষণাবেক্ষণকারীদের জন্য প্রযুক্তিগত ডকুমেন্টেশন।
@@ -43,5 +43,5 @@ sudo pacman -S argvus-boot-splash   # or: sudo pacman -U ./argvus-boot-splash-<v
 ---
 
 - **রিপোজিটরি:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
-- **License:** GPL-3.0-only
+- **লাইসেন্স:** GPL-3.0-শুধুমাত্র
 - **বাগ রিপোর্ট:** [GitHub Issues](https://github.com/argvus/argvus-boot-splash/issues)

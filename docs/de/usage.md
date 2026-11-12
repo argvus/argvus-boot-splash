@@ -6,7 +6,7 @@ description: Überprüfen Sie die Installation, sehen Sie eine Vorschau ohne Neu
 # Verwendung
 
 Wie man das Thema überprüft, es ohne Neustart vorschaut und zu einem anderen wechselt.
-Für die Installation siehe [installation](/docs/argvus-boot-splash/installation/)].
+Für die Installation siehe [installation](/docs/argvus-boot-splash/installation/).
 
 ## Überprüfung der Installation
 

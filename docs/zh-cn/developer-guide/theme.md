@@ -6,7 +6,7 @@ description: 普利茅斯描述符、资产和脚本是如何组合在一起的�
 
 Plymouth 主题的组成方式：描述符、资源集，以及 `argvus.script` 的作用，逐部分说明。
 
-有关打包和发布，请参见 [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] 和 [CI 和发布](/docs/argvus-boot-splash/developer-guide/ci-releases/)]。有关使用方法，请参见 [用户指南](/docs/argvus-boot-splash/)]。
+有关打包和发布，请参见 [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) 和 [CI 和发布](/docs/argvus-boot-splash/developer-guide/ci-releases/)。有关使用方法，请参见 [用户指南](/docs/argvus-boot-splash/)。
 
 ## 描述符
 
@@ -62,7 +62,7 @@ ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 
 在 packaging/arch/common/functions.sh 中使用 `arch_check_splash_payload()`
 需要上述**所有**文件存在；添加资源意味着将其添加到该列表中。参见
-[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions)]。
+[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions)。
 
 ## 脚本讲解
 

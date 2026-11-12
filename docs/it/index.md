@@ -5,7 +5,7 @@ description: Tema Plymouth e guida all'installazione per l'ambiente desktop ARGV
 
 # Schermata di Avvio ARGVUS
 
-Lo splash di avvio di Argvus è un tema [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/)] per l'ecosistema desktop Argvus. È ciò che si vede tra l'accensione del computer e il momento in cui inizia la sessione grafica.
+Lo splash di avvio di Argvus è un tema [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) per l'ecosistema desktop Argvus. È ciò che si vede tra l'accensione del computer e il momento in cui inizia la sessione grafica.
 
 ## Documentazione
 
@@ -41,6 +41,6 @@ L'installer imposta il tema come predefinito e rigenera automaticamente il tuo i
 
 ---
 
-- **Repository:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
+- **Archivio:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
 - **Licenza:** GPL-3.0-only
 - **Segnalazioni di bug:** [GitHub Issues](https://github.com/argvus/argvus-boot-splash/issues)

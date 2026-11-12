@@ -8,9 +8,9 @@ description: Plymouthのディスクリプタ、アセット、スクリプト�
 Plymouthテーマの構成方法：ディスクリプタ、アセットセット、そして
 `argvus.script` が各セクションで何をするか。
 
-パッケージ化とリリースについては [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] および
-[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)] を参照してください。使用方法については
-[user guide](/docs/argvus-boot-splash/)] を参照してください。
+パッケージ化とリリースについては [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) および
+[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/) を参照してください。使用方法については
+[user guide](/docs/argvus-boot-splash/) を参照してください。
 
 ## ディスクリプタ
 
@@ -66,7 +66,7 @@ ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 
 `arch_check_splash_payload()` は `packaging/arch/common/functions.sh` において
 上記の**すべて**のファイルが存在する必要があります；アセットを追加する場合は、そのリストに追加してください。詳細は
-[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions)] を参照してください。
+[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions) を参照してください。
 
 ## スクリプトのウォークスルー
 
@@ -192,7 +192,7 @@ fun refresh_callback()
 | `password.entry.y` gap | `+14` | プロンプトの下 → 入力フィールドの上 |
 | bullet x offset | `+16` | 入力の左 → 最初の箇条書きの位置 |
 | `logo.opacity` (dialog) | `0.15` | パスフレーズ要求中のスプラッシュの暗転 |
-| prompt color | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
+|プロンプトの色 | `0.72, 0.77, 0.81` | `Image.Text` RGB、~`#B8C4CE` |
 | fade | 20 フレーム @ 20 FPS | 約1秒のフェードイン |
 
 ## デザイントークン
@@ -210,7 +210,7 @@ fun refresh_callback()
 ## UKI ビットマップ形式
 
 `argvus-uki-splash.bmp` は400x400、32ビット非圧縮Windows BMP（`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`）です。
-これは独立したアセットであり、Plymouthスクリプトはこれを読み込まず、Archパッケージもどこにも登録しません — UKIに埋め込むのはユーザー自身の作業です（[ユーザーガイド ](/docs/argvus-boot-splash/uki-splash/)]を参照）。
+これは独立したアセットであり、Plymouthスクリプトはこれを読み込まず、Archパッケージもどこにも登録しません — UKIに埋め込むのはユーザー自身の作業です（[ユーザーガイド ](/docs/argvus-boot-splash/uki-splash/)を参照）。
 
 もしそれを置き換える場合は、同等のサイズの圧縮されていない32ビットBMPのままにしてください。
 systemd-bootと`ukify`は任意のフォーマットを拡大縮小せず、大きな画像は起動初期にメモリを大量に消費します。
@@ -228,9 +228,9 @@ systemd-bootと`ukify`は任意のフォーマットを拡大縮小せず、大�
    sudo plymouth-set-default-theme argvus
    sudo plymouth --show-splash    # check, then: sudo plymouthquit
    ```
-3. コミットする前に`make validate && make build`。 
+3. コミットする前に`make validate && make build`。
 
-テーマを機能させ続けるためのルール: 
+テーマを機能させ続けるためのルール:
 
 - 非Plymouth APIを導入してはいけません。エンジンは制限付き方言です。使ったことがないAPIを使用する前に、サポートする`plymouth`のターゲットバージョンを確認してください。
 - argvus.plymouth内の`ImageDir`/`ScriptFile`は絶対パスのままにし、インストールされた `argvus.plymouth` `/usr/share/plymouth/themes/argvus`のパスと一致させる必要があります。

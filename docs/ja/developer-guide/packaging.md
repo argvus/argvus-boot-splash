@@ -6,7 +6,7 @@ description: Archパッケージのメタデータ、ビルドパイプライン
 
 Arch パッケージがどのように定義され、作成されるか：2つの PKGBUILD、共有関数、インストールフック、ローカルビルドパイプライン、および Make ターゲット。
 
-テーマ自体については [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)] を参照；検証、CI、およびリリースについては [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)] を参照。
+テーマ自体については [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/) を参照；検証、CI、およびリリースについては [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/) を参照。
 
 ## 2つの PKGBUILD、1つのペイロード
 
@@ -38,7 +38,7 @@ replaces=('argvus-plymouth')
 `packaging/arch/common/functions.sh` は、両方の PKGBUILD で使用される三つの関数を提供します:
 
 - `arch_normalize_source_tree`（`prepare()`）— GitHubのタグアーカイブを`<repo>-v<version>`に展開します。一方、ローカルのtarballは`<pkgname>-<pkgver>`に展開されます。これは、単一のトップレベルディレクトリを`${srcdir}/${pkgname}-${pkgver}`に名前変更し、ソースディレクトリが存在しない、曖昧である、または宛先が既に存在する場合にエラーを出します。
-- `arch_check_splash_payload`（`check()`）— 抽出されたソース内のすべてのテーマアセットが存在することを確認します。これはパッケージ唯一の「テストスイート」です。必要なファイルのリストは[asset inventory](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory)]にあります。
+- `arch_check_splash_payload`（`check()`）— 抽出されたソース内のすべてのテーマアセットが存在することを確認します。これはパッケージ唯一の「テストスイート」です。必要なファイルのリストは[asset inventory](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory)にあります。
 - `arch_package_splash_payload`（`package()`）— `src/usr`を`find -print0`とともに走査し、各ファイルを`install -Dm644`で`$pkgdir`にインストールします（NULセーフで、名前にスペースがあっても動作します）、その後`LICENSE`を`/usr/share/licenses/argvus-boot-splash/LICENSE`にインストールします。
 
 package() 内には `make install` の呼び出しがないことに注意してください：すべてが  `package()` `install -Dm*` ですので、このパッケージは自己完結型で rootless ビルドに優しいです。これは意図的です — 以前の `package()` は `make install` を呼び出しており、`sudo`/`libfakeroot.so` の失敗を引き起こしていました。
@@ -82,7 +82,7 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 | `make help` | ターゲットリスト (デフォルトゴール) |
 
 CI は `make validate` と `make build` を実行; CI 内では `make install` は実行されない
-(詳細は [known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)] を参照)
+(詳細は [known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps) を参照)
 
 ## 前提条件
 

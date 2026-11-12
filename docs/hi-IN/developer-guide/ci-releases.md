@@ -1,39 +1,39 @@
 ---
-title: CI and Releases
+title: सीआई और रिलीज़
 description: मान्यता, सतत एकीकरण, साइनिंग, और रिलीज़ कार्यप्रवाह।
 ---
 
 # सीआई और रिलीज़।
 
 मान्यता गेट, सतत एकीकरण जॉब्स, रिलीज़ पाइपलाइन और
-the versioning rules.
+संस्करणीकरण नियम.
 
-For the package itself see packaging; for the theme see
+पैकेज के लिए पैकेजिंग देखें; विषय के लिए देखें
 theme architecture.
 
-## Validation
+## मान्यता
 
  is the required gate:
 
-- requires 
+- requires
 
-, 
+,
 
 , tools/sh/validate.sh;
-- 
+-
 
- + 
+ +
 
  on `tools/sh/validate.sh` and `bash`;
 - स्रोत दोनों PKGBUILDs को खोजता है और निकाली गई मेटाडेटा की तुलना करता है — रिमोट और लोकल को  होना चाहिए
-  match;
-- 
+  मिलान;
+-
 
- inside 
+ inside
 
- and `makepkg` git diff --check  local/  ci/  makepkg -p PKGBUILD --printsrcinfo  packaging/arch/common/*.sh  tools/sh/*.sh  bash -n  `shellcheck`  `shellcheck`  (parses the
+ और `makepkg` git अंतर --चेक लोकल/ सीआई/ मेकपीकेजी -पी पीकेजीबीयूआईएलडी --प्रिंट्सआरसीइन्फो पैकेजिंग/arch/common/*.sh टूल्स/sh/*.sh बैश -n `shellcheck` `shellcheck` (पार्स करता है)
 फ़ाइल उसी तरह बनाएं जैसे makepkg करता है);
-- 
+-
 
  (whitespace/conflict markers).
 
@@ -61,36 +61,36 @@ theme architecture.
 
 Steps:
 
-1. **Checkout** the tag (dispatch uses 
+1. **Checkout** the tag (dispatch uses
 
 ).
 2. **संस्करण चरण**: टैग को  के खिलाफ मान्य करता है
 
-, fails if 
+, fails if
 
  is empty in
 
-, then rewrites 
+, then rewrites
 
  from the tag.
 3. **Validate**:  pkgver  packaging/arch/remote/PKGBUILD  url  ^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$  `inputs.tag`  `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`  `url`  `packaging/arch/remote/PKGBUILD`  `pkgver` `make validate`.
-4. **Build** as unprivileged 
+4. **Build** as unprivileged
 
-: 
+:
 
  (resolves and validates the
-   real 
+   real
 
 ) then
 
 .
-   Locates the 
+   Locates the
 
  and fails if none exists.
 5. **पैकेज पर namcap**।
-6. **Sign**: imports 
+6. **Sign**: imports
 
- into a throwaway 
+ into a throwaway
 
  (`builder` mktemp -d  GNUPGHOME  GPG_PRIVATE_KEY  .pkg.tar.zst  makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check  sha256sums  `updpkgsums` ,
 मोड 700), निर्यातित गुप्त कुंजी यह मिलती है कि यह  `sha256sums`  `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`  `.pkg.tar.zst`  `GPG_PRIVATE_KEY`  `GNUPGHOME`  `mktemp -d` `GPG_KEY_ID` (संक्षिप्त आईडी या
@@ -117,7 +117,7 @@ Steps:
 `argvus.files.tar.gz`, `argvus.db`, `argvus.files`).
 - `GPG_PASSPHRASE` खाली नहीं होना चाहिए; वर्कफ़्लो एक खाली पासफ़्रेज़ को अस्वीकार करता है।
 
-Prepare the key:
+कुंजी तैयार करें:
 
 ```sh
 gpg --full-generate-key            # RSA 4096, no expiry recommended
@@ -127,37 +127,37 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
 रिपॉजिटरी में **Settings → Secrets and variables → Actions** में:
 
-| Secret | Value |
+| गुप्त | मूल्य |
 | --- | --- |
-| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
-| `GPG_KEY_ID` | expected key ID or fingerprint |
-| `GPG_PASSPHRASE` | non-empty passphrase of the signing key |
-| `PACKAGES_REPO_TOKEN` | PAT with `contents:write` on `argvus/packages` |
+| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` आउटपुट |
+| `GPG_KEY_ID` | अपेक्षित कुंजी आईडी या फिंगरप्रिंट |
+| `GPG_PASSPHRASE` | हस्ताक्षर कुंजी का गैर-रिक्त पासफ़्रेज़ |
+| `PACKAGES_REPO_TOKEN` | `argvus/packages` पर `contents:write` के साथ पैट |
 
 ## एक रिलीज़ प्रकाशित करना
 
-Before tagging:
+टैग करने से पहले:
 
 1. वास्तविक रिपॉजिटरी के साथ `url` को `packaging/arch/remote/PKGBUILD` में भरें:
-   - GitHub: 
+   - GitHub:
 
  (the source
-     uses 
+     uses
 
 );
-   - GitLab: adjust 
+   - GitLab: adjust
 
  to
 
 ;
-   - without 
+   - without
 
-, the release **fails on purpose** with a clear message.
-2. Sync versions/metadata in 
+, रिलीज़ एक स्पष्ट संदेश के साथ **उद्देश्य पर विफल** है।
+2. Sync versions/metadata in
 
  and
  packaging/arch/local/PKGBUILD  url  https://gitlab.com/argvus/argvus-boot-splash/-/archive/v${pkgver}/argvus-boot-splash-v${pkgver}.tar.gz  source=  ${url}/archive/refs/tags/v${pkgver}.tar.gz  `url="https://github.com/argvus/argvus-boot-splash"`  `${url}/archive/refs/tags/v${pkgver}.tar.gz`  `source=`  `https://gitlab.com/argvus/argvus-boot-splash/-/archive/v${pkgver}/argvus-boot-splash-v${pkgver}.tar.gz`  `url`  `packaging/arch/local/PKGBUILD` `packaging/arch/remote/PKGBUILD`.
-3. Tag and push:
+3. टैग करें और पुश करें:
 
    ```sh
    git tag v0.1.0
@@ -167,7 +167,7 @@ Before tagging:
 कार्यप्रवाह को मौजूदा `v*` टैग के साथ मैन्युअली भी शुरू किया जा सकता है क्योंकि इसका
 `tag` इनपुट, जो नियंत्रित पुनर्निर्माण के लिए उपयोगी है।
 
-## Versioning
+## संस्करणीकरण
 
 - `pkgver` में SemVer, `pkgrel` में रिलीज़ संख्या।
 
@@ -184,13 +184,13 @@ Before tagging:
 **
 
  reports "remote and local PKGBUILD metadata is out of sync".**
-Copy the metadata fields (not 
+Copy the metadata fields (not
 
-) from one PKGBUILD to the other.
+) एक PKGBUILD से दूसरे तक।
 
 **नई शब्दावली पर वर्तनी जांच विफल होती है।** इसे  में जोड़ें
  source=  `make validate`  `source=` `.cspell/custom-dictionary-workspace.txt` (`argvus` शब्दकोश, `addWords:
-true`), not to `ignorePaths`.
+true`), not to `ignorePaths`।
 
 **`sudo` को `make install` के अंदर अनुरोध किया गया, या `libfakeroot.so … LD_PRELOAD`
 त्रुटियाँ।** एक `package()` जो `make install` को शेल करता है बजाय कि

@@ -1,26 +1,26 @@
 ---
-title: ARGVUS Boot Splash
+title: ARGVUS بوٹ سپلیش
 description: ARGVUS ﮉﯿﺋﺎﮔ ﻦﺸﯿﻟﺎﭩﺴﻧﺍ ﺭﻭﺍ ﻢﯿﮭﺗ ﮫﺗﺅﺎﻤﯿﻠﭘ ﮯﯿﻟ ﮯﮐ ﻝﻮﺣﺎﻣ ﭖﺎﭨ ﮏﺴﯾﮈ
 ---
 
 # ARGVUS ﺶﻠﭙﺳﺍ ﭦﻮﺑ
 
 
-## Documentation
+## دستاویزی
 
                                     :ﮯﮨ ﯽﺌﮔ ﯽﮐ ﻢﻈﻨﻣ ﮟﯿﻣ ﮞﻮﺼﺣ ﻢﮨﺍ ﻭﺩ ﺰﯾﻭﺎﺘﺳﺩ ﮧﯾ
 
 ###                                                                ﯽﺋﺎﻤﻨﮨﺭ ﯽﮐ ﻑﺭﺎﺻ
          ۔ﺎﻤﻨﮨﺭ ﮯﮐ ﻝﺎﻤﻌﺘﺳﺍ ﺭﻭﺍ ﺐﯿﺼﻨﺗ ﮯﯿﻟ ﮯﮐ ﻦﯿﻤﻈﺘﻨﻣ ﮯﮐ ﻡﺎﻈﻧ ﺭﻭﺍ ﻦﯿﻓﺭﺎﺻ ﯽﻣﺎﺘﺘﺧﺍ
 
-| Guide | Contents |
+| گائیڈ | مشمولات |
 | --- | --- |
 
                  ۔ﺕﺍﺰﯾﻭﺎﺘﺳﺩ ﯽﮑﯿﻨﮑﺗ ﮯﯿﻟ ﮯﮐ ﮞﻮﻟﺍﻭ ﮯﻧﺮﮐ ﻝﺎﮭﺑ ﮫﮑﯾﺩ ﺭﻭﺍ ﮞﻭﺭﺍﺩ ﺖﮐﺍﺮﺷ
 
 -                                          ۔ﮯﯿﻟ ﮯﮐ ﮞﻮﺘﺳﺍﺭ ﮯﮐ ﻑﺭﺎﺻ ﺭﻭﺍ ﮦﺪﺷ ﻝﺎﭩﺴﻧﺍ(/docs/argvus-boot-splash/developer-guide/theme/) for the installed and user paths.
 - Packaging — Build pipeline and package recipes
-- CI and Releases — Validation, testing, and release workflow
+- CI اور ریلیزز - توثیق، جانچ، اور ریلیز ورک فلو
 
 ## ﭦﺭﺎﭩﺳﺍ ﮏﯿﺋﻮﮐ
 
@@ -34,7 +34,7 @@ sudo pacman -S argvus-boot-splash   # or: sudo pacman -U ./argvus-boot-splash-<v
 
 ---
 
-- **License:** GPL-3.0-only
+- **لائسنس:** GPL-3.0 صرف
 
                                                             ﮯﮨ ﺶﻠﭙﺳﺍ ﭦﻮﺑ ﺱﻮﮔﺭﺁ[                                                                       ﮫﺗﻮﻤﺋﻼ﻿ﭘ](https://www.freedesktop.org/wiki/Software/Plymouth/)۔ﮯﮨ ﯽﺗﺁ ﺮﻈﻧ ﻥﺎﯿﻣﺭﺩ ﮯﮐ ﮯﺤﻤﻟ ﮯﮐ ﮯﻧﻮﮨ ﻉﻭﺮﺷ ﻦﺸﯿﺳ ﻞﮑﯿﻓﺍﺮﮔ ﮯﮐ ﭖﺁ ﺭﻭﺍ ﮯﻧﺮﮐ ﻥﺁ ﻦﯿﺸﻣ ﻮﮐ
 | [                                                                         ﺐﯿﺼﻨﺗ](/docs/argvus-boot-splash/installation/)                | ﮟﯿﮨ ﮯﺗﺮﮐ ﺎﯿﮐ ﺲﮑﮨ ﺞﯿﮑﯿﭘ ،ﺕﺍﺭﺎﯿﺘﺧﺍ ﮯﮐ ﻦﺸﯿﻟﺎﭩﺴﻧﺍ ﻦﯿﺗ ،ﺕﺎﯾﺭﻭﺮﺿ |

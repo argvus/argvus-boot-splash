@@ -1,9 +1,9 @@
 ---
-title: Usage
+title: Kullanım
 description: Kurulumu doğrulayın, yeniden başlatmadan önizleyin ve temaları değiştirin.
 ---
 
-# Usage
+# Kullanım
 
 Temayı nasıl doğrulayacağınızı, yeniden başlatmadan nasıl önizleyeceğinizi ve temadan nasıl çıkacağınızı öğrenin.
 Kurulum için, bkz. [kurulum](/docs/argvus-boot-splash/installation/).
@@ -21,7 +21,7 @@ plymouth-set-default-theme          # prints, e.g.: argvus
 sudo plymouth --show-splash
 ```
 
-## 
+##
 
 ```sh
 sudo plymouth --show-splash   # shows the splash, simulating boot
@@ -37,11 +37,11 @@ sudo plymouth --show-splash    # back to the splash
 ```
 
 Splash görüntülenirken, <kbd>Esc</kbd> tuşuna basarak bir sonraki ekrana geçebilirsiniz
-(splash → details → splash).
+(sıçrama → ayrıntılar → sıçrama).
 
 ## Splash gösteriyor
 
-| Stage | Appearance |
+| Sahne | Görünüm |
 | --- | --- |
 | Başlangıç | Her şey yaklaşık 1 saniyede görünür hale gelir: logo, kelime işareti, ilerleme çubuğu |
 | Başlatılıyor | Plymouth ilerlemeyi bildirirken çubuk soldan sağa doluyor |
@@ -59,25 +59,25 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 ```
 
-Useful configuration files:
+Yararlı yapılandırma dosyaları:
 
-| File | Purpose |
+| Dosya | Amaç |
 | --- | --- |
-| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` written by the package |
-| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
+| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` paketi tarafından yazılmıştır |
+| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)`, `plymouth`'yu içermelidir |
+| `/etc/plymouth/plymouthd.conf` (tekrar) | `PLYMOUTH_TOGGLE_KEY` vb. geneldir, temaya özel değildir |
 
 ## Komutlar hile sayfası
 
-| Command | Effect |
+| Komut | Efekt |
 | --- | --- |
-| `sudo plymouth-set-default-theme argvus` | make `argvus` the default theme |
-| `sudo plymouth-update-theme` | apply the change to the running Plymouth |
-| `sudo plymouth --show-splash` | show the splash in the current session |
-| `sudo plymouth --show-details` | show verbose boot messages instead |
-| `sudo plymouthquit` | leave Plymouth and restore your session |
-| `sudo mkinitcpio -P` | rebuild the Arch initramfs |
-| `sudo dracut --regenerate-all` | rebuild the initramfs with dracut |
+| `sudo plymouth-set-default-theme argvus` | `argvus`'yu varsayılan tema yap |
+| `sudo plymouth-update-theme` | değişikliği çalışan Plymouth |
+| `sudo plymouth --show-splash` | geçerli oturumdaki sıçramayı göster |
+| `sudo plymouth --show-details` | bunun yerine ayrıntılı önyükleme mesajlarını göster |
+| `sudo plymouthquit` | Plymouth'dan ayrılın ve oturumunuzu geri yükleyin |
+| `sudo mkinitcpio -P` | Arch initramfs'ı yeniden inşa etme |
+| `sudo dracut --regenerate-all` | initramf'ları dracut ile yeniden oluşturun |
 
 ## Sonraki adımlar
 

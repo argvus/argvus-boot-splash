@@ -1,9 +1,9 @@
 ---
-title: Uninstallation
+title: আনইনস্টলেশন
 description: প্যাকেজটি অপসারণ করুন এবং আপনার পূর্ববর্তী বুট থিমটি পুনরুদ্ধার করুন।
 ---
 
-# Uninstallation
+# আনইনস্টলেশন
 
 ```sh
 sudo pacman -Rns argvus-boot-splash
@@ -19,7 +19,7 @@ sudo mkinitcpio -P        # or: sudo dracut --regenerate-all
 ```
 
 `pacman -Rns` এছাড়াও `/etc/plymouth/plymouthd.conf` সরিয়ে দেয় যদি আর কিছু না থাকে
-created it.
+এটা তৈরি
 
 প্যাকেজের অপসারণ হুক কেবল একটি অনুস্মারক প্রিন্ট করে — এটি অনুমান করে না কোন থিম
 আপনি পরিবর্তে চান, এবং এটি আপনার initramfs স্পর্শ করে না।

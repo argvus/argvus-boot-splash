@@ -6,7 +6,7 @@ description: Валидация, непрерывная интеграция, п
 
 Валидационный шлюз, задачи непрерывной интеграции, конвейер выпуска и правила версионирования.
 
-Для самого пакета см. [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)]; для темы см. [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)].
+Для самого пакета см. [packaging](/docs/argvus-boot-splash/developer-guide/packaging/); для темы см. [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Валидация
 
@@ -73,7 +73,7 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
 | Секрет | Значение |
 | --- | --- |
-| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
+| `GPG_PRIVATE_KEY` | Выход `gpg --armor --export-secret-keys KEY_ID` |
 | `GPG_KEY_ID` | ожидаемый ID ключа или отпечаток |
 | `GPG_PASSPHRASE` | непустая парольная фраза ключа подписи |
 | `PACKAGES_REPO_TOKEN` | PAT с `contents:write` на `argvus/packages` |

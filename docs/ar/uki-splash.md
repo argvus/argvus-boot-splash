@@ -8,11 +8,11 @@ description: UKI.  ﺪﻴﻬﻤﺗ ﻖﻓﺪﺗ ﻲﻓ ARGVUS ﺔﻳﺍﺪﺒﻟ
             (ﻁﻮﻐﻀﻣ ﺮﻴﻏ ﺖﺑ-400x400، 32) `argvus-uki-splash.bmp` ﻦﺤﺷ ﺎًﻀﻳﺃ ﺔﻣﺰﺤﻟﺍ ﻦﻤﻀﺘﺗ
 BMP). ﺪﻴﻬﻤﺘﻟﺍ ﺕﺎﻘﻓﺪﺘﻟ ﺺﺼﺨﻣ ﻮﻫﻭ UKI / systemd-boot، ﻉﻼ﻿ﻗﻹ﻿ﺍ ﺓﺭﻮﺻ ﻥﻮﻜﺗ ﺚﻴﺣ
                            ﻦﻣ ﻪﺗءﺍﺮﻗ ﻢﺘﻳ ﻥﺃ ﻦﻣ ًﻻ﻿ﺪﺑ ﺓﺪﺣﻮﻤﻟﺍ ﺓﺍﻮﻨﻟﺍ ﺓﺭﻮﺻ ﻲﻓ ﻦﻤﻀﻣ
-initramfs.
+com.initramfs.
 
        ﺎﻬﻟ ءﻲﺷ ﻱﺃ ﻞﻴﺠﺴﺗ ﻢﺘﻳ ﻢﻟﻭ ﺙﻮﻤﻴﻠﺑ ﻉﻮﺿﻮﻣ ﻞﺒﻗ ﻦﻣ ﺔﻣﺪﺨﺘﺴﻣ *ﺖﺴﻴﻟ* ﺔﻄﻘﻨﻟﺍ ﺓﺭﻮﺻ
                  ﻲﺟﺫﻮﻤﻧ .ﻚﺑ ﺹﺎﺨﻟﺍ UKI ءﺎﻨﺑ ﺔﻴﻔﻴﻛ ﻰﻠﻋ ﻪﻨﻴﻤﻀﺗ ﺪﻤﺘﻌﻳ :ﺎًﻴﺋﺎﻘﻠﺗ ﺖﻧﺃ
-consumers are:
+المستهلكين هم:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)

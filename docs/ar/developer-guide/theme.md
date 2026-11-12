@@ -1,5 +1,5 @@
 ---
-title: Theme Architecture
+title: موضوع العمارة
 description:                                        .ﺺﻨﻟﺍﻭ ﻝﻮﺻﻷ﻿ﺍﻭ ﺙﻮﻤﻴﻠﺑ ﻒﺻﺍﻭ ﻊﻴﻤﺠﺗ ﻢﺘﻳ ﻒﻴﻛ
 ---
 
@@ -9,11 +9,11 @@ description:                                        .ﺺﻨﻟﺍﻭ ﻝﻮﺻ�
 
  does, section by section.
 
-For packaging and releases see packaging and
-CI and releases. For usage, see the
+للتغليف والإصدارات، انظر التغليف و
+CI والإصدارات. للاستخدام، راجع
 user guide.
 
-## Descriptor
+## واصف
 
 ﺙﻮﻤﻴﻠﺑ ﺺﻧ ﺎﻫﺮﺴﻔﻳ ﺔﻴﻧﻼ﻿ﻋﺇ ﺕﺎﻔﺻﺍﻭ ﻲﻫ ﺙﻮﻤﻴﻠﺑ ﺕﺎﻋﻮﺿﻮﻣ
                                                            :ﻦﻳﺃﺰﺟ ﻙﺎﻨﻫ .ﻙﺮﺤﻤﻟﺍ
@@ -31,7 +31,7 @@ ImageDir=/usr/share/plymouth/themes/argvus
 ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 ```
 
-Notes:
+ملحوظات:
 
 - `ModuleName=script` ﺪﺟﻮﻳ ﻻ﻿ .ﺙﻮﻤﻴﻠﺑ ﻲﻓ ﺞﻣﺪﻤﻟﺍ ﺹﻮﺼﻨﻟﺍ ﻢﺟﺮﺘﻣ ﺭﺎﺘﺨﻳ
 ,**ﺔﻘﻠﻄﻣ ﺕﺍﺭﺎﺴﻣ** ScriptFile ﻭ `ImageDir` ﻥﻮﻜﺗ ﻥﺃ ﺐﺠﻳ ؛ﺔﻌﻤﺠﻤﻟﺍ ﺓ
@@ -42,14 +42,14 @@ Notes:
                    ﻦﻋ ﺔﺠﺗﺎﻨﻟﺍ ﺩﻮﻴﻘﻟﺍ .(initramfs ﻭ `plymouthd` ـﺑ ﻂﺒﺗﺮﻣ)
   that:              ,ﺔﻳﺮﺸﻋ ﺩﺍﺪﻋﺃ ﻻ﻿ ،ﺔﻴﺟﺭﺎﺧ ﺕﺎﻴﻠﻤﻋ ﻻ﻿ ،ﻁﻮﻴﺧ ﻻ﻿ ،ﺝﺍﺮﺧﺇ/ﻝﺎﺧﺩﺇ ﺕﺎﻔﻠﻣ ﺪﺟﻮﺗ ﻻ﻿
 `MathInt` ﺔﻐﻠﺑ ﺔﻬﻴﺒﺷ ﺓﺮﻴﻐﺻ ﺔﺠﻬﻟ ﻲﻫ ﺔﻐﻠﻟﺍﻭ ،ﻚﻳﺪﻟ ﺪﻴﺣﻮﻟﺍ ﺏﺎﺴﺤﻟﺍ ﻮﻫ C
-.(ﻡﺍﺪﺨﺘﺳﻻ﻿ﺍ ﻞﺒﻗ `Sprite()` ﺕﺎﻨﺋﺎﻛ ءﺎﺸﻧﺇ ﺐﺠﻳ ،ﺢﻴﺗﺎﻔﻤﻟﺎﺑ ﺔﻃﻮﺑﺮﻣ ﺕﺎﻨﺋﺎﻛ ﻲﻫ 
+.(ﻡﺍﺪﺨﺘﺳﻻ﻿ﺍ ﻞﺒﻗ `Sprite()` ﺕﺎﻨﺋﺎﻛ ءﺎﺸﻧﺇ ﺐﺠﻳ ،ﺢﻴﺗﺎﻔﻤﻟﺎﺑ ﺔﻃﻮﺑﺮﻣ ﺕﺎﻨﺋﺎﻛ ﻲﻫ
 
 ##                                                                    ﺽﺮﻌﻟﺍ ﺝﺫﻮﻤﻧ
 
 -                                    / `Window.SetBackgroundTopColor`) ﺓﺪﺣﺍﻭ ﺔﺤﻄﺴﻣ ﺔﺒﻠﺻ ﺔﻴﻔﻠﺧ
   `SetBackgroundBottomColor`).
-- ﻭ ،ﺓﺭﻮﺻ ﻪﻟ `Sprite()` ﻞﻛ .ﺔﻴﻣﻮﺳﺮﻟﺍ ﺕﺎﻴﻬﻳﺪﺒﻟﺍ ﻦﻣ ﺓﺪﻴﺣﻮﻟﺍ ﻲﻫ **(Sprites) 
-  `(x, y)` position, a **z-order** and an opacity in `[0, 1]`. Later `SetPosition`
+- ﻭ ،ﺓﺭﻮﺻ ﻪﻟ `Sprite()` ﻞﻛ .ﺔﻴﻣﻮﺳﺮﻟﺍ ﺕﺎﻴﻬﻳﺪﺒﻟﺍ ﻦﻣ ﺓﺪﻴﺣﻮﻟﺍ ﻲﻫ **(Sprites)
+موضع `(x, y)` و**ترتيب z** والعتامة في `[0, 1]`. لاحقًا `SetPosition`
                                              .ﺪﻬﺸﻣ ﻂﻄﺨﻣ ﺪﺟﻮﺗ ﻻ﻿ ؛ﺕﺎﻤﻟﺎﻜﻤﻟﺍ ﺯﻮﻔﻳ
 -       ءﺎﻋﺪﺘﺳﺍﻭ ﺭﺎﻃﺇ ﻞﻛ ﻲﻓ ﺓﺭﻮﺼﻟ `ImageScale` ﺓﺩﺎﻋﺇ ﻖﻳﺮﻃ ﻦﻋ ﻡّﺪﻘﺘﻟﺍ ﻢﺳﺭ ﻢﺘﻳ
 
@@ -57,25 +57,25 @@ Notes:
 - :ﻝﺎﺼﺗﻻ﻿ﺍ ﺩﻭﺩﺭ ﻝﻼ﻿ﺧ ﻦﻣ ﻞﺠﺴﻳ ﻲﺼﻨﻟﺍ ﺞﻣﺎﻧﺮﺒﻟﺍ ﻥﺄﺑ ﺪﻴﻔُﺗ ﺙﻮﻤﻴﻠﺑ ﺮﻳﺭﺎﻘ
    `SetImage` `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`,
   `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.
-- 
+-
 
- makes the refresh callback run at 20 FPS; the
+يجعل رد الاتصال التحديث يعمل بمعدل 20 إطارًا في الثانية؛ ال
 .ﺎﻬﻴﻠﻋ ﺪﻤﺘﻌﺗ (ﻲﺷﻼ﻿ﺘﻟﺍ) ﻉﻮﺿﻮﻤﻠﻟ ﺔﺘﻗﺆﻤﻟﺍ ﺓﺪﻴﺣﻮﻟﺍ ﺔﻛﺮﺤﺘﻤﻟﺍ ﻡﻮﺳﺮﻟﺍ
 
 ## ﻝﻮﺻﻷ﻿ﺍ ﺩﺮﺟ
 
                                        . `Plymouth.SetRefreshRate(20)` `src/usr/share/plymouth/themes/argvus/` ﻲﻓ ﺓﺩﻮﺟﻮﻣ ﻝﻮﺻﻷ﻿ﺍ ﻊﻴﻤﺟ
 
-| File | Size | Format | Role | Used by `argvus.script` |
+| ملف | الحجم | تنسيق | الدور | يستخدم بواسطة `argvus.script` |
 | --- | --- | --- | --- | --- |
-| `argvus.plymouth` | — | INI | theme descriptor | loaded by `plymouthd` |
-| `argvus.script` | — | Plymouth script | theme logic | yes |
-| `argvus-logo.png` | 256x256 | RGBA 8-bit | main logo | yes (`logo.base_scale = 0.72`) |
-| `argvus-text.png` | 400x53 | RGBA 8-bit | `ARGVUS` wordmark | yes (`text.scale = 0.80`) |
-| `progress-bar.png` | 400x4 | 1-bit palette | filled bar | yes |
-| `progress-bar-track.png` | 400x4 | 1-bit palette | unfilled track | yes |
-| `entry-box.png` | 400x48 | RGB 16-bit | password entry field | yes |
-| `bullet.png` | 12x12 | 4-bit palette | one masked character | yes |
+| `argvus.plymouth` | — | ايني | واصف الموضوع | محملة بواسطة `plymouthd` |
+| `argvus.script` | — | البرنامج النصي Plymouth | منطق الموضوع | نعم |
+| `argvus-logo.png` | 256x256 | RGBA 8 بت | الشعار الرئيسي | نعم (`logo.base_scale = 0.72`) |
+| `argvus-text.png` | 400x53 | RGBA 8 بت | العلامة النصية `ARGVUS` | نعم (`text.scale = 0.80`) |
+| `progress-bar.png` | 400x4 | لوحة 1 بت | شريط مملوء | نعم |
+| `progress-bar-track.png` | 400x4 | لوحة 1 بت | المسار الشاغر | نعم |
+| `entry-box.png` | 400x48 | RGB 16 بت | حقل إدخال كلمة المرور | نعم |
+| `bullet.png` | 12x12 | لوحة 4 بت | شخصية ملثمة واحدة | نعم |
 |  `entry-line.png`  `logo-glow.png` `argvus-uki-splash.bmp` | 400x400 | BMP 32-bit | UKI / systemd-boot splash | no (consumed by the boot loader) |
 
                  ﻊﺟﺮﻤﻟﺍ ﺽﺮﻋ ﻮﻫ ﺔﻤﻠﻜﻟﺍ ﺭﺎﻌﺷ :ﻂﻴﻄﺨﺗ ﺓﺪﺣﻮﻛ ﺓﺭﻮﺼﻟﺍ ﺽﺮﻋ ﻡﺍﺪﺨﺘﺳﺍ ﻢﺘﻳ
@@ -90,7 +90,7 @@ Notes:
 
 `src/usr/share/plymouth/themes/argvus/argvus.script`، ﻞﻔﺳﻷ﻿ﺍ ﻰﻟﺇ ﻰﻠﻋﻷ﻿ﺍ ﻦﻣ.
 
-### 1. Background
+### 1. الخلفية
 
 ```js
 Window.SetBackgroundTopColor(0.0667, 0.0745, 0.0863);
@@ -120,9 +120,9 @@ logo.image = logo.frame[logo.base_width];
          ﺓﺪﺣﺍﻭ ﺓﺮﻣ ﻩﺮﻴﺒﻜﺗ ﻢﺗ ﻪﻨﻜﻟ ، `ImageScale` `text.scale = 0.80` ﻲﻓ ﺓﺮﻜﻔﻟﺍ ﺲﻔﻧ ﺭﺎﻌﺸﻟﺍ ﻊﺒﺘﻳ
         — `text.image.GetWidth()` ﻰﻟﺇ ﻂﻳﺮﺸﻟﺍﻭ ﻡﺪﻘﺘﻟﺍ ﺭﺎﺴﻣ ﺱﺎﻴﻘﻣ ﻞﻳﺪﻌﺗ ﻢﺘﻳ ﻢﺛ .ﻞﺴﻠﺴﺘﻣ
 ﺔﻳﺭﺎﺠﺘﻟﺍ ﺔﻣﻼ﻿ﻌﻠﻟ ﻲﻘﻴﻘﺤﻟﺍ ﺽﺮﻌﻟﺍ ﻥﺎﻛ ﺎﻤﻬﻣ ،ﺔﻳﺭﺎﺠﺘﻟﺍ ﺔﻣﻼ﻿ﻌﻟﺍ ﺽﺮﻋ ﻖﺑﺎﻄﻳ ﺎًﻤﺋﺍﺩ ﻂﻳﺮﺸﻟﺍ
-pixel size is.
+حجم البكسل هو.
 
-### 3. Layout
+### 3. التخطيط
 
 :ﺓﺬﻓﺎﻨﻠﻟ ﻲﻘﻓﻷ﻿ﺍ ﺭﻮﺤﻤﻟﺍ ﻰﻠﻋ ﺰﻛﺮﻤﺘﻳ ﺮﺼﻨﻋ ﻞﻛ
 
@@ -138,15 +138,15 @@ logo.y = Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2 - 3
 `progress_track.y = text.y + text.image.GetHeight() + 28`، …)، ـﻟﺍ ﻲﻨﻌﻳ ﺎﻤﻣ
                                           .ﺔﻗﺪﻟﺍ ﻊﻣ ﺓﺪﺣﺍﻭ ﺓﺪﺣﻮﻛ ﺔﺒﻴﻛﺮﺘﻟﺍ ﺝﺭﺪﺘﺗ
 
-Z-order used here:
+الترتيب Z المستخدم هنا:
 
-| Z | Sprite |
+| ض | سبرايت |
 | --- | --- |
-| 100 | logo, wordmark, progress track |
-| 101 | progress bar (above the track) |
-| 200 | password entry field |
-| 201 | password prompt text |
-| 202 | password bullets |
+| 100 | شعار، علامة نصية، مسار التقدم |
+| 101 | شريط التقدم (فوق المسار) |
+| 200 | حقل إدخال كلمة المرور |
+| 201 | نص المطالبة بكلمة المرور |
+| 202 | نقاط كلمة المرور |
 
 ###                                                                  ﻉﻼ﻿ﻗﻹ﻿ﺍ ﻡﺪﻘﺗ .4
 
@@ -167,9 +167,9 @@ fun progress_callback(duration, progress)
 matters:            ﻂﻳﺮﺸﻟﺍ ﺍﺬﻟ ،ﺙﻮﻤﻴﻠﺑ ﺕﺍﺭﺍﺪﺻﺇ ﺾﻌﺑ ﻲﻓ ﺔﺤﻟﺎﺻ ﺮﻴﻏ ﻱﺮﻔﺼﻟﺍ ﺽﺮﻌﻟﺍ ﺕﺍﺫ ﺓﺭﻮﺼﻟﺍ
                  .ﺍًﺪﺑﺃ ﺭﺎﺴﻤﻟﺍ ﺽﺮﻋ ﺯﻭﺎﺠﺘﻳ ﻥﺃ ﻡﺪﻘﺘﻠﻟ ﻦﻜﻤﻳ ﻻ﻿ﻭ ،ﺍًﺪﺑﺃ ﺎًﻣﺎﻤﺗ ﻲﻔﺘﺨﻳ ﻻ﻿
                     ﺺﻗ ﻭﺃ ﺔﺌﺒﻌﺗ ﻻ﻿ — ﻂﻘﻓ ﺓﺭﻮﺼﻟﺍ ﺽﺮﻋ ﺮﻴﻐﺘﻳ ؛ﺔﺘﺑﺎﺜﻟﺍ ﺔﻴﺼﺨﺸﻟﺍ ﻊﺿﻮﻣ
-operation is used.
+يتم استخدام العملية.
 
-###                                                       ﺭﻭﺮﻤﻟﺍ ﺔﻤﻠﻛ ﺭﺍﻮﺣ ﻊﺑﺮﻣ .٥
+###                                                       ﺭﻭﺮﻤﻟﺍ ﺔﻤﻠﻛ ﺭﺍﻮﺣ ﻊﺑﺮﻣ . ٥
 
 `display_password_callback(prompt, bullets)`:
 
@@ -181,7 +181,7 @@ operation is used.
 3.                                = password.entry.y` :ﻪﺟﻮﻤﻟﺍ ﻞﻔﺳﺃ ﻝﺎﺧﺩﻹ﻿ﺍ ﻞﻘﺣ ﻊﻀﻳ
    password.prompt.y + password.prompt.image.GetHeight() + 14`. ﻞﻴﻤﺤﺘﻟﺍ ﺖﻗﻭ ﺪﻨ
 `password.entry.y` is `0`                                              ﺮﻈﺘﻨﻳ ﻲﻘﻴﻘﺤﻟﺍ ﻊﻗﻮﻤﻟﺍ ﻥﺃ ﻖﻴﻠﻌﺗ ﻊﻣ
-   prompt.
+اِسْتَدْعَى.
 4.                           :ﻡﺍﺪﺨﺘﺳﻻ﻿ﺍ ﺓﺩﺎﻋﺇ ﻭﺃ ءﺎﺸﻧﻹ﻿ﺍ ﺔﻘﻠﺣ ﻡﺍﺪﺨﺘﺳﺎﺑ ﺕﺎﻘﻠﻄﻟﺍ ﻢﺳﺮﻳ
 
    ```js
@@ -225,46 +225,46 @@ fun refresh_callback()
 ```
 
 Plymouth ﻭ ﺔﺼﻴﺧﺭ ﺎﻬﻧﺇ) ﻉﻼ﻿ﻗﻹ﻿ﺍ ﺓﺮﺘﻓ ﻝﺍﻮﻃ ﻞﻤﻌﻟﺍ ﻲﻓ ﺚﻳﺪﺤﺘﻠﻟ ءﺎﻋﺪﺘﺳ
-calls it continuously); the 
+calls it continuously); the
 
  guard makes it a no-op after the
-animation. The logo uses 
+animation. The logo uses
 
  instead of a plain
 ﺪﻌﺑ :ﻲﺷﻼ﻿ﺘﻟﺍ ﺪﻌﺑ ﺭﻭﺮﻤﻟﺍ ﺔﻤﻠﻛ ﺔﻄﺳﺍﻮﺑ ﻢﻴﺘﻌﺘﻟﺍ ﺔﻟﺎﺣ ﻰﻘﺒﺗ ﺚﻴﺤﺑ ﻦﻴﻴ
 .ﻯﺮﺧﺃ ﺓﺮﻣ `fade.complete` `logo.opacity * fade.opacity`  ﺮﻬﻈﻳ ﺭﺎﻌﺸﻟﺍﻭ `fade.opacity == 1` ﺮﻬ
 
 ﺖﻧﺎﻛ ﺪﻘﻟ ؛ﺭﻮﻬﻈﻟﺍ/ﺾﺒﻨﻠﻟ ﺔﻛﺮﺤﺘﻣ ﺕﺎﻣﻮﺳﺭ ﻰﻠﻋ ﺎًﻀﻳﺃ ﻱﻮﺘﺤﺗ ﺖﻧﺎﻛ ﻉﻮﺿﻮﻤﻟﺍ ﺍﺬﻫ ﻦﻣ ﺔﻘﺑﺎﺴﻟ
-ﺭﺎﻃﺇ ﻞﻜﻟ ﺎﻬﻟﺎﺧﺩﺇ ﺪﻴﻌﺗ ﻻ﻿ .("ﺾﺒﻨﻟﺍ ﺕﺍﺮﻴﺛﺄﺗ ﺔﻟﺍﺯﺇ :ﺔَﻤْﻬَﻤﻟﺍ")  `logo.opacity` `0.2.0` ﻲﻓ 
+ﺭﺎﻃﺇ ﻞﻜﻟ ﺎﻬﻟﺎﺧﺩﺇ ﺪﻴﻌﺗ ﻻ﻿ .("ﺾﺒﻨﻟﺍ ﺕﺍﺮﻴﺛﺄﺗ ﺔﻟﺍﺯﺇ :ﺔَﻤْﻬَﻤﻟﺍ")  `logo.opacity` `0.2.0` ﻲﻓ
                    ـﻟ ًﺎﻘﻴﻗﺩ ًﻼ﻿ﻴﺜﻤﺗ ﻂﻳﺮﺸﻟﺍ ﻞﻈﻳ ﻥﺃ ﺐﺠﻳ — ﻡﺪﻘﺘﻟﺍ ﻂﻳﺮﺸﻟ ﺔﻛﺮﺤﺘﻣ ﻡﻮﺳﺭ
-boot progress.
+تقدم التمهيد.
 
 ##                                                                  ﻂﻴﻄﺨﺘﻟﺍ ﺖﺑﺍﻮﺛ
 
                                                :ﻦﻳﻮﻜﺘﻟﺍ ﻂﺒﻀﻟ ﺔﻘﻴﻘﺤﻠﻟ ﺪﺣﺍﻭ ﺭﺪﺼﻣ
 
-| Constant | Value | Meaning |
+| ثابت | القيمة | معنى |
 | --- | --- | --- |
-| `logo.base_scale` | `0.72` | logo scale vs. its native 256x256 |
-| `logo.y` offset | `-35`                                    | ﺔﺷﺎﺸﻟﺍ ﻒﺼﺘﻨﻣ ﻕﻮﻓ ﺔﻳﺰﻛﺮﻤﻟﺍ ﺔﻠﺘﻜﻟﺍ ﻊﻓﺮﻳ | 
-| `text.scale` | `0.80` | wordmark scale vs. its native 400x53 |
-| `text.y` gap | `+16` | logo bottom → wordmark top |
-| `progress_track.y` gap | `+28` | wordmark bottom → track top |
-| `password.prompt.y` gap | `+24` | track bottom → prompt text top |
-| `password.entry.y` gap | `+14` | prompt bottom → entry field top |
-| bullet x offset | `+16` | entry left → first bullet |
-| `logo.opacity` (dialog) | `0.15` | splash dimming while a passphrase is requested |
-| prompt color | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
-| fade | 20 frames @ 20 FPS | ~1 s fade-in |
+| `logo.base_scale` | `0.72` | مقياس الشعار مقابل 256 × 256 الأصلي |
+| `logo.y` offset | `-35`                                    | ﺔﺷﺎﺸﻟﺍ ﻒﺼﺘﻨﻣ ﻕﻮﻓ ﺔﻳﺰﻛﺮﻤﻟﺍ ﺔﻠﺘﻜﻟﺍ ﻊﻓﺮﻳ |
+| `text.scale` | `0.80` | مقياس الكلمات النصية مقابل 400 × 53 الأصلي |
+| فجوة `text.y` | `+16` | أسفل الشعار → أعلى العلامة النصية |
+| فجوة `progress_track.y` | `+28` | العلامة النصية أسفل → المسار العلوي |
+| فجوة `password.prompt.y` | `+24` | المسار السفلي → النص الفوري أعلى |
+| فجوة `password.entry.y` | `+14` | موجه أسفل → حقل الإدخال أعلى |
+| رصاصة × إزاحة | `+16` | دخول اليسار → الرصاصة الأولى |
+| `logo.opacity` (الحوار) | `0.15` | تعتيم البداية أثناء طلب عبارة المرور |
+| لون موجه | `0.72, 0.77, 0.81` | `Image.Text` RGB، ~`#B8C4CE` |
+| تتلاشى | 20 إطارًا بمعدل 20 إطارًا في الثانية | ~1 ثانية تتلاشى |
 
 ##                                                                   ﻢﻴﻤﺼﺘﻟﺍ ﺯﻮﻣﺭ
 
-| Token | Hex | Where it lives |
+| الرمز المميز | عرافة | أين يعيش |
 | --- | --- | --- |
-| Background | `#111316` | script (`0.0667, 0.0745, 0.0863`) |
-| Accent | `#3590BD` | logo / wordmark / progress fill pixels |
-| Progress track | `#262933` | `progress-bar-track.png` |
-| Prompt text | `#B8C4CE` | script (`Image.Text` call) |
+| الخلفية | `#111316` | البرنامج النصي (`0.0667, 0.0745, 0.0863`) |
+| لهجة | `#3590BD` | الشعار/العلامة النصية/ملء التقدم بالبكسلات |
+| مسار التقدم | `#262933` | `progress-bar-track.png` |
+| نص موجه | `#B8C4CE` | البرنامج النصي (استدعاء `Image.Text`) |
 
                   ﻲﻓ ﺎﻬﻨﻋ ﺍًﺮﺒﻌﻣ ﺲﻴﻟﻭ ،PNG ﺕﺎﻔﻠﻣ ﻲﻓ ﺔﻨﻤﻀﻣ ﺭﺎﺴﻤﻟﺍﻭ ﺰﻴﻴﻤﺘﻟﺍ ﻥﺍﻮﻟﺃ
 .(ﻥﺍﻮﻟﻷ﻿ﺍ ﺔﺣﻮﻟ ﻞﻳﺪﻌﺗ ﻭﺃ) ﻝﻮﺻﻷ﻿ﺍ ﺮﻳﺪﺼﺗ ﺓﺩﺎﻋﺇ ﻲﻨﻌﺗ ﻦﻳﻮﻠﺘﻟﺍ ﺓﺩﺎﻋﺇ ﺍﺬﻟ ،ﻲﺠﻣﺮﺒﻟﺍ ﺺﻨﻟﺍ
@@ -283,7 +283,7 @@ systemd-boot ﻭ `ukify` ﺓﺮﻴﺒﻜﻟﺍ ﺭﻮﺼﻟﺍﻭ ﺔﻴﺋﺍ�
 
 ##                                                                    ﺔﻤﺴﻟﺍ ﻞﻳﺪﻌﺗ
 
-Practical loop:
+حلقة عملية:
 
 1.                                        .(PNG ﺕﺎﻔﻠﻣ ﻭﺃ/ﻭ) `src/usr/share/plymouth/themes/argvus/argvus.script` ﺭﺮﺣ
 2.              :ﺭﺪﺼﻤﻟﺍ ﺓﺮﺠﺷ ﻦﻣ ﺔﻨﻳﺎﻌﻣ ﻭﺃ ،ﻚﺑ ﺹﺎﺨﻟﺍ ﻲﺤﻟﺍ Plymouth ﻰﻠﻋ ﺖﻴﺒﺜﺘﻟﺎﺑ ﻢﻗ
@@ -301,8 +301,8 @@ Practical loop:
 
 - ﻦﻣ ﻖﻘﺤﺗ ؛ﺓﺪﻴﻘﻣ ﺔﺠﻬﻟ ﻪﻟ ﻙﺮﺤﻤﻟﺍ .ﺍًﺪﺑﺃ ﺙﻮﻤﻴﻠﺒﻟ ﺔﻌﺑﺎﺘﻟﺍ ﺮﻴﻏ ﺕﺎﻘﻴﺒ
 ﻚﻟﺬﺑ ﻢﻘﺗ ﻢﻟ ﺕﺎﻘﻴﺒﻄﺘﻟﺍ ﺔﺠﻣﺮﺑ ﺔﻬﺟﺍﻭ ﻡﺍﺪﺨﺘﺳﺍ ﻞﺒﻗ ﺎﻬﻤﻋﺪﺗ ﻲﺘﻟﺍ `plymouth` ﻦﻣ
-  used before.
-- ﻖﺑﺎﻄﺘﻳ ﻥﺃ ﺐﺠﻳﻭ ﺎًﻘﻠﻄﻣ argvus.plymouth ﻲﻓ `ImageDir`/`ScriptFile` 
+تستخدم من قبل.
+- ﻖﺑﺎﻄﺘﻳ ﻥﺃ ﺐﺠﻳﻭ ﺎًﻘﻠﻄﻣ argvus.plymouth ﻲﻓ `ImageDir`/`ScriptFile`
                                               . `argvus.plymouth` `/usr/share/plymouth/themes/argvus` ﺖﺒﺜﻤﻟﺍ ﺭﺎﺴﻤﻟﺍ
 -                             ﻊﻣ `arch_check_splash_payload()` ﻲﻓ ﺝﺭﺪﻣ ﻞﺻﺃ ﻞﻛ ﻦﻣﺍﺰﺗ ﻰﻠﻋ ﻆﻓﺎﺣ
 .CI ﻲﻓ ﻞﻤﻌﻳ check() ﻒﻴﻠﻐﺘﻟﺍ — `src/` ﻲﻓ ﻦﺤﺸُﺗ ﻲﺘﻟﺍ ﺕﺎﻔﻠﻤﻟﺍ
@@ -311,7 +311,7 @@ Practical loop:
 -        ﺮﺜﻛﻷ﻿ﺍ ﺔﻟﺎﺤﻟﺍ ﺎﻬﻧﺇ :ﺔﻳﺍﺪﺒﻟﺍ ﺔﺷﺎﺷ ﺩﺮﺠﻣ ﺲﻴﻟﻭ ،ﺭﻭﺮﻤﻟﺍ ﺓﺭﺎﺒﻋ ﺭﺍﻮﺣ ﻊﺑﺮﻣ ﺮﺒﺘﺧﺍ
                               .ﺮﺜﻛﺃ ﻥﻮﻣﺪﺨﺘﺴﻤﻟﺍ ﻪﻈﺣﻼ﻿ﻳ ﺎﻣ ﻮﻫﻭ ﺮﺴﻜﻨﻳ ﻥﺃ ﺢﺟﺮﻤﻟﺍ ﻦﻣ
 -           ﺭﺎﻃﺇ ﻞﻜﻟ ﻞﻤﻌﻟﺍ ﺺﻴﺼﺨﺘﺑ ﻆﻔﺘﺣﺍ ؛ﻉﻼ﻿ﻗﻹ﻿ﺍ ﺔﻴﻠﻤﻋ ﻝﺍﻮﻃ ﺚﻳﺪﺤﺘﻠﻟ ءﺍﺪﻨﻟﺍ ﺩﺭ ﻞﻤﻌﻳ
-  free where possible.
+مجانا حيثما أمكن ذلك.
 
                                                         ﺮﻈﻧﺍ ﺕﺍﺭﺍﺪﺻﻹ﻿ﺍﻭ ﻒﻴﻠﻐﺘﻠﻟ[                                                                       ﻒﻴﻠﻐﺘﻟﺍ](/docs/argvus-boot-splash/developer-guide/packaging/)                                                                             ﻭ
 [                                                     ﺕﺍﺭﺍﺪﺻﻹ﻿ﺍﻭ ﺮﻤﺘﺴﻤﻟﺍ ﻞﻣﺎﻜﺘﻟﺍ](/docs/argvus-boot-splash/developer-guide/ci-releases/)                                                              ﺮﻈﻧﺍ ،ﻡﺍﺪﺨﺘﺳﻼ﻿ﻟ .

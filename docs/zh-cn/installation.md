@@ -7,7 +7,7 @@ description: 要求、安装选项以及包钩子的功能。
 
 在基于 Arch 的系统上获取 Argvus 启动画面的所有内容。
 
-有关主题的外观和内容，请参见 [reference](/docs/argvus-boot-splash/reference/)]。如果要从源代码重新构建，请参见 [developer guide](/docs/argvus-boot-splash/developer-guide/)]。
+有关主题的外观和内容，请参见 [reference](/docs/argvus-boot-splash/reference/)。如果要从源代码重新构建，请参见 [developer guide](/docs/argvus-boot-splash/developer-guide/)。
 
 ## 要求
 
@@ -79,7 +79,7 @@ sudo update-initramfs -u        # Debian/Ubuntu
 
 如果找不到生成器，安装程序会打印警告，并且必须自己重建 initramfs。只有在重新生成 initramfs 后，主题更改才会在启动时可见——不执行此步骤直接重启是“启动画面未更改”的最常见原因。
 
-在删除时，包只打印提醒：选择不同的主题并重建 initramfs 由你自行处理。参见 [卸载 ](/docs/argvus-boot-splash/uninstallation/)]。
+在删除时，包只打印提醒：选择不同的主题并重建 initramfs 由你自行处理。参见 [卸载 ](/docs/argvus-boot-splash/uninstallation/)。
 
 ## 下一步
 

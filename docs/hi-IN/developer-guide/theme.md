@@ -1,5 +1,5 @@
 ---
-title: Theme Architecture
+title: थीम आर्किटेक्चर
 description: यह कि Plymouth वर्णनक, एसेट्स, और स्क्रिप्ट कैसे एक साथ रखे जाते हैं।
 ---
 
@@ -12,7 +12,7 @@ description: यह कि Plymouth वर्णनक, एसेट्स, औ�
 [CI और रिलीज़](/docs/argvus-boot-splash/developer-guide/ci-releases/)। उपयोग के लिए, देखें
 [उपयोगकर्ता गाइड](/docs/argvus-boot-splash/)।
 
-## Descriptor
+## वर्णनकर्ता
 
 प्लायमाउथ थीम्स घोषणात्मक वर्णक हैं जिन्हें प्लायमाउथ के स्क्रिप्ट द्वारा व्याख्यायित किया जाता है
 इंजन। इसके दो भाग हैं:
@@ -30,7 +30,7 @@ ImageDir=/usr/share/plymouth/themes/argvus
 ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 ```
 
-Notes:
+टिप्पणियाँ:
 
 - `ModuleName=script` प्लीमाउथ के बिल्ट-इन स्क्रिप्ट इंटरप्रेटर का चयन करता है। कोई
 संकलित मॉड्यूल नहीं है; `ImageDir` और `ScriptFile` **पूर्ण पथ** होना चाहिए,
@@ -62,16 +62,16 @@ win को कॉल करता है; कोई दृश्य ग्रा
 
 सभी संपत्तियाँ `src/usr/share/plymouth/themes/argvus/` में रहती हैं।
 
-| File | Size | Format | Role | Used by `argvus.script` |
+| फ़ाइल | आकार | प्रारूप | भूमिका | `argvus.script` द्वारा प्रयुक्त |
 | --- | --- | --- | --- | --- |
-| `argvus.plymouth` | — | INI | theme descriptor | loaded by `plymouthd` |
-| `argvus.script` | — | Plymouth script | theme logic | yes |
-| `argvus-logo.png` | 256x256 | RGBA 8-bit | main logo | yes (`logo.base_scale = 0.72`) |
-| `argvus-text.png` | 400x53 | RGBA 8-bit | `ARGVUS` wordmark | yes (`text.scale = 0.80`) |
-| `progress-bar.png` | 400x4 | 1-bit palette | filled bar | yes |
-| `progress-bar-track.png` | 400x4 | 1-bit palette | unfilled track | yes |
-| `entry-box.png` | 400x48 | RGB 16-bit | password entry field | yes |
-| `bullet.png` | 12x12 | 4-bit palette | one masked character | yes |
+| `argvus.plymouth` | — | आईएनआई | विषयवस्तु वर्णनकर्ता | `plymouthd` द्वारा लोड किया गया |
+| `argvus.script` | — | Plymouth स्क्रिप्ट | थीम तर्क | हाँ |
+| `argvus-logo.png` | 256x256 | आरजीबीए 8-बिट | मुख्य लोगो | हाँ (`logo.base_scale = 0.72`) |
+| `argvus-text.png` | 400x53 | आरजीबीए 8-बिट | `ARGVUS` वर्डमार्क | हाँ (`text.scale = 0.80`) |
+| `progress-bar.png` | 400x4 | 1-बिट पैलेट | भरी हुई बार | हाँ |
+| `progress-bar-track.png` | 400x4 | 1-बिट पैलेट | अधूरा ट्रैक | हाँ |
+| `entry-box.png` | 400x48 | आरजीबी 16-बिट | पासवर्ड प्रविष्टि फ़ील्ड | हाँ |
+| `bullet.png` | 12x12 | 4-बिट पैलेट | एक नकाबपोश पात्र | हाँ |
 | `entry-line.png`| 300x2 | 1-बिट पैलेट | प्रवेश नियम/अंडरलाइन | नहीं (देखें[ज्ञात अंतर](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `logo-glow.png`| 260x300 | 8-बिट पैलेट | लोगो ग्लो आर्टवर्क | नहीं (देखें[ज्ञात अंतर](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `argvus-uki-splash.bmp` | 400x400 | BMP 32-बिट | UKI / systemd-boot स्प्लैश | नहीं (बूट लोडर द्वारा उपयोग किया गया) |
@@ -89,7 +89,7 @@ win को कॉल करता है; कोई दृश्य ग्रा
 
 `src/usr/share/plymouth/themes/argvus/argvus.script`, ऊपर से नीचे तक।
 
-### 1. Background
+### 1. पृष्ठभूमि
 
 ```js
 Window.SetBackgroundTopColor(0.0667, 0.0745, 0.0863);
@@ -119,9 +119,9 @@ logo.image = logo.frame[logo.base_width];
 वर्डमार्क वही विचार `text.scale = 0.80` पर अनुसरण करता है, लेकिन इसे एक बार
 इनलाइन में स्केल किया जाता है। प्रगति ट्रैक और बार फिर `text.image.GetWidth()` पर स्केल की जाती हैं —
 यानी बार हमेशा वर्डमार्क की चौड़ाई के मेल खाता है, चाहे वर्डमार्क की वास्तविक
-pixel size is.
+पिक्सेल आकार है.
 
-### 3. Layout
+### 3. लेआउट
 
 जो भी हो। हर तत्व विंडो के क्षैतिज अक्ष पर केंद्रित है:
 
@@ -137,15 +137,15 @@ logo.y = Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2 - 3
 `progress_track.y = text.y + text.image.GetHeight() + 28`, …), जिसका मतलब है
 संयोजन संकल्प के साथ एक इकाई के रूप में मापता है।
 
-Z-order used here:
+यहाँ Z-क्रम का उपयोग किया गया है:
 
-| Z | Sprite |
+| जेड | स्प्राइट |
 | --- | --- |
-| 100 | logo, wordmark, progress track |
-| 101 | progress bar (above the track) |
-| 200 | password entry field |
-| 201 | password prompt text |
-| 202 | password bullets |
+| 100 | लोगो, वर्डमार्क, प्रगति ट्रैक |
+| 101 | प्रगति पट्टी (ट्रैक के ऊपर) |
+| 200 | पासवर्ड प्रविष्टि फ़ील्ड |
+| 201 | पासवर्ड प्रॉम्प्ट टेक्स्ट |
+| 202 | पासवर्ड बुलेट्स |
 
 ### 4. बूट प्रगति
 
@@ -166,7 +166,7 @@ fun progress_callback(duration, progress)
 matters: कुछ Plymouth संस्करणों में शून्य-चौड़ाई वाली छवि अमान्य होती है, इसलिए बार
 कभी पूरी तरह से गायब नहीं होता, और प्रगति कभी ट्रैक की चौड़ाई से अधिक नहीं हो सकती।
 स्प्राइट स्थिति स्थिर है; केवल छवि की चौड़ाई बदलती है — कोई भराई या क्लिप नहीं
-operation is used.
+ऑपरेशन का प्रयोग किया जाता है.
 
 ### 5. पासवर्ड डायलॉग
 
@@ -180,7 +180,7 @@ operation is used.
 3. प्रॉम्प्ट के नीचे एंट्री फ़ील्ड की स्थिति निर्धारित करता है: `password.entry.y =
 password.prompt.y + password.prompt.image.GetHeight() + 14`। लोड समय पर
 `password.entry.y` `0` होता है, एक टिप्पणी के साथ कि वास्तविक स्थिति
-   prompt.
+   संकेत.
 4. के इंतजार में रहती है। क्रिएट-या-रीयूज़ लूप के साथ बुलेट्स बनाता है:
 
    ```js
@@ -232,34 +232,34 @@ fun refresh_callback()
 इस थीम के पहले के संस्करणों में भी पल्स/स्पॉन एनिमेशन थे; उन्हें
 `0.2.0` में हटा दिया गया था ("chore: remove pulse effects")। प्रगति बार की प्रति-फ्रेम
 एनिमेशन को फिर से न जोड़ें — बार
-boot progress.
+बूट प्रगति.
 
 ## लेआउट स्थिरांक
 
 रचना को ट्यून करने के लिए सत्य का एकल स्रोत:
 
-| Constant | Value | Meaning |
+| लगातार | मूल्य | मतलब |
 | --- | --- | --- |
-| `logo.base_scale` | `0.72` | logo scale vs. its native 256x256 |
+| `logo.base_scale` | `0.72` | लोगो स्केल बनाम इसका मूल 256x256 |
 | `logo.y` offset | `-35` | मिड-स्क्रीन के ऊपर केंद्रित ब्लॉक को उठाता है |
-| `text.scale` | `0.80` | wordmark scale vs. its native 400x53 |
-| `text.y` gap | `+16` | logo bottom → wordmark top |
-| `progress_track.y` gap | `+28` | wordmark bottom → track top |
-| `password.prompt.y` gap | `+24` | track bottom → prompt text top |
-| `password.entry.y` gap | `+14` | prompt bottom → entry field top |
-| bullet x offset | `+16` | entry left → first bullet |
-| `logo.opacity` (dialog) | `0.15` | splash dimming while a passphrase is requested |
-| prompt color | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
-| fade | 20 frames @ 20 FPS | ~1 s fade-in |
+| `text.scale` | `0.80` | वर्डमार्क स्केल बनाम इसका मूल 400x53 |
+| `text.y` गैप | `+16` | लोगो नीचे → वर्डमार्क शीर्ष |
+| `progress_track.y` गैप | `+28` | वर्डमार्क बॉटम → ट्रैक टॉप |
+| `password.prompt.y` गैप | `+24` | ट्रैक बॉटम → प्रॉम्प्ट टेक्स्ट टॉप |
+| `password.entry.y` गैप | `+14` | शीघ्र नीचे → प्रवेश क्षेत्र शीर्ष |
+| बुलेट एक्स ऑफसेट | `+16` | प्रविष्टि बाएँ → पहली गोली |
+| `logo.opacity` (संवाद) | `0.15` | पासफ़्रेज़ का अनुरोध करते समय स्प्लैश डिमिंग |
+| शीघ्र रंग | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
+| फीका | 20 फ्रेम @ 20 एफपीएस | ~1 एस फ़ेड-इन |
 
 ## डिजाइन टोकन
 
-| Token | Hex | Where it lives |
+| टोकन | हेक्स | यह कहाँ रहता है |
 | --- | --- | --- |
-| Background | `#111316` | script (`0.0667, 0.0745, 0.0863`) |
-| Accent | `#3590BD` | logo / wordmark / progress fill pixels |
-| Progress track | `#262933` | `progress-bar-track.png` |
-| Prompt text | `#B8C4CE` | script (`Image.Text` call) |
+| पृष्ठभूमि | `#111316` | स्क्रिप्ट (`0.0667, 0.0745, 0.0863`) |
+| एक्सेंट | `#3590BD` | लोगो/वर्डमार्क/प्रगति पिक्सेल भरें |
+| प्रगति पथ | `#262933` | `progress-bar-track.png` |
+| शीघ्र पाठ | `#B8C4CE` | स्क्रिप्ट (`Image.Text` कॉल) |
 
 हाइलाइट और ट्रैक रंग PNG संपत्तियों में शामिल हैं,
 स्क्रिप्ट में व्यक्त नहीं हैं, इसलिए रंग बदलने का मतलब है संपत्तियों को पुनः निर्यात करना (या पैलेट को संपादित करना)।
@@ -279,7 +279,7 @@ systemd-boot और `ukify` किसी भी फॉर्मेट को स
 
 ## थीम को संशोधित करना
 
-Practical loop:
+प्रैक्टिकल लूप:
 
 1. संपादित करें `src/usr/share/plymouth/themes/argvus/argvus.script` (और/या PNGs)।
 2. अपने लाइव Plymouth पर इंस्टॉल करें, या स्रोत वृक्ष से पूर्वावलोकन करें:
@@ -297,7 +297,7 @@ Practical loop:
 
 - कभी भी गैर-Plymouth API पेश न करें। इंजन एक सीमित बोलिपद्धति है; इस्तेमाल करने से पहले
 आप जिस API का उपयोग कर रहे हैं उसमें लक्ष्य संस्करण `plymouth` की जाँच करें
-  used before.
+  पहले इस्तेमाल किया गया.
 - `ImageDir`/`ScriptFile` को `argvus.plymouth` में पूर्ण रूप से स्थिर रहना चाहिए और
 स्थापित पथ `/usr/share/plymouth/themes/argvus` से मेल खाना चाहिए।
 - `arch_check_splash_payload()` में सूचीबद्ध प्रत्येक संपत्ति को
@@ -307,4 +307,4 @@ Practical loop:
 - पासफ्रेज़ डायलॉग का परीक्षण करें, सिर्फ़ बूट स्प्लैश नहीं: यह सबसे
 टूटने की संभावना वाली स्थिति है और वह जिसे उपयोगकर्ता सबसे अधिक नोटिस करते हैं।
 - फ्रेश रिफ्रेश कॉलबैक पूरे बूट के लिए चलता है; प्रति-फ्रेम कार्य आवंटन को बनाए रखें
-  free where possible.
+  जहां संभव हो मुफ़्त.

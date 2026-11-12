@@ -1,9 +1,9 @@
 ---
-title: Uninstallation
+title: स्थापना रद्द करना
 description: पैकेज हटाएँ और अपनी पिछली बूट थीम को बहाल करें।
 ---
 
-# Uninstallation
+# स्थापना रद्द करना
 
 ```sh
 sudo pacman -Rns argvus-boot-splash
@@ -19,7 +19,7 @@ sudo mkinitcpio -P        # or: sudo dracut --regenerate-all
 ```
 
 `pacman -Rns` कुछ और न होने पर `/etc/plymouth/plymouthd.conf` को भी हटा देता है
-created it.
+इसे बनाया.
 
 पैकेज को हटाने वाला हुक केवल एक अनुस्मारक प्रिंट करता है — यह अनुमान नहीं लगाता कि कौन सा थीम है
 आप इसके बजाय चाहते हैं, और यह आपके initramfs को छूता नहीं है।

@@ -5,7 +5,7 @@ description: Проверьте установку, просмотрите пр�
 # Использование
 
 Как проверить тему, просмотреть её без перезагрузки и переключиться на другую.
-Для установки см. [installation](/docs/argvus-boot-splash/installation/)].
+Для установки см. [installation](/docs/argvus-boot-splash/installation/).
 
 ## Проверка установки
 
@@ -31,7 +31,7 @@ sudo plymouthquit             # returns to your session
 sudo plymouth --show-details   # verbose boot messages instead of the splash
 sudo plymouth --show-splash    # back to the splash
 ```
-Пока экран загрузки отображается, нажмите <kbd>Esc</kbd>, чтобы перейти к следующему экрану (заставка → детали → заставка). 
+Пока экран загрузки отображается, нажмите <kbd>Esc</kbd>, чтобы перейти к следующему экрану (заставка → детали → заставка).
 
 ## Что показывает заставка
 
@@ -58,7 +58,7 @@ sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 | --- | --- |
 | `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` написан пакетом |
 | `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` должен включать `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (снова) | `PLYMOUTH_TOGGLE_KEY` и т.д. являются глобальными, а не для каждой темы |
+| `/etc/plymouth/plymouthd.conf` (снова) | `PLYMOUTH_TOGGLE_KEY` и т. д. являются глобальными, а не для каждой темы |
 
 ## Справочник команд
 

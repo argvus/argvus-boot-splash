@@ -7,7 +7,7 @@ description: 검증, 지속적인 통합, 서명 및 릴리스 워크플로우.
 
 검증 게이트, 지속적 통합 작업, 릴리스 파이프라인 및 버전 규칙.
 
-패키지 자체에 대해서는 [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)], 테마에 대해서는 [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)]를 참조하십시오.
+패키지 자체에 대해서는 [packaging](/docs/argvus-boot-splash/developer-guide/packaging/), 테마에 대해서는 [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)를 참조하십시오.
 
 ## 검증
 
@@ -112,8 +112,8 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 `.cspell/custom-dictionary-workspace.txt`(`argvus` 사전, `addWords:
 true`), not to `ignorePaths`.
 
-**`sudo`가 `make install` 또는 `libfakeroot.so … LD_PRELOAD` 내부에서 요청됨, 오류 발생.** `package()`가 install -Dm*를 사용하지 않고 대신 `make install`로 셸을 실행함. 두 PKGBUILD 모두  `install -Dm*` `arch_package_splash_payload`를 호출하며, 이는 호출하지 않음; 아무도 `make` 호출을 다시 도입하지 않았는지 확인할 것.  
+**`sudo`가 `make install` 또는 `libfakeroot.so … LD_PRELOAD` 내부에서 요청됨, 오류 발생.** `package()`가 install -Dm*를 사용하지 않고 대신 `make install`로 셸을 실행함. 두 PKGBUILD 모두  `install -Dm*` `arch_package_splash_payload`를 호출하며, 이는 호출하지 않음; 아무도 `make` 호출을 다시 도입하지 않았는지 확인할 것.
 
-**`makepkg`가 실행을 거부함.** 루트로 실행해서는 안 됨. 빌드를 일반 사용자 또는 `sudo -u <user> make build`로 실행할 것.  
+**`makepkg`가 실행을 거부함.** 루트로 실행해서는 안 됨. 빌드를 일반 사용자 또는 `sudo -u <user> make build`로 실행할 것.
 
 **패키지가 설치되었지만 스플래시는 변경되지 않음.** initramfs가 재빌드되지 않았음. 로컬 테스트의 경우, 재부팅 대신 `sudo plymouth --show-splash`를 호출하거나, `sudo mkinitcpio -P` / `sudo dracut --regenerate-all`로 재빌드할 것.

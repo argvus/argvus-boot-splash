@@ -1,15 +1,15 @@
 ---
-title: Installation
+title: Installation
 description: Exigences, options d'installation et ce que font les hooks du paquet.
 ---
 
-# Installation
+# Mise en place
 
 Tout ce dont vous avez besoin pour obtenir l'écran de démarrage Argvus sur un système basé sur Arch.
 
 Pour voir à quoi ressemble le thème et ce qu'il contient, consultez le
-[reference](/docs/argvus-boot-splash/reference/)]. Pour le reconstruire à partir des sources, consultez plutôt le
-[guide du développeur](/docs/argvus-boot-splash/developer-guide/)].
+[reference](/docs/argvus-boot-splash/reference/). Pour le reconstruire à partir des sources, consultez plutôt le
+[guide du développeur](/docs/argvus-boot-splash/developer-guide/).
 
 ## Exigences
 
@@ -81,7 +81,7 @@ Après l'installation ou la mise à niveau, les hooks du paquet s'exécutent aut
 
 Si aucun des générateurs n'est trouvé, l'installateur affiche un avertissement et vous devez reconstruire l'initramfs vous-même. Un changement de thème ne devient visible au démarrage qu'après la régénération de l'initramfs — redémarrer sans cette étape est la raison la plus fréquente pour laquelle « le splash n'a pas changé ».
 
-Lors de la suppression, le paquet se contente d'afficher un rappel : le choix d'un thème différent et la reconstruction de l'initramfs vous incombe. Voir [uninstallation](/docs/argvus-boot-splash/uninstallation/)].
+Lors de la suppression, le paquet se contente d'afficher un rappel : le choix d'un thème différent et la reconstruction de l'initramfs vous incombe. Voir [uninstallation](/docs/argvus-boot-splash/uninstallation/).
 
 ## Étapes suivantes
 

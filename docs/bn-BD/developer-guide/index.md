@@ -1,5 +1,5 @@
 ---
-title: Developer Guide
+title: বিকাশকারী গাইড
 description: ARGVUS অবদানকারীদের জন্য স্থাপত্য এবং উন্নয়ন নির্দেশিকা।
 ---
 
@@ -7,11 +7,11 @@ description: ARGVUS অবদানকারীদের জন্য স্থ�
 
 `argvus-boot-splash` রিপোজিটরির জন্য প্রযুক্তিগত ডকুমেন্টেশন: Plymouth
 থিমটি কীভাবে তৈরি করা হয়, Arch প্যাকেজটি কীভাবে নির্মিত হয়, এবং কীভাবে রিলিজগুলি
-signed and published.
+স্বাক্ষরিত এবং প্রকাশিত।
 
 করা হয়। এখানে কোনো কম্পাইলেশন ধাপ নেই — থিমটি হলো ডেটা (একটি `.plymouth` বর্ণনাপত্র,
 একটি `.script`, এবং ছবি) প্লাস একটি Arch প্যাকেজ রেসিপি। "তৈরি করা" এর মানে হলো
-a reproducible package:
+একটি প্রজননযোগ্য প্যাকেজ:
 
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
@@ -28,9 +28,9 @@ make install    # sudo pacman -U that file
 প্রক্রিয়া) দেখুন [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) এবং
 [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)।
 
-## Guides
+## গাইড
 
-| Guide | Contents |
+| গাইড | বিষয়বস্তু |
 | --- | --- |
 | [থিম আর্কিটেকচার](/docs/argvus-boot-splash/developer-guide/theme/)| বর্ণনাকারী, রেন্ডারিং মডেল, অ্যাসেট ইনভেন্টরি, স্ক্রিপ্ট ওয়াকথ্রু, লেআউট কনস্ট্যান্টস, ডিজাইন টোকেন, ইউকে আই বিটম্যাপ, থিম কিভাবে পরিবর্তন করবেন |
 | [প্যাকেজিং](/docs/argvus-boot-splash/developer-guide/packaging/)| দুটি PKGBUILD, শেয়ার করা হয়েছে`functions.sh`, হুক ইনস্টল করুন, স্থানীয় বিল্ড পাইপলাইন, মেক টার্গেট, প্রয়োজনীয়তাসমূহ |
@@ -39,16 +39,16 @@ make install    # sudo pacman -U that file
 
 ## তাত্ক্ষণিক রেফারেন্স
 
-| Path | What it is |
+| পথ | এটা কি |
 | --- | --- |
-| `src/usr/share/plymouth/themes/argvus/` | theme payload installed under `/usr` |
-| `packaging/arch/{ci,local}/PKGBUILD` | release and local package recipes |
-| `packaging/arch/common/functions.sh` | shared `prepare`/`check`/`package` |
-| `tools/sh/pkgbuild_local.sh` | deterministic tarball + `makepkg` driver |
-| `tools/sh/validate.sh` | required validation gate |
-| `.github/workflows/` | `ci.yml` (validate, build, spellcheck), `release.yml` (tags `v*`) |
+| `src/usr/share/plymouth/themes/argvus/` | `/usr` | এর অধীনে থিম পেলোড ইনস্টল করা হয়েছে
+| `packaging/arch/{ci,local}/PKGBUILD` | প্রকাশ এবং স্থানীয় প্যাকেজ রেসিপি |
+| `packaging/arch/common/functions.sh` | শেয়ার করা `prepare`/`check`/`package` |
+| `tools/sh/pkgbuild_local.sh` | ডিটারমিনিস্টিক টারবল + `makepkg` ড্রাইভার |
+| `tools/sh/validate.sh` | প্রয়োজনীয় বৈধতা গেট |
+| `.github/workflows/` | `ci.yml` (বৈধীকরণ, নির্মাণ, বানান পরীক্ষা), `release.yml` (ট্যাগ `v*`) |
 
-## Elsewhere
+## অন্যত্র
 
 - রেপোজিটরি রুট: [README.md](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)
 - ব্যবহারকারী-উন্মুখ ডকুমেন্টেশন: [user guide](/docs/argvus-boot-splash/)

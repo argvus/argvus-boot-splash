@@ -1,5 +1,5 @@
 ---
-title: Theme Architecture
+title: থিম আর্কিটেকচার
 description: কীভাবে Plymouth ডেসক্রিপ্টর, অ্যাসেট এবং স্ক্রিপ্ট একসাথে রাখা হয়।
 ---
 
@@ -12,7 +12,7 @@ description: কীভাবে Plymouth ডেসক্রিপ্টর, অ�
 [CI এবং রিলিজ](/docs/argvus-boot-splash/developer-guide/ci-releases/)। ব্যবহারের জন্য দেখুন
 [user guide](/docs/argvus-boot-splash/)।
 
-## Descriptor
+## বর্ণনাকারী
 
 Plymouth থিমগুলো হলো ঘোষণামূলক বর্ণনাকারী যা Plymouth-এর স্ক্রিপ্ট দ্বারা ব্যাখ্যা করা হয়
 ইঞ্জিন। এখানে দুটি অংশ রয়েছে:
@@ -30,7 +30,7 @@ ImageDir=/usr/share/plymouth/themes/argvus
 ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 ```
 
-Notes:
+নোট:
 
 - `ModuleName=script` প্লাইমাউথের বিল্ট-ইন স্ক্রিপ্ট ইন্টারপ্রেটার নির্বাচন করে। কোনো
 কম্পাইলড মডিউল নেই; `ImageDir` এবং `ScriptFile` অবশ্যই **পূর্ণ পাথ** হতে হবে,
@@ -62,16 +62,16 @@ win কল করে; কোন দৃশ্য গ্রাফ নেই।
 
 সমস্ত সম্পদ `src/usr/share/plymouth/themes/argvus/`-তে থাকা হয়।
 
-| File | Size | Format | Role | Used by `argvus.script` |
+| ফাইল | আকার | বিন্যাস | ভূমিকা | `argvus.script` | দ্বারা ব্যবহৃত
 | --- | --- | --- | --- | --- |
-| `argvus.plymouth` | — | INI | theme descriptor | loaded by `plymouthd` |
-| `argvus.script` | — | Plymouth script | theme logic | yes |
-| `argvus-logo.png` | 256x256 | RGBA 8-bit | main logo | yes (`logo.base_scale = 0.72`) |
-| `argvus-text.png` | 400x53 | RGBA 8-bit | `ARGVUS` wordmark | yes (`text.scale = 0.80`) |
-| `progress-bar.png` | 400x4 | 1-bit palette | filled bar | yes |
-| `progress-bar-track.png` | 400x4 | 1-bit palette | unfilled track | yes |
-| `entry-box.png` | 400x48 | RGB 16-bit | password entry field | yes |
-| `bullet.png` | 12x12 | 4-bit palette | one masked character | yes |
+| `argvus.plymouth` | — | INI | থিম বর্ণনাকারী | `plymouthd` | দ্বারা লোড করা হয়েছে
+| `argvus.script` | — | Plymouth স্ক্রিপ্ট | থিম যুক্তি | হ্যাঁ |
+| `argvus-logo.png` | 256x256 | RGBA 8-বিট | প্রধান লোগো | হ্যাঁ (`logo.base_scale = 0.72`) |
+| `argvus-text.png` | 400x53 | RGBA 8-বিট | `ARGVUS` শব্দচিহ্ন | হ্যাঁ (`text.scale = 0.80`) |
+| `progress-bar.png` | 400x4 | 1-বিট প্যালেট | ভরা বার | হ্যাঁ |
+| `progress-bar-track.png` | 400x4 | 1-বিট প্যালেট | অপূর্ণ ট্র্যাক | হ্যাঁ |
+| `entry-box.png` | 400x48 | RGB 16-বিট | পাসওয়ার্ড এন্ট্রি ক্ষেত্র | হ্যাঁ |
+| `bullet.png` | 12x12 | 4-বিট প্যালেট | একটি মুখোশধারী চরিত্র | হ্যাঁ |
 | `entry-line.png`| 300x2 | 1-বিট প্যালেট | এন্ট্রি নিয়ম/আন্ডারলাইন | না (দেখুন [পরিচিত ফাঁক](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `logo-glow.png`| 260x300 | ৮-বিট প্যালেট | লোগো গ্লো আর্টওয়ার্ক | নেই (দেখুন[পরিচিত ফাঁক](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `argvus-uki-splash.bmp` | 400x400 | BMP 32-বিট | UKI / systemd-boot স্প্ল্যাশ | না (বুট লোডার দ্বারা ব্যবহৃত) |
@@ -89,7 +89,7 @@ win কল করে; কোন দৃশ্য গ্রাফ নেই।
 
 `src/usr/share/plymouth/themes/argvus/argvus.script`, উপরের থেকে নীচ পর্যন্ত।
 
-### 1. Background
+### 1. পটভূমি
 
 ```js
 Window.SetBackgroundTopColor(0.0667, 0.0745, 0.0863);
@@ -119,9 +119,9 @@ logo.image = logo.frame[logo.base_width];
 ওয়ার্ডমার্ক একই চিন্তাভাবনা অনুসরণ করে `text.scale = 0.80`-তে, তবে এটি একবারই ইনলাইন স্কেল করা হয়
 । প্রগতি ট্র্যাক এবং বার তারপর `text.image.GetWidth()`-তে স্কেল করা হয় —
 অর্থাৎ, বারের চওড়া সর্বদা ওয়ার্ডমার্কের চওড়ার সাথে মিল হয়, ওয়ার্ডমার্কের বাস্তব
-pixel size is.
+পিক্সেল আকার হয়।
 
-### 3. Layout
+### 3. লেআউট
 
 যাই হোক না কেন। প্রতিটি উপাদান উইন্ডোর অনুভূমিক অক্ষের উপরে কেন্দ্রীভূত:
 
@@ -137,15 +137,15 @@ logo.y = Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2 - 3
 `progress_track.y = text.y + text.image.GetHeight() + 28`, …), যা অর্থ
 কম্পোজিশন রেজোলিউশনের সাথে একক হিসেবে স্কেল করে।
 
-Z-order used here:
+Z- অর্ডার এখানে ব্যবহৃত:
 
-| Z | Sprite |
+| জেড | স্প্রাইট |
 | --- | --- |
-| 100 | logo, wordmark, progress track |
-| 101 | progress bar (above the track) |
-| 200 | password entry field |
-| 201 | password prompt text |
-| 202 | password bullets |
+| 100 | লোগো, ওয়ার্ডমার্ক, অগ্রগতি ট্র্যাক |
+| 101 | অগ্রগতি বার (ট্র্যাকের উপরে) |
+| 200 | পাসওয়ার্ড এন্ট্রি ক্ষেত্র |
+| 201 | পাসওয়ার্ড প্রম্পট টেক্সট |
+| 202 | পাসওয়ার্ড বুলেট |
 
 ### ৪. বুট প্রগতি
 
@@ -166,7 +166,7 @@ fun progress_callback(duration, progress)
 matters: কিছু Plymouth সংস্করণে শূন্য-প্রস্থের চিত্র অবৈধ, তাই বার
 কখনও পুরোপুরি অদৃশ্য হয় না, এবং অগ্রগতি কখনও ট্র্যাক প্রস্থ ছাড়িয়ে যেতে পারে না।
 স্প্রাইটের অবস্থান স্থির; শুধুমাত্র চিত্রের প্রস্থ পরিবর্তিত হয় — কোন_fill বা কাট নেই
-operation is used.
+অপারেশন ব্যবহার করা হয়।
 
 ### ৫. পাসওয়ার্ড ডায়ালগ
 
@@ -180,7 +180,7 @@ operation is used.
 3. প্রম্পটের নিচে এন্ট্রি ফিল্ডের অবস্থান নির্ধারণ করে: `password.entry.y =
 password.prompt.y + password.prompt.image.GetHeight() + 14`। লোড সময়
 `password.entry.y` হল `0` একটি মন্তব্য সহ যে আসল অবস্থান
-   prompt.
+   প্রম্পট
 4. অপেক্ষা করছে। একটি তৈরি-অথবা-পুনঃব্যবহার লুপ দিয়ে বুলেট আঁকে:
 
    ```js
@@ -232,34 +232,34 @@ fun refresh_callback()
 এই থিমের পূর্ববর্তী সংস্করণগুলিতেও পালস/স্প্যান অ্যানিমেশন ছিল; সেগুলি
 পরে সরানো হয়েছে `0.2.0` ("chore: remove pulse effects")। প্রগতি বারটির প্রতি-ফ্রেম
 অ্যানিমেশন পুনঃপ্রবর্তন করবেন না — বারটি অবশ্যই
-boot progress.
+বুট অগ্রগতি।
 
 ## লেআউট ধ্রুবকসমূহ
 
 কম্পোজিশন টিউন করার জন্য একক সত্যের উৎস:
 
-| Constant | Value | Meaning |
+| ধ্রুবক | মান | অর্থ |
 | --- | --- | --- |
-| `logo.base_scale` | `0.72` | logo scale vs. its native 256x256 |
+| `logo.base_scale` | `0.72` | লোগো স্কেল বনাম এর নেটিভ 256x256 |
 | `logo.y` offset | `-35`| মধ্য-স্ক্রিনের উপরে কেন্দ্রিত ব্লকটি তুলছে |
-| `text.scale` | `0.80` | wordmark scale vs. its native 400x53 |
-| `text.y` gap | `+16` | logo bottom → wordmark top |
-| `progress_track.y` gap | `+28` | wordmark bottom → track top |
-| `password.prompt.y` gap | `+24` | track bottom → prompt text top |
-| `password.entry.y` gap | `+14` | prompt bottom → entry field top |
-| bullet x offset | `+16` | entry left → first bullet |
-| `logo.opacity` (dialog) | `0.15` | splash dimming while a passphrase is requested |
-| prompt color | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
-| fade | 20 frames @ 20 FPS | ~1 s fade-in |
+| `text.scale` | `0.80` | wordmark স্কেল বনাম এর নেটিভ 400x53 |
+| `text.y` ফাঁক | `+16` | লোগো নীচে → wordmark শীর্ষ |
+| `progress_track.y` ফাঁক | `+28` | শব্দচিহ্ন নীচে → ট্র্যাক শীর্ষ |
+| `password.prompt.y` ফাঁক | `+24` | ট্র্যাক নীচে → প্রম্পট টেক্সট শীর্ষ |
+| `password.entry.y` ফাঁক | `+14` | প্রম্পট নীচে → এন্ট্রি ফিল্ড শীর্ষ |
+| বুলেট x অফসেট | `+16` | এন্ট্রি বাম → প্রথম বুলেট |
+| `logo.opacity` (সংলাপ) | `0.15` | একটি পাসফ্রেজ অনুরোধ করার সময় স্প্ল্যাশ ডিমিং |
+| প্রম্পট রঙ | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
+| বিবর্ণ | 20 ফ্রেম @ 20 FPS | ~1 s ফেড-ইন |
 
 ## ডিজাইন টোকেন
 
-| Token | Hex | Where it lives |
+| টোকেন | হেক্স | কোথায় থাকে |
 | --- | --- | --- |
-| Background | `#111316` | script (`0.0667, 0.0745, 0.0863`) |
-| Accent | `#3590BD` | logo / wordmark / progress fill pixels |
-| Progress track | `#262933` | `progress-bar-track.png` |
-| Prompt text | `#B8C4CE` | script (`Image.Text` call) |
+| পটভূমি | `#111316` | স্ক্রিপ্ট (`0.0667, 0.0745, 0.0863`) |
+| উচ্চারণ | `#3590BD` | লোগো/ওয়ার্ডমার্ক/প্রগ্রেস ফিল পিক্সেল |
+| অগ্রগতি ট্র্যাক | `#262933` | `progress-bar-track.png` |
+| প্রম্পট টেক্সট | `#B8C4CE` | স্ক্রিপ্ট (`Image.Text` কল) |
 
 অ্যাকসেন্ট এবং ট্র্যাক রঙ PNG অ্যাসেটে অন্তর্ভুক্ত,
 স্ক্রিপ্টে প্রকাশ করা হয়নি, তাই রিকলোরিং মানে অ্যাসেটগুলি পুনঃরফতানি করা (অথবা প্যালেট সম্পাদনা) করা।
@@ -279,7 +279,7 @@ systemd-boot এবং `ukify` যেকোন ফরম্যাট এবং �
 
 ## থিম পরিবর্তন করা
 
-Practical loop:
+ব্যবহারিক লুপ:
 
 1. সম্পাদনা করুন `src/usr/share/plymouth/themes/argvus/argvus.script` (এবং/অথবা PNG ফাইলগুলো)।
 2. আপনার লাইভ প্লাইমাউথ-এ ইনস্টল করুন, বা উৎস ট্রি থেকে প্রিভিউ করুন:
@@ -297,7 +297,7 @@ Practical loop:
 
 - কখনই নন-প্লাইমাউথ API ব্যবহার করবেন না। ইঞ্জিন একটি সীমিত ভাষা; ব্যবহার করার আগে যে API-টি আপনি ব্যবহার করেননি তা পরীক্ষার জন্য
 লক্ষ্য সংস্করণ `plymouth` যা আপনি সমর্থন করেন।
-  used before.
+  আগে ব্যবহার করা হয়।
 - `ImageDir`/`ScriptFile`-কে `argvus.plymouth`-এ পুরোপুরি অপরিবর্তিত রাখতে হবে এবং এটি
 -এ ইনস্টল করা পথ `/usr/share/plymouth/themes/argvus`-এর সাথে মিলতে হবে।
 - প্রতিটি সম্পদ যা `arch_check_splash_payload()`-এ তালিকাভুক্ত আছে তা
@@ -307,4 +307,4 @@ Practical loop:
 - পাসফ্রেজ ডায়ালগ পরীক্ষা করুন, শুধু বুট স্প্ল্যাশ নয়: এটি সবচেয়ে
 ভাঙার সম্ভাবনা বেশি এবং ব্যবহারকারীরা সবচেয়ে বেশি লক্ষ্য করে।
 - রিফ্রেশ কলব্যাক পুরো বুটের জন্য চলে; প্রতি-ফ্রেম কাজের বরাদ্দ রাখা
-  free where possible.
+  যেখানে সম্ভব বিনামূল্যে।

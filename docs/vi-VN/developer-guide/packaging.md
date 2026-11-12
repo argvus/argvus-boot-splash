@@ -1,9 +1,9 @@
 ---
-title: Packaging
+title: Bao bì
 description: Siêu dữ liệu gói Arch, quy trình xây dựng và các mục tiêu Make.
 ---
 
-# Packaging
+# Bao bì
 
 Cách gói Arch được định nghĩa và tạo ra: hai PKGBUILD, các hàm
 chia sẻ, các hook cài đặt, quy trình xây dựng cục bộ và các mục tiêu Make.
@@ -14,19 +14,19 @@ các bản phát hành, xem [CI và các bản phát hành](/docs/argvus-boot-sp
 ## Hai PKGBUILD, một payload
 
 `packaging/arch/remote/PKGBUILD` và `packaging/arch/local/PKGBUILD` giống hệt nhau
-except for `source=`:
+ngoại trừ `source=`:
 
 | | `local` | `ci` |
 | --- | --- | --- |
-| source | `${pkgname}-${pkgver}.tar.gz` (built by `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
-| used by | developers, `make build` | GitHub Actions release |
+| nguồn | `${pkgname}-${pkgver}.tar.gz` (được xây dựng bởi `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
+| được sử dụng bởi | nhà phát triển, `make build` | Phát hành hành động GitHub |
 
 Cả hai đều gọi các hàm giống nhau từ `packaging/arch/common/functions.sh`, và
 `tools/sh/validate.sh` xác nhận siêu dữ liệu của chúng (`pkgname`, `pkgver`, `pkgrel`,
 `pkgdesc`, `arch`, `license`, `depends`, `makedepends`, `options`) là giống hệt nhau,
 vì vậy hai cái không thể lặng lẽ trôi dạt.
 
-Shared metadata:
+Siêu dữ liệu được chia sẻ:
 
 ```bash
 pkgname=argvus-boot-splash
@@ -44,7 +44,7 @@ replaces=('argvus-plymouth')
 ## Chức năng dùng chung
 
 `packaging/arch/common/functions.sh` cung cấp ba chức năng được cả
-PKGBUILDs:
+PKGBUILD:
 
 - `arch_normalize_source_tree` (`prepare()`) sử dụng — lưu trữ nhãn GitHub giải nén sang
 `<repo>-v<version>`, trong khi gói tarball cục bộ giải nén sang
@@ -61,9 +61,9 @@ có trong [danh mục tài sản](/docs/argvus-boot-splash/developer-guide/theme
 
 Lưu ý không có cuộc gọi `make install` bên trong `package()`: mọi thứ đều
 `install -Dm*`, vì vậy gói này tự chứa và thân thiện với xây dựng không cần quyền root.
-That is deliberate — an old 
+That is deliberate — an old
 
- that called 
+ that called
 
  produced
 
@@ -75,11 +75,11 @@ That is deliberate — an old
 
  (identical):
 
-- 
+-
 
- / 
+ /
 
- → 
+ →
 
 ,
 sau đó  plymouth-set-default-theme argvus  post_upgrade()  post_install()  packaging/arch/{ci,local}/argvus-boot-splash.install  libfakeroot.so  sudo  make install  `package()`  `make install`  `sudo`  `libfakeroot.so`  `packaging/arch/{ci,local}/argvus-boot-splash.install`  `post_install()`  `post_upgrade()`  `plymouth-set-default-theme argvus` `mkinitcpio -P` nếu có, nếu không thì `dracut --regenerate-all`, nếu không thì
@@ -104,26 +104,26 @@ dư thừa gói bên trong các thư mục đóng gói.
 3. Tính toán `sha256` của kho lưu trữ và chèn nó với `sed` vào một **bản sao tạm thời
 ** của PKGBUILD cục bộ (`.PKGBUILD.local.XXXXXX`, bị loại bỏ bởi một `EXIT`
 trap). Kho lưu trữ luôn giữ `sha256sums=()` trống; `SKIP` không bao giờ
-   used.
+   đã sử dụng.
 4. Xóa bất kỳ `${pkgname}-${pkgver}-*.pkg.tar.zst` tồn tại trước đó từ
 `build/dist/` để một gói cũ không bị nhầm lẫn với bản build này.
 5. Chạy `makepkg -p <generated PKGBUILD> --nodeps --noconfirm --needed
 --cleanbuild --force --check` with `BUILDDIR`/`SRCDEST` in `build/artifacts/`
-   and 
+   and
 
- in 
+ in
 
-. Extra arguments are forwarded to 
+. Extra arguments are forwarded to
 
 ;
 
  overrides the default flag set (word-split on purpose).
-6. Fails unless exactly one 
+6. Fails unless exactly one
 
- matches, then runs 
+ matches, then runs
 
  on it if
-   installed.
+   đã cài đặt.
 
 Outputs:
 
@@ -135,20 +135,20 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 
 ## Tạo mục tiêu
 
-| Target | Effect |
+| Mục tiêu | Hiệu ứng |
 | --- | --- |
 |  namcap  .pkg.tar.zst  MAKEPKG_FLAGS  makepkg  build/dist/  `PKGDEST`  `build/dist/`  `makepkg`  `MAKEPKG_FLAGS`  `.pkg.tar.zst`  `namcap` `make build` (alias `make package`) | run `tools/sh/pkgbuild_local.sh` → `build/` |
 | `make install` (alias `make install-package`) | `sudo pacman -U`gói đơn trong`build/dist/`; lỗi nếu số lượng không đúng 1 |
-| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD metadata sync + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
+| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + Đồng bộ hóa siêu dữ liệu PKGBUILD + `makepkg --printsrcinfo` mỗi PKGBUILD + `git diff --check` |
 | `make lint` (alias `make lint-shell`) | shellcheck over `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` disabled), `bash -n`, `git diff --check` |
-| `make spellcheck` | `cspell --config cspell.json .` if `cspell` is installed, otherwise skipped |
+| `make spellcheck` | `cspell --config cspell.json .` nếu `cspell` được cài đặt, nếu không thì bỏ qua |
 | `make clean` | `rm -rf build/` |
-| `make help` | target list (default goal) |
+| `make help` | danh sách mục tiêu (mục tiêu mặc định) |
 
 CI chạy `make validate` và `make build`; không có gì trong CI chạy `make install`
 (xem [các khoảng trống đã biết](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
-## Prerequisites
+## Điều kiện tiên quyết
 
 Một hệ thống dựa trên Arch với `make`, `git`, `gnupg` và nhóm `base-devel`:
 
@@ -158,6 +158,6 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 
 - `pacman-contrib` cung cấp `updpkgsums` (tái tạo các checksum PKGBUILD).
 - `shellcheck` xác thực các tập lệnh shell trong kho lưu trữ và các công cụ chia sẻ Arch
-  packaging functions.
-- Optional: `namcap` (package
+  chức năng đóng gói.
+- Tùy chọn: `namcap` (gói
 linting) và cspell (kiểm tra chính tả cục bộ). CI cài đặt tất cả chúng.

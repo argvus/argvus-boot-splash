@@ -1,9 +1,9 @@
 ---
-title: Installation
+title: التثبيت
 description: .ﺔﻣﺰﺤﻟﺍ ﻂﺑﺍﻭﺭ ﻪﺑ ﻡﻮﻘﺗ ﺎﻣﻭ ،ﺖﻴﺒﺜﺘﻟﺍ ﺕﺍﺭﺎﻴﺧ ،ﺕﺎﺒﻠﻄﺘﻤﻟﺍ
 ---
 
-# Installation
+# التثبيت
 
              .Arch ﻰﻠﻋ ﻢﺋﺎﻗ ﻡﺎﻈﻧ ﻰﻠﻋ Argvus ﻞﻴﻤﺤﺗ ﺔﺷﺎﺷ ﻰﻠﻋ ﻝﻮﺼﺤﻠﻟ ﻪﺟﺎﺘﺤﺗ ﺎﻣ ﻞﻛ
 
@@ -11,13 +11,13 @@ description: .ﺔﻣﺰﺤﻟﺍ ﻂﺑﺍﻭﺭ ﻪﺑ ﻡﻮﻘﺗ ﺎﻣﻭ �
 [                                                                          ﻊﺟﺮﻣ](/docs/argvus-boot-splash/reference/)                                  ﻰﻟﺇ ﺮﻈﻧﺍ ،ﻚﻟﺫ ﻦﻣ ًﻻ﻿ﺪﺑ ﺭﺪﺼﻤﻟﺍ ﻦﻣ ﻪﺋﺎﻨﺑ ﺓﺩﺎﻋﻹ﻿ .
 [                                                                   ﺭﻮﻄﻤﻟﺍ ﻞﻴﻟﺩ](/docs/argvus-boot-splash/developer-guide/).
 
-## Requirements
+## المتطلبات
 
 - .(ﻪﻴﻠﻋ ﺪﻤﺘﻌﺗ ﺔﻣﺰﺤﻟﺍ) `plymouth` ﻡﺪﺨﺘﺴﻳ Arch ﻰﻠﻋ ﻢﺋﺎﻗ ﻡ
 -             ﻝﺍ .**dracut** ﻭﺃ (ﺵﺭﺃ ﻲﻓ ﻲﺿﺍﺮﺘﻓﻹ﻿ﺍ) **initramfs: **mkinitcpio ﺪﻟﻮﻣ
                  .ﻚﻠﺟﺃ ﻦﻣ initramfs ءﺎﻨﺑ ﺪﻴﻌﻳﻭ ﺩﻮﺟﻮﻣ ﻮﻫ ﺎﻤﻋ ﻒﺸﻜﻟﺎﺑ ﺖّﺒﺜﻤﻟﺍ ﻡﻮﻘﻳ
 -                 ,mkinitcpio ﻊﻣ .ﻚﺑ ﺹﺎﺨﻟﺍ initramfs ﻦﻳﻮﻜﺗ ﻲﻓ Plymouth ﻦﻴﻜﻤﺗ ﺐﺠﻳ
-  make sure `plymouth` is in the `HOOKS` list of `/etc/mkinitcpio.conf`:
+  تأكد من وجود `plymouth` في قائمة `HOOKS` الخاصة بـ `/etc/mkinitcpio.conf`:
 
   ```ini
   HOOKS=(base udev autodetect modconf kms keyboard keymap consolefont plymouth)
@@ -26,7 +26,7 @@ description: .ﺔﻣﺰﺤﻟﺍ ﻂﺑﺍﻭﺭ ﻪﺑ ﻡﻮﻘﺗ ﺎﻣﻭ �
                                           .ﻮﺘﻠﻟ ﺍﺬﻫ ﺮﻴﻴﻐﺘﺑ ﺖﻤﻗ ﺍﺫﺇ ﻞﻴﻐﺸﺘﻟﺍ ﺪﻋﺃ
 
 -                            ﻲﻓ ﻂﻘﻓ ﻞﻤﻌﻳ ﻉﻮﺿﻮﻤﻟﺍ ؛ﺔﻳﺩﺎﻋ ﺔﻴﻣﻮﺳﺭ ﺔﺴﻠﺠﻟ ﺏﻮﻠﻄﻣ ءﻲﺷ ﻻ﻿
-  boot path.
+  مسار التمهيد.
 
 ##                                        (ﻪﺑ ﻰﺻﻮﻣ) ﻲﻤﺳﺮﻟﺍ ﻡﺰﺤﻟﺍ ﻉﺩﻮﺘﺴﻣ :1 ﺭﺎﻴﺨﻟﺍ
 
@@ -92,16 +92,16 @@ sudo update-initramfs -u        # Debian/Ubuntu
 
                             :ﺎًﻴﺋﺎﻘﻠﺗ ﺔﻣﺰﺤﻟﺍ ﻒﺋﺎﻇﻭ ﻞﻤﻌﺗ ،ﺔﻴﻗﺮﺘﻟﺍ ﻭﺃ ﺖﻴﺒﺜﺘﻟﺍ ﺪﻌﺑ
 
-1. 
+1.
 
- — writes 
+ — writes
 
  into
 
 .
-2. 
+2.
 
- if mkinitcpio exists, otherwise 
+ if mkinitcpio exists, otherwise
 
 .
 
@@ -117,6 +117,6 @@ sudo update-initramfs -u        # Debian/Ubuntu
 ##                                                                ﺔﻴﻟﺎﺘﻟﺍ ﺕﺍﻮﻄﺨﻟﺍ
 
 - [                                                                       ﻡﺍﺪﺨﺘﺳﺍ](/docs/argvus-boot-splash/usage/)                     ﻞﻳﺪﺒﺘﻟﺍ ،ﻞﻴﻐﺸﺘﻟﺍ ﺓﺩﺎﻋﺇ ﻥﻭﺪﺑ ﺔﻨﻳﺎﻌﻤﻟﺍ ،ﺖﻴﺒﺜﺘﻟﺍ ﻦﻣ ﻖﻘﺤﺘﻟﺍ —
-  themes.
+المواضيع.
 - [UKI ﻭ systemd-boot splash](/docs/argvus-boot-splash/uki-splash/) — ﻲﻓ ﺔﻴﻄﻘﻨﻟﺍ ﺓﺭﻮﺼﻟﺍ ﻡﺪﺨﺘﺳﺍ UKI.
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/) for the installed and user paths.
+- [استكشاف الأخطاء وإصلاحها](/docs/argvus-boot-splash/troubleshooting/) للمسارات المثبتة والمستخدمين.

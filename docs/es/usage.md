@@ -6,7 +6,7 @@ description: Verifica la instalación, previsualiza sin reiniciar y cambia de te
 # Uso
 
 Cómo verificar el tema, previsualizarlo sin reiniciar y cambiar a otro.
-Para la instalación, consulte [installation](/docs/argvus-boot-splash/installation/)].
+Para la instalación, consulte [installation](/docs/argvus-boot-splash/installation/).
 
 ## Verificación de la instalación
 

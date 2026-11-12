@@ -1,18 +1,18 @@
 ---
-title: Reference
+title: مرجع
 description:                             .ﻥﺍﻮﻟﻷ﻿ﺍ ﻢﻴﻗﻭ ﺞﻣﺎﻧﺮﺒﻟﺍ ﺔﻣﺰﺣ ﺕﺎﻧﺎﻴﺑﻭ ﺔﺘﺒﺜﻤﻟﺍ ﺕﺎﻔﻠﻤﻟﺍ
 ---
 
-# Reference
+# مرجع
 
                            .ﺎﻬﻣﺪﺨﺘﺴﻳ ﻲﺘﻟﺍ ﻢﻴﻘﻟﺍﻭ ﺔﻣﺰﺤﻟﺍ ﻪﺘﺒﺜﻳ ﺎﻤﻟ ﻲﻨﻔﻟﺍ ﻊﺟﺮﻤﻟﺍ
 
 ##                                                                   ﻪﻴﻠﻋ ﻞﺼﺤﺗ ﺎﻣ
 
-| Component | Description |
+| المكون | الوصف |
 | --- | --- |
                      | ﺔﻣﻼ﻿ﻌﻟﺍ ﺔﻤﻠﻛ ﻕﻮﻓ ﺔﻣﻮﺳﺮﻣ ،ﻒﺼﺘﻨﻤﻟﺍ ﻲﻓ ﺔﻣﻼ﻿ﻋ | ﺱﻮﻔﻏﺭﺃ ﺭﺎﻌﺷ |
-| Wordmark | `ARGVUS` text below the logo |
+| علامة وردية | نص `ARGVUS` أسفل الشعار |
                     | ﺙﻮﻤﻴﻠﺑ ﻉﻼ﻿ﻗﺇ ﻡﺪﻘﺗ ﻂﻳﺮﺷ ﺽﺮﻋ ﺲﻜﻌﻳ ﻊﻴﻓﺭ ﻂﻳﺮﺷ | ﻡﺪﻘﺘﻟﺍ ﻂﻳﺮﺷ |
                        ) ﻲﻔﺨﻣ ﻝﺎﺧﺩﺇ ﻞﻘﺣ ﻊﻣ LUKS ﻪﺟﻮﻣ | ﺭﻭﺮﻤﻟﺍ ﺔﻤﻠﻛ ﺭﺍﻮﺣ ﻊﺑﺮﻣ |`•` bullets) |
 | ﺙﻮﻤﻳﻼ﻿ﺑ ﺃﺪﺒﻳ ﺎﻣﺪﻨﻋ ﺓﺪﺣﺍﻭ ﺔﻴﻧﺎﺛ ﻲﻟﺍﻮﺣ ﻲﻓ ﺪﻬﺸﻤﻠﻟ ﻲﺷﻼ﻿ﺘﻟﺍ ﺮﻴﺛﺄﺗ ﺮﻬﻈﻳ | ﻞﺧﺍﺪﻠﻟ ﻲﺷﻼ
@@ -25,41 +25,41 @@ description:                             .ﻥﺍﻮﻟﻷ﻿ﺍ ﻢﻴﻗﻭ ﺞ
 
                                                         :`/usr/share/plymouth/themes/argvus/` ﺖﺤﺗ
 
-| File | Size | Purpose |
+| ملف | الحجم | الغرض |
 | --- | --- | --- |
-| `argvus.plymouth` | — | theme descriptor (name, description, module) |
-| `argvus.script` | — | the theme script (Plymouth's own scripting language) |
-| `argvus-logo.png` | 256x256 | logo, RGBA |
-| `argvus-text.png` | 400x53 | wordmark, RGBA |
-| `progress-bar.png` | 400x4 | filled part of the progress bar |
-| `progress-bar-track.png` | 400x4 | unfilled track |
-| `entry-box.png` | 400x48 | password entry field |
-| `entry-line.png` | 300x2 | password field rule/underline |
-| `bullet.png` | 12x12 | masked character |
-| `logo-glow.png` | 260x300 | logo glow artwork |
-| `argvus-uki-splash.bmp` | 400x400, 32-bit | UKI/systemd-boot splash bitmap |
+| `argvus.plymouth` | — | واصف الموضوع (الاسم والوصف والوحدة النمطية) |
+| `argvus.script` | — | البرنامج النصي للموضوع (لغة البرمجة النصية الخاصة بـ Plymouth) |
+| `argvus-logo.png` | 256x256 | شعار RGBA |
+| `argvus-text.png` | 400x53 | العلامة النصية، RGBA |
+| `progress-bar.png` | 400x4 | الجزء المملوء من شريط التقدم |
+| `progress-bar-track.png` | 400x4 | المسار الشاغر |
+| `entry-box.png` | 400x48 | حقل إدخال كلمة المرور |
+| `entry-line.png` | 300x2 | قاعدة حقل كلمة المرور/تسطير |
+| `bullet.png` | 12x12 | شخصية ملثمة |
+| `logo-glow.png` | 260x300 | عمل فني متوهج بالشعار |
+| `argvus-uki-splash.bmp` | 400 × 400، 32 بت | UKI/systemd-التمهيد الصورة النقطية |
 
                                      .`/usr/share/licenses/argvus-boot-splash/LICENSE` ﻲﻓ ﺺﻴﺧﺮﺘﻟﺍ ﻰﻟﺇ ﺔﻓﺎﺿﻹ﻿ﺎﺑ
 
 ##                                                          ﺔﻣﺰﺤﻠﻟ ﻒﻳﺮﻌﺘﻟﺍ ﺕﺎﻧﺎﻴﺑ
 
-| Field | Value |
+| المجال | القيمة |
 | --- | --- |
-| Name | `argvus-boot-splash` |
-| Architecture | `any` |
-| Depends | `plymouth` |
-| Optional depends | `mkinitcpio`, `dracut` |
-| Conflicts / replaces | `argvus-plymouth` |
-| License | GPL-3.0-only |
+| الاسم | `argvus-boot-splash` |
+| العمارة | `any` |
+| يعتمد | `plymouth` |
+| اختياري يعتمد | `mkinitcpio`، `dracut` |
+| الصراعات / يستبدل | `argvus-plymouth` |
+| الترخيص | GPL-3.0 فقط |
 
-## Colors
+## الألوان
 
-| Element | Color |
+| العنصر | اللون |
 | --- | --- |
-| Background | `#111316` |
-| Accent (logo, wordmark, progress fill) | `#3590BD` |
-| Progress track | `#262933` |
-| Password prompt text | light gray-blue (`#B8C4CE`) |
+| الخلفية | `#111316` |
+| اللكنة (الشعار، العلامة النصية، تعبئة التقدم) | `#3590BD` |
+| مسار التقدم | `#262933` |
+| نص المطالبة بكلمة المرور | رمادي فاتح-أزرق (`#B8C4CE`) |
 
 ﻻ﻿ ﻚﻟﺬﻟ ،ﺔﻗﺩ ﻱﺃ ﺪﻨﻋ ﺔﺒﻠﺻ ﺔﻨﻛﺍﺩ ﺔﻴﻔﻠﺧ ﺔﻤﺴﻟﺍ ﻡﺪﺨﺘﺴﻳ
                                      .ﺔﻨﻛﺍﺪﻟﺍﻭ ﺔﺤﺗﺎﻔﻟﺍ ﺦﺴُﻨﻟﺍ ﻦﻴﺑ ﺎًﻴﺋﺎﻘﻠﺗ ﻝﻮﺤﺘﻳ
@@ -67,7 +67,7 @@ description:                             .ﻥﺍﻮﻟﻷ﻿ﺍ ﻢﻴﻗﻭ ﺞ
 ##                                                            ﺓﺪﻋﺎﺴﻤﻟﺍ ﻰﻠﻋ ﻝﻮﺼﺤﻟﺍ
 
 - .ﻉﻭﺮﺸﻤﻟﺍ ﺕﻼ﻿ﻜﺸﻣ ﻊﺒﺘﺘﻣ ﻲﻓ ﺕﺍﺰﻴﻤﻟﺍ ﺐﻠﻃﻭ ءﺎﻄﺧﻷ﻿ﺍ ﻦﻋ ﻍﻼ﻿ﺑﻹ﻿ﺍ
-  issue for vulnerabilities.
+قضية لنقاط الضعف.
 
 ##                                                                ﺔﻴﻟﺎﺘﻟﺍ ﺕﺍﻮﻄﺨﻟﺍ
 

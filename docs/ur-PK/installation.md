@@ -1,9 +1,9 @@
 ---
-title: Installation
+title: تنصیب
 description:                    ۔ﮟﯿﮨ ﮯﺗﺮﮐ ﺎﯿﮐ ﺲﮑﮨ ﺞﯿﮑﯿﭘ ﺭﻭﺍ ،ﺕﺍﺭﺎﯿﺘﺧﺍ ﮯﮐ ﻦﺸﯿﻟﺎﭩﺴﻧﺍ ،ﺕﺎﯾﺭﻭﺮﺿ
 ---
 
-# Installation
+# تنصیب
 
 ۔ﮯﯿﮨﺎﭼ ﮯﯿﻟ ﮯﮐ ﮯﻧﺮﮐ ﻞﺻﺎﺣ ﺮﭘ ﻢﭩﺴﺳ ﮉﺴﯿﺑ ﭺﺭﺁ ﻮﮐ ﺵﻼ﻿ﭙﺳﺍ ﭦﻮﺑ ﺱﻭﻮﮔﺭﺁ ﻮﮐ ﭖﺁ ﻮﺟ ﮫﭽﮐ ﺐﺳ ﮦ
 
@@ -11,11 +11,11 @@ description:                    ۔ﮟﯿﮨ ﮯﺗﺮﮐ ﺎﯿﮐ ﺲﮑﮨ ﺞ
 [                                                                         ﮧﻟﺍﻮﺣ](/docs/argvus-boot-splash/reference/)                                     ﮟﯿﮭﮑﯾﺩ ،ﮯﯿﻟ ﮯﮐ ﮯﻧﺎﻨﺑ ﮦﺭﺎﺑﻭﺩ ﮯﺳ ﺬﺧﺎﻣ ﮯﺳﺍ .
 [                                                                  ﮉﯿﺋﺎﮔ ﺮﭙﻠﯾﻭﮈ](/docs/argvus-boot-splash/developer-guide/).
 
-## Requirements
+## تقاضے
 
-- ۔(ﮯﮨ ﺮﺼﺤﻨﻣ ﺮﭘ ﺱﺍ ﺞﯿﮑﯿﭘ) ﮯﮨ ﺎﺗﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ `plymouth` ﻮﺟ ﻡﺎﻈﻧ ﯽﻨﺒﻣ ﺮﭘ ﭺﺭﺁ 
+- ۔(ﮯﮨ ﺮﺼﺤﻨﻣ ﺮﭘ ﺱﺍ ﺞﯿﮑﯿﭘ) ﮯﮨ ﺎﺗﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ `plymouth` ﻮﺟ ﻡﺎﻈﻧ ﯽﻨﺒﻣ ﺮﭘ ﭺﺭﺁ
 -            ۔**dracut** ﺎﯾ (ﭧﻟﺎﻔﯾﮈ ﺎﮐ ﭺﺭﺁ) **mkinitcpio** :ﺮﭩﯾﺮﻨﺟ initramfs ﮏﯾﺍ
-۔ﮯﮨ ﺎﺘﯾﺩ ﺮﮐ ﺭﺎﯿﺗ ﮦﺭﺎﺑﻭﺩ initramfs ﮯﯿﻟ ﮯﮐ ﭖﺁ ﺭﻭﺍ ﮯﮨ ﺎﺘﯿﻟ ﺮﮐ ﻡﻮﻠﻌﻣ ﮯﺳﺍ ﻮﮨ ﺩﻮﺟﻮﻣ 
+۔ﮯﮨ ﺎﺘﯾﺩ ﺮﮐ ﺭﺎﯿﺗ ﮦﺭﺎﺑﻭﺩ initramfs ﮯﯿﻟ ﮯﮐ ﭖﺁ ﺭﻭﺍ ﮯﮨ ﺎﺘﯿﻟ ﺮﮐ ﻡﻮﻠﻌﻣ ﮯﺳﺍ ﻮﮨ ﺩﻮﺟﻮﻣ
 -  ،ﮫﺗﺎﺳ ﮯﮐ mkinitcpio ۔ﮯﯿﮨﺎﭼ ﺎﻧﻮﮨ ﻝﺎﻌﻓ ﻮﮐ Plymouth ﮟﯿﻣ ﺐﯿﺗﺮﺗ ﯽﮐ initramfs ﯽﮐ ﭖﺁ
 :ﮯﮨ ﮟﯿﻣ ﺖﺳﺮﮩﻓ /etc/mkinitcpio.conf ﯽﮐ `plymouth`، `HOOKS` ﮧﮐ ﮟﯾﺮ
 
@@ -26,7 +26,7 @@ description:                    ۔ﮟﯿﮨ ﮯﺗﺮﮐ ﺎﯿﮐ ﺲﮑﮨ ﺞ
                            ۔ﮟﯾﺮﮐ ﻉﻭﺮﺷ ﮦﺭﺎﺑﻭﺩ ﻮﺗ ﮯﮨ ﺎﯿﮐ ﻞﯾﺪﺒﺗ ﮧﯾ ﯽﮭﺑﺍ ﮯﻧ ﭖﺁ ﺮﮔﺍ
 
 -   ﮯﮨ ﯽﺘﻠﭼ ﮟﯿﻣ ﻑﺮﺻ ﻢﯿﮭﺗ ؛ﮯﮨ ﮟﯿﮩﻧ ﯼﺭﻭﺮﺿ ﯽﮭﺑ ﮫﭽﮐ ﮯﯿﻟ ﮯﮐ ﻦﺸﯿﺳ ﻞﮑﯿﻓﺍﺮﮔ ﮯﮐ ﻝﻮﻤﻌﻣ ﮏﯾﺍ
-  boot path.
+  بوٹ کا راستہ.
 
 ## (ﮦﺩﺮﮐ ﺰﯾﻮﺠﺗ) ﯼﺮﭩﯾﺯﻮﭙﯾﺭ ﺞﯿﮑﯿﭘ ﯼﺭﺎﮐﺮﺳ :1 ﻦﺸﭘﺁ
 
@@ -86,7 +86,7 @@ sudo update-initramfs -u        # Debian/Ubuntu
 ```
 
 ﮯﮨ ﺎﺘﮑﺳ ﺎﺟ ﺎﯿﮐ ﯽﮭﺑ ﻝﺎﻌﻓ ﮫﺗﺎﺳ ﮯﮐ `.sig` ﮟﯿﻣ `/etc/default/grub` ﻮﮐ ﮫﺗﻮ
- `GRUB_CMDLINE_LINUX` `splash` ﺭﻭﺍ `quiet` ۔ﮯﮨ ﺎﺘﯾﺩ ﺱﺎﺴﺣﺍ ﺎﮐ ﭦﻮﺑ ﻢﮐ ﮯﺳ ﻢﮐ ﯽﮑﯿﺳﻼ﻿ﮐ 
+ `GRUB_CMDLINE_LINUX` `splash` ﺭﻭﺍ `quiet` ۔ﮯﮨ ﺎﺘﯾﺩ ﺱﺎﺴﺣﺍ ﺎﮐ ﭦﻮﺑ ﻢﮐ ﮯﺳ ﻢﮐ ﯽﮑﯿﺳﻼ﻿ﮐ
 
 ##                                                            ﮯﮨ ﺎﺗﺮﮐ ﺎﯿﮐ ﺮﻟﺎﭩﺴﻧﺍ
 
@@ -97,7 +97,7 @@ sudo update-initramfs -u        # Debian/Ubuntu
 2.          ۔dracut --regenerate-all ﮧﻧﺭﻭ ،`mkinitcpio -P` `dracut --regenerate-all`  ﻮﺗ ﮯﮨ ﺩﻮﺟﻮﻣ mkinitcpio ﺮﮔﺍ
 
 ﮯﮨ ﯽﻣﺯﻻ﻿ ﻮﮐ ﭖﺁ ﺭﻭﺍ ﮯﮨ ﺎﺗﺎﮭﮐﺩ ﮓﻨﻧﺭﺍﻭ ﮏﯾﺍ ﺮﻟﺎﭩﺴﻧﺍ ﻮﺗ ،ﺎﺘﻠﻣ ﮟﯿﮩﻧ ﺮﭩﯾﺮﻨﺟ ﯽﮭﺑ ﯽﺋﻮﮐ ﺮ
-ﮯﮨ ﯽﺗﻮﮨ ﺮﮨﺎﻇ ﺪﻌﺑ ﮯﮐ ﭦﻮﺑ ﻑﺮﺻ ﯽﻠﯾﺪﺒﺗ ﯽﮐ ﻢﯿﮭﺗ ۔ﮟﯾﺮﮐ ﺮﯿﻤﻌﺗ ﮦﺭﺎﺑﻭﺩ ﻮﮐ initramfs ﭖﺁ 
+ﮯﮨ ﯽﺗﻮﮨ ﺮﮨﺎﻇ ﺪﻌﺑ ﮯﮐ ﭦﻮﺑ ﻑﺮﺻ ﯽﻠﯾﺪﺒﺗ ﯽﮐ ﻢﯿﮭﺗ ۔ﮟﯾﺮﮐ ﺮﯿﻤﻌﺗ ﮦﺭﺎﺑﻭﺩ ﻮﮐ initramfs ﭖﺁ
 initramfs ﮯﮨ ﻢﮨﺍ ﮦﺩﺎﯾﺯ ﮯﺳ ﺐﺳ ﺎﻧﺮﮐ ﻉﻭﺮﺷ ﮦﺭﺎﺑﻭﺩ ﺮﯿﻐﺑ ﮯﮐ ﮯﻠﺣﺮﻣ ﺱﺍ — ﮯﮨ ﺎﮨﺭ ﺎﺟ ﺎﯿﮐ
                                       ۔'ﺍﻮﮨ ﮟﯿﮩﻧ ﻞﯾﺪﺒﺗ ﺶﯿﻠﭙﺳ' ﮧﮐ ﮯﮨ ﮧﯾ ﮧﺟﻭ ﻡﺎﻋ
 
@@ -108,6 +108,6 @@ initramfs ﮟﯿﮭﮑﯾﺩ ۔ﮯﮨ ﯽﺌﮔ ﯼﺩ ﮌﻮﮭﭼ ﺮﭘ ﭖ�
 ##                                                                   ﺕﺎﻣﺍﺪﻗﺍ ﮯﻠﮔﺍ
 
 - [                                                                       ﻝﺎﻤﻌﺘﺳﺍ](/docs/argvus-boot-splash/usage/)            ﮟﯾﺮﮐ ﭻﺋﻮﺳ ،ﮟﯾﺮﮐ ﮦﺭﺎﻈﻧ ﺶﯿﭘ ﮯﮐ ﭦﻮﺒﯾﺭ ﺮﯿﻐﺑ ،ﮟﯾﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ ﻦﺸﯿﻟﺎﭩﺴﻧﺍ —
-  themes.
+  تھیمز
 - [UKI ﺭﻭﺍ systemd-boot ﺵﻼ﻿ﭙﺳ](/docs/argvus-boot-splash/uki-splash/) — UKI ۔ﮟﯾﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ ﭗﯿﻣ ﭧﺑ ﮟﯿﻣ
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/) for the installed and user paths.
+- نصب شدہ اور صارف کے راستوں کے لیے [Tubleshooting](/docs/argvus-boot-splash/troubleshooting/)۔

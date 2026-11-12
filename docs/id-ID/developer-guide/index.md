@@ -1,5 +1,5 @@
 ---
-title: Developer Guide
+title: Panduan Pengembang
 description: Panduan arsitektur dan pengembangan untuk kontributor ARGVUS.
 ---
 
@@ -7,11 +7,11 @@ description: Panduan arsitektur dan pengembangan untuk kontributor ARGVUS.
 
 Dokumentasi teknis untuk repositori `argvus-boot-splash`: bagaimana tema Plymouth
 disusun, bagaimana paket Arch dibuat, dan bagaimana rilis
-signed and published.
+ditandatangani dan diterbitkan.
 
 Tidak ada langkah kompilasi di sini — tema ini adalah data (deskriptor `.plymouth`,
 sebuah `.script`, dan gambar) ditambah resep paket Arch. "Membangun" berarti menghasilkan
-a reproducible package:
+paket yang dapat direproduksi:
 
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
@@ -26,11 +26,11 @@ ke `.cspell/custom-dictionary-workspace.txt` atau tugas pemeriksa ejaan akan gag
 Jika Anda hanya ingin *menggunakan* tema, bacalah [panduan pengguna](/docs/argvus-boot-splash/). Untuk
 rekan berorientasi proses dari file ini (git flow, rahasia, rilis
 proses) lihat [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) dan
-[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
+[KONTRIBUSI.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 
-## Guides
+## Panduan
 
-| Guide | Contents |
+| Panduan | Isi |
 | --- | --- |
 | [Arsitektur tema](/docs/argvus-boot-splash/developer-guide/theme/)| Deskriptor, model rendering, inventaris aset, walkthrough skrip, konstanta tata letak, token desain, bitmap UKI, cara memodifikasi tema |
 | [Kemasan](/docs/argvus-boot-splash/developer-guide/packaging/)| Dua PKGBUILD, dibagikan`functions.sh`, pasang hooks, pipeline build lokal, target Make, prasyarat |
@@ -39,16 +39,16 @@ proses) lihat [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob
 
 ## Referensi cepat
 
-| Path | What it is |
+| Jalur | Apa itu |
 | --- | --- |
-| `src/usr/share/plymouth/themes/argvus/` | theme payload installed under `/usr` |
-| `packaging/arch/{ci,local}/PKGBUILD` | release and local package recipes |
-| `packaging/arch/common/functions.sh` | shared `prepare`/`check`/`package` |
-| `tools/sh/pkgbuild_local.sh` | deterministic tarball + `makepkg` driver |
-| `tools/sh/validate.sh` | required validation gate |
-| `.github/workflows/` | `ci.yml` (validate, build, spellcheck), `release.yml` (tags `v*`) |
+| `src/usr/share/plymouth/themes/argvus/` | payload tema diinstal di bawah `/usr` |
+| `packaging/arch/{ci,local}/PKGBUILD` | rilis dan resep paket lokal |
+| `packaging/arch/common/functions.sh` | dibagikan `prepare`/`check`/`package` |
+| `tools/sh/pkgbuild_local.sh` | tarball deterministik + driver `makepkg` |
+| `tools/sh/validate.sh` | gerbang validasi yang diperlukan |
+| `.github/workflows/` | `ci.yml` (validasi, build, periksa ejaan), `release.yml` (tag `v*`) |
 
-## Elsewhere
+## Di tempat lain
 
 - Root repositori: [README.md](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)
 - Dokumen untuk pengguna: [panduan pengguna](/docs/argvus-boot-splash/)

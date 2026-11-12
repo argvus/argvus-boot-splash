@@ -1,5 +1,5 @@
 ---
-title: Theme Architecture
+title: Tema Mimarisi
 description: Plymouth açıklayıcısının, varlıklarının ve betiğinin nasıl bir araya getirildiği.
 ---
 
@@ -12,7 +12,7 @@ Paketleme ve sürümler için bkz. [packaging](/docs/argvus-boot-splash/develope
 [CI ve sürümler](/docs/argvus-boot-splash/developer-guide/ci-releases/). Kullanım için bkz.
 [kullanıcı kılavuzu](/docs/argvus-boot-splash/).
 
-## Descriptor
+## Tanımlayıcı
 
 Plymouth temaları, Plymouth'un betiği tarafından yorumlanan bildirgesel tanımlayıcılardır
 motor. İki parça vardır:
@@ -30,7 +30,7 @@ ImageDir=/usr/share/plymouth/themes/argvus
 ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 ```
 
-Notes:
+Notlar:
 
 - `ModuleName=script` Plymouth'in yerleşik komut dosyası yorumlayıcısını seçer.
 derlenmiş bir modül yoktur; `ImageDir` ve `ScriptFile` **mutlak yollar** olmalıdır,
@@ -62,16 +62,16 @@ temanın tek zamanlı animasyonu (fade-in) buna bağlıdır.
 
 Tüm varlıklar `src/usr/share/plymouth/themes/argvus/` içinde bulunur.
 
-| File | Size | Format | Role | Used by `argvus.script` |
+| Dosya | Boyut | Biçim | Rol | `argvus.script` tarafından kullanılır |
 | --- | --- | --- | --- | --- |
-| `argvus.plymouth` | — | INI | theme descriptor | loaded by `plymouthd` |
-| `argvus.script` | — | Plymouth script | theme logic | yes |
-| `argvus-logo.png` | 256x256 | RGBA 8-bit | main logo | yes (`logo.base_scale = 0.72`) |
-| `argvus-text.png` | 400x53 | RGBA 8-bit | `ARGVUS` wordmark | yes (`text.scale = 0.80`) |
-| `progress-bar.png` | 400x4 | 1-bit palette | filled bar | yes |
-| `progress-bar-track.png` | 400x4 | 1-bit palette | unfilled track | yes |
-| `entry-box.png` | 400x48 | RGB 16-bit | password entry field | yes |
-| `bullet.png` | 12x12 | 4-bit palette | one masked character | yes |
+| `argvus.plymouth` | — | INI | tema tanımlayıcı | `plymouthd` tarafından yüklendi |
+| `argvus.script` | — | Plymouth senaryosu | tema mantığı | evet |
+| `argvus-logo.png` | 256x256 | RGBA 8 bit | ana logo | evet (`logo.base_scale = 0.72`) |
+| `argvus-text.png` | 400x53 | RGBA 8 bit | `ARGVUS` marka işareti | evet (`text.scale = 0.80`) |
+| `progress-bar.png` | 400x4 | 1 bitlik palet | dolu çubuk | evet |
+| `progress-bar-track.png` | 400x4 | 1 bitlik palet | doldurulmamış parça | evet |
+| `entry-box.png` | 400x48 | RGB 16 bit | şifre giriş alanı | evet |
+| `bullet.png` | 12x12 | 4 bitlik palet | bir maskeli karakter | evet |
 | `entry-line.png`| 300x2 | 1-bit palet | giriş kuralı/alt çizgi | hayır (bkz [bilinen boşluklar](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `logo-glow.png`| 260x300 | 8-bit palet | logo parıltı tasarımı | hayır (bak)[bilinen boşluklar](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `argvus-uki-splash.bmp` | 400x400 | BMP 32-bit | UKI / systemd-boot açılış ekranı | hayır (önyükleyici tarafından tüketiliyor) |
@@ -89,7 +89,7 @@ logotype varlığı yeniden dışa aktarılırsa bile uyumlu kalır.
 
 `src/usr/share/plymouth/themes/argvus/argvus.script`, yukarıdan aşağıya.
 
-### 1. Background
+### 1. Arka Plan
 
 ```js
 Window.SetBackgroundTopColor(0.0667, 0.0745, 0.0863);
@@ -116,16 +116,16 @@ logo.image = logo.frame[logo.base_width];
 her kare için yeni bir resim tahsis edin; logo bir kez ölçeklenir ve hedef  tarafından önbelleğe alınır
 sadece yeni bir giriş gerektirecek şekilde genişlik.
 
-The wordmark follows the same idea at 
+The wordmark follows the same idea at
 
 , but it is scaled once
-inline. Progress track and bar are then scaled to 
+inline. Progress track and bar are then scaled to
 
  —
 yani çubuk her zaman kelime işaretinin genişliğiyle eşleşir, kelime işaretinin gerçek genişliği ne olursa olsun
-pixel size is.
+piksel boyutudur.
 
-### 3. Layout
+### 3. Düzen
 
 Tüm öğeler pencerenin yatay ekseninde ortalanmıştır:
 
@@ -144,15 +144,15 @@ previous element (
 , …), which means the
 bileşim çözünürlük ile bir birim olarak ölçeklenir.
 
-Z-order used here:
+Burada kullanılan Z sırası:
 
-| Z | Sprite |
+| Z | Peri |
 | --- | --- |
-| 100 | logo, wordmark, progress track |
-| 101 | progress bar (above the track) |
-| 200 | password entry field |
-| 201 | password prompt text |
-| 202 | password bullets |
+| 100 | logo, marka işareti, ilerleme takibi |
+| 101 | ilerleme çubuğu (parçanın üstünde) |
+| 200 | şifre giriş alanı |
+| 201 | şifre istemi metni |
+| 202 | şifre madde işaretleri |
 
 ### 4. Başlangıç ilerlemesi
 
@@ -169,13 +169,13 @@ fun progress_callback(duration, progress)
 }
 ```
 
-Registered with 
+Registered with
 
 . The clamp
 matters: sıfır genişlikte bir görüntü bazı Plymouth sürümlerinde geçersizdir, bu yüzden çubuk
 hiçbir zaman tamamen kaybolmaz ve ilerleme asla yol genişliğini aşamaz.
 Sprite konumu sabittir; yalnızca görüntü genişliği değişir — dolgu veya kesme yok
-operation is used.
+işlemi kullanılır.
 
 ### 5. Şifre diyaloğu
 
@@ -189,7 +189,7 @@ parça ve çubuk kalır.
 3. Giriş alanını istemin altına konumlandırır: `password.entry.y =
 password.prompt.y + password.prompt.image.GetHeight() + 14`. Yükleme sırasında
 `password.entry.y`, `0` ile birlikte gerçek konumun
-   prompt.
+   çabuk.
 4. için beklediği bir yorumdur. Madde işaretlerini oluştur veya yeniden kullan döngüsü ile çizer:
 
    ```js
@@ -241,40 +241,40 @@ solma tamamlanır, `fade.opacity == 1` ve logo tekrar `logo.opacity` gösterir.
 Bu temanın daha önceki revizyonları da darbe/oluşum animasyonlarına sahipti; onlar
 `0.2.0` içinde kaldırıldı ("iş: nabız efektlerini kaldır"). Kare başına tekrar eklemeyin
 ilerleme çubuğunun animasyonu — çubuk, sadık bir temsil olarak kalmalıdır
-boot progress.
+önyükleme ilerlemesi.
 
 ## Yerleşim sabitleri
 
 Kompozisyonu ayarlamak için tek doğruluk kaynağı:
 
-| Constant | Value | Meaning |
+| Sabit | Değer | Anlamı |
 | --- | --- | --- |
-| `logo.base_scale` | `0.72` | logo scale vs. its native 256x256 |
+| `logo.base_scale` | `0.72` | logo ölçeği ve yerel 256x256 |
 | `logo.y` offset | `-35` | ortalanmış bloğu ekranın ortasının üstüne kaldırır |
-| `text.scale` | `0.80` | wordmark scale vs. its native 400x53 |
-| `text.y` gap | `+16` | logo bottom → wordmark top |
-| `progress_track.y` gap | `+28` | wordmark bottom → track top |
-| `password.prompt.y` gap | `+24` | track bottom → prompt text top |
-| `password.entry.y` gap | `+14` | prompt bottom → entry field top |
-| bullet x offset | `+16` | entry left → first bullet |
-| `logo.opacity` (dialog) | `0.15` | splash dimming while a passphrase is requested |
-| prompt color | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
-| fade | 20 frames @ 20 FPS | ~1 s fade-in |
+| `text.scale` | `0.80` | kelime işareti ölçeği ile yerel 400x53 karşılaştırması |
+| `text.y` boşluğu | `+16` | logo alt → kelime işareti üst |
+| `progress_track.y` boşluğu | `+28` | kelime işareti alt → parça üst |
+| `password.prompt.y` boşluğu | `+24` | parça alt → bilgi istemi metni üst |
+| `password.entry.y` boşluğu | `+14` | bilgi istemi alt → giriş alanı üst |
+| madde işareti x uzaklığı | `+16` | giriş sola → ilk madde işareti |
+| `logo.opacity` (iletişim kutusu) | `0.15` | parola istendiğinde sıçrama karartma |
+| istem rengi | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
+| solması | 20 kare @ 20 FPS | ~1 sn. yavaş yavaş belirme |
 
 ## Tasarım tokenları
 
-| Token | Hex | Where it lives |
+| Jeton | Altıgen | Nerede yaşıyor |
 | --- | --- | --- |
-| Background | `#111316` | script (`0.0667, 0.0745, 0.0863`) |
-| Accent | `#3590BD` | logo / wordmark / progress fill pixels |
-| Progress track | `#262933` | `progress-bar-track.png` |
-| Prompt text | `#B8C4CE` | script (`Image.Text` call) |
+| Arka Plan | `#111316` | komut dosyası (`0.0667, 0.0745, 0.0863`) |
+| Aksan | `#3590BD` | logo / kelime işareti / ilerleme dolgu pikselleri |
+| İlerleme takibi | `#262933` | `progress-bar-track.png` |
+| Bilgi istemi metni | `#B8C4CE` | komut dosyası (`Image.Text` çağrısı) |
 
 Vurgu ve parça renkleri PNG varlıklarına gömülüdür,
 betiğinde ifade edilmemiştir, bu nedenle yeniden renklendirme varlıkların yeniden dışa aktarılmasını (veya paletin düzenlenmesini) gerektirir.
 Tema yalnızca koyu renkli ve açık varyantı yoktur.
 
-## UKI bitmap format
+## UKI bit eşlem biçimi
 
 `argvus-uki-splash.bmp`, 400x400, 32-bit sıkıştırılmamış Windows BMP
 (`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`) formatındadır. Bu
@@ -288,7 +288,7 @@ erken önyüklemede hafıza tüketir.
 
 ## Temayı değiştirme
 
-Practical loop:
+Pratik döngü:
 
 1. Düzenle `src/usr/share/plymouth/themes/argvus/argvus.script` (ve/veya PNG dosyaları).
 2. Canlı Plymouth'unuza yükleyin veya kaynak ağacından önizleyin:
@@ -306,7 +306,7 @@ Temayı çalışır durumda tutan kurallar:
 
 - Hiçbir zaman Plymouth dışı API'leri tanıtmayın. Motor sınırlı bir lehçedir;
 kullanmadığınız bir API'yi kullanmadan önce desteklediğiniz `plymouth` hedef sürümü kontrol edin.
-  used before.
+  daha önce kullanılmış.
 - `ImageDir`/`ScriptFile`, `argvus.plymouth` içinde mutlak olarak kalmalı ve
 kurulu yol olan `/usr/share/plymouth/themes/argvus` ile eşleşmelidir.
 - `arch_check_splash_payload()` içinde listelenen her varlığı,
@@ -316,4 +316,4 @@ kurulu yol olan `/usr/share/plymouth/themes/argvus` ile eşleşmelidir.
 - Parola iletişim kutusunu test edin, sadece önyükleme ekranını değil: bu, en
 olası olarak bozulacak durumdur ve kullanıcıların en çok fark ettiği durumdur.
 - Yenileme geri çağrısı tüm açılış için çalışır; kare başına iş tahsisini sürdür
-  free where possible.
+  mümkün olduğunda ücretsiz.

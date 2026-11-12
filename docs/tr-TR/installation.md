@@ -1,9 +1,9 @@
 ---
-title: Installation
+title: Kurulum
 description: Gereksinimler, kurulum seçenekleri ve paket kancalarının ne yaptığı.
 ---
 
-# Installation
+# Kurulum
 
 Argvus önyükleme açılış ekranını Arch tabanlı bir sistemde almak için ihtiyacınız olan her şey.
 
@@ -11,7 +11,7 @@ Temanın nasıl göründüğünü ve neler içerdiğini görmek için, bkz.
 [referans](/docs/argvus-boot-splash/reference/). Bunun yerine kaynaktan yeniden oluşturmak için,
 [geliştirici kılavuzuna](/docs/argvus-boot-splash/developer-guide/) bakın.
 
-## Requirements
+## Gereksinimler
 
 - `plymouth` kullanan, Arch tabanlı bir sistem (paket buna bağlıdır).
 - Bir initramfs oluşturucusu: **mkinitcpio** (Arch varsayılanı) veya **dracut**.
@@ -26,7 +26,7 @@ Yükleyici mevcut olanı tespit eder ve sizin için initramfs’i yeniden oluşt
 Bunu yeni değiştirdiyseniz yeniden başlatın.
 
 - Normal bir grafik oturumu için hiçbir şeye gerek yok; tema yalnızca
-  boot path.
+  önyükleme yolu.
 
 ## Seçenek 1: resmi paket deposunda çalışır (önerilen)
 
@@ -108,6 +108,6 @@ initramfs'in yeniden inşası size bırakılmıştır. Bakınız
 ## Sonraki adımlar
 
 - [Kullanım](/docs/argvus-boot-splash/usage/) — kurulumu doğrulama, yeniden başlatmadan önizleme,
-  themes.
+  temalar.
 - [UKI ve systemd-boot açılış ekranını değiştirme](/docs/argvus-boot-splash/uki-splash/) — UKI'deki bitmap'i kullanma.
 - [Sorun Giderme](/docs/argvus-boot-splash/troubleshooting/) — eğer açılış ekranı değişmediyse.

@@ -29,7 +29,7 @@ Sous `/usr/share/plymouth/themes/argvus/` :
 | --- | --- | --- |
 | `argvus.plymouth` | — | descripteur de thème (nom, description, module) |
 | `argvus.script` | — | script de thème (langage de script propre à Plymouth) |
-| `argvus-logo.png` | 256x256 | logo, RGBA |
+| `argvus-logo.png` | 256x256 | logo, RVBA |
 | `argvus-text.png` | 400x53 | mot-symbole, RGBA |
 | `progress-bar.png` | 400x4 | partie remplie de la barre de progression |
 | `progress-bar-track.png` | 400x4 | piste non remplie |

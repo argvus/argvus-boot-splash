@@ -1,9 +1,9 @@
 ---
-title: Usage
+title: Cách sử dụng
 description: Xác minh cài đặt, xem trước mà không khởi động lại, và chuyển đổi chủ đề.
 ---
 
-# Usage
+# Cách sử dụng
 
 Cách xác minh chủ đề, xem trước nó mà không khởi động lại, và chuyển sang chủ đề khác.
 Để cài đặt, xem [cài đặt](/docs/argvus-boot-splash/installation/).
@@ -37,11 +37,11 @@ sudo plymouth --show-splash    # back to the splash
 ```
 
 Khi màn hình khởi động xuất hiện, nhấn <kbd>Esc</kbd> để chuyển sang màn hình tiếp theo
-(splash → details → splash).
+(giật gân → chi tiết → giật gân).
 
 ## Những gì màn hình khởi động hiển thị
 
-| Stage | Appearance |
+| Sân khấu | Ngoại hình |
 | --- | --- |
 | Khởi động | Mọi thứ xuất hiện dần trong khoảng ~1 giây: logo, chữ thương hiệu, thanh tiến trình |
 | Khởi động | Thanh nạp đầy từ bên trái khi Plymouth báo cáo tiến trình |
@@ -59,25 +59,25 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 ```
 
-Useful configuration files:
+Các tập tin cấu hình hữu ích:
 
-| File | Purpose |
+| Tập tin | Mục đích |
 | --- | --- |
-| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` written by the package |
-| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
+| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` viết theo gói |
+| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` phải bao gồm `plymouth` |
+| `/etc/plymouth/plymouthd.conf` (lại) | `PLYMOUTH_TOGGLE_KEY`, v.v. mang tính toàn cầu, không phải theo chủ đề |
 
 ## Bảng mẹo lệnh
 
-| Command | Effect |
+| Lệnh | Hiệu ứng |
 | --- | --- |
-| `sudo plymouth-set-default-theme argvus` | make `argvus` the default theme |
-| `sudo plymouth-update-theme` | apply the change to the running Plymouth |
-| `sudo plymouth --show-splash` | show the splash in the current session |
-| `sudo plymouth --show-details` | show verbose boot messages instead |
-| `sudo plymouthquit` | leave Plymouth and restore your session |
-| `sudo mkinitcpio -P` | rebuild the Arch initramfs |
-| `sudo dracut --regenerate-all` | rebuild the initramfs with dracut |
+| `sudo plymouth-set-default-theme argvus` | đặt `argvus` làm chủ đề mặc định |
+| `sudo plymouth-update-theme` | áp dụng thay đổi cho Plymouth đang chạy |
+| `sudo plymouth --show-splash` | hiển thị phần giật gân trong phiên hiện tại |
+| `sudo plymouth --show-details` | thay vào đó hãy hiển thị các thông báo khởi động dài dòng |
+| `sudo plymouthquit` | rời khỏi Plymouth và khôi phục phiên của bạn |
+| `sudo mkinitcpio -P` | xây dựng lại Arch initramfs |
+| `sudo dracut --regenerate-all` | xây dựng lại initramfs bằng dracut |
 
 ## Các bước tiếp theo
 

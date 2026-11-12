@@ -8,8 +8,8 @@ description: 要件、インストールオプション、およびパッケー�
 ArchベースのシステムでArgvusのブートスプラッシュを表示するために必要なすべて。
 
 テーマの見た目や内容については、
-[reference](/docs/argvus-boot-splash/reference/)]を参照してください。ソースから再構築する場合は、
-[developer guide](/docs/argvus-boot-splash/developer-guide/)]を参照してください。
+[reference](/docs/argvus-boot-splash/reference/)を参照してください。ソースから再構築する場合は、
+[developer guide](/docs/argvus-boot-splash/developer-guide/)を参照してください。
 
 ## 必要条件
 

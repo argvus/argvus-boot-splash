@@ -8,8 +8,8 @@ description: Hausregeln, Dokumentationskarte und Feststellungen der Repository-P
 Hausregeln für Änderungen in diesem Repository, sowie die beim
 Audit festgestellten Inkonsistenzen – es lohnt sich, diese zu beheben, anstatt sie zu kopieren.
 
-Für die technische Referenz siehe [Themenarchitektur](/docs/argvus-boot-splash/developer-guide/theme/)],
-[Packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] und [CI und Releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)].
+Für die technische Referenz siehe [Themenarchitektur](/docs/argvus-boot-splash/developer-guide/theme/),
+[Packaging](/docs/argvus-boot-splash/developer-guide/packaging/) und [CI und Releases](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Konventionen
 

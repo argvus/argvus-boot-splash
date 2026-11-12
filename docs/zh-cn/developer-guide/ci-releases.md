@@ -6,7 +6,7 @@ description: 验证、持续集成、签名和发布工作流。
 
 验证门、持续集成任务、发布管道和版本规则。
 
-有关软件包本身，请参见 [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)]；有关主题，请参见 [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)]。
+有关软件包本身，请参见 [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)；有关主题，请参见 [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)。
 
 ## 验证
 

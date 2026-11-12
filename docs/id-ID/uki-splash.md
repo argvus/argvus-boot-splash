@@ -12,7 +12,7 @@ initramfs.
 
 . Bitmap ini *tidak* digunakan oleh tema Plymouth dan tidak ada yang terdaftar untuk
 Anda secara otomatis: menyematkannya tergantung pada bagaimana Anda membangun UKI Anda.
-consumers are:
+konsumen adalah:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)

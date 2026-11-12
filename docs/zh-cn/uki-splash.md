@@ -22,5 +22,5 @@ ukify build --splash=/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp \
 
 ## 接下来的步骤
 
-- [Usage](/docs/argvus-boot-splash/usage/)
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)
+- [用法](/docs/argvus-boot-splash/usage/)
+- [故障排除](/docs/argvus-boot-splash/troubleshooting/)

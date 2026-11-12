@@ -1,24 +1,24 @@
 ---
-title: CI and Releases
+title: CI và các bản phát hành
 description: Xác thực, tích hợp liên tục, ký và quy trình phát hành.
 ---
 
 # CI và các bản phát hành
 
 Cổng xác thực, các công việc tích hợp liên tục, pipeline phát hành và
-the versioning rules.
+các quy tắc phiên bản.
 
 Đối với gói chính, xem [đóng gói](/docs/argvus-boot-splash/developer-guide/packaging/); đối với chủ đề, xem
 [kiến trúc chủ đề](/docs/argvus-boot-splash/developer-guide/theme/).
 
-## Validation
+## Xác thực
 
 `tools/sh/validate.sh` là cổng bắt buộc:
 
 - yêu cầu `bash`, `makepkg`, `shellcheck`;
 - `shellcheck` + `bash -n` trên `tools/sh/*.sh` và `packaging/arch/common/*.sh`;
 - lấy nguồn cả PKGBUILD và so sánh siêu dữ liệu đã trích xuất — từ xa và cục bộ phải
-  match;
+  trận đấu;
 - `makepkg -p PKGBUILD --printsrcinfo` bên trong `ci/` và `local/` (phân tích tệp
 theo cách makepkg làm);
 - `git diff --check` (dấu cách/dấu xung đột).
@@ -45,13 +45,13 @@ trong workspace ở `.cspell/custom-dictionary-workspace.txt` — các thuật n
 `workflow_dispatch` với một thẻ hiện có (xây dựng lại có kiểm soát). Nhóm đồng thời
 `release-<ref>`, không hủy bỏ.
 
-Steps:
+Các bước:
 
 1. **Kiểm tra** thẻ (dispatch sử dụng `inputs.tag`).
 2. **Bước phiên bản**: xác thực thẻ với
 `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`, thất bại nếu `url` trống trong
 `packaging/arch/remote/PKGBUILD`, sau đó ghi lại `pkgver` từ thẻ.
-3. **Validate**: `make validate`.
+3. **Xác thực**: `make validate`.
 4. **Xây dựng** như không đặc quyền `builder`: `updpkgsums` (giải quyết và xác thực
 thực `sha256sums`) sau đó
 `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`.
@@ -80,14 +80,14 @@ thời gian (địa phương) hoặc thông qua `updpkgsums` (phát hành CI).
 - Giữ `sha256sums=()` **trống** trong kho lưu trữ.
 - Các bản phát hành được ký GPG (gói `.sig`, `argvus.db.tar.gz`,
 
-, 
+,
 
 , `argvus.files.tar.gz` GPG_PASSPHRASE  argvus.files  `argvus.db` ).
-- 
+-
 
  must be non-empty; the workflow rejects an empty passphrase.
 
-Prepare the key:
+Chuẩn bị chìa khóa:
 
 ```sh
 gpg --full-generate-key            # RSA 4096, no expiry recommended
@@ -97,41 +97,41 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
 Trong **Cài đặt → Bí mật và biến → Actions** của kho lưu trữ:
 
-| Secret | Value |
+| Bí mật | Giá trị |
 | --- | --- |
 |  `argvus.files`  `GPG_PASSPHRASE` `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
-| `GPG_KEY_ID` | expected key ID or fingerprint |
-| `GPG_PASSPHRASE` | non-empty passphrase of the signing key |
-| `PACKAGES_REPO_TOKEN` | PAT with `contents:write` on `argvus/packages` |
+| `GPG_KEY_ID` | ID khóa hoặc dấu vân tay dự kiến ​​|
+| `GPG_PASSPHRASE` | cụm mật khẩu không trống của khóa ký |
+| `PACKAGES_REPO_TOKEN` | PAT với `contents:write` trên `argvus/packages` |
 
 ## Xuất bản một bản phát hành
 
-Before tagging:
+Trước khi gắn thẻ:
 
-1. Fill in 
+1. Fill in
 
- in 
+ in
 
  with the real repository:
-   - GitHub: 
+   - GitHub:
 
  (the source
-     uses 
+     uses
 
 );
-   - GitLab: adjust 
+   - GitLab: adjust
 
  to
 
 ;
-   - without 
+   - without
 
 , the release **fails on purpose** with a clear message.
-2. Sync versions/metadata in 
+2. Sync versions/metadata in
 
  and
  packaging/arch/local/PKGBUILD  `url`  https://gitlab.com/argvus/argvus-boot-splash/-/archive/v${pkgver}/argvus-boot-splash-v${pkgver}.tar.gz  source=  ${url}/archive/refs/tags/v${pkgver}.tar.gz  url="https://github.com/argvus/argvus-boot-splash"  `packaging/arch/remote/PKGBUILD`   `url="https://github.com/argvus/argvus-boot-splash"`  `${url}/archive/refs/tags/v${pkgver}.tar.gz`  `source=`  `https://gitlab.com/argvus/argvus-boot-splash/-/archive/v${pkgver}/argvus-boot-splash-v${pkgver}.tar.gz` `url`  `packaging/arch/local/PKGBUILD` `packaging/arch/remote/PKGBUILD`.
-3. Tag and push:
+3. Gắn thẻ và đẩy:
 
    ```sh
    git tag v0.1.0
@@ -141,7 +141,7 @@ Before tagging:
 Quy trình làm việc cũng có thể được bắt đầu thủ công với một thẻ `v*` hiện có như là của nó
    Đầu vào `tag`, điều này hữu ích cho việc xây dựng lại có kiểm soát.
 
-## Versioning
+## Phiên bản
 
 - SemVer trong `pkgver`, số lần phát hành trong `pkgrel`.
 

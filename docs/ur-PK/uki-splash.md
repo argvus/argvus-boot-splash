@@ -12,7 +12,7 @@ initramfs.
 
 ﮯﮨ ﺎﯿﮔ ﺎﯿﮐ ﮟﯿﮩﻧ ﺮﭩﺴﺟﺭ ﯽﮭﺑ ﮫﭽﮐ ﺭﻭﺍ ﺎﺗﺎﺟ ﺎﯿﮐ ﮟﯿﮩﻧ ﻝﺎﻤﻌﺘﺳﺍ ﮟﯿﻣ ﻢﯿﮭﺗ ﮫﺗﺅﺎﻤﯿﻠﭘ ﻮﮐ ﭗ
 ﻡﺎﻋ ۔ﮟﯿﮨ ﮯﺗﺎﻨﺑ ﮯﺴﯿﮐ UKI ﺎﻨﭘﺍ ﭖﺁ ﮧﮐ ﮯﮨ ﺮﭘ ﺕﺎﺑ ﺱﺍ ﺭﺎﺼﺤﻧﺍ ﺎﮐ ﺱﺍ
-consumers are:
+صارفین ہیں:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)
@@ -23,7 +23,7 @@ ukify build --splash=/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp \
            --linux=... --initrd=... --microcode=...
 ```
 
-Re-run the UKI build (or 
+UKI بلڈ کو دوبارہ چلائیں (یا
 
 ) whenever the image changes, and
 ﮯﮨ ﺎﺗﺮﮐ ﻞﯿﮑﺳﺍ ﻮﮐ systemd-boot  ۔ﮟﯾﺮﮐ ﯽﭘﺎﮐ ﮟﯿﻣ ESP ﻮﮐ ﻞﺋﺎﻓ ﻮﺗ ﮟ

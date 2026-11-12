@@ -1,24 +1,24 @@
 ---
-title: CI and Releases
+title: CI اور ریلیز
 description:                                 ۔ﻮﻠﻓ ﮎﺭﻭ ﺰﯿﻠﯾﺭ ﺭﻭﺍ ،ﻂﺨﺘﺳﺩ ،ﻡﺎﻤﻀﻧﺍ ﻞﺴﻠﺴﻣ ،ﻖﯾﺪﺼﺗ
 ---
 
 #                                                              ﺯﺰﯿﻠﯾﺭ ﺭﻭﺍ ﯽﺋﺁ ﯽﺳ
 
                           ﺭﻭﺍ ﻦﺋﻻ﻿ ﭗﺋﺎﭘ ﺰﯿﻠﯾﺭ ،ﺰﺑﺎﺟ ﮯﮐ ﻡﺎﻤﻀﻧﺍ ﻞﻘﺘﺴﻣ ،ﭧﯿﮔ ﯽﻘﯾﺪﺼﺗ
-the versioning rules.
+ورژن بنانے کے قوانین
 
                                                         ﮟﯿﮭﮑﯾﺩ ﮯﯿﻟ ﮯﮐ ﺩﻮﺧ ﺞﮑﯿﭘ[                                                                       ﮓﻨﺠﯿﮑﯿﭘ](/docs/argvus-boot-splash/developer-guide/packaging/)                                                          ﮟﯿﮭﮑﯾﺩ ﮯﯿﻟ ﮯﮐ ﻢﯿﮭﺗ ;
 [                                                                ﺮﭽﮑﯿﭩﯿﮐﺭﺁ ﻢﯿﮭﺗ](/docs/argvus-boot-splash/developer-guide/theme/).
 
-## Validation
+## توثیق
 
 `tools/sh/validate.sh` ﮯﮨ ﭧﯿﮔ ﮧﺑﻮﻠﻄﻣ:
 
 - `bash`، `makepkg`، `shellcheck` ؛ﮯﮨ ﺕﺭﻭﺮﺿ ﯽﮐ
-- `shellcheck` + `bash -n` on `tools/sh/*.sh` and `packaging/arch/common/*.sh`;
+- `shellcheck` + `bash -n` پر `tools/sh/*.sh` اور `packaging/arch/common/*.sh`؛
 - ﮟﯿﮨ ﮯﺗﺮﮐ ﮧﻧﺯﺍﻮﻣ ﺎﮐ ﯽﻣﺎﻘﻣ ﺭﻭﺍ ﺯﺍﺭﺩ ﺭﻭﺩ — ﺎﭩﯾﮈ ﺎﭩﯿﻣ ﺎﯿﮔ ﻻ﻿ﺎﮑﻧ ﺭﻭﺍ ﮟﯿﮨ ﮯﺗﺮﮐ ﺵﻼ﻿ﺗ ﻮﮐ
-  match;
+  میچ
 - `makepkg -p PKGBUILD --printsrcinfo` ﺭﺪﻧﺍ ﮯﮐ `ci/` ﺭﻭﺍ `local/` (ﮯﮨ ﺎﺗﺮﮐ ﮧﯾﺰ
                                 ؛ﮯﮨ ﺎﺗﺮﮐ makepkg ﮯﺴﯿﺟ ﮟﯿﺋﺎﻨﺑ ﮯﺳ ﮯﻘﯾﺮﻃ ﮯﺳﺍ ﻞﺋﺎﻓ
 - `git diff --check` (ﻥﺎﺸﻧ ﮯﮐ ﻉﺯﺎﻨﺗ/ﺲﯿﭙﺳﺍ ﭧﺋﺍﻭ).
@@ -32,7 +32,7 @@ the versioning rules.
 3. ﻮﮨ **ﮯﮐ ﺭﺎﯿﺘﺧﺍ ﺹﺎﺧ ﯽﺴﮐ ﺮﯿﻐﺑ** ﻮﺟ ﮟﯾﺮﮐ ﺮﯿﻤﻌﺗ ﺮﭘ ﺭﻮﻃ ﮯﮐ ﺭﺯﻮﯾ `builder` ﮯ
    (`sudo -u builder env HOME=/home/builder make build`) — makepkg ﮯﮨ ﺎﺗﺮﮐ ﺭﺎﮑﻧﺍ ﮯﺳ ﮯﻧﻼ﻿ﭼ
                      ؛ﮯﮨ `chown`ed ﮯﻠﮩﭘ ﺲﯿﭙﺳﺍ ﮎﺭﻭ ﺭﻭﺍ ،ﺮﭘ ﺭﻮﻃ ﮯﮐ ﭦﻭﺭ
-4. ۔ﮯﮨ ﺎﺗﻼ﻿ﭼ ﮫﺗﺎﺳ ﮯﮐ cspell.json ﻮﮐ cspell-action@v6 ﻡﺎﮐ `spellcheck` 
+4. ۔ﮯﮨ ﺎﺗﻼ﻿ﭼ ﮫﺗﺎﺳ ﮯﮐ cspell.json ﻮﮐ cspell-action@v6 ﻡﺎﮐ `spellcheck`
 
  cspell.json  `cspell-action@v6`  `cspell.json` `namcap` ﺮﭘ ﮯﻧﻮﮨ ﻝﺎﭩﺴﻧﺍ `pkgbuild_local.sh` ﮟﯿﮨ ﮯﺗﻮﮨ ﺮﮨﺎﻇ ﺯﮉﻠﺑ ﯽﻣﺎﻘﻣ ﮯﯿ
 ﮫﺗﺎﺳ ﮯﮐ ﺲﯿﭙﺳﺍ ﮎﺭﻭ ﮯﮨ `cspell.json` ﻦﺸﯾﺮﮕﯿﻔﻨﮐ ﮏﯿﭼ ﻞﯿﭙﺳﺍ ۔CI ﮧﮐ ﺎﺴﯿﺟ ﭧﻨﻟ ﯽﮨﻭ
@@ -45,19 +45,19 @@ the versioning rules.
 `workflow_dispatch` ﭖﻭﺮﮔ ﺮﺼﻋ ﻢﮨ .(ﺮﯿﻤﻌﺗ ﮦﺭﺎﺑﻭﺩ ﮦﺪﺷ ﻝﻭﺮﭩﻨﮐ) ﮫﺗﺎﺳ ﮯﮐ ﮓﯿﭨ ﮦﺩﻮﺟﻮﻣ
 `release-<ref>`، ۔ﮟﯿﮩﻧ ﯽﺧﻮﺴﻨﻣ ﯽﺋﻮﮐ
 
-Steps:
+مراحل:
 
 1.                     ۔(ﮯﮨ ﺎﺗﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ `inputs.tag` ﭻﯿﭙﺳﮈ) ﮓﯿﭨ **ﭦﺅﺁ ﮏﯿﭼ**
 2.                                             ﮯﮨ ﺎﺗﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ ﮓﯿﭨ :**ﻡﺪﻗ ﻥﮊﺭﻭ**
 `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`، ﺮﮔﺍ ﮯﮨ ﺎﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ `url` ﻮﮨ ﯽﻟﺎﺧ
 `packaging/arch/remote/PKGBUILD`، ﮯﺳ ﮓﯿﭨ ﺮﮭﭘ `pkgver` ۔ﮯﮨ ﺎﺘﮭﮑﻟ ﮦﺭﺎﺑﻭﺩ ﻮﮐ
-3. **Validate**: `make validate`.
+3. **تصدیق کریں**: `make validate`۔
 4. ﮯﮨ ﺎﺗﺮﮐ ﻖﯾﺪﺼﺗ ﺭﻭﺍ ﮯﮨ ﺎﺗﺮﮐ ﻞﺣ) `builder`: `updpkgsums` ﮯﮐ ﺕﺍﺭﺎﯿﺘﺧﺍ
                                                   ﺮﮭﭘ (`sha256sums` ﯽﻘﯿﻘﺣ
 `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`.
 `.pkg.tar.zst` ۔ﮯﮨ ﺎﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ ﻮﺗ ﻮﮨ ﮧﻧ ﺩﻮﺟﻮﻣ ﯽﺋﻮﮐ ﺮﮔﺍ ﺭﻭﺍ ﮯﮨ ﺎﺗﺎﮕﻟ ﮧﺘﭘ ﺎ
 5. **namcap** ۔ﺮﭘ ﺞﯿﮑﯿﭘ
-6. **Sign**: imports `GPG_PRIVATE_KEY` into a throwaway `GNUPGHOME` (`mktemp -d`,
+6. **سائن**: `GPG_PRIVATE_KEY` کو ایک پھینکے ہوئے `GNUPGHOME` (`mktemp -d` میں درآمد کرتا ہے،
 ﮯﮨ ﯽﺗﺎﮭﮐ ﻞﯿﻣ ﮫﺗﺎﺳ ﮯﮐ (ﺎﯾ ﺖﺧﺎﻨﺷ ﺮﺼﺘﺨﻣ) `GPG_KEY_ID` ﮧﯾ ﮧﮐ ﮯﮨ ﺎﺗﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ
             ﮫﺗﺎﺳ ﮯﮐ ﺲﺟ ﮯﮨ ﺎﺗﺮﮐ ﻖﯿﻠﺨﺗ `.sig` ﮓﻟﺍ ﮏﯾﺍ ﺭﻭﺍ ،(ﭧﻧﺮﭘ ﺮﮕﻨﻓ
 `--pinentry-mode loopback --passphrase-fd 0`.
@@ -68,7 +68,7 @@ Steps:
 9.   ﮟﯾﺮﮐ ﻞﻘﻧ ،ﮟﯾﺮﮐ ﮏﯿﭼ ﮫﺗﺎﺳ ﮯﮐ PACKAGES_REPO_TOKEN ﻮﮐ `argvus/packages` :**ﺖﻋﺎﺷﺍ**
                    ﮟﯿﺋﻼ﻿ﭼ ،ﮟﯿﻣ `PACKAGES_REPO_TOKEN` ﻮﮐ `.sig` ﺭﻭﺍ ﺞﯿﮑﯿﭘ
     `public/arch/x86_64` `repo-add -R argvus.db.tar.gz <pkg>`، ﻦﺋﺎﺳ `argvus.db.tar.gz`،
-`argvus.files.tar.gz`, `argvus.db` ﺭﻭﺍ `argvus.files`، ﮧﮐ ﺎﺴﯿﺟ ﮟﯾﺮﮐ ﭧﯿﻤﮐ 
+`argvus.files.tar.gz`, `argvus.db` ﺭﻭﺍ `argvus.files`، ﮧﮐ ﺎﺴﯿﺟ ﮟﯾﺮﮐ ﭧﯿﻤﮐ
 `github-actions[bot]` ۔ﮯﮨ ﺩﻮﺟﻮﻣ ﺮﭘ 0 ﻕﺮﻓ ،ﮟﯿﮩﻧ ﯽﻠﯾﺪﺒﺗ ﯽﺋﻮﮐ ﮯﯿﮐ ﭧﯿﻤﮐ ﺮﯿﻐﺑ ۔ﮟﯿﺋﺎﺑﺩ ﺭ
 10. **GitHub ﺰﯿﻠﯾﺭ**: `softprops/action-gh-release@v2` ﺲﭨﻮﻧ ﮦﺪﺷ ﺭﺎﯿﺗ ﮫﺗﺎﺳ ﮯﮐ
                                         ۔ﺮﭘ ﺭﻮﻃ ﮯﮐ ﮞﻮﺛﺎﺛﺍ ﻮﮐ ﻂﺨﺘﺳﺩ + ﺞﯿﮑﯿﭘ ﺭﻭﺍ
@@ -82,7 +82,7 @@ Steps:
 `argvus.files.tar.gz`، `argvus.db`، `argvus.files`).
 - `GPG_PASSPHRASE` ۔ﮯﮨ ﺎﺘﯾﺩ ﺮﮐ ﺩﺮﺘﺴﻣ ﻮﮐ ﺰﯾﺮﻓ ﺱﺎﭘ ﯽﻟﺎﺧ ﮏﯾﺍ ﻮﻠﻓ ﮎﺭﻭ ؛ﮯﯿﮨﺎﭼ ﺎﻧﻮﮨ ﮟ
 
-Prepare the key:
+کلید تیار کریں:
 
 ```sh
 gpg --full-generate-key            # RSA 4096, no expiry recommended
@@ -92,16 +92,16 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
               :ﮟﯿﻣ **Settings → Secrets and variables → Actions** ﮯﮐ ﯼﺮﭩﯾﺯﻮﭙﯾﺭ
 
-| Secret | Value |
+| خفیہ | قدر |
 | --- | --- |
-| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
-| `GPG_KEY_ID` | expected key ID or fingerprint |
-| `GPG_PASSPHRASE` | non-empty passphrase of the signing key |
-| `PACKAGES_REPO_TOKEN` | PAT with `contents:write` on `argvus/packages` |
+| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` آؤٹ پٹ |
+| `GPG_KEY_ID` | متوقع کلیدی ID یا فنگر پرنٹ |
+| `GPG_PASSPHRASE` | دستخط کرنے والی کلید کا غیر خالی پاسفریز |
+| `PACKAGES_REPO_TOKEN` | PAT `contents:write` کے ساتھ `argvus/packages` پر |
 
 ##                                                            ﺎﻧﺮﮐ ﻊﺋﺎﺷ ﺰﯿﻠﯾﺭ ﮏﯾﺍ
 
-Before tagging:
+ٹیگ کرنے سے پہلے:
 
 1.          :ﮟﯾﺮﮭﺑ `url` ﮟﯿﻣ `packaging/arch/remote/PKGBUILD` ﮫﺗﺎﺳ ﮯﮐ ﯼﺮﭩﯾﺯﻮﭙﯾﺭ ﯽﻠﺻﺍ
    - GitHub: `url="https://github.com/argvus/argvus-boot-splash"` (ﺬﺧﺎﻣ )
@@ -111,7 +111,7 @@ Before tagging:
    - without `url`              ۔ﮫﺗﺎﺳ ﮯﮐ ﻡﺎﻐﯿﭘ ﺢﺿﺍﻭ ﮏﯾﺍ **ﮯﮨ ﯽﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ ﺮﮐ ﮫﺟﻮﺑ ﻥﺎﺟ** ﺰﯿﻠﯾﺭ ،
 2. `packaging/arch/local/PKGBUILD` ﺭﻭﺍ ﮟﯾﺮﮐ ﮓﻨﮨﺁ ﻢﮨ ﺎﭩﯾﮈ ﺎﭩﯿﻣ/ﺰﻧﮊﺭﻭ ﮟﯿﻣ
 `packaging/arch/remote/PKGBUILD`.
-3. Tag and push:
+3. ٹیگ اور پش:
 
    ```sh
    git tag v0.1.0
@@ -121,33 +121,33 @@ Before tagging:
 ﺎﮐ ﺱﺍ ﮧﮐ ﺎﺴﯿﺟ ﮯﮨ ﺎﺘﮑﺳ ﺎﺟ ﺎﯿﮐ ﻉﻭﺮﺷ ﮫﺗﺎﺳ ﮯﮐ ﮓﯿﭨ `v*` ﺩﻮﺟﻮﻣ ﺮﭘ ﺭﻮﻃ ﯽ
 `tag` ۔ﮯﮨ ﺪﯿﻔﻣ ﮯﯿﻟ ﮯﮐ ﺮﯿﻤﻌﺗ ﮦﺭﺎﺑﻭﺩ ﮦﺪﺷ ﻝﻭﺮﭩﻨﮐ ﮏﯾﺍ ﻮﺟ ،ﭧﭘ ﻥﺍ
 
-## Versioning
+## ورژننگ
 
 - `pkgver` ﮟﯿﻣ SemVer، `pkgrel` ۔ﺩﺍﺪﻌﺗ ﯽﮐ ﺰﯿﻠﯾﺭ ﮟﯿﻣ
 
 ##                                                              ﮓﻨﭨﻮﺷ ﻞﺑﺮﭨ ﺮﭙﻠﯾﻭﮈ
 
-ﮏﯾﺍ ﺎﯾ ،ﮓﯿﭨ v* ﺐﺋﺎﻏ ،`url` ﯽﻟﺎﺧ **۔ﮯﮨ ﯽﺌﮔ ﻮﮨ ﻡﺎﮐﺎﻧ 
+ﮏﯾﺍ ﺎﯾ ،ﮓﯿﭨ v* ﺐﺋﺎﻏ ،`url` ﯽﻟﺎﺧ **۔ﮯﮨ ﯽﺌﮔ ﻮﮨ ﻡﺎﮐﺎﻧ
 (ﻝﺎﺑﺭﺎﭨ GitLab ﮧﻠﺑﺎﻘﻤﺑ GitHub) ﺎﺗﺎﮭﮐ ﮟﯿﮩﻧ ﻞﯿﻣ ﮯﺳ ﻥﺎﺑﺰﯿﻣ ﻮﺟ ﭧﯿﻣﺭﺎﻓ ﻞﯾﺍ ﺭﺁ ﻮﯾ ﻮﯿ
 ﮯﮨ ﺎﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ ﺪﻠﺟ ﺮﭘ ﮯﻧﻮﮨ ﯽﻟﺎﺧ ﺭﻭﺍ ﮯﮨ ﺎﺗﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ ﻥﺮﭩﯿﭘ ﮓﯿﭨ ﻮﻠﻓ ﮎﺭﻭ ۔(ﭦﺅﺁ
  `v*` `url`.
 
 **`updpkgsums` ﮯﮨ ﯼﺭﻭﺮﺿ ﺎﻧﺎﺟ ﺎﯿﮐ ﺶﭘ ﮯﻠﮩﭘ ﮯﺳ ﺱﺍ ﺭﻭﺍ ﮯﯿﮨﺎﭼ ﺎﻧﻮﮨ ﺩﻮﺟﻮﻣ ﮓﯿﭨ *
-۔ﮯﮨ ﺎﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ ﺎﻨﺠﯿﮭﺑ ﮫﺗﺎﺳ ﮯﮐ ﮓﯿﭨ ﺩﻮﺟﻮﻣ ﺮﭘ ﺭﻮﻃ ﯽﻣﺎﻘﻣ ﻑﺮﺻ ﮞﺎﮩﯾ ؛ﮯﮨ ﯽﺘﻠﭼ ﺏﺎﺟ 
+۔ﮯﮨ ﺎﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ ﺎﻨﺠﯿﮭﺑ ﮫﺗﺎﺳ ﮯﮐ ﮓﯿﭨ ﺩﻮﺟﻮﻣ ﺮﭘ ﺭﻮﻃ ﯽﻣﺎﻘﻣ ﻑﺮﺻ ﮞﺎﮩﯾ ؛ﮯﮨ ﯽﺘﻠﭼ ﺏﺎﺟ
 
 **`make validate` ﻞﮐﻮﻟ ﺭﻭﺍ ﭦﻮﻤﯾﺭ" ﮧﮐ ﮯﮨ ﺎﺗﺮﮐ ﭦﺭﻮﭘﺭ PKGBUILD ۔"ﮯﮨ ﮟﯿﮩﻧ ﮓﻨﮨﺁ ﻢ
 .(ﮟﯿﮩﻧ `source=`) ﮟﯾﺮﮐ ﯽﭘﺎﮐ ﯽﮐ ﺯﮉﻠﯿﻓ ﮯﮐ ﺎﭩﯾﮈ ﺎﭩﯿﻣ ﮟﯿﻣ ﮮﺮﺳﻭﺩ ﮯﺳ PKGBUIL
 
                     ﮟﯾﺮﮐ ﻞﻣﺎﺷ ﮯﺳﺍ **۔ﮯﮨ ﺎﺗﺎﺟ ﻮﮨ ﻡﺎﮐﺎﻧ ﮏﯿﭼ ﻞﯿﭙﺳﺍ ﺮﭘ ﺡﻼ﻿ﻄﺻﺍ ﯽﺌﻧ**
 `.cspell/custom-dictionary-workspace.txt` (`argvus` ﯼﺮﻨﺸﮐﮈ، `addWords:
-true`), not to `ignorePaths`.
+true`), not to `ignorePaths`۔
 
-**`sudo` ﮯﻧ `make install` ﺎﯾ `libfakeroot.so … LD_PRELOAD` ﯽﮐ ﺖﺳﺍﻮﺧﺭﺩ ﺭﺪﻧﺍ 
+**`sudo` ﮯﻧ `make install` ﺎﯾ `libfakeroot.so … LD_PRELOAD` ﯽﮐ ﺖﺳﺍﻮﺧﺭﺩ ﺭﺪﻧﺍ
 ﮮﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ ﮧﮐ ﮯﮐ ﺱﺍ ﮯﺋﺎﺠﺑ ﮯﮨ ﺎﺘﺠﯿﮭﺑ ﺮﭘ make install ﻮﺟ `package()`
  `make install` `install -Dm*`ﮞﻮﻧﻭﺩ ۔ PKGBUILDﺯ `arch_package_splash_payload` ﮯﮨ ﺎﺗﺮﮐ ﮧﮐ ﻮﺟ ،ﮟﯿﮨ ﮯﺗﺮﮐ ﻝ
 ۔ﻮﮨ ﯽﺋﺍﺮﮐ ﮧﻧ ﻑﺭﺎﻌﺘﻣ ﮦﺭﺎﺑﻭﺩ ﻝﺎﮐ `make` ﮯﻧ ﯽﺴﮐ ﮧﮐ ﮟﯿﺋﺎﻨﺑ ﯽﻨﯿﻘﯾ ﻮﮐ ﺕﺎﺑ
 
-**`makepkg` ﮟﯿﺋﻼ﻿ﭼ ﺮﭘ ﺭﻮﻃ ﮯﮐ ﻑﺭﺎﺻ ﻡﺎﻋ ﻮﮐ ﺮﯿﻤﻌﺗ ۔ﮯﯿﮨﺎﭼ ﺎﻧﻼ﻿ﭼ ﮟﯿﮩﻧ ﺮﭘ ﺭﻮﻃ 
+**`makepkg` ﮟﯿﺋﻼ﻿ﭼ ﺮﭘ ﺭﻮﻃ ﮯﮐ ﻑﺭﺎﺻ ﻡﺎﻋ ﻮﮐ ﺮﯿﻤﻌﺗ ۔ﮯﯿﮨﺎﭼ ﺎﻧﻼ﻿ﭼ ﮟﯿﮩﻧ ﺮﭘ ﺭﻮﻃ
                                                    ۔`sudo -u <user> make build` ﺎﯾ ،ﻑﺭﺎﺻ
 
 ۔ﺎﯿﮔ ﺎﯾﺎﻨﺑ ﮟﯿﮩﻧ ﮦﺭﺎﺑﻭﺩ initramfs **۔ﯽﺋﺁ ﮟﯿﮩﻧ ﯽﻠﯾﺪﺒﺗ ﯽﺋﻮﮐ ﮟﯿﻣ ﺶﯿﻠﭙﺳﺍ ﻦﮑﯿﻟ ﮯﮨ ﺎﯿ

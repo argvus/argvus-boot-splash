@@ -7,7 +7,7 @@ description: Metadatos del paquete Arch, canal de compilación y objetivos de Ma
 
 Cómo se define y produce el paquete Arch: los dos PKGBUILDs, las funciones compartidas, los hooks de instalación, la tubería de compilación local y los objetivos de Make.
 
-Para el tema en sí, ver [arquitectura del tema](/docs/argvus-boot-splash/developer-guide/theme/)]; para la validación, CI y lanzamientos, ver [CI y lanzamientos](/docs/argvus-boot-splash/developer-guide/ci-releases/)].
+Para el tema en sí, ver [arquitectura del tema](/docs/argvus-boot-splash/developer-guide/theme/); para la validación, CI y lanzamientos, ver [CI y lanzamientos](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Dos PKGBUILDs, una carga útil
 

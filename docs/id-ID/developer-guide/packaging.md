@@ -1,9 +1,9 @@
 ---
-title: Packaging
+title: Kemasan
 description: Metadata paket Arch, pipeline build, dan target Make.
 ---
 
-# Packaging
+# Pengemasan
 
 Bagaimana paket Arch didefinisikan dan diproduksi: dua PKGBUILD, fungsi
 yang dibagikan, hook instalasi, pipeline build lokal, dan target Make.
@@ -14,19 +14,19 @@ rilis lihat [CI dan rilis](/docs/argvus-boot-splash/developer-guide/ci-releases/
 ## Dua PKGBUILD, satu payload
 
 `packaging/arch/remote/PKGBUILD` dan `packaging/arch/local/PKGBUILD` identik
-except for `source=`:
+kecuali `source=`:
 
 | | `local` | `ci` |
 | --- | --- | --- |
-| source | `${pkgname}-${pkgver}.tar.gz` (built by `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
-| used by | developers, `make build` | GitHub Actions release |
+| sumber | `${pkgname}-${pkgver}.tar.gz` (dibangun oleh `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
+| digunakan oleh | pengembang, `make build` | Rilis Tindakan GitHub |
 
 Keduanya memanggil fungsi yang sama dari `packaging/arch/common/functions.sh`, dan
 `tools/sh/validate.sh` menegaskan metadata mereka (`pkgname`, `pkgver`, `pkgrel`,
 `pkgdesc`, `arch`, `license`, `depends`, `makedepends`, `options`) identik,
 sehingga keduanya tidak bisa melayang secara diam-diam.
 
-Shared metadata:
+Metadata bersama:
 
 ```bash
 pkgname=argvus-boot-splash
@@ -44,7 +44,7 @@ replaces=('argvus-plymouth')
 ## Fungsi bersama
 
 `packaging/arch/common/functions.sh` menyediakan tiga fungsi yang digunakan oleh kedua
-PKGBUILDs:
+PKGBUILD:
 
 - `arch_normalize_source_tree` (`prepare()`) — arsip tag GitHub diekstrak ke
 `<repo>-v<version>`, sementara tarball lokal diekstrak ke
@@ -53,7 +53,7 @@ PKGBUILDs:
 
 , erroring out if the source directory is
 hilang, ambigu, atau tujuan sudah ada.
-- 
+-
 
  (
 
@@ -97,7 +97,7 @@ di dalam direktori pengemasan.
 3. Menghitung `sha256` dari arsip dan menyuntikkannya dengan `sed` ke dalam **salinan sementara
 ** dari PKGBUILD lokal (`.PKGBUILD.local.XXXXXX`, dihapus oleh jebakan `EXIT`
 ). Repositori selalu menjaga `sha256sums=()` tetap kosong; `SKIP` tidak pernah
-   used.
+   digunakan.
 4. Menghapus `${pkgname}-${pkgver}-*.pkg.tar.zst` yang sudah ada dari
 `build/dist/` sehingga paket basi tidak bisa dikira sebagai build ini.
 5. Menjalankan `makepkg -p <generated PKGBUILD> --nodeps --noconfirm --needed
@@ -105,7 +105,7 @@ di dalam direktori pengemasan.
 dan `PKGDEST` di `build/dist/`. Argumen tambahan diteruskan ke `makepkg`;
 `MAKEPKG_FLAGS` menggantikan set bendera default (pemisahan kata disengaja).
 6. Gagal kecuali tepat satu `.pkg.tar.zst` cocok, lalu menjalankan `namcap` di atasnya jika
-   installed.
+   dipasang.
 
 Outputs:
 
@@ -117,20 +117,20 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 
 ## Membuat target
 
-| Target | Effect |
+| Sasaran | Efek |
 | --- | --- |
-| `make build` (alias `make package`) | run `tools/sh/pkgbuild_local.sh` → `build/` |
+| `make build` (alias `make package`) | jalankan `tools/sh/pkgbuild_local.sh` → `build/` |
 | `make install` (alias `make install-package`) | `sudo pacman -U` paket tunggal di `build/dist/`; kesalahan jika jumlahnya tidak tepat 1 |
-| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD metadata sync + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
+| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + sinkronisasi metadata PKGBUILD + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
 | `make lint` (alias `make lint-shell`) | shellcheck over `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` disabled), `bash -n`, `git diff --check` |
-| `make spellcheck` | `cspell --config cspell.json .` if `cspell` is installed, otherwise skipped |
+| `make spellcheck` | `cspell --config cspell.json .` jika `cspell` diinstal, jika tidak, lewati |
 | `make clean` | `rm -rf build/` |
-| `make help` | target list (default goal) |
+| `make help` | daftar target (tujuan default) |
 
 CI menjalankan `make validate` dan `make build`; tidak ada di CI yang menjalankan `make install`
 (lihat [celah yang diketahui](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
-## Prerequisites
+## Prasyarat
 
 Sebuah sistem berbasis Arch dengan `make`, `git`, `gnupg` dan grup `base-devel`:
 
@@ -140,6 +140,6 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 
 - `pacman-contrib` menyediakan `updpkgsums` (menghasilkan ulang checksum PKGBUILD).
 - `shellcheck` memvalidasi skrip shell repositori dan berbagi Arch
-  packaging functions.
-- Optional: `namcap` (package
+  fungsi pengemasan.
+- Opsional: `namcap` (paket
 linting) dan cspell (pemeriksaan ejaan lokal). CI menginstal semuanya.

@@ -1,9 +1,9 @@
 ---
-title: Troubleshooting
+title: Pemecahan Masalah
 description: Gejala umum boot splash dan cara memperbaikinya.
 ---
 
-# Troubleshooting
+# Pemecahan masalah
 
 **Splash tidak berubah setelah instalasi.**
 Initramfs tidak dihasilkan ulang. Jalankan `sudo mkinitcpio -P` (atau

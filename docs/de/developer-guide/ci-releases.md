@@ -7,8 +7,8 @@ description: Validierung, kontinuierliche Integration, Signierung und Release-Wo
 Das Validierungstor, die Continuous-Integration-Jobs, die Release-Pipeline und
 die Versionierungsregeln.
 
-Für das Paket selbst siehe [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)]; für das Theme siehe
-[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)].
+Für das Paket selbst siehe [packaging](/docs/argvus-boot-splash/developer-guide/packaging/); für das Theme siehe
+[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Validierung
 
@@ -44,7 +44,7 @@ Schritte:
 1. **Checkout** des Tags (Dispatch verwendet `inputs.tag`).
 2. **Versionsschritt**: validiert das Tag gegen `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`, schlägt fehl, wenn `url` in `packaging/arch/remote/PKGBUILD` leer ist, dann wird `pkgver` aus dem Tag neu geschrieben.
 3. **Validieren**: `make validate`.
-4. **Erstellen** als unprivilegierter `builder`: `updpkgsums` (löst auf und validiert das echte `sha256sums`) dann `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`. 
+4. **Erstellen** als unprivilegierter `builder`: `updpkgsums` (löst auf und validiert das echte `sha256sums`) dann `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`.
    Findet das `.pkg.tar.zst` und schlägt fehl, wenn kein solches existiert.
 5. **namcap** auf dem Paket.
 6. **Signieren**: importiert `GPG_PRIVATE_KEY` in ein temporäres `GNUPGHOME` (`mktemp -d`, Modus 700), prüft, ob der importierte geheime Schlüssel `GPG_KEY_ID` (kurze ID oder Fingerabdruck) entspricht, und erstellt ein losgelöstes `.sig` mit `--pinentry-mode loopback --passphrase-fd 0`.

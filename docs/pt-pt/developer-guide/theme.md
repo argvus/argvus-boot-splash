@@ -124,7 +124,7 @@ A palavra-marca segue a mesma ideia com `text.scale = 0.80`, mas é escalada uma
 `text.image.GetWidth()` — ou seja, a barra sempre acompanha a largura da
 palavra-marca, qualquer que seja o tamanho real dela em pixels.
 
-### 3. Layout
+### 3. Disposição
 
 Todo elemento é centralizado no eixo horizontal da janela:
 
@@ -207,7 +207,7 @@ abortada e o boot continua.
 Consequência: `logo.opacity` é uma variável, e não uma constante, porque tanto o
 fade quanto o estado de palavra-passe multiplicam sobre ela.
 
-### 6. Fade-in
+### 6. Aparecimento gradual
 
 ```js
 Plymouth.SetRefreshRate(20);

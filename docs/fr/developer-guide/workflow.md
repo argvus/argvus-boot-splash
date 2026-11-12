@@ -8,19 +8,19 @@ description: Règles de la maison, carte de documentation et résultats de l'aud
 Règles internes pour les modifications de ce dépôt, ainsi que les incohérences
 trouvées lors de son audit — il vaut mieux les corriger plutôt que les copier.
 
-Pour la référence technique, voir [architecture du thème](/docs/argvus-boot-splash/developer-guide/theme/)],
-[emballage](/docs/argvus-boot-splash/developer-guide/packaging/)] et [CI et versions](/docs/argvus-boot-splash/developer-guide/ci-releases/)].
+Pour la référence technique, voir [architecture du thème](/docs/argvus-boot-splash/developer-guide/theme/),
+[emballage](/docs/argvus-boot-splash/developer-guide/packaging/) et [CI et versions](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
-## Conventions
+## Congrès
 
-- Shell : `set -euo pipefail`, tabulations pour l'indentation, `printf`/`error` messages vers stderr, `command -v` vérifications de capacité, shellcheck propre (voir `.editorconfig`).  
-- Ne jamais écrire `sha256sums=('SKIP')` ; garder `sha256sums=()` vide dans git.  
-- Ne pas committer les résultats de compilation (`build/`), fichiers de paquet, ou copies générées `.PKGBUILD.local.*`.  
-- Commits conventionnels avec les scopes utilisés par l'historique : `splash`, `layout`, `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.  
-- Nomination des branches : `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.  
-- Une approbation du relecteur avant fusion, squash-merge.  
-- Licence : GPL-3.0-only. Fourni comme `/usr/share/licenses/argvus-boot-splash/LICENSE`.  
-- Suivre le processus dans [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) et [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).  
+- Shell : `set -euo pipefail`, tabulations pour l'indentation, `printf`/`error` messages vers stderr, `command -v` vérifications de capacité, shellcheck propre (voir `.editorconfig`).
+- Ne jamais écrire `sha256sums=('SKIP')` ; garder `sha256sums=()` vide dans git.
+- Ne pas committer les résultats de compilation (`build/`), fichiers de paquet, ou copies générées `.PKGBUILD.local.*`.
+- Commits conventionnels avec les scopes utilisés par l'historique : `splash`, `layout`, `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
+- Nomination des branches : `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
+- Une approbation du relecteur avant fusion, squash-merge.
+- Licence : GPL-3.0-only. Fourni comme `/usr/share/licenses/argvus-boot-splash/LICENSE`.
+- Suivre le processus dans [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) et [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 
 ## Lacunes connues
 

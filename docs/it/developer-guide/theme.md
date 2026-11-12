@@ -8,9 +8,9 @@ description: Come vengono messi insieme il descrittore di Plymouth, gli asset e 
 Come è strutturato il tema Plymouth: il descrittore, il set di asset e cosa
 fa `argvus.script`, sezione per sezione.
 
-Per il packaging e le release, vedere [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] e
-[CI e release](/docs/argvus-boot-splash/developer-guide/ci-releases/)]. Per l'utilizzo, vedere la
-[guida dell'utente](/docs/argvus-boot-splash/)].
+Per il packaging e le release, vedere [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) e
+[CI e release](/docs/argvus-boot-splash/developer-guide/ci-releases/). Per l'utilizzo, vedere la
+[guida dell'utente](/docs/argvus-boot-splash/).
 
 ## Descrittore
 
@@ -37,11 +37,11 @@ Note:
 
 ## Modello di rendering
 
-- Uno sfondo solido unico (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).  
-- **Sprite** sono le uniche primitive di disegno. Ogni `Sprite()` ha un'immagine, una posizione `(x, y)`, un **ordine z** e un'opacità in `[0, 1]`. Successivamente `SetPosition` chiama win; non c'è un grafo della scena.  
-- Il progresso viene disegnato ri-`ImageScale`-ando un'immagine ogni frame e chiamando `SetImage` sullo sprite — non ci sono primitive di ritaglio o di disegno parziale.  
-- Plymouth segnala lo stato attraverso callback che lo script registra: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.  
-- `Plymouth.SetRefreshRate(20)` fa eseguire la callback di aggiornamento a 20 FPS; l'unica animazione temporizzata del tema (il fade-in) dipende da essa.  
+- Uno sfondo solido unico (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).
+- **Sprite** sono le uniche primitive di disegno. Ogni `Sprite()` ha un'immagine, una posizione `(x, y)`, un **ordine z** e un'opacità in `[0, 1]`. Successivamente `SetPosition` chiama win; non c'è un grafo della scena.
+- Il progresso viene disegnato ri-`ImageScale`-ando un'immagine ogni frame e chiamando `SetImage` sullo sprite — non ci sono primitive di ritaglio o di disegno parziale.
+- Plymouth segnala lo stato attraverso callback che lo script registra: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.
+- `Plymouth.SetRefreshRate(20)` fa eseguire la callback di aggiornamento a 20 FPS; l'unica animazione temporizzata del tema (il fade-in) dipende da essa.
 
 ## Inventario degli asset
 
@@ -68,7 +68,7 @@ l'asset del marchio viene riesportato.
 
 `arch_check_splash_payload()` in `packaging/arch/common/functions.sh` richiede
 che **tutti** i file sopra esistano; aggiungere un asset significa aggiungerlo a quella lista. Vedi
-[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
+[confezione](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
 
 ## Panoramica dello script
 
@@ -97,7 +97,7 @@ La cache `logo.frame[...]` è intenzionale: `ImageScale` su ogni frame allocareb
 
 Il marchio segue la stessa idea su `text.scale = 0.80`, ma viene scalato una volta in linea. La barra di avanzamento e il tracciato vengono quindi scalati su `text.image.GetWidth()` — cioè la barra corrisponde sempre alla larghezza del marchio, qualunque sia la dimensione reale del marchio in pixel.
 
-### 3. Layout
+### 3. Disposizione
 
 Ogni elemento è centrato sull'asse orizzontale della finestra:
 
@@ -109,7 +109,7 @@ Nota il `- 35`: lo stack è centrato sull'intera composizione (logo + marchio te
 
 Ordine Z utilizzato qui:
 
-| Z | Sprite |
+| Z| Folletto |
 | --- | --- |
 | 100 | logo, marchio testuale, traccia di progresso |
 | 101 | barra di progresso (sopra la traccia) |
@@ -150,16 +150,16 @@ Registrato con `PlymouthSetBootProgressFunction(progress_callback)`. La morsa co
        if (index < bullets) sprite.SetOpacity(1); else sprite.SetOpacity(0);
    }
    ```
-Gli sprite vengono raggruppati e riutilizzati tra i prompt invece di essere ricreati; 
-i proiettili vecchi sono nascosti con opacità `0`. I proiettili sono centrati verticalmente 
+Gli sprite vengono raggruppati e riutilizzati tra i prompt invece di essere ricreati;
+i proiettili vecchi sono nascosti con opacità `0`. I proiettili sono centrati verticalmente
 riguardo all'altezza del campo di inserimento.
 
-`display_normal_callback()` è l'inverso: ripristina l'opacità `1.0`, nasconde il 
-prompt, il campo di inserimento e ogni proiettile raggruppato. Registrato con 
-`PlymouthSetDisplayNormalFunction`, Plymouth lo chiama quando la parola d'ordine viene 
+`display_normal_callback()` è l'inverso: ripristina l'opacità `1.0`, nasconde il
+prompt, il campo di inserimento e ogni proiettile raggruppato. Registrato con
+`PlymouthSetDisplayNormalFunction`, Plymouth lo chiama quando la parola d'ordine viene
 accettata o annullata e l'avvio continua.
 
-Conseguenza: `logo.opacity` è una variabile, non una costante, perché sia il fade 
+Conseguenza: `logo.opacity` è una variabile, non una costante, perché sia il fade
 che lo stato della password si moltiplicano in essa.
 
 ### 6. Effetto di comparsa
@@ -211,12 +211,12 @@ Fonte unica di verità per la regolazione della composizione:
 | Traccia progresso | `#262933` | `progress-bar-track.png` |
 | Testo prompt | `#B8C4CE` | script (chiamata `Image.Text`) |
 
-I colori di accento e della traccia sono incorporati nelle risorse PNG, non sono espressi nello script, quindi ricolorare significa riesportare le risorse (o modificare la tavolozza).  
+I colori di accento e della traccia sono incorporati nelle risorse PNG, non sono espressi nello script, quindi ricolorare significa riesportare le risorse (o modificare la tavolozza).
 Il tema è solo scuro e non ha variante chiara.
 
 ## Formato bitmap UKI
 
-`argvus-uki-splash.bmp` è un BMP Windows non compresso a 32-bit, 400x400 (`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`).  
+`argvus-uki-splash.bmp` è un BMP Windows non compresso a 32-bit, 400x400 (`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`).
 È una risorsa autonoma: lo script Plymouth non lo carica mai, e il pacchetto Arch non lo registra da nessuna parte — incorporarlo in un UKI è un passaggio dell'utente (vedi la [guida utente](/docs/argvus-boot-splash/uki-splash/)).
 
 Se lo sostituisci, mantienilo un BMP semplice non compresso a 32 bit di dimensioni comparabili; systemd-boot e `ukify` non ridimensionano formati arbitrari e le immagini grandi consumano molta memoria all'avvio iniziale.

@@ -7,8 +7,8 @@ description: Validation, intégration continue, signature et flux de travail de 
 La passerelle de validation, les jobs d'intégration continue, le pipeline de release et
 les règles de versioning.
 
-Pour le package lui-même, voir [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] ; pour le thème, voir
-[architecture du thème](/docs/argvus-boot-splash/developer-guide/theme/)].
+Pour le package lui-même, voir [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) ; pour le thème, voir
+[architecture du thème](/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Validation
 
@@ -24,25 +24,25 @@ Pour le package lui-même, voir [packaging](/docs/argvus-boot-splash/developer-g
 
 `.github/workflows/ci.yml` (push/PR vers `main`, conteneur `archlinux:latest`) :
 
-1. installer `base-devel git namcap pacman-contrib shellcheck sudo` ; 
-2. `make validate` ; 
+1. installer `base-devel git namcap pacman-contrib shellcheck sudo` ;
+2. `make validate` ;
 3. Build en tant qu’utilisateur `builder` **non privilégié**.
    (`sudo -u builder env HOME=/home/builder make build`) — makepkg refuse de s’exécuter
-   en tant que racine, et l’espace de travail est `chown` en premier ; 
-4. Un travail `spellcheck` séparé fonctionne `cspell-action@v6` avec `cspell.json`. 
+   en tant que racine, et l’espace de travail est `chown` en premier ;
+4. Un travail `spellcheck` séparé fonctionne `cspell-action@v6` avec `cspell.json`.
 
 `namcap` s’enchaîne à l’intérieur de `pkgbuild_local.sh` une fois installé, donc les constructions locales apparaissent
 la même peluche que le CI. La configuration du correcteur orthographique est `cspell.json` avec l’espace de travail
 Dictionnaire en `.cspell/custom-dictionary-workspace.txt` — Nouveaux termes techniques
-(drapeaux de coque, noms d’outils) doivent être dans ce dictionnaire, sinon le CI échoue. 
+(drapeaux de coque, noms d’outils) doivent être dans ce dictionnaire, sinon le CI échoue.
 
 ## Pipeline de sortie
 
 `.github/workflows/release.yml` — déclencheurs : pousser une étiquette `v*`, ou
 `workflow_dispatch` avec un tag existant (reconstruction contrôlée). Groupe de concurrence
-`release-<ref>`, pas d’annulation. 
+`release-<ref>`, pas d’annulation.
 
-Étapes : 
+Étapes :
 
 1. **Vérifier** le tag (le dispatch utilise `inputs.tag`).
 2. **Étape de version** : valide le tag contre `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`, échoue si `url` est vide dans `packaging/arch/remote/PKGBUILD`, puis réécrit `pkgver` à partir du tag.

@@ -1,19 +1,19 @@
 ---
-title: Reference
+title: حوالہ
 description:                           ۔ﺭﺍﺪﻗﺍ ﮯﮐ ﮓﻧﺭ ﺭﻭﺍ ،ﺎﭩﯾﮈ ﺎﭩﯿﻣ ﺞﮑﯿﭘ ،ﮟﯿﻠﺋﺎﻓ ﮦﺪﺷ ﻝﺎﭩﺴﻧﺍ
 ---
 
-# Reference
+# حوالہ
 
   ۔ﮯﮨ ﺎﺗﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ ﮟﯾﺭﺪﻗ ﯽﺳ ﻥﻮﮐ ﮧﯾ ﺭﻭﺍ ﮯﮨ ﺎﺗﺮﮐ ﻝﺎﭩﺴﻧﺍ ﺎﯿﮐ ﺞﮑﯿﭘ ﮧﮐ ﮧﻟﺍﻮﺣ ﯽﮑﯿﻨﮑﺗ
 
 ##                                                               ﮯﮨ ﺎﺘﻠﻣ ﻮﮐ ﭖﺁ ﻮﺟ
 
-| Component | Description |
+| جزو | تفصیل |
 | --- | --- |
                   | ﻥﺎﺸﻧ ﻻ﻿ﺍﻭ ﺖﯾﺰﮐﺮﻣ ﺍﻮﮨ ﺎﯾﺎﻨﺑ ﺮﭘﻭﺍ ﮯﮐ ﻥﺎﺸﻧ ﯽﻈﻔﻟ | ﻮﮔﻮﻟ ﺱﻮﮔﺭﺁ |
-| Wordmark | `ARGVUS` text below the logo |
-| ﮯﮨ ﯽﺗﺮﮐ ﯽﺳﺎﮑﻋ ﯽﮐ ﺖﻓﺭ ﺶﯿﭘ ﻥﺍﺭﻭﺩ ﮯﮐ ﭦﻮﺑ ﮯﮐ ﮫﺘﯿﺋﻼ﻿ﭘ ﯽﺋﺍﮌﻮﭼ ﯽﮐ ﺲﺟ ﺭﺎﺑ ﯽﻠﺘﭘ | ﺭﺎﺑ 
+| ورڈ مارک | لوگو کے نیچے `ARGVUS` متن |
+| ﮯﮨ ﯽﺗﺮﮐ ﯽﺳﺎﮑﻋ ﯽﮐ ﺖﻓﺭ ﺶﯿﭘ ﻥﺍﺭﻭﺩ ﮯﮐ ﭦﻮﺑ ﮯﮐ ﮫﺘﯿﺋﻼ﻿ﭘ ﯽﺋﺍﮌﻮﭼ ﯽﮐ ﺲﺟ ﺭﺎﺑ ﯽﻠﺘﭘ | ﺭﺎﺑ
                ) ﮫﺗﺎﺳ ﮯﮐ ﮉﻠﯿﻓ ﯼﺮﭩﻧﺍ ﮦﺪﺷ ﮏﺳﺎﻣ ﮏﯾﺍ ﭧﭙﻣﺍﺮﭘ LUKS | ﮒﻼ﻿ﯿﺋﺍﮈ ﮈﺭﻮﺳﺎﭘ |`•` bullets) |
 | ﮯﮨ ﺎﺗﻮﮨ ﻥﺍ ﮉﯿﻓ ﮟﯿﻣ ﮉﻨﮑﯿﺳ 1 ٔﺎﺒﯾﺮﻘﺗ ﮏﯿﻠﭙﺳﺍ ،ﮯﮨ ﺎﺗﻮﮨ ﻉﻭﺮﺷ ﮫﺗﻮﻤﯿﻠﭘ ﺐﺟ | ﻥﺍ-ﮉﯿﻓ |
                                                           | ﭗﯿﻣ ﭧﺑ ﯽﺋﺁ ﮯﮐ ﻮﯾ |`argvus-uki-splash.bmp`                                 | ﮯﯿﻟ ﮯﮐ ﺲﭨﻮﺑ ﯽﻨﺒﻣ ﺮﭘ ﭦﻮﺑ-ﯼﮈ ﻢﭩﺴﺳ / ﯽﺋﺁ ﮯﮐ ﻮﯾ
@@ -25,41 +25,41 @@ description:                           ۔ﺭﺍﺪﻗﺍ ﮯﮐ ﮓﻧﺭ ﺭﻭ
 
 `/usr/share/plymouth/themes/argvus/` ﺖﺤﺗ ﮯﮐ:
 
-| File | Size | Purpose |
+| فائل | سائز | مقصد |
 | --- | --- | --- |
-| `argvus.plymouth` | — | theme descriptor (name, description, module) |
-| `argvus.script` | — | the theme script (Plymouth's own scripting language) |
-| `argvus-logo.png` | 256x256 | logo, RGBA |
-| `argvus-text.png` | 400x53 | wordmark, RGBA |
-| `progress-bar.png` | 400x4 | filled part of the progress bar |
-| `progress-bar-track.png` | 400x4 | unfilled track |
-| `entry-box.png` | 400x48 | password entry field |
-| `entry-line.png` | 300x2 | password field rule/underline |
-| `bullet.png` | 12x12 | masked character |
-| `logo-glow.png` | 260x300 | logo glow artwork |
-| `argvus-uki-splash.bmp` | 400x400, 32-bit | UKI/systemd-boot splash bitmap |
+| `argvus.plymouth` | - | تھیم ڈسکرپٹر (نام، تفصیل، ماڈیول) |
+| `argvus.script` | - | تھیم اسکرپٹ (Plymouth کی اپنی اسکرپٹنگ زبان) |
+| `argvus-logo.png` | 256x256 | لوگو، RGBA |
+| `argvus-text.png` | 400x53 | ورڈ مارک، آر جی بی اے |
+| `progress-bar.png` | 400x4 | پروگریس بار کا بھرا ہوا حصہ |
+| `progress-bar-track.png` | 400x4 | نامکمل ٹریک |
+| `entry-box.png` | 400x48 | پاس ورڈ انٹری فیلڈ |
+| `entry-line.png` | 300x2 | پاس ورڈ فیلڈ رول/انڈر لائن |
+| `bullet.png` | 12x12 | نقاب پوش کردار |
+| `logo-glow.png` | 260x300 | لوگو گلو آرٹ ورک |
+| `argvus-uki-splash.bmp` | 400x400، 32 بٹ | UKI/systemd-بوٹ سپلیش بٹ میپ |
 
                                      ۔ﮯﮨ ﺮﭘ `/usr/share/licenses/argvus-boot-splash/LICENSE` ﺲﻨﺴﺋﻻ﻿ ﮧﮐ ﮧﯾ ﺪﯾﺰﻣ
 
 ##                                                                ﺎﭩﯾﮈ ﺎﭩﯿﻣ ﺞﯿﮑﯿﭘ
 
-| Field | Value |
+| فیلڈ | قدر |
 | --- | --- |
-| Name | `argvus-boot-splash` |
-| Architecture | `any` |
-| Depends | `plymouth` |
-| Optional depends | `mkinitcpio`, `dracut` |
-| Conflicts / replaces | `argvus-plymouth` |
-| License | GPL-3.0-only |
+| نام | `argvus-boot-splash` |
+| فن تعمیر | `any` |
+| انحصار کرتا ہے | `plymouth` |
+| اختیاری منحصر ہے | `mkinitcpio`, `dracut` |
+| تنازعات / بدلتا ہے | `argvus-plymouth` |
+| لائسنس | GPL-3.0 صرف |
 
-## Colors
+## رنگ
 
-| Element | Color |
+| عنصر | رنگ |
 | --- | --- |
-| Background | `#111316` |
-| Accent (logo, wordmark, progress fill) | `#3590BD` |
-| Progress track | `#262933` |
-| Password prompt text | light gray-blue (`#B8C4CE`) |
+| پس منظر | `#111316` |
+| لہجہ (لوگو، ورڈ مارک، پروگریس فل) | `#3590BD` |
+| پیش رفت ٹریک | `#262933` |
+| پاس ورڈ پرامپٹ متن | ہلکا سرمئی نیلا (`#B8C4CE`) |
 
 ﮟﯿﮩﻧ ﯽﮭﺒﮐ ﮧﯾ ﺍﺬﮩﻟ ،ﮯﮨ ﯽﺗﺮﮐ ﻝﺎﻤﻌﺘﺳﺍ ﺮﻈﻨﻣ ﺲﭘ ﺍﺮﮩﮔ ﻁﻮﺒﻀﻣ ﺮﭘ ﻦﺷﻮﻟﻭﺰﯾﺭ ﯽﮭﺑ ﯽﺴﮐ ﻢﯿﮭﺗ
              ۔ﮯﮨ ﺎﺗﺮﮐ ﭻﺋﻮﺳ ﺮﭘ ﺭﻮﻃ ﺭﺎﮐﺩﻮﺧ ﻥﺎﯿﻣﺭﺩ ﮯﮐ ﺕﻻ﻿ﺩﺎﺒﺘﻣ ﮯﮐ ﯽﮑﯾﺭﺎﺗ ﺭﻭﺍ ﯽﻨﺷﻭﺭ
@@ -68,7 +68,7 @@ description:                           ۔ﺭﺍﺪﻗﺍ ﮯﮐ ﮓﻧﺭ ﺭﻭ
 
 -          ۔ﮟﯾﺮﮐ ﺖﺳﺍﻮﺧﺭﺩ ﯽﮐ ﺕﺎﯿﺻﻮﺼﺧ ﺭﻭﺍ ﮟﯾﺮﮐ ﭦﺭﻮﭘﺭ ﮓﺑ ﮟﯿﻣ ﺮﮑﯾﺮﭨ ﮧﻠﺌﺴﻣ ﮯﮐ ﭧﮑﯿﺟﻭﺮﭘ
                                                ﮟﯾﺮﮐ ﯼﻭﺮﯿﭘ :ﻞﺋﺎﺴﻣ ﮯﮐ ﯽﭨﺭﻮﯿﮑﯿﺳ -[SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md)                                                             ﮟﯿﻟﻮﮭﮐ ﮧﻧ ﯽﻣﺍﻮﻋ —
-  issue for vulnerabilities.
+  کمزوریوں کے لئے مسئلہ.
                                      ) ﮍﺟ ﯽﮐ ﻥﺰﺨﻣ :ﺯﺰﯿﻠﯾﺭ ﺭﻭﺍ ﺕﺍﺮﯿﻤﻌﺗ ،ﮧﻌﯾﺭﺫ -[                                                                         ﮯﯿﮬﮍﭘ](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
                                                                  :ﮟﯾﺮﮐ ﻥﻭﺎﻌﺗ -[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
                                                                       :ﺲﻨﺴﺋﻻ﻿ -[                                                             ﻑﺮﺻ-3.0-ﻞﯾﺍ ﯽﭘ ﯽﺟ](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).

@@ -85,7 +85,7 @@ Después de la instalación o actualización, los ganchos del paquete se ejecuta
 
 Si no se encuentra ningún generador, el instalador imprime una advertencia y debe reconstruir el initramfs usted mismo. Un cambio de tema solo se hace visible al arrancar después de regenerar el initramfs; reiniciar sin ese paso es la razón más común de que "la pantalla de inicio no cambió".
 
-Al eliminar el paquete solo imprime un recordatorio: elegir un tema diferente y reconstruir el initramfs queda a su criterio. Vea [uninstallation](/docs/argvus-boot-splash/uninstallation/)].
+Al eliminar el paquete solo imprime un recordatorio: elegir un tema diferente y reconstruir el initramfs queda a su criterio. Vea [uninstallation](/docs/argvus-boot-splash/uninstallation/).
 
 ## Próximos pasos
 

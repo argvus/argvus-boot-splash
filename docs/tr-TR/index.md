@@ -1,5 +1,5 @@
 ---
-title: ARGVUS Boot Splash
+title: ARGVUS Önyükleme Sıçraması
 description: ARGVUS masaüstü ortamı için Plymouth teması ve kurulum rehberi
 ---
 
@@ -7,14 +7,14 @@ description: ARGVUS masaüstü ortamı için Plymouth teması ve kurulum rehberi
 
 Argvus boot splash, Argvus masaüstü ekosistemi için bir [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) temasıdır. Bu, cihazı açtığınız ile grafik oturumunuzun başladığı an arasındaki görüntülediğiniz şeydir.
 
-## Documentation
+## Dokümantasyon
 
 Bu dokümantasyon iki ana bölümde düzenlenmiştir:
 
 ### Kullanıcı Kılavuzu
 Son kullanıcılar ve sistem yöneticileri için kurulum ve kullanım rehberleri.
 
-| Guide | Contents |
+| Kılavuzu | İçindekiler |
 | --- | --- |
 | [Kurulum](/docs/argvus-boot-splash/installation/)| Gereksinimler, üç kurulum seçeneği, paket kancalarının ne yaptığı |
 | [Kullanım](/docs/argvus-boot-splash/usage/)| Kurulumu doğrulayın, yeniden başlatmadan önizleme yapın, temaları değiştirin veya geri alın, komut hilesi sayfası |
@@ -43,5 +43,5 @@ Kurucu, temayı varsayılan olarak ayarlar ve initramfs'inizi otomatik olarak ye
 ---
 
 - **Depo:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
-- **License:** GPL-3.0-only
+- **Lisans:** Yalnızca GPL-3.0
 - **Hata Bildirimleri:** [GitHub Issues](https://github.com/argvus/argvus-boot-splash/issues)

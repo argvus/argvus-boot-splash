@@ -1,24 +1,24 @@
 ---
-title: CI and Releases
+title: CI ve Sürümler
 description: Doğrulama, sürekli entegrasyon, imzalama ve sürüm iş akışı.
 ---
 
 # CI ve sürümler
 
 Doğrulama kapısı, sürekli entegrasyon işleri, sürüm hattı ve
-the versioning rules.
+sürüm oluşturma kuralları.
 
 Paket için bkz. [paketleme](/docs/argvus-boot-splash/developer-guide/packaging/); tema için bkz.
 [tema mimarisi](/docs/argvus-boot-splash/developer-guide/theme/).
 
-## Validation
+## Doğrulama
 
 `tools/sh/validate.sh` gerekli kapıdır:
 
 - `bash`, `makepkg`, `shellcheck` gerektirir;
 - `shellcheck` + `bash -n` `tools/sh/*.sh` ve `packaging/arch/common/*.sh` üzerinde;
 - kaynakları hem PKGBUILD'leri alır hem de çıkarılan meta verileri karşılaştırır — uzak ve yerel
-  match;
+  maç;
 - `makepkg -p PKGBUILD --printsrcinfo` `ci/` ve `local/` içinde olmalıdır (
 dosyasını makepkg'in yaptığı şekilde ayrıştırır);
 - `git diff --check` (boşluk / çakışma işaretleri).
@@ -45,24 +45,24 @@ sözlüğü `.cspell/custom-dictionary-workspace.txt` içindedir — yeni teknik
 `workflow_dispatch` mevcut bir etiketle (kontrollü yeniden derleme). Eşzamanlılık grubu
 `release-<ref>`, iptal yok.
 
-Steps:
+Adımlar:
 
-1. **Checkout** the tag (dispatch uses 
+1. **Checkout** the tag (dispatch uses
 
 ).
 2. **Sürüm adımı**: etiketi  ile doğrular
 
-, fails if 
+, fails if
 
  is empty in
 
-, then rewrites 
+, then rewrites
 
  from the tag.
 3. **Validate**:  pkgver  packaging/arch/remote/PKGBUILD  url  ^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$  `inputs.tag`  `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$`  `url`  `packaging/arch/remote/PKGBUILD`  `pkgver` `make validate`.
-4. **Build** as unprivileged 
+4. **Build** as unprivileged
 
-: 
+:
 
  (resolves and validates the
 gerçek  updpkgsums  `builder`  `updpkgsums` `sha256sums`) sonra
@@ -94,7 +94,7 @@ zamanı (yerel) veya `updpkgsums` aracılığıyla (sürüm CI) hesaplanır.
 `argvus.files.tar.gz`, `argvus.db`, `argvus.files`).
 - `GPG_PASSPHRASE` boş olmamalıdır; iş akışı boş bir parola reddeder.
 
-Prepare the key:
+Anahtarı hazırlayın:
 
 ```sh
 gpg --full-generate-key            # RSA 4096, no expiry recommended
@@ -104,16 +104,16 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
 Depodaki **Ayarlar → Sırlar ve değişkenler → Eylemler** kısmında:
 
-| Secret | Value |
+| Gizli | Değer |
 | --- | --- |
-| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
-| `GPG_KEY_ID` | expected key ID or fingerprint |
-| `GPG_PASSPHRASE` | non-empty passphrase of the signing key |
-| `PACKAGES_REPO_TOKEN` | PAT with `contents:write` on `argvus/packages` |
+| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` çıkışı |
+| `GPG_KEY_ID` | beklenen anahtar kimliği veya parmak izi |
+| `GPG_PASSPHRASE` | imzalama anahtarının boş olmayan parolası |
+| `PACKAGES_REPO_TOKEN` | `argvus/packages` üzerinde `contents:write` ile PAT |
 
 ## Bir sürüm yayımlama
 
-Before tagging:
+Etiketlemeden önce:
 
 1. Gerçek depoyu kullanarak `url` değerini `packaging/arch/remote/PKGBUILD` alanına doldurun:
    - GitHub: `url="https://github.com/argvus/argvus-boot-splash"` (kaynak
@@ -123,7 +123,7 @@ Before tagging:
    - `url` olmadan, sürüm **kasıtlı olarak başarısız olur** ve açık bir mesaj verir.
 2. `packaging/arch/local/PKGBUILD` ve
 `packaging/arch/remote/PKGBUILD`.
-3. Tag and push:
+3. Etiketleyin ve iletin:
 
    ```sh
    git tag v0.1.0
@@ -133,7 +133,7 @@ Before tagging:
 İş akışı, mevcut bir `v*` etiketi ile
 giriş olarak manuel olarak da başlatılabilir, bu kontrollü bir yeniden oluşturma için faydalıdır.
 
-## Versioning
+## Sürüm oluşturma
 
 - SemVer  `tag` `pkgver` içinde, sürüm sayısı `pkgrel` içinde.
 

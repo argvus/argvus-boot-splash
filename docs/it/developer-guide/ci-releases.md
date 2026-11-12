@@ -8,8 +8,8 @@ description: Validazione, integrazione continua, firma e flusso di lavoro di ril
 Il gate di validazione, i job di integrazione continua, la pipeline di rilascio e
 le regole di versioning.
 
-Per il pacchetto in sé, vedi [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)]; per il tema, vedi
-[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)].
+Per il pacchetto in sé, vedi [packaging](/docs/argvus-boot-splash/developer-guide/packaging/); per il tema, vedi
+[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Validazione
 

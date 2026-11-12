@@ -8,9 +8,9 @@ description: Cómo se ensamblan el descriptor, los activos y el guion de Plymout
 Cómo se compone el tema Plymouth: el descriptor, el conjunto de recursos, y lo que
 `argvus.script` hace, sección por sección.
 
-Para empaquetado y versiones, vea [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] y
-[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)]. Para uso, vea el
-[guía del usuario](/docs/argvus-boot-splash/)].
+Para empaquetado y versiones, vea [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) y
+[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/). Para uso, vea el
+[guía del usuario](/docs/argvus-boot-splash/).
 
 ## Descriptor
 
@@ -44,10 +44,10 @@ Notas:
 
 ## Modelo de renderizado
 
-- Un fondo sólido plano (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).  
-- **Sprites** son los únicos primitivos de dibujo. Cada `Sprite()` tiene una imagen, una posición `(x, y)`, un **orden z** y una opacidad en `[0, 1]`. Más tarde `SetPosition` llama a win; no hay un grafo de escena.  
-- El progreso se dibuja re-`ImageScale`-ando una imagen en cada cuadro y llamando a `SetImage` en el sprite — no hay un primitivo de recorte o dibujo parcial.  
-- Plymouth informa el estado mediante callbacks que registra el script: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.  
+- Un fondo sólido plano (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).
+- **Sprites** son los únicos primitivos de dibujo. Cada `Sprite()` tiene una imagen, una posición `(x, y)`, un **orden z** y una opacidad en `[0, 1]`. Más tarde `SetPosition` llama a win; no hay un grafo de escena.
+- El progreso se dibuja re-`ImageScale`-ando una imagen en cada cuadro y llamando a `SetImage` en el sprite — no hay un primitivo de recorte o dibujo parcial.
+- Plymouth informa el estado mediante callbacks que registra el script: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.
 - `Plymouth.SetRefreshRate(20)` hace que el callback de refresco se ejecute a 20 FPS; la única animación temporal del tema (la aparición progresiva) depende de ello.
 
 ## Inventario de activos
@@ -117,7 +117,7 @@ Tenga en cuenta el `- 35`: la pila está centrada en toda la composición (logo 
 
 Orden Z usado aquí:
 
-| Z | Sprite |
+| Z | duende |
 | --- | --- |
 | 100 | logo, marca de palabra, pista de progreso |
 | 101 | barra de progreso (sobre la pista) |

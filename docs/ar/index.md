@@ -1,19 +1,19 @@
 ---
-title: ARGVUS Boot Splash
+title: ARGVUS التمهيد سبلاش
 description:                                ARGVUS ﺐﺘﻜﻤﻟﺍ ﺢﻄﺳ ﺔﺌﻴﺒﻟ ﻪﺘﻴﺒﺜﺗﻭ ﺙﻮﻤﻴﻠﺑ ﻢﻴﺛ ﻞﻴﻟﺩ
 ---
 
 #                                                          ARGVUS ﻞﻴﻐﺸﺗ ءﺪﺑ ﺔﺷﺎﺷ
 
 
-## Documentation
+## التوثيق
 
                                         :ﻦﻴﻴﺴﻴﺋﺭ ﻦﻴﻤﺴﻗ ﻲﻓ ﻖﺋﺎﺛﻮﻟﺍ ﻩﺬﻫ ﻢﻴﻈﻨﺗ ﻢﺗ
 
 ### ﻡﺪﺨﺘﺴﻤﻟﺍ ﻞﻴﻟﺩ
                    .ﻡﺎﻈﻨﻟﺍ ﻲﻟﻭﺆﺴﻣﻭ ﻦﻴﻴﺋﺎﻬﻨﻟﺍ ﻦﻴﻣﺪﺨﺘﺴﻤﻠﻟ ﻡﺍﺪﺨﺘﺳﻻ﻿ﺍﻭ ﺖﻴﺒﺜﺘﻟﺍ ﺔﻟﺩﺃ
 
-| Guide | Contents |
+| دليل | المحتويات |
 | --- | --- |
 
                                            .ﺔﻧﺎﻴﺼﻟﺍﻭ ﻦﻴﻤﻫﺎﺴﻤﻠﻟ ﺔﻴﻨﻘﺘﻟﺍ ﻖﺋﺎﺛﻮﻟﺍ
@@ -31,10 +31,10 @@ sudo pacman -S argvus-boot-splash   # or: sudo pacman -U ./argvus-boot-splash-<v
 
 ---
 
-- **License:** GPL-3.0-only
+- **الترخيص:** GPL-3.0 فقط
  for the installed and user paths.                                            .ﻡﺪﺨﺘﺴﻤﻟﺍ ﺕﺍﺭﺎﺴﻣﻭ ﺔﺘﺒﺜﻤﻟﺍ ﺕﺍﺭﺎﺴﻤﻠﻟ(https://github.com/argvus/argvus-boot-splash/issues)
 
-                                                      ﻲﻫ Argvus ﻞﻴﻐﺸﺗ ءﺪﺑ ﺔﺷﺎﺷ[                                                                        ﺙﻮﻤﻴﻠﺑ](https://www.freedesktop.org/wiki/Software/Plymouth/).ﺔﻴﻣﻮﺳﺮﻟﺍ ﻚﺘﺴﻠﺟ ءﺪﺑ ﺔﻈﺤﻟ ﻦﻴﺑﻭ ﺯﺎﻬﺠﻟﺍ ﻞﻴﻐﺸﺗ ﻦﻴﺑ ﻩﺍﺮﺗ ﺎﻣ ﻪﻧﺇ .Argvus ﺐﺘﻜﻤﻟﺍ ﺢﻄﺳ 
+                                                      ﻲﻫ Argvus ﻞﻴﻐﺸﺗ ءﺪﺑ ﺔﺷﺎﺷ[                                                                        ﺙﻮﻤﻴﻠﺑ](https://www.freedesktop.org/wiki/Software/Plymouth/).ﺔﻴﻣﻮﺳﺮﻟﺍ ﻚﺘﺴﻠﺟ ءﺪﺑ ﺔﻈﺤﻟ ﻦﻴﺑﻭ ﺯﺎﻬﺠﻟﺍ ﻞﻴﻐﺸﺗ ﻦﻴﺑ ﻩﺍﺮﺗ ﺎﻣ ﻪﻧﺇ .Argvus ﺐﺘﻜﻤﻟﺍ ﺢﻄﺳ
 | [                                                                       ﺖﻴﺒﺜﺘﻟﺍ](/docs/argvus-boot-splash/installation/)                   | ﺔﻣﺰﺤﻟﺍ ﺕﺎﻄﺑﺭ ﻪﻠﻌﻔﺗ ﺎﻣ ،ﺔﺛﻼ﻿ﺜﻟﺍ ﺖﻴﺒﺜﺘﻟﺍ ﺕﺍﺭﺎﻴﺧ ،ﺕﺎﺒﻠﻄﺘﻤﻟﺍ |
 | [                                                                       ﻡﺍﺪﺨﺘﺳﺍ](/docs/argvus-boot-splash/usage/)| ﺮﻣﺍﻭﻷ﻿ﺍ ﺔﻋﺪﺧ ﺔﻗﺭﻭ ،ﺕﺎﻤﺴﻟﺍ ﻉﺎﺟﺮﺘﺳﺍ ﻭﺃ ﻞﻳﺪﺒﺗ ،ﻞﻴﻐﺸﺗ ﺓﺩﺎﻋﺇ ﻥﻭﺪﺑ ﺔﻨﻳﺎﻌﻤﻟﺍ ،ﺖﻴﺒﺜﺘﻟ
 | [UKI ﻭ systemd-boot ﺔﻳﺍﺪﺒﻟﺍ ﺔﺷﺎﺷ](/docs/argvus-boot-splash/uki-splash/)                                                                     ﻡﺍﺪﺨﺘﺳﺍ |`argvus-uki-splash.bmp`                                                            | UKI ﻉﻼ﻿ﻗﺇ ﻖﻓﺪﺗ ﻲﻓ

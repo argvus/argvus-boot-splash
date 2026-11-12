@@ -60,16 +60,16 @@ description: インストールされたファイル、パッケージのメタ�
 | 進捗トラック | `#262933` |
 | パスワード入力テキスト | ライトグレー青 (`#B8C4CE`) |
 
-このテーマは任意の解像度で濃いソリッド背景を使用するため、  
+このテーマは任意の解像度で濃いソリッド背景を使用するため、
 ライトとダークのバリアントを自動的に切り替えることはありません。
 
 ## ヘルプを得る
 
 - バグを報告し、機能のリクエストをプロジェクトのイシュートラッカーで行ってください。
-- セキュリティの問題: [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md)] に従ってください — 脆弱性については公開のイシューを開かないでください。
+- セキュリティの問題: [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md) に従ってください — 脆弱性については公開のイシューを開かないでください。
 - ソース、ビルド、リリース: リポジトリのルート ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md))。
-- 貢献: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)]。
-- ライセンス: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)]。
+- 貢献: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)。
+- ライセンス: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)。
 
 ## 次のステップ
 

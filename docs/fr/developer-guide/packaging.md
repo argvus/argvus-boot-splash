@@ -7,7 +7,7 @@ description: Métadonnées du package Arch, pipeline de construction et cibles M
 
 Comment le paquet Arch est défini et produit : les deux PKGBUILD, les fonctions partagées, les hooks d'installation, le pipeline de construction local et les cibles Make.
 
-Pour le thème lui-même, voir [architecture du thème](/docs/argvus-boot-splash/developer-guide/theme/)] ; pour la validation, l'intégration continue et les versions, voir [CI et versions](/docs/argvus-boot-splash/developer-guide/ci-releases/)].
+Pour le thème lui-même, voir [architecture du thème](/docs/argvus-boot-splash/developer-guide/theme/) ; pour la validation, l'intégration continue et les versions, voir [CI et versions](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Deux PKGBUILD, un seul contenu
 

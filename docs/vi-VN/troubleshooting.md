@@ -1,9 +1,9 @@
 ---
-title: Troubleshooting
+title: Khắc phục sự cố
 description: Các triệu chứng phổ biến của màn hình khởi động và cách khắc phục.
 ---
 
-# Troubleshooting
+# Khắc phục sự cố
 
 **Màn hình khởi động không thay đổi sau khi cài đặt.**
 Initramfs chưa được tái tạo. Chạy `sudo mkinitcpio -P` (hoặc
@@ -47,7 +47,7 @@ initramfs).
 
 **Một Plymouth lạc vẫn đang chạy sau khi xem trước.**
 `sudo plymouthquit` khôi phục phiên làm việc của bạn. Nếu màn hình vẫn đen, chuyển sang
-another virtual terminal (`Ctrl+Alt+F2`) — your session is intact.
+một thiết bị đầu cuối ảo khác (`Ctrl+Alt+F2`) - phiên của bạn vẫn nguyên vẹn.
 
 ## Các bước tiếp theo
 

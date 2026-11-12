@@ -1,5 +1,5 @@
 ---
-title: Developer Guide
+title: Geliştirici Kılavuzu
 description: ARGVUS katkıda bulunanları için mimari ve geliştirme rehberi.
 ---
 
@@ -7,11 +7,11 @@ description: ARGVUS katkıda bulunanları için mimari ve geliştirme rehberi.
 
 `argvus-boot-splash` deposu için teknik dokümantasyon: Plymouth
 temasının nasıl oluşturulduğu, Arch paketinin nasıl derlendiği ve sürümlerin
-signed and published.
+imzalandı ve yayınlandı.
 
 nasıl yapıldığı. Burada bir derleme adımı yok — tema veridir (bir `.plymouth` tanımlayıcı,
 bir `.script` ve resimler) artı bir Arch paket tarifi. "Oluşturmak"
-a reproducible package:
+tekrarlanabilir bir paket:
 
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
@@ -26,11 +26,11 @@ terimleri `.cspell/custom-dictionary-workspace.txt`'ya ekleyin yoksa yazım dene
 Sadece temayı *kullanmak* istiyorsanız, [kullanıcı kılavuzunu](/docs/argvus-boot-splash/) okuyun.
 Bu dosyanın süreç odaklı karşılığı (git flow, gizli bilgiler, sürüm
 süreç) bkz. [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) ve
-[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
+[KATKILI.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 
-## Guides
+## Kılavuzlar
 
-| Guide | Contents |
+| Kılavuzu | İçindekiler |
 | --- | --- |
 | [Tema mimarisi](/docs/argvus-boot-splash/developer-guide/theme/)| Tanımlayıcı, render modeli, varlık envanteri, betik yürütme, düzen sabitleri, tasarım simgeleri, UKI bitmap, temayı nasıl değiştirilir |
 | [Ambalaj](/docs/argvus-boot-splash/developer-guide/packaging/)| İki PKGBUILD, paylaşıldı`functions.sh`, kancaları yükleyin, yerel derleme hattı, Make hedefleri, önkoşullar |
@@ -39,16 +39,16 @@ süreç) bkz. [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob
 
 ## Hızlı referans
 
-| Path | What it is |
+| Yol | Nedir |
 | --- | --- |
-| `src/usr/share/plymouth/themes/argvus/` | theme payload installed under `/usr` |
-| `packaging/arch/{ci,local}/PKGBUILD` | release and local package recipes |
-| `packaging/arch/common/functions.sh` | shared `prepare`/`check`/`package` |
-| `tools/sh/pkgbuild_local.sh` | deterministic tarball + `makepkg` driver |
-| `tools/sh/validate.sh` | required validation gate |
-| `.github/workflows/` | `ci.yml` (validate, build, spellcheck), `release.yml` (tags `v*`) |
+| `src/usr/share/plymouth/themes/argvus/` | `/usr` altında yüklü tema verisi |
+| `packaging/arch/{ci,local}/PKGBUILD` | sürüm ve yerel paket tarifleri |
+| `packaging/arch/common/functions.sh` | paylaşılan `prepare`/`check`/`package` |
+| `tools/sh/pkgbuild_local.sh` | deterministik tarball + `makepkg` sürücüsü |
+| `tools/sh/validate.sh` | gerekli doğrulama kapısı |
+| `.github/workflows/` | `ci.yml` (doğrulama, oluşturma, yazım denetimi), `release.yml` (etiketler `v*`) |
 
-## Elsewhere
+## Başka yerde
 
 - Depo kökü: [README.md](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)
 - Kullanıcıya yönelik belgeler: [kullanıcı kılavuzu](/docs/argvus-boot-splash/)

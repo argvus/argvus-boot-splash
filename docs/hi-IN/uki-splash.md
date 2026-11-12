@@ -12,7 +12,7 @@ initramfs.
 
 से पढ़ा जाए। बिटमैप का उपयोग Plymouth थीम द्वारा *नहीं* किया जाता और
 आप स्वतः: इसे एम्बेड करते हैं यह इस पर निर्भर करता है कि आप अपना UKI कैसे बनाते हैं। सामान्य
-consumers are:
+उपभोक्ता हैं:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)

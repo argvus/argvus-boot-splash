@@ -16,7 +16,7 @@ make install    # sudo pacman -U that file
 ```
 変更をコミットする前に: `make validate && make build`、および新しい技術用語を`.cspell/custom-dictionary-workspace.txt`に追加してください。さもなければスペルチェックジョブが失敗します。
 
-テーマを*使用*したいだけの場合は、[ユーザーガイド](/docs/argvus-boot-splash/)]を読んでください。このファイルのプロセス指向の対応バージョン（gitフロー、シークレット、リリースプロセス）については、[DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)]および[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)]を参照してください。
+テーマを*使用*したいだけの場合は、[ユーザーガイド](/docs/argvus-boot-splash/)を読んでください。このファイルのプロセス指向の対応バージョン（gitフロー、シークレット、リリースプロセス）については、[DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)および[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)を参照してください。
 
 ## ガイド
 

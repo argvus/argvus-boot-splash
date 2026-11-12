@@ -1,24 +1,24 @@
 ---
-title: CI and Releases
+title: CI এবং রিলিজ
 description: যাচাইকরণ, ক্রমাগত ইন্টিগ্রেশন, স্বাক্ষর এবং প্রকাশ ওয়ার্কফ্লো।
 ---
 
 # CI এবং প্রকাশ।
 
 ভ্যালিডেশন গেট, কন্টিনিউয়াস ইন্টিগ্রেশন জব, রিলিজ পাইপলাইন এবং
-the versioning rules.
+সংস্করণ করার নিয়ম।
 
 । প্যাকেজটির জন্য দেখুন [প্যাকেজিং](/docs/argvus-boot-splash/developer-guide/packaging/); থিমের জন্য দেখুন
 [থিম আর্কিটেকচার](/docs/argvus-boot-splash/developer-guide/theme/)।
 
-## Validation
+## বৈধতা
 
 `tools/sh/validate.sh` প্রয়োজনীয় গেট:
 
 - প্রয়োজন করে `bash`, `makepkg`, `shellcheck`;
 - `shellcheck` + `bash -n` এ `tools/sh/*.sh` এবং `packaging/arch/common/*.sh`;
 - উভয় PKGBUILD উৎস এবং তুলনা করে নিষ্কাশিত মেটাডেটা — দূরবর্তী এবং স্থানীয় অবশ্যই
-  match;
+  ম্যাচ
 - `makepkg -p PKGBUILD --printsrcinfo` মধ্যে `ci/` এবং `local/` (ফাইলটি
 পার্স করে যেভাবে makepkg করে);
 - `git diff --check` (স্পেস/সংশ্লেষণ চিহ্ন).
@@ -45,13 +45,13 @@ CI এর মতো একই লিন্ট। স্পেলচেক কন
 `workflow_dispatch` একটি বিদ্যমান ট্যাগের সাথে (নিয়ন্ত্রিত পুনঃনির্মাণ)। কনকারেন্সি গ্রুপ
 `release-<ref>`, কোনো বাতিলকরণ নেই।
 
-Steps:
+পদক্ষেপ:
 
 1. **চেকআউট** ট্যাগটি (ডিসপ্যাচ ব্যবহার করে `inputs.tag`)।
 2. **ভার্সন ধাপ**: ট্যাগটি
  `^v[0-9]+(\.[0-9]+)*([._+-][A-Za-z0-9]+)*$` `url` এর সাথে যাচাই করে, যদি
 তে `packaging/arch/remote/PKGBUILD` খালি থাকে তাহলে ব্যর্থ হয়, তারপর ট্যাগ থেকে `pkgver` পুনর্লিখন করে।
-3. **Validate**: `make validate`.
+3. **ভ্যালিডেট**: `make validate`।
 4. **বিল্ড** অপরিবর্তিত `builder` হিসেবে: `updpkgsums` (
 আসল `sha256sums`) তারপর
 `makepkg --nodeps --noconfirm --needed --cleanbuild --clean --check`.
@@ -82,7 +82,7 @@ Steps:
 `argvus.files.tar.gz`, `argvus.db`, `argvus.files`)।
 - `GPG_PASSPHRASE` খালি হতে পারবে না; ওয়ার্কফ্লো একটি খালি পাসফ্রেজ গ্রহণ করে না।
 
-Prepare the key:
+কী প্রস্তুত করুন:
 
 ```sh
 gpg --full-generate-key            # RSA 4096, no expiry recommended
@@ -92,16 +92,16 @@ gpg --armor --export-secret-keys KEY_ID            # what the workflow imports
 
 রিপোজিটরির **Settings → Secrets and variables → Actions**-এ:
 
-| Secret | Value |
+| গোপন | মান |
 | --- | --- |
-| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` output |
-| `GPG_KEY_ID` | expected key ID or fingerprint |
-| `GPG_PASSPHRASE` | non-empty passphrase of the signing key |
-| `PACKAGES_REPO_TOKEN` | PAT with `contents:write` on `argvus/packages` |
+| `GPG_PRIVATE_KEY` | `gpg --armor --export-secret-keys KEY_ID` আউটপুট |
+| `GPG_KEY_ID` | প্রত্যাশিত কী আইডি বা আঙুলের ছাপ |
+| `GPG_PASSPHRASE` | সাইনিং কী এর অ-খালি পাসফ্রেজ |
+| `PACKAGES_REPO_TOKEN` | `contents:write`-এ `argvus/packages` এর সাথে PAT |
 
 ## একটি রিলিজ প্রকাশ করা
 
-Before tagging:
+ট্যাগ করার আগে:
 
 1. `url` বাস্তব রিপোজিটরির সাথে `packaging/arch/remote/PKGBUILD`-এ পূরণ করুন:
    - GitHub: `url="https://github.com/argvus/argvus-boot-splash"` (সোর্স
@@ -111,7 +111,7 @@ Before tagging:
    - ছাড়া `url`, রিলিজটি **উদ্দেশ্যমূলকভাবে ব্যর্থ হয়** স্পষ্ট বার্তা সহ।
 2. `packaging/arch/local/PKGBUILD` এবং
 `packaging/arch/remote/PKGBUILD`.
-3. Tag and push:
+3. ট্যাগ এবং পুশ:
 
    ```sh
    git tag v0.1.0
@@ -121,7 +121,7 @@ Before tagging:
 কাজের প্রবাহটি বিদ্যমান `v*` ট্যাগকে
 ইনপুট হিসাবে ব্যবহার করে ম্যানুয়ালি শুরু করাও যায়, যা একটি নিয়ন্ত্রিত পুনর্নির্মাণের জন্য উপকারী।
 
-## Versioning
+## সংস্করণ করা
 
 - SemVer  `tag` `pkgver`, রিলিজ সংখ্যা `pkgrel`।
 
@@ -140,7 +140,7 @@ Before tagging:
 
 **একটি নতুন টার্মে বানান পরীক্ষা ব্যর্থ হয়।** এটিকে
 `.cspell/custom-dictionary-workspace.txt` (`argvus` অভিধান, `addWords:
-true`), not to `ignorePaths`.
+true`), not to `ignorePaths`।
 
 **`sudo` `make install` এর ভিতরে অনুরোধ করা হয়েছে, বা `libfakeroot.so … LD_PRELOAD`
 ত্রুটি।** একটি `package()` যা ব্যবহার না করে

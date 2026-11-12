@@ -1,18 +1,18 @@
 ---
-title: Reference
+title: রেফারেন্স
 description: ইনস্টল করা ফাইল, প্যাকেজ মেটাডেটা, এবং রঙের মান।
 ---
 
-# Reference
+# রেফারেন্স
 
 যে সফ্টওয়্যার প্যাকেজটি ইনস্টল করে এবং এটি কোন মান ব্যবহার করে তার জন্য প্রযুক্তিগত রেফারেন্স।
 
 ## আপনি যা পাবেন
 
-| Component | Description |
+| উপাদান | বর্ণনা |
 | --- | --- |
 | আর্গভাস লোগো | শব্দচিহ্নের উপরে আঁকা কেন্দ্রীভূত চিহ্ন |
-| Wordmark | `ARGVUS` text below the logo |
+| ওয়ার্ডমার্ক | লোগোর নিচে `ARGVUS` পাঠ্য |
 | প্রগতি বার | পাতলা বার যেটির প্রস্থ প্লাইমাউথের বুট প্রগ্রেসকে প্রতিফলিত করে |
 | পাসওয়ার্ড ডায়ালগ | লুকস প্রম্পট একটি লুকানো এন্ট্রি ফিল্ড সহ (`•` bullets) |
 | ফেড-ইন | যখন প্লাইমাউথ শুরু হয়, তখন প্রায় ১ সেকেন্ডে স্প্ল্যাশ ফেড ইন করে |
@@ -25,41 +25,41 @@ description: ইনস্টল করা ফাইল, প্যাকেজ �
 
 `/usr/share/plymouth/themes/argvus/` এর অধীনে:
 
-| File | Size | Purpose |
+| ফাইল | আকার | উদ্দেশ্য |
 | --- | --- | --- |
-| `argvus.plymouth` | — | theme descriptor (name, description, module) |
-| `argvus.script` | — | the theme script (Plymouth's own scripting language) |
-| `argvus-logo.png` | 256x256 | logo, RGBA |
+| `argvus.plymouth` | — | থিম বর্ণনাকারী (নাম, বিবরণ, মডিউল) |
+| `argvus.script` | — | থিম স্ক্রিপ্ট (Plymouth এর নিজস্ব স্ক্রিপ্টিং ভাষা) |
+| `argvus-logo.png` | 256x256 | লোগো, RGBA |
 | `argvus-text.png` | 400x53 | wordmark, RGBA |
-| `progress-bar.png` | 400x4 | filled part of the progress bar |
-| `progress-bar-track.png` | 400x4 | unfilled track |
-| `entry-box.png` | 400x48 | password entry field |
-| `entry-line.png` | 300x2 | password field rule/underline |
-| `bullet.png` | 12x12 | masked character |
-| `logo-glow.png` | 260x300 | logo glow artwork |
-| `argvus-uki-splash.bmp` | 400x400, 32-bit | UKI/systemd-boot splash bitmap |
+| `progress-bar.png` | 400x4 | অগ্রগতি বারের ভরা অংশ |
+| `progress-bar-track.png` | 400x4 | অপূর্ণ ট্র্যাক |
+| `entry-box.png` | 400x48 | পাসওয়ার্ড এন্ট্রি ক্ষেত্র |
+| `entry-line.png` | 300x2 | পাসওয়ার্ড ক্ষেত্রের নিয়ম/আন্ডারলাইন |
+| `bullet.png` | 12x12 | মুখোশ পরা চরিত্র |
+| `logo-glow.png` | 260x300 | লোগো গ্লো আর্টওয়ার্ক |
+| `argvus-uki-splash.bmp` | 400x400, 32-বিট | UKI/systemd-বুট স্প্ল্যাশ বিটম্যাপ |
 
 প্লাস লাইসেন্স `/usr/share/licenses/argvus-boot-splash/LICENSE` এ।
 
 ## প্যাকেজ মেটাডাটা
 
-| Field | Value |
+| মাঠ | মান |
 | --- | --- |
-| Name | `argvus-boot-splash` |
-| Architecture | `any` |
-| Depends | `plymouth` |
-| Optional depends | `mkinitcpio`, `dracut` |
-| Conflicts / replaces | `argvus-plymouth` |
-| License | GPL-3.0-only |
+| নাম | `argvus-boot-splash` |
+| স্থাপত্য | `any` |
+| নির্ভর করে | `plymouth` |
+| ঐচ্ছিক নির্ভর করে | `mkinitcpio`, `dracut` |
+| দ্বন্দ্ব / প্রতিস্থাপন | `argvus-plymouth` |
+| লাইসেন্স | GPL-3.0-শুধু |
 
-## Colors
+## রং
 
-| Element | Color |
+| উপাদান | রঙ |
 | --- | --- |
-| Background | `#111316` |
-| Accent (logo, wordmark, progress fill) | `#3590BD` |
-| Progress track | `#262933` |
-| Password prompt text | light gray-blue (`#B8C4CE`) |
+| পটভূমি | `#111316` |
+| অ্যাকসেন্ট (লোগো, ওয়ার্ডমার্ক, অগ্রগতি পূরণ) | `#3590BD` |
+| অগ্রগতি ট্র্যাক | `#262933` |
+| পাসওয়ার্ড প্রম্পট টেক্সট | হালকা ধূসর-নীল (`#B8C4CE`) |
 
 থিমটি যে কোনো রেজোলিউশনে একটি শক্ত ডার্ক ব্যাকগ্রাউন্ড ব্যবহার করে, তাই এটি কখনও
 লাইট এবং ডার্ক ভেরিয়ান্টের মধ্যে স্বয়ংক্রিয়ভাবে পরিবর্তিত হয় না।
@@ -68,7 +68,7 @@ description: ইনস্টল করা ফাইল, প্যাকেজ �
 
 - প্রকল্পের ইস্যু ট্র্যাকার-এ বাগ রিপোর্ট করুন এবং ফিচার অনুরোধ করুন।
 - নিরাপত্তা বিষয়: [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md) অনুসরণ করুন — একটি পাবলিক
-  issue for vulnerabilities.
+  দুর্বলতার জন্য সমস্যা।
 - সোর্স, বিল্ড এবং রিলিজ খোলবেন না: রিপোজিটরির রুট ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
 - অবদান রাখুন: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)।
 - লাইসেন্স: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)।

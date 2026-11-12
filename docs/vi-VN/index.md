@@ -1,5 +1,5 @@
 ---
-title: ARGVUS Boot Splash
+title: ARGVUS
 description: Chủ đề Plymouth và hướng dẫn cài đặt cho môi trường bàn ARGVUS
 ---
 
@@ -7,14 +7,14 @@ description: Chủ đề Plymouth và hướng dẫn cài đặt cho môi trư�
 
 Ảnh khởi động Argvus là một [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) theme cho hệ sinh thái máy tính để bàn Argvus. Đây là những gì bạn nhìn thấy giữa lúc bật máy và khi phiên làm việc đồ họa của bạn bắt đầu.
 
-## Documentation
+## Tài liệu
 
 Tài liệu này được tổ chức thành hai phần chính:
 
 ### Hướng dẫn người dùng
 Hướng dẫn cài đặt và sử dụng cho người dùng cuối và quản trị viên hệ thống.
 
-| Guide | Contents |
+| Hướng dẫn | Nội dung |
 | --- | --- |
 | [Cài đặt](/docs/argvus-boot-splash/installation/)| Yêu cầu, ba lựa chọn cài đặt, các gói hook thực hiện gì |
 | [Sử dụng](/docs/argvus-boot-splash/usage/)| Xác minh cài đặt, xem trước mà không cần khởi động lại, chuyển đổi hoặc khôi phục chủ đề, bảng hướng dẫn lệnh |
@@ -43,5 +43,5 @@ Trình cài đặt sẽ đặt chủ đề làm mặc định và tự động t
 ---
 
 - **Kho lưu trữ:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
-- **License:** GPL-3.0-only
+- **Giấy phép:** chỉ dành cho GPL-3.0
 - **Báo cáo lỗi:** [GitHub Issues](https://github.com/argvus/argvus-boot-splash/issues)

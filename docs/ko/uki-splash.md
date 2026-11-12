@@ -18,9 +18,9 @@ ukify build --splash=/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp \
 ```
 이미지가 변경될 때마다 UKI 빌드(또는 `bootctl set-splash`)를 다시 실행하고, 다른 곳에서 빌드하는 경우 파일을 ESP에 복사하는 것을 잊지 마십시오. systemd-boot는 비트맵을 콘솔 크기에 맞게 조정하므로, 정사각형 이미지는 중앙에 표시됩니다.
 
-만약 mkinitcpio 또는 dracut만 사용한다면, 이 파일은 완전히 무시해도 됩니다 — 일반 [installation](/docs/argvus-boot-splash/installation/)]이 그 경로를 다룹니다.
+만약 mkinitcpio 또는 dracut만 사용한다면, 이 파일은 완전히 무시해도 됩니다 — 일반 [installation](/docs/argvus-boot-splash/installation/)이 그 경로를 다룹니다.
 
 ## 다음 단계
 
-- [Usage](/docs/argvus-boot-splash/usage/)]
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)]
+- [Usage](/docs/argvus-boot-splash/usage/)
+- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)

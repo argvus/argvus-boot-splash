@@ -12,7 +12,7 @@ initramfs.
 
 'den okunmak yerine birleşik çekirdek imajına yerleştirilir. Bitmap, Plymouth teması tarafından *kullanılmaz* ve
 siz otomatik olarak: onu yerleştirmek, UKI'nizi nasıl oluşturduğunuza bağlıdır. Görüntü değiştiğinde tipik
-consumers are:
+tüketiciler:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)

@@ -1,9 +1,9 @@
 ---
-title: Packaging
+title: Ambalaj
 description: Arch paket meta verileri, derleme hattı ve Make hedefleri.
 ---
 
-# Packaging
+# Ambalaj
 
 Arch paketinin nasıl tanımlandığı ve üretildiği: iki PKGBUILD, paylaşılan
 fonksiyonları, kurulum kancaları, yerel derleme hattı ve Make hedefleri.
@@ -14,19 +14,19 @@ sürümler için [CI ve sürümler](/docs/argvus-boot-splash/developer-guide/ci-
 ## İki PKGBUILD, bir içerik paketi
 
 `packaging/arch/remote/PKGBUILD` ve `packaging/arch/local/PKGBUILD`,
-except for `source=`:
+`source=` hariç:
 
 | | `local` | `ci` |
 | --- | --- | --- |
-| source | `${pkgname}-${pkgver}.tar.gz` (built by `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
-| used by | developers, `make build` | GitHub Actions release |
+| kaynak | `${pkgname}-${pkgver}.tar.gz` (`make build` tarafından oluşturulmuştur) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
+| tarafından kullanılan | geliştiriciler, `make build` | GitHub Eylemler sürümü |
 
 ile tamamen aynıdır. Her ikisi de `packaging/arch/common/functions.sh`'den aynı işlevleri çağırır ve
 `tools/sh/validate.sh`, onların meta verisinin (`pkgname`, `pkgver`, `pkgrel`,
 `pkgdesc`, `arch`, `license`, `depends`, `makedepends`, `options`) aynı olduğunu doğrular,
 bu yüzden ikisi sessizce sürüklenemez.
 
-Shared metadata:
+Paylaşılan meta veriler:
 
 ```bash
 pkgname=argvus-boot-splash
@@ -44,7 +44,7 @@ replaces=('argvus-plymouth')
 ## Paylaşılan işlevler
 
 `packaging/arch/common/functions.sh`,
-PKGBUILDs:
+PKGBUILD'ler:
 
 - `arch_normalize_source_tree` (`prepare()`) tarafından kullanılan üç işlev sağlar — GitHub etiket arşivleri
 `<repo>-v<version>` içine çıkarılırken, yerel tarball
@@ -91,7 +91,7 @@ paket kalıntısını içermez.
 3. Arşivin `sha256`'sini hesaplar ve bunu **geçici bir
 kopyasına** `sed` ile enjekte eder; yerel PKGBUILD (`.PKGBUILD.local.XXXXXX`, bir `EXIT`
 tuzağı ile kaldırıldı). Depo her zaman `sha256sums=()`'yi boş tutar; `SKIP` asla
-   used.
+   kullanılmış.
 4. değildir.
  `${pkgname}-${pkgver}-*.pkg.tar.zst` `build/dist/` böylece bayat bir paket bu derleme ile karıştırılamaz.
 5. `makepkg -p <generated PKGBUILD> --nodeps --noconfirm --needed
@@ -99,9 +99,9 @@ tuzağı ile kaldırıldı). Depo her zaman `sha256sums=()`'yi boş tutar; `SKIP
 ve `PKGDEST` içinde `build/dist/`. Ek argümanlar `makepkg`'ye iletilir;
 `MAKEPKG_FLAGS` varsayılan bayrak setinin üzerine yazar (kelime bölme kasıtlı).
 6. Tam olarak bir `.pkg.tar.zst` eşleşmediği sürece başarısız olur, ardından `namcap` üzerinde çalışır
-   installed.
+   yüklü.
 
-Outputs:
+Çıkışlar:
 
 ```text
 build/dist/argvus-boot-splash-0.2.0-1-any.pkg.tar.zst   installable package
@@ -111,20 +111,20 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 
 ## Hedefler
 
-| Target | Effect |
+| Hedef | Efekt |
 | --- | --- |
-| `make build` (alias `make package`) | run `tools/sh/pkgbuild_local.sh` → `build/` |
+| `make build` (takma adı `make package`) | `tools/sh/pkgbuild_local.sh` → `build/` | komutunu çalıştırın
 | `make install` (alias `make install-package`) | `sudo pacman -U`tek paket içinde`build/dist/`; sayısı tam olarak 1 değilse hatalar |
-| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD metadata sync + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
-| `make lint` (alias `make lint-shell`) | shellcheck over `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` disabled), `bash -n`, `git diff --check` |
-| `make spellcheck` | `cspell --config cspell.json .` if `cspell` is installed, otherwise skipped |
+| `make validate` | `tools/sh/validate.sh`: kabuk denetimi + `bash -n` + PKGBUILD meta veri senkronizasyonu + PKGBUILD başına `makepkg --printsrcinfo` + `git diff --check` |
+| `make lint` (takma adı `make lint-shell`) | `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` devre dışı), `bash -n`, `git diff --check` üzerinde kabuk denetimi |
+| `make spellcheck` | `cspell --config cspell.json .`, eğer `cspell` kuruluysa, aksi halde atlanır |
 | `make clean` | `rm -rf build/` |
-| `make help` | target list (default goal) |
+| `make help` | hedef listesi (varsayılan hedef) |
 
 CI, `make validate` ve `make build` çalıştırır; CI, `make install`
 çalıştırmaz (bkz. [bilinen boşluklar](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
-## Prerequisites
+## Önkoşullar
 
 `make`, `git`, `gnupg` ve `base-devel` grubu ile bir Arch tabanlı sistem:
 
@@ -134,6 +134,6 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 
 - `pacman-contrib`, `updpkgsums` sağlar (PKGBUILD özetlerini yeniden oluşturur).
 - `shellcheck`, depo kabuk betiklerini ve paylaşılan Arch
-  packaging functions.
-- Optional: `namcap` (package
+  paketleme fonksiyonları.
+- İsteğe bağlı: `namcap` (paket
 linting) ve cspell (yerel yazım denetimi) doğrular. CI bunların hepsini yükler.

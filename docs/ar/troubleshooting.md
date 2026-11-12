@@ -1,18 +1,18 @@
 ---
-title: Troubleshooting
+title: استكشاف الأخطاء وإصلاحها
 description: .ﺎﻬﺣﻼ﻿ﺻﺇ ﺔﻴﻔﻴﻛﻭ ﺔﻌﺋﺎﺸﻟﺍ ﺏﻮﺳﺎﺤﻟﺍ ﺪﻴﻬﻤﺗ ﺔﺷﺎﺷ ﺽﺍﺮﻋﺃ
 ---
 
-# Troubleshooting
+# استكشاف الأخطاء وإصلاحها
 
 **.ﺖﻴﺒﺜﺘﻟﺍ ﺪﻌﺑ ﺵﺮﻟﺍ ﺮﻴﻐﺘﻳ ﻢﻟ**
 ( ﻭﺃ) sudo mkinitcpio -P ﻞﻴﻐﺸﺘﺑ ﻢﻗ .initramfs ءﺎﺸﻧﺇ ﺓﺩﺎﻋﺇ ﻢﺘﻳ ﻢ
-sudo mkinitcpio -P) and reboot. If your system uses multiple kernels,
+Sudo mkinitcpio -P) وأعد التشغيل. إذا كان نظامك يستخدم نواة متعددة،
 .ﺪﻳﺪﺠﻟﺍ initramfs ﻰﻠﻋ ﻞﺼﺣ ﻪﻋﻼ﻿ﻗﺈﺑ ﺖﻤﻗ ﻱﺬﻟﺍ ﺯﺎﻬﺠﻟﺍ ﻥﺃ ﻦﻣ ﺪﻛﺄﺗ
 
 **.ﻂﻘﻓ ﺺﻧ ﻭﺃ ءﺍﺩﻮﺳ ﺔﺷﺎﺸﻟﺍ ؛ﻕﻼ﻿ﻃﻹ﻿ﺍ ﻰﻠﻋ ﺔﻴﺒﻴﺣﺮﺗ ﺔﺷﺎﺷ ﻱﺃ ﺪﺟﻮﻳ ﻻ﻿**
-`sudo mkinitcpio -P` is missing from the initramfs hooks. Check `sudo dracut --regenerate-all`
-`plymouth` contains `/etc/mkinitcpio.conf`  `HOOKS=(...)` `plymouth`  `plymouth`  HOOKS=(...) , then rebuild and reboot. On Ubuntu/Debian,
+`sudo mkinitcpio -P` مفقود من خطافات initramfs. تحقق `sudo dracut --regenerate-all`
+`plymouth` يحتوي على `/etc/mkinitcpio.conf` `HOOKS=(...)` `plymouth` `plymouth` HOOKS=(...) ، ثم أعد البناء وأعد التشغيل. على أوبونتو/ديبيان،
     `plymouth-x11`/`plymouth-themes` ﻭ plymouth ﺖﻴﺒﺜﺗ ﻦﻣ ﺎًﻀﻳﺃ ﺪﻛﺄﺗ
                                   .splash quiet ﻪﻳﺪﻟ `GRUB_CMDLINE_LINUX` ﻥﺃ
 
@@ -34,11 +34,11 @@ dracut).  ﺕﺍﺪﺣﻭ ﺾﻌﺑ ﻭﺃ  `splash quiet` `plymouth-spawn` ﻥ�
 
                        **.`argvus-plymouth` ﻦﻣ ﺔﻴﻗﺮﺘﻟﺍ ﺪﻌﺑ ﺔﻤﺴﻟﺍ ﻖﻴﺒﻄﺗ ﻢﺘﻳ ﻻ﻿**
               `/etc/plymouth/plymouthd.conf` ﻪﻟﻮﻘﻳ ﺎﻤﻣ ﻖﻘﺤﺗ ؛ﺔﻤﻳﺪﻘﻟﺍ ﻞﺤﻣ ﻞﺤﺗ ﺓﺪﻳﺪﺠﻟﺍ ﺔﻣﺰﺤﻟﺍ
-`PLYMOUTH_THEME_NAME=argvus` and rebuild the initramfs.
+`PLYMOUTH_THEME_NAME=argvus` وأعد بناء ملف initramfs.
 
 **.ﻊﻴﻗﻮﺘﻟﺍ ﻦﻣ ﻖﻘﺤﺘﻟﺍ ﻲﻓ ﺖﻴﺒﺜﺘﻟﺍ ﻞﺸﻓ**
 ﻲﻟﺎﺤﻟﺍ  ﺩﺍﺮﻴﺘﺳﺍ ﺪﻋﺃ .ﻚﺤﻴﺗﺎﻔﻣ ﺔﻠﺴﻠﺳ ﻲﻓ ﻢﻳﺪﻗ ﻭﺃ ﺩﻮﻘﻔﻣ ﻉﺩﻮﺘﺴﻤﻟﺍ ﺡ
-public key, then `sudo pacman -Sy`.
+المفتاح العام، ثم `sudo pacman -Sy`.
 
 **.ﺮﻴﻴﻐﺗ ﻥﻭﺩ ﻭﺪﺒﺗ ﻥﻮﻜﺴﻟﺍ / ﻞﻔﻘﻟﺍ ﺔﺷﺎﺷ**
 ﻞﺼﻔﻨﻣ ﻞﻜﺸﺑ ﻑﺎﻨﺌﺘﺳﻻ﻿ﺍ/ﺕﺎﺒﺳﻹ﻿ﺍ ﺕﺎﺷﺎﺷ ﻲﻓ ﻢﻜﺤﺘﻟﺍ ﻢﺘﻳ .ﻂﻘﻓ ﻉﻼ﻿ﻗﻹ﻿ﺍ ﺔﺷﺎ
@@ -52,4 +52,4 @@ initramfs).
 ##                                                                ﺔﻴﻟﺎﺘﻟﺍ ﺕﺍﻮﻄﺨﻟﺍ
 
 - [                                                                       ﺖﻴﺒﺜﺘﻟﺍ](/docs/argvus-boot-splash/installation/)                                                .ﺔﻔﻠﺘﺨﻣ ﺔﻘﻳﺮﻄﺑ ﻯﺮﺧﺃ ﺓﺮﻣ ﻝﻭﺎﺣ —
-- [Usage](/docs/argvus-boot-splash/usage/) for the installed and user paths.
+- [الاستخدام](/docs/argvus-boot-splash/usage/) للمسارات المثبتة والمستخدمين.

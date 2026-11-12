@@ -33,11 +33,11 @@ ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 
 ## 렌더링 모델
 
-- 하나의 평면 단색 배경 (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).  
-- **스프라이트**만이 유일한 그래픽 기본 요소입니다. 각 `Sprite()`는 이미지, `(x, y)` 위치, **z-순서** 및 `[0, 1]`의 불투명도를 가집니다. 나중에 `SetPosition`는 win을 호출합니다; 장면 그래프는 없습니다.  
-- 진행 상황은 매 프레임마다 이미지를 재-`ImageScale`하고 `SetImage`를 스프라이트에 호출하여 그립니다 — 클리핑이나 부분 그리기 기본 요소는 없습니다.  
-- 플리머스는 스크립트가 등록한 콜백을 통해 상태를 보고합니다: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.  
-- `Plymouth.SetRefreshRate(20)`는 갱신 콜백을 초당 20 프레임으로 실행하게 합니다; 테마의 유일한 시간 기반 애니메이션(페이드 인)은 이에 의존합니다.  
+- 하나의 평면 단색 배경 (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).
+- **스프라이트**만이 유일한 그래픽 기본 요소입니다. 각 `Sprite()`는 이미지, `(x, y)` 위치, **z-순서** 및 `[0, 1]`의 불투명도를 가집니다. 나중에 `SetPosition`는 win을 호출합니다; 장면 그래프는 없습니다.
+- 진행 상황은 매 프레임마다 이미지를 재-`ImageScale`하고 `SetImage`를 스프라이트에 호출하여 그립니다 — 클리핑이나 부분 그리기 기본 요소는 없습니다.
+- 플리머스는 스크립트가 등록한 콜백을 통해 상태를 보고합니다: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.
+- `Plymouth.SetRefreshRate(20)`는 갱신 콜백을 초당 20 프레임으로 실행하게 합니다; 테마의 유일한 시간 기반 애니메이션(페이드 인)은 이에 의존합니다.
 
 ## 자산 목록
 
@@ -202,7 +202,7 @@ fun refresh_callback()
 | 진행 트랙 | `#262933` | `progress-bar-track.png` |
 | 프롬프트 텍스트 | `#B8C4CE` | 스크립트 (`Image.Text` 호출) |
 
-악센트와 트랙 색상은 PNG 자산에 내장되어 있으며 스크립트에서는 표현되지 않으므로, 색상을 변경하려면 자산을 다시 내보내거나 팔레트를 편집해야 합니다. 
+악센트와 트랙 색상은 PNG 자산에 내장되어 있으며 스크립트에서는 표현되지 않으므로, 색상을 변경하려면 자산을 다시 내보내거나 팔레트를 편집해야 합니다.
 테마는 다크 전용이며 라이트 버전이 없습니다.
 
 ## UKI 비트맵 형식

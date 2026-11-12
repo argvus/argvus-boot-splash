@@ -1,9 +1,9 @@
 ---
-title: Packaging
+title: پیکیجنگ
 description: ۔ﺲﭩﮔﺭﺎﭨ ﮏﯿﻣ ﺭﻭﺍ ،ﻦﺋﻻ﻿ ﭗﺋﺎﭘ ﮉﻠﺑ ،ﺎﭩﯾﮈ ﺎﭩﯿﻣ ﺞﯿﮑﯿﭘ ﭺﺭﺁ
 ---
 
-# Packaging
+# پیکجنگ
 
           ﮧﮐﺮﺘﺸﻣ ،PKGBUILDs ﻭﺩ :ﮯﮨ ﯽﺗﺎﺟ ﯽﮐ ﮯﺴﯿﮐ ﺭﺍﻭﺍﺪﯿﭘ ﺭﻭﺍ ﻒﯾﺮﻌﺗ ﯽﮐ ﺞﯿﮑﯿﭘ ﭺﺭﺁ
                          ۔ﺲﭩﮔﺭﺎﭨ ﮏﯿﻣ ﺭﻭﺍ ﻦﺋﻻ﻿ ﭗﺋﺎﭘ ﮉﻠﺑ ﻞﮐﻮﻟ ،ﺲﮑُﮨ ﻝﺎﭩﺴﻧﺍ ،ﺰﻨﺸﮑﻨﻓ
@@ -14,19 +14,19 @@ description: ۔ﺲﭩﮔﺭﺎﭨ ﮏﯿﻣ ﺭﻭﺍ ،ﻦﺋﻻ﻿ ﭗﺋﺎ�
 ##                                                         ﮈﻮﻠﯿﭘ ﮏﯾﺍ ،PKGBUILD ﻭﺩ
 
 `packaging/arch/remote/PKGBUILD` ﺭﻭﺍ `packaging/arch/local/PKGBUILD` ﮟﯿﮨ ﮯﺴﯿﺟ ﮏﯾﺍ
-except for `source=`:
+سوائے `source=` کے:
 
 | | `local` | `ci` |
 | --- | --- | --- |
-| source | `${pkgname}-${pkgver}.tar.gz` (built by `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
-| used by | developers, `make build` | GitHub Actions release |
+| ماخذ | `${pkgname}-${pkgver}.tar.gz` (`make build` کے ذریعے بنایا گیا) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
+| کی طرف سے استعمال کیا جاتا ہے | ڈویلپرز، `make build` | GitHub ایکشن ریلیز |
 
                  ﺭﻭﺍ ،ﮟﯿﮨ ﮯﺗﺮﮐ ﻝﺎﮐ ﻮﮐ ﺰﻨﺸﮑﻨﻓ ﯽﮨ ﮏﯾﺍ ﮯﺳ `packaging/arch/common/functions.sh` ﮞﻮﻧﻭﺩ
-`tools/sh/validate.sh` asserts their metadata (`pkgname`, `pkgver`, `pkgrel`,
-`pkgdesc`, `arch`, `license`, `depends`, `makedepends`, `options`) is identical,
+`tools/sh/validate.sh` اپنے میٹا ڈیٹا کا دعویٰ کرتا ہے (`pkgname`, `pkgver`, `pkgrel`،
+`pkgdesc`، `arch`، `license`، `depends`، `makedepends`، `options`) ایک جیسا ہے،
                                        ۔ﮯﺘﮑﺳ ﮟﯿﮩﻧ ﮧﺑ ﮯﺳ ﯽﺷﻮﻣﺎﺧ ﮞﻮﻧﻭﺩ ﮧﯾ ﮯﯿﻟ ﺱﺍ
 
-Shared metadata:
+مشترکہ میٹا ڈیٹا:
 
 ```bash
 pkgname=argvus-boot-splash
@@ -61,7 +61,7 @@ PKGBUILDs:
 
 ﮯﮨ ﮫﭽﮐ ﺐﺳ :ﮯﮨ ﮟﯿﮩﻧ ﺩﻮﺟﻮﻣ ﻝﺎﮐ `make install` ﺭﺪﻧﺍ ﮯﮐ `package()` ﮧﮐ ﮟﯾ
 `install -Dm*`، ۔ﮯﮨ ﮧﻧﺎﺘﺳﻭﺩ ﮯﯿﻟ ﮯﮐ ﮉﻠﺑ ﺲﯿﻟ ﭦﻭﺭ ﺭﻭﺍ ﺭﺎﺘﺨﻣ ﺩﻮﺧ ﺞﯿﮑﯿﭘ ﺍﺬﮩﻟ
-ﺎﯿﮐ ﺍﺪﯿﭘ make install ﮯﻧ ﺲﺟ `package()` ﺎﻧﺍﺮﭘ ﮏﯾﺍ — ﮯﮨ ﺮﮐ ﮫﺟﻮﺑ ﻥﺎﺟ 
+ﺎﯿﮐ ﺍﺪﯿﭘ make install ﮯﻧ ﺲﺟ `package()` ﺎﻧﺍﺮﭘ ﮏﯾﺍ — ﮯﮨ ﺮﮐ ﮫﺟﻮﺑ ﻥﺎﺟ
  `make install` `sudo`/`libfakeroot.so` ۔ﮞﺎﯿﻣﺎﮐﺎﻧ
 
 ##                                                                   ﮟﯾﺮﮐ ﺐﺼﻧ ﺲﮑﮨ
@@ -78,30 +78,30 @@ PKGBUILDs:
 
 `tools/sh/pkgbuild_local.sh` (`make build` ﺎﯿﮔ ﺎﯾﻼ﻿ﺑ ﮯﻌﯾﺭﺫ ﮯﮐ):
 
-1. Verifies `makepkg`, `sha256sum`, `tar`, `awk`, `find` and that the PKGBUILD
+1. تصدیق کرتا ہے `makepkg`, `sha256sum`, `tar`, `awk`, `find` اور PKGBUILD
 ﮮﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ ﮞﻮﻧﻭﺩ ﺭﻭﺍ ﮯﮬﮍﭘ ﻮﮐ `pkgname`/`pkgver` ﮧﮐﺎﺗ ﮯﮨ ﺎﺗﺮ
        (ﻥﮊﺭﻭ ﺭﺍﺩ ﮧﻄﻘﻧ ﮏﯾﺍ ،`^[a-z0-9@._+-]+$` ﮯﯿﻟ ﮯﮐ ﻡﺎﻧ) ﻑﻼ﻿ﺧ ﮯﮐ ﺲﮑﯿﺠﯾﺭ ﭧﺴﻟ ﺅﻻ﻿ﺍ
                                                            ۔(ﮧﻧﻮﻤﻧ ﮯﯿﻟ ﮯﮐ ﮯﺨﺴﻧ
 2. `build/artifacts/${pkgname}-${pkgver}.tar.gz` ﮯﮨ ﺎﺗﺮﮐ ﺭﺎﯿﺗ ﮫﺗﺎﺳ ﮯﮐ
 `tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner`
 ،ﻦﯿﻌﺘﻣ ﮏﯾﺍ — `--transform "s#^\./#${pkgname}-${pkgver}/#"` ﺭﻭﺍ
-   reproducible archive. It excludes `.git`, `build/`, `dist/`, `target/`,
-   `tools/`, `release`/`packages-repo` scratch dirs, and any `src/`, `pkg/` or
+   دوبارہ پیدا کرنے کے قابل محفوظ شدہ دستاویزات. اس میں `.git`، `build/`، `dist/`، `target/`،
+   `tools/`، `release`/`packages-repo` سکریچ ڈائر، اور کوئی بھی `src/`، `pkg/` یا
                                     ۔ﺞﯿﮑﯿﭘ ﮯﺋﻮﮨ ﮯﭽﺑ ﺭﺪﻧﺍ ﮯﮐ ﺰﯾﺮﭩﮑﯾﺮﺋﺍﮈ ﮓﻨﺠﯿﮑﯿﭘ
 3.                                                       ﮯﮨ ﺎﺗﺎﮕﻟ ﺏﺎﺴﺣ ﺎﮐ ﻮﯿﺋﺎﮐﺭﺁ`sha256`                                                          ﮯﮨ ﺎﺗﺮﮐ ﻞﺧﺍﺩ ﮯﺳﺍ ﺭﻭﺍ`sed`                                                               ﮟﯿﻣ ﯽﺿﺭﺎﻋ** ﮏﯾﺍ
-(ﯽﺌﮔ ﯼﺩ ﺎﭩﮨ ﮯﺳ ﺐﻧﺎﺟ ﯽﮐ `.PKGBUILD.local.XXXXXX`, `EXIT`) ﯽﭘﺎﮐ ﯽﮐ PKGBUILD 
+(ﯽﺌﮔ ﯼﺩ ﺎﭩﮨ ﮯﺳ ﺐﻧﺎﺟ ﯽﮐ `.PKGBUILD.local.XXXXXX`, `EXIT`) ﯽﭘﺎﮐ ﯽﮐ PKGBUILD
 ﮟﯿﮩﻧ ﯽﮭﺒﮐ SKIP ؛ﮯﮨ ﺎﺘﮭﮐﺭ ﯽﻟﺎﺧ ﻮﮐ `sha256sums=()` ﮧﺸﯿﻤﮨ ﮦﺮﯿﺧﺫ ۔(
-   used.
+   استعمال کیا جاتا ہے
 4. ﮦﺩﻮﺟﻮﻣ ﯽﮭﺑ ﯽﺴﮐ ﮯﺳ  `SKIP` `${pkgname}-${pkgver}-*.pkg.tar.zst` ﮯﮨ ﺎﺗﺮﮐ ﻑﺬﺣ ﻮﮐ
 `build/dist/` ۔ﮯﺋﺎﺟ ﺎﮭﺠﻤﺳ ﮧﻧ ﻂﻠﻏ ﮯﯿﻟ ﮯﮐ ﮉﻠﺑ ﺱﺍ ﻮﮐ ﺞﮑﯿﭘ ﯽﻧﺍﺮﭘ ﮏﯾﺍ ﮧﮐﺎﺗ
 5. ` with ` ﮯﮨ ﺎﺗﻼ﻿ﭼ
 `/` with ` in `/SRCDEST in `build/arti
-   and `PKGDEST` in `build/dist/`. Extra arguments are forwarded to `makepkg`;
-`MAKEPKG_FLAGS` ۔(ﮯﮨ ﺎﯿﮔ ﺎﯿﮐ ﻢﯿﺴﻘﺗ ﻮﮐ ﻅﺎﻔﻟﺍ ﺮﮐ ﮫﺟﻮﺑ ﻥﺎﺟ) ﮯﮨ ﺎﺗﺮﮐ ﮉﯿﺋﺍﺭ ﺭﻭﻭﺍ 
+   اور `PKGDEST` میں `build/dist/`۔ اضافی دلائل `makepkg` کو بھیجے جاتے ہیں۔
+`MAKEPKG_FLAGS` ۔(ﮯﮨ ﺎﯿﮔ ﺎﯿﮐ ﻢﯿﺴﻘﺗ ﻮﮐ ﻅﺎﻔﻟﺍ ﺮﮐ ﮫﺟﻮﺑ ﻥﺎﺟ) ﮯﮨ ﺎﺗﺮﮐ ﮉﯿﺋﺍﺭ ﺭﻭﻭﺍ
 6. ﺮﮔﺍ ﮯﮨ ﺎﺘﻠﭼ namcap ﺮﭘ ﺱﺍ ﺮﮭﭘ ،ﮯﺋﺎﮭﮐ ﮧﻧ ﻞﯿﻣ `.pkg.tar.zst` ﮏﯾﺍ ﻞﮑ
-   installed.
+   نصب
 
-Outputs:
+آؤٹ پٹ:
 
 ```text
 build/dist/argvus-boot-splash-0.2.0-1-any.pkg.tar.zst   installable package
@@ -111,22 +111,22 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 
 ##                                                                   ﮟﯿﺋﺎﻨﺑ ﻑﺍﺪﮨﺍ
 
-| Target | Effect |
+| ہدف | اثر |
 | --- | --- |
 |  `namcap` `make build` (alias `make package`) | run `tools/sh/pkgbuild_local.sh` → `build/` |
 | `make install` (alias `make install-package`) | `sudo pacman -U`                                                              ﮟﯿﻣ ﺞﯿﮑﯿﭘ ﯽﮨ ﮏﯾﺍ`build/dist/`                                          | ﮞﺎﯿﻄﻠﻏ ﻮﺗ ﻮﮨ ﮧﻧ 1 ﻞﮑﻟﺎﺑ ﯽﺘﻨﮔ ﺮﮔﺍ ;
-| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD metadata sync + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
-| `make lint` (alias `make lint-shell`) | shellcheck over `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` disabled), `bash -n`, `git diff --check` |
-| `make spellcheck` | `cspell --config cspell.json .` if `cspell` is installed, otherwise skipped |
+| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD میٹا ڈیٹا مطابقت پذیری + `makepkg --printsrcinfo` فی PKGBUILD + `git diff --check` |
+| `make lint` (عرف `make lint-shell`) | شیل چیک اوور `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` غیر فعال), `bash -n`, `git diff --check` |
+| `make spellcheck` | `cspell --config cspell.json .` اگر `cspell` انسٹال ہے، بصورت دیگر چھوڑ دیا جائے گا
 | `make clean` | `rm -rf build/` |
-| `make help` | target list (default goal) |
+| `make help` | ہدف کی فہرست (پہلے سے طے شدہ مقصد) |
 
-CI runs `make validate` and `make build`; nothing in CI runs `make install`
+CI `make validate` اور `make build` چلاتا ہے۔ CI میں کچھ بھی نہیں چلتا ہے `make install`
                                                                        ﮟﯿﮭﮑﯾﺩ)[                                                                     ﺕﻼ﻿ﺧ ﺭﻮﮩﺸﻣ](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
-## Prerequisites
+## شرطیں
 
-`make`، `git`، `gnupg` ﺭﻭﺍ `base-devel` 
+`make`، `git`، `gnupg` ﺭﻭﺍ `base-devel`
 
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
@@ -134,6 +134,6 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 
 - `pacman-contrib` `updpkgsums` ﮯﮨ ﺎﺗﺮﮐ ﻢﮨﺍﺮﻓ (PKGBUILD ﮯﮨ ﺎﺗﺮﮐ ﺭﺎﯿﺗ ﮦﺭﺎﺑﻭ
 - `shellcheck` ﮯﮨ ﺎﺗﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ ﮎﺭﺁ ﮧﮐﺮﺘﺸﻣ ﺭﻭﺍ ﺲﭩﭘﺮﮑﺳﺍ ﻞﯿﺷ ﯼﺮﭩﯾﺯﻮﭙﯾﺭ
-  packaging functions.
-- Optional: `namcap` (package
+  پیکیجنگ کے افعال
+- اختیاری: `namcap` (پیکیج
             .ﮯﮨ ﺎﺗﺮﮐ ﻝﺎﭩﺴﻧﺍ ﻮﮐ ﺐﺳ ﻥﺍ CI .(ﭻﻧﺎﺟ ﯽﮐ ﮯﺠﮨ ﯽﻣﺎﻘﻣ) cspell ﺭﻭﺍ (ﮓﻨﭩﻨِﻟ

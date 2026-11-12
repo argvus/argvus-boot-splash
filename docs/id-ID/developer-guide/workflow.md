@@ -11,14 +11,14 @@ mengauditnya — lebih baik diperbaiki daripada disalin.
 Untuk referensi teknis lihat [arsitektur tema](/docs/argvus-boot-splash/developer-guide/theme/),
 [kemasan](/docs/argvus-boot-splash/developer-guide/packaging/)dan [CI dan rilis](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
-## Conventions
+## Konvensi
 
 - Shell: `set -euo pipefail`, tab untuk indentasi, `printf`/`error` pesan ke
 stderr, pemeriksaan kemampuan `command -v`, pembersihan shellcheck (lihat
   `.editorconfig`).
 - Jangan menulis `sha256sums=('SKIP')`; biarkan `sha256sums=()` kosong di git.
 - Jangan meng-commit hasil build (`build/`), file paket, atau
-  `.PKGBUILD.local.*` copies.
+  salinan `.PKGBUILD.local.*`.
 - yang dihasilkan Komit Konvensional dengan ruang lingkup yang digunakan oleh sejarah: `splash`, `layout`,
 `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
 - Penamaan cabang: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
@@ -40,7 +40,7 @@ hubungkan mereka ke dalam skrip atau hapus mereka dari payload dan daftar periks
 - `src/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp` terpasang tetapi
 tidak pernah terdaftar dengan apa pun;
 [panduan pengguna](/docs/argvus-boot-splash/uki-splash/) mendokumentasikan manual
-  `bootctl`/`ukify` step.
+  Langkah `bootctl`/`ukify`.
 - Dokumen kanonik berada di root repositori (`README.md`,
 `DEVELOPMENT.md`) dan tumpang tindih dengan panduan di `docs/`. Jaga konsistensi mereka
 saat mengubah salah satunya. Kebijakan kontribusi (`CONTRIBUTING.md`, `SECURITY.md`)
@@ -48,10 +48,10 @@ berada di repositori organisasi `.github`.
 
 ## Peta dokumentasi
 
-| Document | Audience | Scope |
+| Dokumen | Penonton | Ruang Lingkup |
 | --- | --- | --- |
-| `README.md` | everyone | one-paragraph overview and layout |
-| `DEVELOPMENT.md` | maintainers | build, signing, release process |
+| `README.md` | semuanya | ikhtisar dan tata letak satu paragraf |
+| `DEVELOPMENT.md` | pengelola | membangun, menandatangani, proses rilis |
 | [`CONTRIBUTING.md`](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)(org `.github`) | kontributor | alur git, aturan PR, kebijakan rahasia |
 | [`docs/user-guide.md`](/docs/argvus-boot-splash/)| pengguna akhir | pemasangan, penggunaan, pemecahan masalah |
 | [`docs/developer-guide.md`](/docs/argvus-boot-splash/developer-guide/)(/docs/argvus-boot-splash/developer-guide/) | developers | theme internals, packaging, CI |

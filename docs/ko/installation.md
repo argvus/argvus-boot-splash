@@ -7,8 +7,8 @@ description: 요구 사항, 설치 옵션, 그리고 패키지 후크가 하는 
 Arch 기반 시스템에서 Argvus 부트 스플래시를 설정하는 데 필요한 모든 것.
 
 테마가 어떻게 생겼는지와 무엇이 포함되어 있는지 보려면
-[reference](/docs/argvus-boot-splash/reference/)]를 참조하십시오. 대신 소스에서 다시 빌드하려면
-[developer guide](/docs/argvus-boot-splash/developer-guide/)]를 참조하십시오.
+[reference](/docs/argvus-boot-splash/reference/)를 참조하십시오. 대신 소스에서 다시 빌드하려면
+[developer guide](/docs/argvus-boot-splash/developer-guide/)를 참조하십시오.
 
 ## 요구 사항
 
@@ -82,7 +82,7 @@ sudo update-initramfs -u        # Debian/Ubuntu
 
 둘 중 어떤 생성기(generator)도 발견되지 않으면 설치 프로그램은 경고를 출력하며 사용자가 직접 initramfs를 재빌드해야 합니다. 테마 변경은 initramfs가 재생성된 후에만 부팅 시 표시됩니다 — 이 단계를 생략하고 재부팅하는 것이 "스플래시가 변경되지 않았다"는 가장 일반적인 원인입니다.
 
-제거 시 패키지는 단순히 알림을 출력합니다: 다른 테마를 선택하고 initramfs를 재빌드하는 것은 사용자의 몫입니다. 자세한 내용은 [uninstallation](/docs/argvus-boot-splash/uninstallation/)]를 참조하십시오.
+제거 시 패키지는 단순히 알림을 출력합니다: 다른 테마를 선택하고 initramfs를 재빌드하는 것은 사용자의 몫입니다. 자세한 내용은 [uninstallation](/docs/argvus-boot-splash/uninstallation/)를 참조하십시오.
 
 ## 다음 단계
 

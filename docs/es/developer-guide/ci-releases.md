@@ -8,8 +8,8 @@ description: Validación, integración continua, firma y flujo de trabajo de lan
 La puerta de validación, los trabajos de integración continua, la canalización de lanzamiento y
 las reglas de versionado.
 
-Para el paquete en sí, ver [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)]; para el tema, ver
-[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)].
+Para el paquete en sí, ver [packaging](/docs/argvus-boot-splash/developer-guide/packaging/); para el tema, ver
+[theme architecture](/docs/argvus-boot-splash/developer-guide/theme/).
 
 ## Validación
 

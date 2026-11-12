@@ -1,9 +1,9 @@
 ---
-title: Packaging
+title: पैकेजिंग
 description: आर्क पैकेज मेटाडेटा, बिल्ड पाइपलाइन, और मेक टारगेट।
 ---
 
-# Packaging
+# पैकेजिंग
 
 आर्च पैकेज को कैसे परिभाषित और उत्पादित किया जाता है: दो PKGBUILD, साझा
 फ़ंक्शन, इंस्टॉल हुक, स्थानीय बिल्ड पाइपलाइन और मेक टारगेट्स।
@@ -14,19 +14,19 @@ description: आर्क पैकेज मेटाडेटा, बिल्
 ## दो PKGBUILDs, एक पेलोड
 
 `packaging/arch/remote/PKGBUILD` और `packaging/arch/local/PKGBUILD` समान हैं
-except for `source=`:
+`source=` को छोड़कर:
 
 | | `local` | `ci` |
 | --- | --- | --- |
-| source | `${pkgname}-${pkgver}.tar.gz` (built by `make build`) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
-| used by | developers, `make build` | GitHub Actions release |
+| स्रोत | `${pkgname}-${pkgver}.tar.gz` (`make build` द्वारा निर्मित) | `${url}/archive/refs/tags/v${pkgver}.tar.gz` |
+| द्वारा उपयोग किया गया | डेवलपर्स, `make build` | GitHub क्रियाएँ रिलीज़ |
 
 दोनों `packaging/arch/common/functions.sh` से वही फ़ंक्शन कॉल करते हैं, और
 `tools/sh/validate.sh` उनके मेटाडेटा (`pkgname`, `pkgver`, `pkgrel`,
 `pkgdesc`, `arch`, `license`, `depends`, `makedepends`, `options`) समान हैं,
 तो दोनों चुपचाप नहीं बह सकते।
 
-Shared metadata:
+साझा मेटाडेटा:
 
 ```bash
 pkgname=argvus-boot-splash
@@ -44,7 +44,7 @@ replaces=('argvus-plymouth')
 ## साझा फ़ंक्शन प्रदान करता है
 
 `packaging/arch/common/functions.sh` द्वारा उपयोग किए जाने वाले तीन फ़ंक्शन
-PKGBUILDs:
+पीकेजीबीबिल्ड्स:
 
 - `arch_normalize_source_tree` (`prepare()`) — GitHub टैग संग्रह निष्कर्षण करता है
 `<repo>-v<version>`, जबकि स्थानीय टारबॉल निष्कर्षण करता है
@@ -74,7 +74,7 @@ PKGBUILDs:
 - `post_remove()` → केवल सूचनात्मक संदेश; थीम को स्वचालित रूप से वापस नहीं बदला जाता (अनुमान लगाने से सुरक्षित)।
 स्थानीय बिल्ड पाइपलाइन
 
-## 
+##
 
 `tools/sh/pkgbuild_local.sh` (`make build` द्वारा प्रवर्तित):
 
@@ -91,7 +91,7 @@ PKGBUILDs:
 3. आर्काइव का `sha256` गणना करता है और इसे `sed` के साथ स्थानीय PKGBUILD की **अस्थायी
 प्रति** में इंजेक्ट करता है (`.PKGBUILD.local.XXXXXX`, जिसे एक `EXIT`
 ट्रैप द्वारा हटा दिया जाता है)। रिपॉजिटरी हमेशा `sha256sums=()` को खाली रखता है; `SKIP` कभी
-   used.
+   प्रयोग किया गया।
 4. नहीं होता है। किसी भी पूर्व-मौजूद `${pkgname}-${pkgver}-*.pkg.tar.zst` को
 `build/dist/` ताकि एक पुराना पैकेज इस बिल्ड के लिए गलत न समझा जाए।
 5. `makepkg -p <generated PKGBUILD> --nodeps --noconfirm --needed
@@ -99,9 +99,9 @@ PKGBUILDs:
 और `PKGDEST` में `build/dist/`। अतिरिक्त तर्क `makepkg` को आगे बढ़ाए जाते हैं;
 `MAKEPKG_FLAGS` डिफ़ॉल्ट फ़्लैग सेट को अधिलेखित करता है (जानबूझकर शब्द विभाजन)।
 6. जब तक केवल एक `.pkg.tar.zst` मेल नहीं खाता, विफल रहता है, फिर उस पर `namcap` चलाता है यदि
-   installed.
+   स्थापित.
 
-Outputs:
+आउटपुट:
 
 ```text
 build/dist/argvus-boot-splash-0.2.0-1-any.pkg.tar.zst   installable package
@@ -111,20 +111,20 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 
 ## लक्ष्य बनाता है
 
-| Target | Effect |
+| लक्ष्य | प्रभाव |
 | --- | --- |
-| `make build` (alias `make package`) | run `tools/sh/pkgbuild_local.sh` → `build/` |
+| `make build` (उर्फ `make package`) | `tools/sh/pkgbuild_local.sh` चलाएँ → `build/` |
 | `make install` (alias `make install-package`) | `sudo pacman -U`एकल पैकेज में`build/dist/`; त्रुटियाँ यदि गिनती ठीक 1 नहीं है |
-| `make validate` | `tools/sh/validate.sh`: shellcheck + `bash -n` + PKGBUILD metadata sync + `makepkg --printsrcinfo` per PKGBUILD + `git diff --check` |
-| `make lint` (alias `make lint-shell`) | shellcheck over `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` disabled), `bash -n`, `git diff --check` |
-| `make spellcheck` | `cspell --config cspell.json .` if `cspell` is installed, otherwise skipped |
+| `make validate` | `tools/sh/validate.sh`: शेलचेक + `bash -n` + PKGBUILD मेटाडेटा सिंक + `makepkg --printsrcinfo` प्रति PKGBUILD + `git diff --check` |
+| `make lint` (उर्फ `make lint-shell`) | `tools`, `packaging/arch/common`, `src` (`SC1090`, `SC2034`, `SC2154` अक्षम), `bash -n`, `git diff --check` पर शेलचेक |
+| `make spellcheck` | `cspell --config cspell.json .` यदि `cspell` स्थापित है, अन्यथा छोड़ दिया गया है |
 | `make clean` | `rm -rf build/` |
-| `make help` | target list (default goal) |
+| `make help` | लक्ष्य सूची (डिफ़ॉल्ट लक्ष्य) |
 
 CI `make validate` और `make build` चलाता है; CI में `make install`
 कुछ भी नहीं चलता (देखें [ज्ञात अंतर](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
-## Prerequisites
+## पूर्वावश्यकताएँ
 
 `make`, `git`, `gnupg` और `base-devel` समूह के साथ एक Arch-आधारित प्रणाली:
 
@@ -134,6 +134,6 @@ sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 
 - `pacman-contrib` `updpkgsums` प्रदान करता है (PKGBUILD चेकसम को पुनर्जन्म करता है)।
 - `shellcheck` रिपॉजिटरी शेल स्क्रिप्ट और साझा Arch
-  packaging functions.
-- Optional: `namcap` (package
+पैकेजिंग कार्य।
+- वैकल्पिक: `namcap` (पैकेज
 को मान्य करता है (linting) और cspell (स्थानीय स्पेलचेक)। CI इन सभी को इंस्टॉल करता है।

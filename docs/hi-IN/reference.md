@@ -1,18 +1,18 @@
 ---
-title: Reference
+title: संदर्भ
 description: स्थापित की गई फ़ाइलें, पैकेज मेटाडेटा, और रंग मान।
 ---
 
-# Reference
+# संदर्भ
 
 पैकेज क्या स्थापित करता है और यह कौन से मान उपयोग करता है, इसके लिए तकनीकी संदर्भ।
 
 ## आपको क्या मिलता है
 
-| Component | Description |
+| घटक | विवरण |
 | --- | --- |
 | आर्गुस लोगो | केन्द्रित चिह्न, शब्दचिह्न के ऊपर खींचा गया |
-| Wordmark | `ARGVUS` text below the logo |
+| वर्डमार्क | लोगो के नीचे `ARGVUS` टेक्स्ट |
 | प्रगति बार | लंबाई में पतला बार जो Plymouth के बूट प्रगति को दर्शाता है |
 | पासवर्ड संवाद | मास्क किए गए एंट्री फ़ील्ड के साथ LUKS प्रॉम्प्ट (`•` bullets) |
 | फीका-आना | जब प्लायमाउथ शुरू होता है, तो स्प्लैश लगभग 1 सेकंड में फीका हो जाता है |
@@ -25,41 +25,41 @@ description: स्थापित की गई फ़ाइलें, पै�
 
 के अंतर्गत `/usr/share/plymouth/themes/argvus/`:
 
-| File | Size | Purpose |
+| फ़ाइल | आकार | उद्देश्य |
 | --- | --- | --- |
-| `argvus.plymouth` | — | theme descriptor (name, description, module) |
-| `argvus.script` | — | the theme script (Plymouth's own scripting language) |
-| `argvus-logo.png` | 256x256 | logo, RGBA |
-| `argvus-text.png` | 400x53 | wordmark, RGBA |
-| `progress-bar.png` | 400x4 | filled part of the progress bar |
-| `progress-bar-track.png` | 400x4 | unfilled track |
-| `entry-box.png` | 400x48 | password entry field |
-| `entry-line.png` | 300x2 | password field rule/underline |
-| `bullet.png` | 12x12 | masked character |
-| `logo-glow.png` | 260x300 | logo glow artwork |
-| `argvus-uki-splash.bmp` | 400x400, 32-bit | UKI/systemd-boot splash bitmap |
+| `argvus.plymouth` | — | थीम डिस्क्रिप्टर (नाम, विवरण, मॉड्यूल) |
+| `argvus.script` | — | थीम स्क्रिप्ट (Plymouth की अपनी स्क्रिप्टिंग भाषा) |
+| `argvus-logo.png` | 256x256 | लोगो, आरजीबीए |
+| `argvus-text.png` | 400x53 | वर्डमार्क, आरजीबीए |
+| `progress-bar.png` | 400x4 | प्रगति पट्टी का भरा हुआ भाग |
+| `progress-bar-track.png` | 400x4 | अधूरा ट्रैक |
+| `entry-box.png` | 400x48 | पासवर्ड प्रविष्टि फ़ील्ड |
+| `entry-line.png` | 300x2 | पासवर्ड फ़ील्ड नियम/अंडरलाइन |
+| `bullet.png` | 12x12 | नकाबपोश पात्र |
+| `logo-glow.png` | 260x300 | लोगो चमक कलाकृति |
+| `argvus-uki-splash.bmp` | 400x400, 32-बिट | UKI/systemd-बूट स्प्लैश बिटमैप |
 
 इसके अलावा लाइसेंस `/usr/share/licenses/argvus-boot-splash/LICENSE` पर।
 
 ## पैकेज मेटाडेटा
 
-| Field | Value |
+| फ़ील्ड | मूल्य |
 | --- | --- |
-| Name | `argvus-boot-splash` |
-| Architecture | `any` |
-| Depends | `plymouth` |
-| Optional depends | `mkinitcpio`, `dracut` |
-| Conflicts / replaces | `argvus-plymouth` |
-| License | GPL-3.0-only |
+| नाम | `argvus-boot-splash` |
+| वास्तुकला | `any` |
+| निर्भर करता है | `plymouth` |
+| वैकल्पिक निर्भर करता है | `mkinitcpio`, `dracut` |
+| संघर्ष/प्रतिस्थापन | `argvus-plymouth` |
+| लाइसेंस | जीपीएल-3.0-केवल |
 
-## Colors
+## रंग
 
-| Element | Color |
+| तत्त्व | रंग |
 | --- | --- |
-| Background | `#111316` |
-| Accent (logo, wordmark, progress fill) | `#3590BD` |
-| Progress track | `#262933` |
-| Password prompt text | light gray-blue (`#B8C4CE`) |
+| पृष्ठभूमि | `#111316` |
+| एक्सेंट (लोगो, वर्डमार्क, प्रगति भरण) | `#3590BD` |
+| प्रगति पथ | `#262933` |
+| पासवर्ड प्रॉम्प्ट टेक्स्ट | हल्का भूरा-नीला (`#B8C4CE`) |
 
 थीम किसी भी रिज़ॉल्यूशन पर ठोस डार्क बैकग्राउंड का उपयोग करता है, इसलिए यह कभी भी
 ऑटो-स्विच नहीं करता, लाइट और डार्क वेरिएंट्स के बीच।
@@ -68,7 +68,7 @@ description: स्थापित की गई फ़ाइलें, पै�
 
 - परियोजना के इश्यू ट्रैकर में बग रिपोर्ट करें और फीचर्स का अनुरोध करें।
 - सुरक्षा मुद्दे: पालन करें [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md) — सार्वजनिक
-  issue for vulnerabilities.
+  कमजोरियों के लिए मुद्दा.
 - स्रोत न खोलें, बिल्ड और रिलीज़: रिपॉजिटरी रूट ([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md))।
 - योगदान करें: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)।
 - लाइसेंस: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)।

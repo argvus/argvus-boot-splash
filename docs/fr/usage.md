@@ -6,7 +6,7 @@ description: Vérifiez l'installation, prévisualisez sans redémarrer et change
 # Utilisation
 
 Comment vérifier le thème, le prévisualiser sans redémarrer et en changer.
-Pour l'installation, voir [installation](/docs/argvus-boot-splash/installation/)].
+Pour l'installation, voir [installation](/docs/argvus-boot-splash/installation/).
 
 ## Vérification de l'installation
 

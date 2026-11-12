@@ -82,7 +82,7 @@ Nach der Installation oder dem Upgrade laufen die Paket-Hooks automatisch:
 
 Wenn kein Generator gefunden wird, zeigt der Installer eine Warnung an und Sie müssen das initramfs selbst neu erstellen. Ein Themenwechsel wird nur beim Boot sichtbar, nachdem das initramfs neu generiert wurde — ein Neustart ohne diesen Schritt ist der mit Abstand häufigste Grund dafür, dass „der Splash nicht geändert wurde“.
 
-Beim Entfernen gibt das Paket nur eine Erinnerung aus: Das Auswählen eines anderen Themas und das Neuaufbauen des initramfs bleibt Ihnen überlassen. Siehe [Deinstallation](/docs/argvus-boot-splash/uninstallation/)].
+Beim Entfernen gibt das Paket nur eine Erinnerung aus: Das Auswählen eines anderen Themas und das Neuaufbauen des initramfs bleibt Ihnen überlassen. Siehe [Deinstallation](/docs/argvus-boot-splash/uninstallation/).
 
 ## Nächste Schritte
 

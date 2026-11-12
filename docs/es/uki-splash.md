@@ -22,5 +22,5 @@ Si solo usa mkinitcpio o dracut, puede ignorar este archivo por completo; la ins
 
 ## Próximos pasos
 
-- [Usage](/docs/argvus-boot-splash/usage/)
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)
+- [Uso](/docs/argvus-boot-splash/usage/)
+- [Solución de problemas](/docs/argvus-boot-splash/troubleshooting/)

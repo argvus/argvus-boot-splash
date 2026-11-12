@@ -1,9 +1,9 @@
 ---
-title: Troubleshooting
+title: Sorun giderme
 description: Yaygın başlatma splash belirtileri ve bunların nasıl düzeltileceği.
 ---
 
-# Troubleshooting
+# Sorun giderme
 
 **Yükledikten sonra splash değişmedi.**
 initramfs yeniden oluşturulmadı. `sudo mkinitcpio -P` çalıştırın (veya

@@ -8,19 +8,19 @@ description: Reglas de la casa, mapa de documentación y hallazgos de la auditor
 Reglas internas para cambios en este repositorio, además de las inconsistencias encontradas durante
 su auditoría — vale más corregirlas que copiarlas.
 
-Para referencia técnica, ver [arquitectura del tema](/docs/argvus-boot-splash/developer-guide/theme/)],
+Para referencia técnica, ver [arquitectura del tema](/docs/argvus-boot-splash/developer-guide/theme/),
 [empaquetado](/docs/argvus-boot-splash/developer-guide/packaging/) y [CI y lanzamientos](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Convenciones
 
-- Shell: `set -euo pipefail`, tabulaciones para la indentación, `printf`/`error` mensajes a stderr, `command -v` verificaciones de capacidad, shellcheck limpio (ver `.editorconfig`).  
-- Nunca escriba `sha256sums=('SKIP')`; mantenga `sha256sums=()` vacío en git.  
-- No comprometa salidas de compilación (`build/`), archivos de paquete o copias generadas de `.PKGBUILD.local.*`.  
-- Commits Convencionales con los alcances usados en el historial: `splash`, `layout`, `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.  
-- Nombres de ramas: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.  
-- Aprobación de un revisor antes de fusionar, merge con squash.  
-- Licencia: GPL-3.0-only. Distribuido como `/usr/share/licenses/argvus-boot-splash/LICENSE`.  
-- Siga el proceso en [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)] y [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)].  
+- Shell: `set -euo pipefail`, tabulaciones para la indentación, `printf`/`error` mensajes a stderr, `command -v` verificaciones de capacidad, shellcheck limpio (ver `.editorconfig`).
+- Nunca escriba `sha256sums=('SKIP')`; mantenga `sha256sums=()` vacío en git.
+- No comprometa salidas de compilación (`build/`), archivos de paquete o copias generadas de `.PKGBUILD.local.*`.
+- Commits Convencionales con los alcances usados en el historial: `splash`, `layout`, `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
+- Nombres de ramas: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
+- Aprobación de un revisor antes de fusionar, merge con squash.
+- Licencia: GPL-3.0-only. Distribuido como `/usr/share/licenses/argvus-boot-splash/LICENSE`.
+- Siga el proceso en [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) y [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md).
 
 ## Brechas conocidas
 

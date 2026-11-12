@@ -7,7 +7,7 @@ description: Wie der Plymouth-Deskriptor, die Assets und das Skript zusammengef�
 
 Wie das Plymouth-Thema aufgebaut ist: der Deskriptor, das Asset-Set und was `argvus.script` Abschnitt f체r Abschnitt macht.
 
-F체r Verpackung und Releases siehe [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] und [CI und Releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)]. F체r die Nutzung siehe den [Benutzerhandbuch](/docs/argvus-boot-splash/)].
+F체r Verpackung und Releases siehe [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) und [CI und Releases](/docs/argvus-boot-splash/developer-guide/ci-releases/). F체r die Nutzung siehe den [Benutzerhandbuch](/docs/argvus-boot-splash/).
 
 ## Deskriptor
 
@@ -72,7 +72,7 @@ Wortzeichen-Asset erneut exportiert wird.
 
 `arch_check_splash_payload()` in `packaging/arch/common/functions.sh` erfordert,
 dass **alle** oben genannten Dateien vorhanden sind; das Hinzuf체gen eines Assets bedeutet, es zu dieser Liste hinzuzuf체gen. Siehe
-[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions)].
+[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
 
 ## Skript-Durchlauf
 

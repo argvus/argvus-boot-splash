@@ -7,7 +7,7 @@ description: 房屋规则、文档地图和存储库审计结果。
 
 此仓库变更的内部规则，以及在审计过程中发现的不一致之处——值得修复而不是复制。
 
-技术参考请参见 [主题架构](/docs/argvus-boot-splash/developer-guide/theme/)]、[打包](/docs/argvus-boot-splash/developer-guide/packaging/)] 和 [CI 与发布](/docs/argvus-boot-splash/developer-guide/ci-releases/)]。
+技术参考请参见 [主题架构](/docs/argvus-boot-splash/developer-guide/theme/)、[打包](/docs/argvus-boot-splash/developer-guide/packaging/) 和 [CI 与发布](/docs/argvus-boot-splash/developer-guide/ci-releases/)。
 
 ## 约定
 
@@ -18,7 +18,7 @@ description: 房屋规则、文档地图和存储库审计结果。
 - 分支命名：`feat/…`、`fix/…`、`docs/…`、`chore/…`、`refactor/…`。
 - 合并前需一个审阅者批准，使用 squash-merge。
 - 许可：GPL-3.0-only。随 `/usr/share/licenses/argvus-boot-splash/LICENSE` 发布。
-- 遵循 [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)] 和 [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)] 中的流程。
+- 遵循 [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md) 和 [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) 中的流程。
 
 ## 已知缺口
 

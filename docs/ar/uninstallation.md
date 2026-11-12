@@ -1,9 +1,9 @@
 ---
-title: Uninstallation
+title: إلغاء التثبيت
 description: .ﻚﺑ ﺹﺎﺨﻟﺍ ﻖﺑﺎﺴﻟﺍ ﺪﻴﻬﻤﺘﻟﺍ ﻉﻮﺿﻮﻣ ﺓﺩﺎﻌﺘﺳﺍﻭ ﺔﻣﺰﺤﻟﺍ ﺔﻟﺍﺯﺈﺑ ﻢﻗ
 ---
 
-# Uninstallation
+# إلغاء التثبيت
 
 ```sh
 sudo pacman -Rns argvus-boot-splash
@@ -18,10 +18,10 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P        # or: sudo dracut --regenerate-all
 ```
 
- also removes 
+ also removes
 
  if nothing else
-created it.
+خلقته.
 
 ﻉﻮﺿﻮﻣ ﻱﺃ ﻦﻤﺨﻳ ﻻ﻿ﻭ — ﻂﻘﻓ ﺍًﺮﻴﻛﺬﺗ ﻊﺒﻄﻳ ﺔﻣﺰﺤﻟﺍ ﺔﻟﺍﺯﺇ ﻑﺎﻄﺧ
 .ﻚﺑ ﺹﺎﺨﻟﺍ initramfs ﺲﻤﻳ ﻻ﻿ ﻮﻫﻭ ،ﻚﻟﺫ ﻦﻣ ﺎًﻟﺪﺑ ﺪﻳﺮﺗ
@@ -30,6 +30,6 @@ created it.
 
 - Troubleshooting — restoring the previous splash.
 - [Installation](/docs/argvus-boot-splash/troubleshooting/) — reinstalling later.
- /etc/plymouth/plymouthd.conf  `pacman -Rns` `/etc/plymouth/plymouthd.conf`  
+ /etc/plymouth/plymouthd.conf  `pacman -Rns` `/etc/plymouth/plymouthd.conf`
 
 - [Troubleshooting](/docs/argvus-boot-splash/installation/) — restoring the previous splash.

@@ -1,16 +1,16 @@
 ---
-title: Uninstallation
+title: Uninstall
 description: Hapus paket dan kembalikan tema boot sebelumnya.
 ---
 
-# Uninstallation
+# Penghapusan instalasi
 
 ```sh
 sudo pacman -Rns argvus-boot-splash
 ```
 
 Kemudian pilih tema lain dan bangun kembali, jika tidak splash lama akan tetap berada di dalam
-initramfs:
+initramf:
 
 ```sh
 sudo plymouth-set-default-theme argonaut
@@ -19,7 +19,7 @@ sudo mkinitcpio -P        # or: sudo dracut --regenerate-all
 ```
 
 `pacman -Rns` juga menghapus `/etc/plymouth/plymouthd.conf` jika tidak ada yang lain
-created it.
+menciptakannya.
 
 Hook penghapusan paket hanya mencetak pengingat — itu tidak menebak tema
 yang Anda inginkan sebagai gantinya, dan itu tidak menyentuh initramfs Anda.

@@ -82,7 +82,7 @@ Dopo l'installazione o l'aggiornamento, gli hook del pacchetto vengono eseguiti 
 
 Se nessun generatore viene trovato, l'installer stampa un avviso e devi ricostruire l'initramfs da solo. Un cambio di tema diventa visibile solo all'avvio dopo che l'initramfs è stato rigenerato — riavviare senza questo passaggio è la ragione più comune per cui «lo splash non è cambiato».
 
-Alla rimozione, il pacchetto stampa solo un promemoria: scegliere un tema diverso e ricostruire l'initramfs è lasciato a te. Vedi [disinstallazione](/docs/argvus-boot-splash/uninstallation/)].
+Alla rimozione, il pacchetto stampa solo un promemoria: scegliere un tema diverso e ricostruire l'initramfs è lasciato a te. Vedi [disinstallazione](/docs/argvus-boot-splash/uninstallation/).
 
 ## Passaggi successivi
 

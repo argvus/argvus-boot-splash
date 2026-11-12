@@ -1,9 +1,9 @@
 ---
-title: Usage
+title: Penggunaan
 description: Verifikasi instalasi, pratinjau tanpa me-reboot, dan ganti tema.
 ---
 
-# Usage
+# Penggunaan
 
 Cara memverifikasi tema, pratinjau tanpa me-reboot, dan beralih darinya.
 Untuk instalasi, lihat [instalasi](/docs/argvus-boot-splash/installation/).
@@ -37,11 +37,11 @@ sudo plymouth --show-splash    # back to the splash
 ```
 
 Saat layar splash muncul, tekan <kbd>Esc</kbd> untuk beralih ke layar berikutnya
-(splash → details → splash).
+(percikan → detail → percikan).
 
 ## Apa yang ditampilkan splash
 
-| Stage | Appearance |
+| Tahap | Penampilan |
 | --- | --- |
 | Startup | Semua memudar dalam ~1 detik: logo, wordmark, jalur kemajuan |
 | Booting | Bilah terisi dari kiri saat Plymouth melaporkan kemajuan |
@@ -59,25 +59,25 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 ```
 
-Useful configuration files:
+File konfigurasi yang berguna:
 
-| File | Purpose |
+| Berkas | Tujuan |
 | --- | --- |
-| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` written by the package |
-| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
+| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` ditulis dengan paket |
+| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` harus menyertakan `plymouth` |
+| `/etc/plymouth/plymouthd.conf` (lagi) | `PLYMOUTH_TOGGLE_KEY` dll. bersifat global, bukan per tema |
 
 ## Lembar contekan perintah
 
-| Command | Effect |
+| Perintah | Efek |
 | --- | --- |
-| `sudo plymouth-set-default-theme argvus` | make `argvus` the default theme |
-| `sudo plymouth-update-theme` | apply the change to the running Plymouth |
-| `sudo plymouth --show-splash` | show the splash in the current session |
-| `sudo plymouth --show-details` | show verbose boot messages instead |
-| `sudo plymouthquit` | leave Plymouth and restore your session |
-| `sudo mkinitcpio -P` | rebuild the Arch initramfs |
-| `sudo dracut --regenerate-all` | rebuild the initramfs with dracut |
+| `sudo plymouth-set-default-theme argvus` | jadikan `argvus` sebagai tema default |
+| `sudo plymouth-update-theme` | terapkan perubahan pada Plymouth |
+| `sudo plymouth --show-splash` | tampilkan splash di sesi saat ini |
+| `sudo plymouth --show-details` | tampilkan pesan boot verbose sebagai gantinya |
+| `sudo plymouthquit` | tinggalkan Plymouth dan pulihkan sesi Anda |
+| `sudo mkinitcpio -P` | membangun kembali Arch initramfs |
+| `sudo dracut --regenerate-all` | membangun kembali initramf dengan dracut |
 
 ## Langkah selanjutnya
 

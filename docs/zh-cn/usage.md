@@ -6,7 +6,7 @@ description: 验证安装，预览而无需重启，并切换主题。
 # 使用方法
 
 如何验证主题，在不重启的情况下预览它，以及切换主题。
-有关安装，请参见 [installation](/docs/argvus-boot-splash/installation/)]。
+有关安装，请参见 [installation](/docs/argvus-boot-splash/installation/)。
 
 ## 验证安装
 

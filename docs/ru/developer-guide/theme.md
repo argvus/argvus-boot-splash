@@ -8,9 +8,9 @@ description: Как сочетаются дескриптор Plymouth, акти
 Как устроена тема Plymouth: дескриптор, набор ресурсов и что делает
 `argvus.script`, по разделам.
 
-Для упаковки и релизов см. [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] и
-[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)]. Для использования см.
-[руководство пользователя](/docs/argvus-boot-splash/)].
+Для упаковки и релизов см. [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) и
+[CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/). Для использования см.
+[руководство пользователя](/docs/argvus-boot-splash/).
 
 ## Дескриптор
 
@@ -37,10 +37,10 @@ ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 
 ## Модель рендеринга
 
-- Один сплошной фон (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).  
-- **Спрайты** — единственные примитивы для рисования. Каждый `Sprite()` имеет изображение, позицию `(x, y)`, **z-порядок** и непрозрачность в `[0, 1]`. Позже `SetPosition` вызывает win; граф сцены отсутствует.  
-- Прогресс отображается повторным `ImageScale` изображения каждый кадр и вызовом `SetImage` на спрайте — нет обрезки или примитива для частичного рисования.  
-- Plymouth сообщает о состоянии через обратные вызовы, которые регистрирует скрипт: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.  
+- Один сплошной фон (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).
+- **Спрайты** — единственные примитивы для рисования. Каждый `Sprite()` имеет изображение, позицию `(x, y)`, **z-порядок** и непрозрачность в `[0, 1]`. Позже `SetPosition` вызывает win; граф сцены отсутствует.
+- Прогресс отображается повторным `ImageScale` изображения каждый кадр и вызовом `SetImage` на спрайте — нет обрезки или примитива для частичного рисования.
+- Plymouth сообщает о состоянии через обратные вызовы, которые регистрирует скрипт: `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.
 - `Plymouth.SetRefreshRate(20)` заставляет обратный вызов обновления работать с 20 кадрами в секунду; единственная анимация с таймером темы (появление) зависит от этого.
 
 ## Инвентарь ресурсов
@@ -68,7 +68,7 @@ ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 
 `arch_check_splash_payload()` в `packaging/arch/common/functions.sh` требует, чтобы
 **все** перечисленные выше файлы существовали; добавление ресурса означает добавление его в этот список. См.
-[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions)].
+[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
 
 ## Обзор скрипта
 
@@ -209,7 +209,7 @@ fun refresh_callback()
 
 ## Формат растрового изображения UKI
 
-`argvus-uki-splash.bmp` — это 400x400, 32-битный несжатый Windows BMP (`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`). Это самостоятельный ресурс: скрипт Plymouth его не загружает, и пакет Arch нигде его не регистрирует — внедрение в UKI осуществляется пользователем (см. [руководство пользователя](/docs/argvus-boot-splash/uki-splash/)]).
+`argvus-uki-splash.bmp` — это 400x400, 32-битный несжатый Windows BMP (`PC bitmap, Windows 98/2000 and newer format, 400 x 400 x 32`). Это самостоятельный ресурс: скрипт Plymouth его не загружает, и пакет Arch нигде его не регистрирует — внедрение в UKI осуществляется пользователем (см. [руководство пользователя](/docs/argvus-boot-splash/uki-splash/)).
 
 Если вы замените его, используйте простой несжатый 32-битный BMP сопоставимого размера; systemd-boot и `ukify` не масштабируют произвольные форматы, а большие изображения потребляют много памяти на ранней стадии загрузки.
 

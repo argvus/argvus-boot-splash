@@ -1,9 +1,9 @@
 ---
-title: Installation
+title: Cài đặt
 description: Yêu cầu, tùy chọn cài đặt và các chức năng mà gói cắm vào thực hiện.
 ---
 
-# Installation
+# Cài đặt
 
 Mọi thứ bạn cần để có giao diện khởi động Argvus trên hệ thống dựa trên Arch.
 
@@ -11,7 +11,7 @@ Mọi thứ bạn cần để có giao diện khởi động Argvus trên hệ t
 [tham khảo](/docs/argvus-boot-splash/reference/). Để xây dựng lại từ mã nguồn, xem hướng dẫn dành cho nhà phát triển
 [hướng dẫn cho nhà phát triển](/docs/argvus-boot-splash/developer-guide/).
 
-## Requirements
+## Yêu cầu
 
 - Một hệ thống dựa trên Arch sử dụng `plymouth` (gói phụ thuộc vào nó).
 - Một trình tạo initramfs: **mkinitcpio** (mặc định của Arch) hoặc **dracut**.
@@ -26,7 +26,7 @@ Trình cài đặt sẽ phát hiện bất kỳ cái nào có sẵn và xây d�
 Khởi động lại nếu bạn vừa thay đổi điều này.
 
 - Không cần gì cho một phiên đồ họa bình thường; chủ đề chỉ chạy trong
-  boot path.
+  đường dẫn khởi động.
 
 ## Tùy chọn 1: kho gói chính thức (khuyến nghị)
 
@@ -108,6 +108,6 @@ việc xây dựng lại initramfs để bạn tự thực hiện. Xem
 ## Các bước tiếp theo
 
 - [Sử dụng](/docs/argvus-boot-splash/usage/) — kiểm tra cài đặt, xem trước mà không cần khởi động lại, chuyển
-  themes.
+  chủ đề.
 - [UKI và màn hình khởi động systemd](/docs/argvus-boot-splash/uki-splash/) — sử dụng bitmap trong một UKI.
 - [Khắc phục sự cố](/docs/argvus-boot-splash/troubleshooting/) — nếu màn hình khởi động không thay đổi.

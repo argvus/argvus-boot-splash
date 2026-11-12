@@ -1,9 +1,9 @@
 ---
-title: Uninstallation
+title: Gỡ cài đặt
 description: Gỡ bỏ gói và khôi phục giao diện khởi động trước đó của bạn.
 ---
 
-# Uninstallation
+# Gỡ cài đặt
 
 ```sh
 sudo pacman -Rns argvus-boot-splash
@@ -18,10 +18,10 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P        # or: sudo dracut --regenerate-all
 ```
 
- also removes 
+ also removes
 
  if nothing else
-created it.
+đã tạo ra nó.
 
 Hook gỡ bỏ của gói chỉ in ra một lời nhắc — nó không đoán được chủ đề
 bạn muốn thay vào đó, và nó không chạm vào initramfs của bạn.
@@ -30,6 +30,6 @@ bạn muốn thay vào đó, và nó không chạm vào initramfs của bạn.
 
 - Troubleshooting — restoring the previous splash.
 - [Cài đặt](/docs/argvus-boot-splash/troubleshooting/) — cài đặt lại sau.
- /etc/plymouth/plymouthd.conf  `pacman -Rns` `/etc/plymouth/plymouthd.conf`  
+ /etc/plymouth/plymouthd.conf  `pacman -Rns` `/etc/plymouth/plymouthd.conf`
 
 - [Troubleshooting](/docs/argvus-boot-splash/installation/) — restoring the previous splash.

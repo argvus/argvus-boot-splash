@@ -1,5 +1,5 @@
 ---
-title: Developer Guide
+title: دليل المطور
 description:                                       .ARGVUS ﻲﻤﻫﺎﺴﻤﻟ ﺮﻳﻮﻄﺘﻟﺍﻭ ﻢﻴﻤﺼﺘﻟﺍ ﺕﺍﺩﺎﺷﺭﺇ
 ---
 
@@ -7,11 +7,11 @@ description:                                       .ARGVUS ﻲﻤﻫﺎﺴﻤﻟ
 
                         ﺙﻮﻤﻴﻠﻴﺑ ﻒﻴﻛ :`argvus-boot-splash` ﻉﺩﻮﺘﺴﻤﻟ ﺔﻴﻨﻘﺘﻟﺍ ﻖﺋﺎﺛﻮﻟﺍ
              ﺕﺍﺭﺍﺪﺻﻹ﻿ﺍ ﻢﺘﺗ ﻒﻴﻛﻭ ،Arch ﺔﻣﺰﺣ ءﺎﻨﺑ ﻢﺘﻳ ﻒﻴﻛﻭ ،ﻉﻮﺿﻮﻤﻟﺍ ﻊﻴﻤﺠﺗ ﻢﺘﻳ ﻒﻴﻛ
-signed and published.
+تم التوقيع عليها ونشرها.
 
            ،`.plymouth` ﻒﺻﻭ) ﺕﺎﻧﺎﻴﺒﻟﺍ ﻮﻫ ﻉﻮﺿﻮﻤﻟﺍ — ﺎﻨﻫ ﻊﻴﻤﺠﺗ ﺓﻮﻄﺧ ﺪﺟﻮﺗ ﻻ﻿
 a `.script`، ﺔﻣﺰﺣ ﺔﻔﺻﻭ ﻰﻟﺇ ﺔﻓﺎﺿﻹ﻿ﺎﺑ (ﺭﻮﺼﻟﺍﻭ Arch. "ﺝﺎﺘﻧﻹ﻿ﺍ ﻲﻨﻌﻳ "ءﺎﻨﺒﻟﺍ
-a reproducible package:
+حزمة قابلة للتكرار:
 
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
@@ -20,33 +20,33 @@ make build      # -> build/dist/argvus-boot-splash-<version>-1-any.pkg.tar.zst
 make install    # sudo pacman -U that file
 ```
 
-Before committing a change: 
+Before committing a change:
 
 , and add new technical
-terms to 
+terms to
 
  or the spellcheck job fails.
 
-If you only want to *use* the theme, read the user guide. For
+إذا كنت تريد فقط *استخدام* السمة، فاقرأ دليل المستخدم. ل
 ﺭﺍﺪﺻﻹ﻿ﺍ ،ﺭﺍﺮﺳﻷ﻿ﺍ ،git flow) ﻒﻠﻤﻟﺍ ﺍﺬﻫ ﻦﻣ ﺔﻴﻠﻤﻌﻟﺍ ﻮﺤﻧ ﺔﻬﺟﻮﻤﻟﺍ ﺔﺨ
 
-## Guides
+## أدلة
 
-| Guide | Contents |
+| دليل | المحتويات |
 | --- | --- |
 
 ##                                                                      ﻊﻳﺮﺳ ﻊﺟﺮﻣ
 
-| Path | What it is |
+| المسار | ما هو |
 | --- | --- |
 |  `make validate && make build`  `.cspell/custom-dictionary-workspace.txt`  `functions.sh`  `validate.sh`  `ci.yml`  `release.yml` `src/usr/share/plymouth/themes/argvus/` | theme payload installed under `/usr` |
-| `packaging/arch/{ci,local}/PKGBUILD` | release and local package recipes |
-| `packaging/arch/common/functions.sh` | shared `prepare`/`check`/`package` |
-| `tools/sh/pkgbuild_local.sh` | deterministic tarball + `makepkg` driver |
-| `tools/sh/validate.sh` | required validation gate |
-| `.github/workflows/` | `ci.yml` (validate, build, spellcheck), `release.yml` (tags `v*`) |
+| `packaging/arch/{ci,local}/PKGBUILD` | الافراج عن وصفات الحزمة المحلية |
+| `packaging/arch/common/functions.sh` | مشترك `prepare`/`check`/`package` |
+| `tools/sh/pkgbuild_local.sh` | القطران الحتمي + سائق `makepkg` |
+| `tools/sh/validate.sh` | بوابة التحقق المطلوبة |
+| `.github/workflows/` | `ci.yml` (التحقق من الصحة والإنشاء والتدقيق الإملائي)، `release.yml` (العلامات `v*`) |
 
-## Elsewhere
+## في مكان آخر
 
 -                   (/docs/argvus-boot-splash/)[ﻡﺪﺨﺘﺴﻤﻟﺍ ﻞﻴﻟﺩ] :ﻡﺪﺨﺘﺴﻤﻠﻟ ﺔﻬﺟﻮﻤﻟﺍ ﻖﺋﺎﺛﻮﻟﺍ
 -                             (https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)[DEVELOPMENT.md] :ﺮﻳﻮﻄﺘﻟﺍ ﺔﻴﻠﻤﻋ
@@ -54,11 +54,11 @@ If you only want to *use* the theme, read the user guide. For
 
                                        ﺃﺮﻗﺍ ،ﺐﻟﺎﻘﻟﺍ *ﻡﺍﺪﺨﺘﺳﺍ* ﻂﻘﻓ ﺪﻳﺮﺗ ﺖﻨﻛ ﺍﺫﺇ[                                                                 ﻡﺪﺨﺘﺴﻤﻟﺍ ﻞﻴﻟﺩ](/docs/argvus-boot-splash/)                                                                          ـﻟ .
                                                                  ﺮﻈﻧﺍ (ﺔﻴﻠﻤﻌﻟﺍ[DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)                                                                             ﻭ
-[CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
+[المساهمة.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
 | [                                                                 ﻉﻮﺿﻮﻤﻟﺍ ﺔﺳﺪﻨﻫ](/docs/argvus-boot-splash/developer-guide/theme/)| ﺔﻤﺴﻟﺍ ﻞﻳﺪﻌﺗ ﺔﻴﻔﻴﻛ ،ﺔﻴﻄﻘﻨﻟﺍ UKI ﺔﻄﻳﺮﺧ ،ﻢﻴﻤﺼﺘﻟﺍ ﺯﻮﻣﺭ ،ﻂﻴﻄﺨﺘﻟﺍ ﺖﺑﺍﻮﺛ ،ﻲﺠﻣﺮﺒﻟﺍ ﺺ
 | [Packaging](/docs/argvus-boot-splash/developer-guide/packaging/) | The two PKGBUILDs, shared functions.sh, install hooks, local build pipeline, Make targets, prerequisites |
-| [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/) | validate.sh, ci.yml, release.yml step by step, checksums, signing, secrets, publishing and versioning |
-| [                                                   ﺔﻓﻭﺮﻌﻤﻟﺍ ﺕﺍﺮﻐﺜﻟﺍﻭ ﺕﺎﻴﻗﺎﻔﺗﻻ﻿ﺍ](/docs/argvus-boot-splash/developer-guide/workflow/)| ﻉﺩﻮﺘﺴﻤﻟﺍ ﻖﻴﻗﺪﺗ ءﺎﻨﺛﺃ ﺎﻬﻴﻠﻋ ﺭﻮﺜﻌﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﺕﺎﻀﻗﺎﻨﺘﻟﺍﻭ ،ﻖﺋﺎﺛﻮﻟﺍ ﺔﻄﻳﺮﺧ ،ﻝﺰﻨﻤﻟﺍ 
+| [CI والإصدارات](/docs/argvus-boot-splash/developer-guide/ci-releases/) | validate.sh وci.yml وrelease.yml خطوة بخطوة والمجاميع الاختبارية والتوقيع والأسرار والنشر والإصدار |
+| [                                                   ﺔﻓﻭﺮﻌﻤﻟﺍ ﺕﺍﺮﻐﺜﻟﺍﻭ ﺕﺎﻴﻗﺎﻔﺗﻻ﻿ﺍ](/docs/argvus-boot-splash/developer-guide/workflow/)| ﻉﺩﻮﺘﺴﻤﻟﺍ ﻖﻴﻗﺪﺗ ءﺎﻨﺛﺃ ﺎﻬﻴﻠﻋ ﺭﻮﺜﻌﻟﺍ ﻢﺗ ﻲﺘﻟﺍ ﺕﺎﻀﻗﺎﻨﺘﻟﺍﻭ ،ﻖﺋﺎﺛﻮﻟﺍ ﺔﻄﻳﺮﺧ ،ﻝﺰﻨﻤﻟﺍ
                                                                :ﻉﺩﻮﺘﺴﻤﻟﺍ ﺭﺬﺟ -[README.md](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)
                                                   ﻡﺪﺨﺘﺴﻤﻠﻟ ﺔﻬﺟﻮﻤﻟﺍ ﺕﺍﺪﻨﺘﺴﻤﻟﺍ -[                                                                 ﻡﺪﺨﺘﺴﻤﻟﺍ ﻞﻴﻟﺩ](/docs/argvus-boot-splash/)
                                                               :ﺮﻳﻮﻄﺘﻟﺍ ﺔﻴﻠﻤﻋ -[DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)

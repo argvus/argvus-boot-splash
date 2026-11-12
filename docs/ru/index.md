@@ -5,7 +5,7 @@ description: Тема Plymouth и руководство по установке
 
 # Заставка загрузки ARGVUS
 
-Заставка загрузки Argvus — это тема [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/)] для рабочего стола Argvus. Она отображается между включением компьютера и моментом начала вашей графической сессии.
+Заставка загрузки Argvus — это тема [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) для рабочего стола Argvus. Она отображается между включением компьютера и моментом начала вашей графической сессии.
 
 ## Документация
 

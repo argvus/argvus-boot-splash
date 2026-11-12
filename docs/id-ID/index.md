@@ -1,5 +1,5 @@
 ---
-title: ARGVUS Boot Splash
+title: Percikan Boot ARGVUS
 description: Tema Plymouth dan panduan instalasi untuk lingkungan desktop ARGVUS
 ---
 
@@ -7,14 +7,14 @@ description: Tema Plymouth dan panduan instalasi untuk lingkungan desktop ARGVUS
 
 Argvus boot splash adalah tema [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) untuk ekosistem desktop Argvus. Ini adalah yang Anda lihat antara saat menyalakan mesin dan momen saat sesi grafis Anda dimulai.
 
-## Documentation
+## Dokumentasi
 
 Dokumentasi ini disusun dalam dua bagian utama:
 
 ### Panduan Pengguna
 Panduan instalasi dan penggunaan untuk pengguna akhir dan administrator sistem.
 
-| Guide | Contents |
+| Panduan | Isi |
 | --- | --- |
 | [Instalasi](/docs/argvus-boot-splash/installation/)| Persyaratan, tiga opsi instalasi, apa yang dilakukan hook paket |
 | [Penggunaan](/docs/argvus-boot-splash/usage/)| Verifikasi pemasangan, pratinjau tanpa mem-boot ulang, ubah atau kembalikan tema, lembar contekan perintah |
@@ -43,5 +43,5 @@ Penginstal mengatur tema sebagai default dan secara otomatis menghasilkan ulang 
 ---
 
 - **Repositori:** [github.com/argvus/argvus-boot-splash](https://github.com/argvus/argvus-boot-splash)
-- **License:** GPL-3.0-only
+- **Lisensi:** Khusus GPL-3.0
 - **Laporan Bug:** [GitHub Issues](https://github.com/argvus/argvus-boot-splash/issues)

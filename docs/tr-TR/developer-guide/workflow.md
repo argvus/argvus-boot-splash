@@ -11,14 +11,14 @@ denetlemek — kopyalamaktan ziyade düzeltmeye değer.
 Teknik referans için bkz. [tema mimarisi](/docs/argvus-boot-splash/developer-guide/theme/),
 [ambalaj](/docs/argvus-boot-splash/developer-guide/packaging/)ve[CI ve sürümler](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
-## Conventions
+## Sözleşmeler
 
 - Shell: `set -euo pipefail`, girinti için sekmeler, `printf`/`error` mesajları
 stderr, `command -v` yetenek kontrolleri, shellcheck temizliği (bakınız
   `.editorconfig`).
 - `sha256sums=('SKIP')`'yi yazmayın; git'te `sha256sums=()` boş bırakın.
 - Derleme çıktıları (`build/`), paket dosyaları veya üretilmiş olanları commit etmeyin
-  `.PKGBUILD.local.*` copies.
+  `.PKGBUILD.local.*` kopyaları.
 - Geçmişte kullanılan kapsamlarla Geleneksel Commitler: `splash`, `layout`,
 `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
 - Dal adlandırma: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
@@ -48,10 +48,10 @@ organizasyondaki `.github` deposunda bulunur.
 
 ## Dokümantasyon haritası
 
-| Document | Audience | Scope |
+| Belge | İzleyici | Kapsam |
 | --- | --- | --- |
-| `README.md` | everyone | one-paragraph overview and layout |
-| `DEVELOPMENT.md` | maintainers | build, signing, release process |
+| `README.md` | herkes | tek paragraflı genel bakış ve düzen |
+| `DEVELOPMENT.md` | bakımcılar | oluşturma, imzalama, yayınlama süreci |
 | [`CONTRIBUTING.md`](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)(org`.github`) | katkıda bulunanlar | git akışı, PR kuralları, gizli bilgiler politikası |
 | [`docs/user-guide.md`](/docs/argvus-boot-splash/)| son kullanıcılar | kurulum, kullanım, sorun giderme |
 | [`docs/developer-guide.md`](/docs/argvus-boot-splash/developer-guide/)(/docs/argvus-boot-splash/developer-guide/) | developers | theme internals, packaging, CI |

@@ -6,7 +6,7 @@ description: Метаданные пакета Arch, конвейер сборк
 
 Как определяется и создаётся пакет Arch: два PKGBUILD, общие функции, хуки установки, локальный конвейер сборки и цели Make.
 
-Для самой темы смотрите [архитектура темы](/docs/argvus-boot-splash/developer-guide/theme/)]; для проверки, CI и выпусков смотрите [CI и выпуски](/docs/argvus-boot-splash/developer-guide/ci-releases/)].
+Для самой темы смотрите [архитектура темы](/docs/argvus-boot-splash/developer-guide/theme/); для проверки, CI и выпусков смотрите [CI и выпуски](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
 ## Два PKGBUILD, одна нагрузка
 
@@ -37,7 +37,7 @@ replaces=('argvus-plymouth')
 
 `packaging/arch/common/functions.sh` предоставляет три функции, используемые обоими PKGBUILDs:
 
-- `arch_normalize_source_tree` (`prepare()`) — архивы тегов GitHub извлекаются в `<repo>-v<version>`, в то время как локальный tarball извлекается в `<pkgname>-<pkgver>`. Это переименовывает единственный каталог верхнего уровня в `${srcdir}/${pkgname}-${pkgver}`, выдавая ошибку, если исходный каталог отсутствует, неоднозначен или если назначение уже существует. 
+- `arch_normalize_source_tree` (`prepare()`) — архивы тегов GitHub извлекаются в `<repo>-v<version>`, в то время как локальный tarball извлекается в `<pkgname>-<pkgver>`. Это переименовывает единственный каталог верхнего уровня в `${srcdir}/${pkgname}-${pkgver}`, выдавая ошибку, если исходный каталог отсутствует, неоднозначен или если назначение уже существует.
 - `arch_check_splash_payload` (`check()`) — проверяет, что каждый ресурс темы существует в извлечённом исходном коде. Это единственный «тестовый набор» пакета; список необходимых файлов находится в [inventory ресурсов](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory).
 - `arch_package_splash_payload` (`package()`) — проходит по `src/usr` с помощью `find -print0` и устанавливает каждый файл с помощью `install -Dm644` в `$pkgdir` (безопасно для NUL, работает с пробелами в названиях), затем устанавливает `LICENSE` в `/usr/share/licenses/argvus-boot-splash/LICENSE`.
 
@@ -85,7 +85,7 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 | `make clean` | `rm -rf build/` |
 | `make help` | список целей (цель по умолчанию) |
 
-CI выполняет `make validate` и `make build`; ничего в CI не выполняет `make install` (см. [известные пробелы](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)]).
+CI выполняет `make validate` и `make build`; ничего в CI не выполняет `make install` (см. [известные пробелы](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)).
 
 ## Предварительные требования
 

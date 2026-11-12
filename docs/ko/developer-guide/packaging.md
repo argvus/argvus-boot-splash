@@ -6,7 +6,7 @@ description: Arch 패키지 메타데이터, 빌드 파이프라인, 및 Make �
 
 Arch 패키지가 정의되고 만들어지는 방법: 두 개의 PKGBUILD, 공유 함수, 설치 훅, 로컬 빌드 파이프라인 및 Make 타겟.
 
-테마 자체에 대해서는 [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)]를 참조하고, 검증, CI 및 릴리스에 대해서는 [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)]를 참조.
+테마 자체에 대해서는 [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)를 참조하고, 검증, CI 및 릴리스에 대해서는 [CI and releases](/docs/argvus-boot-splash/developer-guide/ci-releases/)를 참조.
 
 ## 두 개의 PKGBUILD, 하나의 페이로드
 
@@ -38,7 +38,7 @@ replaces=('argvus-plymouth')
 `packaging/arch/common/functions.sh`는 두 PKGBUILD에서 모두 사용되는 세 가지 함수를 제공합니다:
 
 - `arch_normalize_source_tree` (`prepare()`) — GitHub 태그 아카이브를 `<repo>-v<version>`에 추출하는 반면, 로컬 tarball은 `<pkgname>-<pkgver>`에 추출됩니다. 이는 최상위 디렉토리를 `${srcdir}/${pkgname}-${pkgver}`로 이름을 변경하며, 소스 디렉토리가 없거나 모호하거나 대상이 이미 존재하면 오류를 발생시킵니다.
-- `arch_check_splash_payload` (`check()`) — 추출된 소스에 모든 테마 자산이 존재하는지 확인합니다. 이것은 패키지의 유일한 "테스트 스위트"이며, 필요한 파일 목록은 [자산 목록](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory)]에 있습니다.
+- `arch_check_splash_payload` (`check()`) — 추출된 소스에 모든 테마 자산이 존재하는지 확인합니다. 이것은 패키지의 유일한 "테스트 스위트"이며, 필요한 파일 목록은 [자산 목록](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory)에 있습니다.
 - `arch_package_splash_payload` (`package()`) — `src/usr`를 `find -print0`로 순회하고, 각 파일을 `install -Dm644`로 `$pkgdir`에 설치합니다 (NUL 안전, 이름에 공백이 있어도 작동), 그 후 `LICENSE`를 `/usr/share/licenses/argvus-boot-splash/LICENSE`에 설치합니다.
 
 package() 내부에는 make install 호출이 없음을 주의하세요: 모든 것이 install -Dm*이므로, 패키지는 자급자족이며 루트 없는 빌드에 적합합니다. 이것은 의도된 것입니다 — `make install`를 호출하던 오래된 `package()`는  `install -Dm*` `package()` `make install` `sudo`/`libfakeroot.so` 오류를 발생시켰습니다.
@@ -55,7 +55,7 @@ package() 내부에는 make install 호출이 없음을 주의하세요: 모든 
 `tools/sh/pkgbuild_local.sh` (`make build`에서 호출됨):
 
 1. `makepkg`, `sha256sum`, `tar`, `awk`, `find`를 확인하고 PKGBUILD가 존재하는지 확인합니다; PKGBUILD를 소싱하여 `pkgname`/`pkgver`를 읽고 둘 다 검증합니다.
-   허용 목록 정규식(이름에는 `^[a-z0-9@._+-]+$`, 버전에는 점이 포함된 버전 패턴)에 대비하여). 
+   허용 목록 정규식(이름에는 `^[a-z0-9@._+-]+$`, 버전에는 점이 포함된 버전 패턴)에 대비하여).
 2. `build/artifacts/${pkgname}-${pkgver}.tar.gz`를 `tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner` 및 `--transform "s#^\./#${pkgname}-${pkgver}/#"`와 함께 빌드 — 결정적이고 재현 가능한 아카이브. `.git`, `build/`, `dist/`, `target/`, `tools/`, `release`/`packages-repo` 스크래치 디렉토리와 패키징 디렉토리 안의 `src/`, `pkg/` 또는 패키지 잔여물을 제외합니다.
 3. 아카이브의 `sha256`를 계산하고 `sed`로 로컬 PKGBUILD의 **임시 복사본**(`.PKGBUILD.local.XXXXXX`, `EXIT` 트랩에 의해 제거됨)에 주입합니다. 저장소는 항상 `sha256sums=()`을 비워둡니다; `SKIP`은 절대 사용되지 않습니다.
 4. 기존의 `${pkgname}-${pkgver}-*.pkg.tar.zst`을 `build/dist/`에서 삭제하여 오래된 패키지가 이번 빌드로 오인되지 않도록 합니다.
@@ -82,7 +82,7 @@ build/artifacts/argvus-boot-splash/{src,pkg}/            makepkg work dirs
 | `make help` | 목표 목록 (기본 목표) |
 
 CI는 `make validate` 및 `make build`를 실행; CI에서 `make install`는 실행하지 않음
-([known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)] 참조).
+([known gaps](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps) 참조).
 
 ## 전제 조건
 
@@ -91,6 +91,6 @@ CI는 `make validate` 및 `make build`를 실행; CI에서 `make install`는 실
 ```sh
 sudo pacman -S --needed base-devel git gnupg make pacman-contrib shellcheck
 ```
-- `pacman-contrib`는 `updpkgsums`를 제공합니다 (PKGBUILD 체크섬을 재생성합니다). 
-- `shellcheck`는 저장소 셸 스크립트와 공유 Arch 패키징 기능을 검증합니다. 
+- `pacman-contrib`는 `updpkgsums`를 제공합니다 (PKGBUILD 체크섬을 재생성합니다).
+- `shellcheck`는 저장소 셸 스크립트와 공유 Arch 패키징 기능을 검증합니다.
 - 선택 사항: `namcap` (패키지 린팅) 및 cspell (로컬 맞춤법 검사). CI는 이 모든 것을 설치합니다.

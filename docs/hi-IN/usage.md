@@ -1,9 +1,9 @@
 ---
-title: Usage
+title: उपयोग
 description: इंस्टॉलेशन की पुष्टि करें, बिना रिबूट किए पूर्वावलोकन करें, और थीम बदलें।
 ---
 
-# Usage
+# उपयोग
 
 थीम की पुष्टि कैसे करें, बिना रिबूट किए इसे पूर्वावलोकन कैसे करें, और इसे बदलें।
 इंस्टॉलेशन के लिए देखें [इंस्टॉलेशन](/docs/argvus-boot-splash/installation/)।
@@ -37,11 +37,11 @@ sudo plymouth --show-splash    # back to the splash
 ```
 
 जब स्प्लैश दिखाई दे रहा हो, तो अगली स्क्रीन पर जाने के लिए <kbd>Esc</kbd> दबाएं
-(splash → details → splash).
+(स्पलैश → विवरण → स्पलैश)।
 
 ## स्प्लैश जो दिखाता है
 
-| Stage | Appearance |
+| स्टेज | सूरत |
 | --- | --- |
 | स्टार्टअप | लगभग 1 सेकंड में सभी कुछ दिखाई देता है: लोगो, शब्दांक, प्रगति ट्रैक |
 | बूटिंग | बार बाईं ओर से भरती है जैसे कि प्लायमाउथ प्रगति की रिपोर्ट करता है |
@@ -59,25 +59,25 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 ```
 
-Useful configuration files:
+उपयोगी कॉन्फ़िगरेशन फ़ाइलें:
 
-| File | Purpose |
+| फ़ाइल | उद्देश्य |
 | --- | --- |
-| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` written by the package |
-| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
+| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` पैकेज द्वारा लिखा गया |
+| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` में `plymouth` शामिल होना चाहिए |
+| `/etc/plymouth/plymouthd.conf` (फिर से) | `PLYMOUTH_TOGGLE_KEY` आदि वैश्विक हैं, प्रति-विषय नहीं |
 
 ## कमांड्स चीट शीट
 
-| Command | Effect |
+| आदेश | प्रभाव |
 | --- | --- |
-| `sudo plymouth-set-default-theme argvus` | make `argvus` the default theme |
-| `sudo plymouth-update-theme` | apply the change to the running Plymouth |
-| `sudo plymouth --show-splash` | show the splash in the current session |
-| `sudo plymouth --show-details` | show verbose boot messages instead |
-| `sudo plymouthquit` | leave Plymouth and restore your session |
-| `sudo mkinitcpio -P` | rebuild the Arch initramfs |
-| `sudo dracut --regenerate-all` | rebuild the initramfs with dracut |
+| `sudo plymouth-set-default-theme argvus` | `argvus` को डिफ़ॉल्ट थीम बनाएं |
+| `sudo plymouth-update-theme` | चल रहे Plymouth | में परिवर्तन लागू करें
+| `sudo plymouth --show-splash` | चालू सत्र में दिखाओ जलवा |
+| `sudo plymouth --show-details` | इसके बजाय वर्बोज़ बूट संदेश दिखाएँ |
+| `sudo plymouthquit` | Plymouth छोड़ें और अपना सत्र बहाल करें |
+| `sudo mkinitcpio -P` | आर्क initramfs का पुनर्निर्माण करें |
+| `sudo dracut --regenerate-all` | dracut | के साथ initramfs का पुनर्निर्माण करें
 
 ## अगले कदम
 

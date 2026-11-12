@@ -33,15 +33,15 @@ Notes :
 
 ## Modèle de rendu
 
-- Un seul arrière-plan solide plat (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).  
-- **Sprites** sont les seuls primitives de dessin. Chaque `Sprite()` a une image, une position `(x, y)`, un **ordre Z** et une opacité dans `[0, 1]`. Plus tard, `SetPosition` appelle win ; il n'y a pas de graphe de scène.  
-- La progression est dessinée en re-`ImageScale`-nt une image à chaque image et en appelant `SetImage` sur le sprite — il n'y a pas de découpages ni de primitives de dessin partiel.  
-- Plymouth rapporte l'état via des callbacks que le script enregistre : `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.  
-- `Plymouth.SetRefreshRate(20)` fait exécuter le callback de rafraîchissement à 20 FPS ; la seule animation temporelle du thème (le fondu) en dépend.  
+- Un seul arrière-plan solide plat (`Window.SetBackgroundTopColor` / `SetBackgroundBottomColor`).
+- **Sprites** sont les seuls primitives de dessin. Chaque `Sprite()` a une image, une position `(x, y)`, un **ordre Z** et une opacité dans `[0, 1]`. Plus tard, `SetPosition` appelle win ; il n'y a pas de graphe de scène.
+- La progression est dessinée en re-`ImageScale`-nt une image à chaque image et en appelant `SetImage` sur le sprite — il n'y a pas de découpages ni de primitives de dessin partiel.
+- Plymouth rapporte l'état via des callbacks que le script enregistre : `PlymouthSetBootProgressFunction`, `PlymouthSetDisplayPasswordFunction`, `PlymouthSetDisplayNormalFunction`, `PlymouthSetRefreshFunction`.
+- `Plymouth.SetRefreshRate(20)` fait exécuter le callback de rafraîchissement à 20 FPS ; la seule animation temporelle du thème (le fondu) en dépend.
 
 ## Inventaire des ressources
 
-Toutes les ressources se trouvent dans `src/usr/share/plymouth/themes/argvus/`.  
+Toutes les ressources se trouvent dans `src/usr/share/plymouth/themes/argvus/`.
 
 | Fichier | Taille | Format | Rôle | Utilisé par `argvus.script` |
 | --- | --- | --- | --- | --- |
@@ -63,7 +63,7 @@ en sont tous dérivés, donc la composition reste cohérente si l'actif du logot
 
 `arch_check_splash_payload()` dans `packaging/arch/common/functions.sh` nécessite
 **tous** les fichiers ci-dessus pour exister ; ajouter un actif signifie l'ajouter à cette liste. Voir
-[packaging](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
+[emballage](/docs/argvus-boot-splash/developer-guide/packaging/#shared-functions).
 
 ## Présentation du script
 
@@ -104,7 +104,7 @@ Notez le `- 35` : la pile est centrée sur l'ensemble de la composition (logo +
 
 Ordre Z utilisé ici :
 
-| Z | Sprite |
+| Z | Lutin |
 | --- | --- |
 | 100 | logo, logotype, piste de progression |
 | 101 | barre de progression (au-dessus de la piste) |

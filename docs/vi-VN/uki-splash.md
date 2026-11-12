@@ -12,7 +12,7 @@ initramfs.
 
 . Hình ảnh bitmap *không* được sử dụng bởi chủ đề Plymouth và không có gì được đăng ký cho
 bạn tự động: nhúng nó tùy thuộc vào cách bạn xây dựng UKI của mình. Thường thì
-consumers are:
+người tiêu dùng là:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)

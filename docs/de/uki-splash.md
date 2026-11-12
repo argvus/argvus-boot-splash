@@ -26,5 +26,5 @@ Wenn Sie nur mkinitcpio oder dracut verwenden, können Sie diese Datei vollstän
 
 ## Nächste Schritte
 
-- [Usage](/docs/argvus-boot-splash/usage/)
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)
+- [Verwendung](/docs/argvus-boot-splash/usage/)
+- [Fehlerbehebung](/docs/argvus-boot-splash/troubleshooting/)

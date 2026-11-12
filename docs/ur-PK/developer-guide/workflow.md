@@ -9,17 +9,17 @@ description:                   ۔ﺞﺋﺎﺘﻧ ﮯﮐ ﭦﮈﺁ ﯼﺮﭩﯾ�
               ۔ﮯﮨ ﺪﻨﻣ ﮦﺪﺋﺎﻓ ﮦﺩﺎﯾﺯ ﺎﻧﺮﮐ ﺖﺳﺭﺩ ﮯﺋﺎﺠﺑ ﮯﮐ ﮯﻧﺮﮐ ﻞﻘﻧ — ﺎﻧﺮﮐ ﭦﮈﺁ ﺎﮐ ﺱﺍ
 
 
-## Conventions
+## کنونشنز
 
-- Shell: `set -euo pipefail`, tabs for indentation, `printf`/`error` messages to
+- شیل: `set -euo pipefail`، انڈینٹیشن کے لیے ٹیبز، `printf`/`error` پیغامات
 stderr، `command -v` ﭻﻧﺎﺟ ﯽﮐ ﺖﯿﺣﻼ﻿ﺻ، shellcheck ﮟﯿﮭﮑﯾﺩ) ﻑﺎﺻ
   `.editorconfig`).
 -         ۔ﮟﯿﮭﮐﺭ ﯽﻟﺎﺧ sha256sums=() ﮟﯿﻣ git ؛ﮟﯿﮭﮑﻟ ﮧﻧ `sha256sums=('SKIP')` ﯽﮭﺒﮐ
 - ﮟﯾﺮﮐ ﮧﻧ ﭧﯿﻤﮐ ﮟﯿﻠﺋﺎﻓ ﯽﺌﮔ ﯽﮐ ﭧﯾﺮﯿﻨﯿﺟ ﺎﯾ ،ﮟﯿﻠﺋﺎﻓ ﺞﯿﮑﯿﭘ ،( `sha256sums=()` `build/`) ﺲﭩﭘ ﭦ
-  `.PKGBUILD.local.*` copies.
+  `.PKGBUILD.local.*` کاپیاں۔
 - ،`splash`، `layout` :ﺭﺎﮐ ﮦﺮﺋﺍﺩ ﮯﻟﺍﻭ ﮯﻧﻮﮨ ﻝﺎﻤﻌﺘﺳﺍ ﮟﯿﻣ ﺦﯾﺭﺎﺗ ﺭ
   `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`.
-- Branch naming: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`.
+- برانچ کا نام: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`۔
 -                     ۔ﺝﺮﻣ-ﺵﺍﻮﮑﺳ ،ﯼﺭﻮﻈﻨﻣ ﯽﮐ ﮯﻟﺍﻭ ﮯﻨﯿﻟ ﮦﺰﺋﺎﺟ ﮏﯾﺍ ﮯﻠﮩﭘ ﮯﺳ ﮯﻧﺮﮐ ﺝﺮﻣ
 -                    ۔`/usr/share/licenses/argvus-boot-splash/LICENSE` :ﺎﯿﮔ ﺎﺠﯿﮭﺑ ﺮﭘ ﺭﻮﻃ ﮯﮐ ۔ﻑﺮﺻ-GPL-3.0 :ﺲﻨﺴﺋﻻ﻿
 
@@ -29,12 +29,12 @@ stderr، `command -v` ﭻﻧﺎﺟ ﯽﮐ ﺖﯿﺣﻼ﻿ﺻ، shellcheck ﮟﯿ
 
 - `README.md` `make test` ﮟﯿﮩﻧ ﮫﭽﮐ ﺎﺴﯾﺍ ﻦﮑﯿﻟ ،ﮯﮨ ﺎﺗﺮﮐ ﺮﯿﮩﺸﺗ ﯽﮐ ﻮﯾﻮﯾﺮ
    `sudo plymouth --show-splash` `sudo plymouthquit` / `entry-line.png`.
-- `logo-glow.png` and `arch_check_splash_payload()` ship in the payload and are required by
+- `logo-glow.png` اور `arch_check_splash_payload()` پے لوڈ میں جہاز اور اس کی ضرورت ہے
   `argvus.script`, but printf never loads them. Either
                ۔ﮟﯾﺩ ﺮﮐ ﻑﺬﺣ ﮯﺳ ﭧﺴﻟ ﮏﯿﭼ ﺭﻭﺍ ﮈﻮﻟ ﮯﭘ ﺎﯾ ﮟﯾﺮﮐ ﻞﻣﺎﺷ ﮟﯿﻣ ﭧﭘﺮﮑﺳﺍ ﮟﯿﮩﻧﺍ
 - `src/usr/share/plymouth/themes/argvus/argvus-uki-splash.bmp` ﻦﮑﯿﻟ ﮯﮨ ﺐﺼﻧ
                                        ﮧﯾ ؛ﺍﻮﮨ ﮟﯿﮩﻧ ﺮﭩﺴﺟﺭ ﯽﮭﺒﮐ ﮫﺗﺎﺳ ﮯﮐ ﺰﯿﭼ ﯽﺴﮐ
-  `bootctl`/`ukify` step.
+  `bootctl`/`ukify` مرحلہ۔
 -           ,`README.md`) ﮟﯿﮨ ﺩﻮﺟﻮﻣ ﺮﭘ ﭦﻭﺭ ﮯﮐ ﯼﺮﭩﯾﺯﻮﭙﯾﺭ ﺕﺍﺰﯾﻭﺎﺘﺳﺩ ﻞﮑﯿﻧﻮﻨﯿﮐ
 `DEVELOPMENT.md`) ﺭﻭﺍ `docs/` ۔ﮟﯿﮭﮐﺭ ﮟﯿﻣ ﺖﻘﺑﺎﻄﻣ ﮟﯿﮩﻧﺍ ۔ﮟﯾﺮﮐ ﭗﯿﻟﺭﻭﻭﺍ
 (`CONTRIBUTING.md`، `SECURITY.md`) ﮞﺎﯿﺴﯿﻟﺎﭘ ﯽﮐ ﺖﮐﺍﺮﺷ ۔ﮯﺋﺎﺟ ﺎﯿﮐ ﻞﯾﺪﺒﺗ ﻮﮐ ﮏﯾ
@@ -42,10 +42,10 @@ stderr، `command -v` ﭻﻧﺎﺟ ﯽﮐ ﺖﯿﺣﻼ﻿ﺻ، shellcheck ﮟﯿ
 
 ##                                                              ﮧﺸﻘﻧ ﺎﮐ ﺕﺍﺰﯾﻭﺎﺘﺳﺩ
 
-| Document | Audience | Scope |
+| دستاویز | سامعین | دائرہ کار |
 | --- | --- | --- |
-| `README.md` | everyone | one-paragraph overview and layout |
-| `DEVELOPMENT.md` | maintainers | build, signing, release process |
+| `README.md` | ہر کوئی | ایک پیراگراف کا جائزہ اور ترتیب |
+| `DEVELOPMENT.md` | دیکھ بھال کرنے والے | تعمیر، دستخط، رہائی کا عمل |
 
                                                     ﮟﯿﮭﮑﯾﺩ ﮯﯿﻟ ﮯﮐ ﮧﻟﺍﻮﺣ ﯽﮑﯿﻨﮑﺗ[                                                                ﺮﭽﮑﯿﭩﯿﮐﺭﺁ ﻢﯿﮭﺗ](/docs/argvus-boot-splash/developer-guide/theme/),
 [                                                                       ﮓﻨﺠﯿﮑﯿﭘ](/docs/argvus-boot-splash/developer-guide/packaging/)                                                                           ﺭﻭﺍ[                                                             ﺯﺰﯿﻠﯾﺭ ﺭﻭﺍ ﯽﺋﺁ ﯽﺳ](/docs/argvus-boot-splash/developer-guide/ci-releases/).

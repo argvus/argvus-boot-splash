@@ -1,5 +1,5 @@
 ---
-title: Theme Architecture
+title: Kiến trúc chủ đề
 description: Cách mô tả Plymouth, tài sản và tập lệnh được kết hợp với nhau.
 ---
 
@@ -12,7 +12,7 @@ Cách theme Plymouth được kết hợp: mô tả, tập hợp tài sản và 
 [CI và phát hành](/docs/argvus-boot-splash/developer-guide/ci-releases/). Để sử dụng, xem
 [hướng dẫn sử dụng](/docs/argvus-boot-splash/).
 
-## Descriptor
+## Bộ mô tả
 
 Các chủ đề Plymouth là các mô tả khai báo được kịch bản của Plymouth giải thích
 động cơ. Có hai phần:
@@ -30,7 +30,7 @@ ImageDir=/usr/share/plymouth/themes/argvus
 ScriptFile=/usr/share/plymouth/themes/argvus/argvus.script
 ```
 
-Notes:
+Ghi chú:
 
 - `ModuleName=script` chọn trình thông dịch script tích hợp sẵn của Plymouth. Không có
 module đã biên dịch; `ImageDir` và `ScriptFile` phải là **đường dẫn tuyệt đối**,
@@ -62,16 +62,16 @@ chỉ animation theo thời gian của theme (hiệu ứng mờ dần) phụ thu
 
 Tất cả tài sản nằm trong `src/usr/share/plymouth/themes/argvus/`. Chiều rộng hình ảnh
 
-| File | Size | Format | Role | Used by `argvus.script` |
+| Tập tin | Kích thước | Định dạng | Vai trò | Được sử dụng bởi `argvus.script` |
 | --- | --- | --- | --- | --- |
-| `argvus.plymouth` | — | INI | theme descriptor | loaded by `plymouthd` |
-| `argvus.script` | — | Plymouth script | theme logic | yes |
-| `argvus-logo.png` | 256x256 | RGBA 8-bit | main logo | yes (`logo.base_scale = 0.72`) |
-| `argvus-text.png` | 400x53 | RGBA 8-bit | `ARGVUS` wordmark | yes (`text.scale = 0.80`) |
-| `progress-bar.png` | 400x4 | 1-bit palette | filled bar | yes |
-| `progress-bar-track.png` | 400x4 | 1-bit palette | unfilled track | yes |
-| `entry-box.png` | 400x48 | RGB 16-bit | password entry field | yes |
-| `bullet.png` | 12x12 | 4-bit palette | one masked character | yes |
+| `argvus.plymouth` | — | INI | mô tả chủ đề | được tải bởi `plymouthd` |
+| `argvus.script` | — | Kịch bản Plymouth | logic chủ đề | vâng |
+| `argvus-logo.png` | 256x256 | RGBA 8-bit | logo chính | có (`logo.base_scale = 0.72`) |
+| `argvus-text.png` | 400x53 | RGBA 8-bit | Nhãn từ `ARGVUS` | có (`text.scale = 0.80`) |
+| `progress-bar.png` | 400x4 | Bảng màu 1 bit | thanh đầy | vâng |
+| `progress-bar-track.png` | 400x4 | Bảng màu 1 bit | đường đua chưa được lấp đầy | vâng |
+| `entry-box.png` | 400x48 | RGB 16-bit | trường nhập mật khẩu | vâng |
+| `bullet.png` | 12x12 | Bảng màu 4 bit | một nhân vật đeo mặt nạ | vâng |
 | `entry-line.png`| 300x2 | bảng màu 1-bit | quy tắc mục/nằm dưới | không (xem[khoảng trống đã biết](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `logo-glow.png`| 260x300 | bảng màu 8-bit | tác phẩm nghệ thuật phát sáng logo | không (xem[khoảng trống đã biết](/docs/argvus-boot-splash/developer-guide/workflow/#known-gaps)) |
 | `argvus-uki-splash.bmp` | 400x400 | BMP 32-bit | UKI / màn hình khởi động systemd-boot | không (đã được bộ nạp khởi động sử dụng) |
@@ -89,7 +89,7 @@ Tất cả tài sản nằm trong `src/usr/share/plymouth/themes/argvus/`. Chi�
 
 `src/usr/share/plymouth/themes/argvus/argvus.script`, từ trên xuống dưới.
 
-### 1. Background
+### 1. Bối cảnh
 
 ```js
 Window.SetBackgroundTopColor(0.0667, 0.0745, 0.0863);
@@ -119,9 +119,9 @@ nên việc thay đổi kích thước chỉ cần một mục mới.
 Chữ ký hiệu tuân theo cùng một ý tưởng tại `text.scale = 0.80`, nhưng nó được phóng to một lần
 trực tiếp. Thanh tiến trình và thanh trạng thái sau đó được phóng to đến `text.image.GetWidth()` —
 tức là thanh luôn khớp với chiều rộng của chữ ký thương hiệu, bất kể chiều rộng thực tế của chữ ký thương hiệu
-pixel size is.
+kích thước pixel là
 
-### 3. Layout
+### 3. Bố cục
 
 Mỗi yếu tố được căn giữa theo trục ngang của cửa sổ:
 
@@ -137,15 +137,15 @@ phần tử trước (`text.y = logo.y + logo.image.GetHeight() + 16`,
 `progress_track.y = text.y + text.image.GetHeight() + 28`, …), có nghĩa là
 tỷ lệ thành phần như một đơn vị với độ phân giải.
 
-Z-order used here:
+Thứ tự Z được sử dụng ở đây:
 
-| Z | Sprite |
+| Z | Ma |
 | --- | --- |
-| 100 | logo, wordmark, progress track |
-| 101 | progress bar (above the track) |
-| 200 | password entry field |
-| 201 | password prompt text |
-| 202 | password bullets |
+| 100 | logo, wordmark, theo dõi tiến độ |
+| 101 | thanh tiến trình (phía trên bản nhạc) |
+| 200 | trường nhập mật khẩu |
+| 201 | văn bản nhắc mật khẩu |
+| 202 | đạn mật khẩu |
 
 ### 4. Tiến trình khởi động
 
@@ -166,7 +166,7 @@ fun progress_callback(duration, progress)
 matters: một hình ảnh có chiều rộng bằng không là không hợp lệ trong một số phiên bản Plymouth, vì vậy thanh
 sẽ không bao giờ biến mất hoàn toàn, và tiến trình không bao giờ vượt quá chiều rộng của thanh.
 Vị trí sprite được cố định; chỉ có chiều rộng hình ảnh thay đổi — không lấp đầy hoặc cắt
-operation is used.
+hoạt động được sử dụng.
 
 ### 5. Hộp thoại mật khẩu
 
@@ -180,7 +180,7 @@ vì nó phụ thuộc vào chiều cao của văn bản.
 3. Đặt vị trí trường nhập dưới lời nhắc: `password.entry.y =
 password.prompt.y + password.prompt.image.GetHeight() + 14`. Khi tải,
 `password.entry.y` là `0` với một chú thích rằng vị trí thực sự chờ
-   prompt.
+   nhắc nhở.
 4. Vẽ các biểu tượng đầu đạn với một vòng lặp tạo hoặc tái sử dụng:
 
    ```js
@@ -232,34 +232,34 @@ khi fade hoàn tất, `fade.opacity == 1` và logo hiển thị `logo.opacity` l
 Các phiên bản trước của chủ đề này cũng có các hiệu ứng nhấp nháy/tái tạo; chúng đã
 bị loại bỏ trong `0.2.0` ("chore: remove pulse effects"). Không tái hiện lại hoạt hình
 theo từng khung của thanh tiến trình — thanh phải duy trì việc
-boot progress.
+tiến trình khởi động.
 
 ## Hằng số bố cục
 
 Nguồn duy nhất để tinh chỉnh bố cục:
 
-| Constant | Value | Meaning |
+| Hằng số | Giá trị | Ý nghĩa |
 | --- | --- | --- |
-| `logo.base_scale` | `0.72` | logo scale vs. its native 256x256 |
+| `logo.base_scale` | `0.72` | tỷ lệ logo so với bản gốc 256x256 |
 | `logo.y` offset | `-35` | nâng khối ở giữa lên trên giữa màn hình |
-| `text.scale` | `0.80` | wordmark scale vs. its native 400x53 |
-| `text.y` gap | `+16` | logo bottom → wordmark top |
-| `progress_track.y` gap | `+28` | wordmark bottom → track top |
-| `password.prompt.y` gap | `+24` | track bottom → prompt text top |
-| `password.entry.y` gap | `+14` | prompt bottom → entry field top |
-| bullet x offset | `+16` | entry left → first bullet |
-| `logo.opacity` (dialog) | `0.15` | splash dimming while a passphrase is requested |
-| prompt color | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
-| fade | 20 frames @ 20 FPS | ~1 s fade-in |
+| `text.scale` | `0.80` | tỷ lệ nhãn từ so với 400x53 gốc của nó |
+| Khoảng cách `text.y` | `+16` | logo dưới cùng → nhãn chữ trên cùng |
+| Khoảng cách `progress_track.y` | `+28` | phần dưới của dấu từ → phần trên cùng |
+| Khoảng cách `password.prompt.y` | `+24` | theo dõi dưới cùng → văn bản nhắc nhở trên cùng |
+| Khoảng cách `password.entry.y` | `+14` | dấu nhắc dưới cùng → đầu trường nhập |
+| đạn x bù | `+16` | mục bên trái → dấu đầu tiên |
+| `logo.opacity` (hộp thoại) | `0.15` | làm mờ giật gân trong khi yêu cầu cụm mật khẩu |
+| màu nhắc | `0.72, 0.77, 0.81` | `Image.Text` RGB, ~`#B8C4CE` |
+| mờ dần | 20 khung hình @ 20 FPS | ~1 giây mờ dần |
 
 ## Token thiết kế
 
-| Token | Hex | Where it lives |
+| Mã thông báo | Hex | Nó sống ở đâu |
 | --- | --- | --- |
-| Background | `#111316` | script (`0.0667, 0.0745, 0.0863`) |
-| Accent | `#3590BD` | logo / wordmark / progress fill pixels |
-| Progress track | `#262933` | `progress-bar-track.png` |
-| Prompt text | `#B8C4CE` | script (`Image.Text` call) |
+| Bối cảnh | `#111316` | tập lệnh (`0.0667, 0.0745, 0.0863`) |
+| Giọng | `#3590BD` | logo / wordmark / tiến trình điền pixel |
+| Theo dõi tiến độ | `#262933` | `progress-bar-track.png` |
+| Văn bản nhắc nhở | `#B8C4CE` | tập lệnh (cuộc gọi `Image.Text`) |
 
 Màu nhấn và màu theo dõi được nhúng trong các tài sản PNG, không được biểu thị trong
 tập lệnh, vì vậy việc đổi màu có nghĩa là phải xuất lại các tài sản (hoặc chỉnh sửa bảng màu).
@@ -279,7 +279,7 @@ tiêu tốn nhiều bộ nhớ khi khởi động sớm.
 
 ## Chỉnh sửa giao diện
 
-Practical loop:
+Vòng lặp thực tế:
 
 1. Chỉnh sửa `src/usr/share/plymouth/themes/argvus/argvus.script` (và/hoặc các tệp PNG).
 2. Cài đặt vào Plymouth đang chạy của bạn, hoặc xem trước từ cây nguồn:
@@ -297,23 +297,23 @@ Các quy tắc giữ cho chủ đề hoạt động:
 
 - Không bao giờ giới thiệu các API ngoài Plymouth. Bộ công cụ là một ngôn ngữ hạn chế; kiểm tra
 phiên bản mục tiêu của `plymouth` mà bạn hỗ trợ trước khi sử dụng một API mà bạn chưa
-  used before.
-- 
+  được sử dụng trước đây.
+-
 
 /
 
- in 
+ in
 
  must stay absolute and must match
-  the installed path 
+  the installed path
 
 .
-- Keep every asset listed in 
+- Keep every asset listed in
 
  in sync with the
-  files that ship in 
+  files that ship in
 
- — the packaging 
+ — the packaging
 
  runs in CI.
 - Chiều rộng thanh tiến trình phải luôn phản ánh trung thực chức năng của tiến trình được báo cáo;
@@ -321,4 +321,4 @@ kẹp vào  check()  src/  arch_check_splash_payload()  /usr/share/plymouth/them
 - Kiểm tra hộp thoại mật khẩu, không chỉ màn hình khởi động: đây là trạng thái
 có khả năng bị hỏng nhất và là trạng thái mà người dùng chú ý nhất.
 - Hàm gọi lại làm mới chạy cho toàn bộ quá trình khởi động; giữ phân bổ công việc theo từng khung
-  free where possible.
+  miễn phí nếu có thể.

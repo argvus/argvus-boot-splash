@@ -1,9 +1,9 @@
 ---
-title: Installation
+title: Instalasi
 description: Persyaratan, opsi instalasi, dan apa yang dilakukan paket hooks.
 ---
 
-# Installation
+# Instalasi
 
 Segala yang Anda butuhkan untuk mendapatkan splash boot Argvus pada sistem berbasis Arch.
 
@@ -11,7 +11,7 @@ Untuk melihat seperti apa tema dan apa yang dikandungnya, lihat
 [referensi](/docs/argvus-boot-splash/reference/). Untuk membangunnya dari sumber, lihat panduan pengembang
 [panduan pengembang](/docs/argvus-boot-splash/developer-guide/).
 
-## Requirements
+## Persyaratan
 
 - Sistem berbasis Arch yang menggunakan `plymouth` (paket bergantung padanya).
 - Generator initramfs: **mkinitcpio** (default Arch) atau **dracut**.
@@ -26,7 +26,7 @@ installer mendeteksi mana yang ada dan membangun kembali initramfs untuk Anda.
 Restart jika Anda baru saja mengubah ini.
 
 - Tidak ada yang dibutuhkan untuk sesi grafis normal; tema hanya berjalan di Repositori paket resmi
-  boot path.
+  jalur booting.
 
 ## Opsi 1: (disarankan)
 
@@ -108,6 +108,6 @@ membangun kembali initramfs diserahkan kepada Anda. Lihat
 ## Langkah selanjutnya
 
 - [Penggunaan](/docs/argvus-boot-splash/usage/) — verifikasi instalasi, pratinjau tanpa melakukan reboot, beralih
-  themes.
+  tema.
 - [UKI dan layar awal systemd-boot](/docs/argvus-boot-splash/uki-splash/) — gunakan bitmap di UKI.
 - [Pemecahan Masalah](/docs/argvus-boot-splash/troubleshooting/) — jika layar awal tidak berubah.

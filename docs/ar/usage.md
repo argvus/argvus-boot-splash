@@ -1,9 +1,9 @@
 ---
-title: Usage
+title: الاستخدام
 description:                     .ﺕﺎﻤﺴﻟﺍ ﺮﻴﻴﻐﺗﻭ ،ﻞﻴﻐﺸﺘﻟﺍ ﺓﺩﺎﻋﺇ ﻥﻭﺪﺑ ﺔﻨﻳﺎﻌﻣ ،ﺖﻴﺒﺜﺘﻟﺍ ﻦﻣ ﻖﻘﺤﺗ
 ---
 
-# Usage
+# الاستخدام
 
             .ﺎﻬﻨﻣ ﻞﻳﻮﺤﺘﻟﺍﻭ ،ﻞﻴﻐﺸﺘﻟﺍ ﺓﺩﺎﻋﺇ ﻥﻭﺪﺑ ﺎﻬﺘﻨﻳﺎﻌﻣ ،ﺔﻤﺴﻟﺍ ﻦﻣ ﻖﻘﺤﺘﻟﺍ ﺔﻴﻔﻴﻛ
                                                                  ﺮﻈﻧﺍ ،ﺖﻴﺒﺜﺘﻠﻟ[                                                                         ﺖﻴﺒﺜﺗ](/docs/argvus-boot-splash/installation/).
@@ -37,11 +37,11 @@ sudo plymouth --show-splash    # back to the splash
 ```
 
 ﺔﻴﻟﺎﺘﻟﺍ ﺔﺷﺎﺸﻟﺍ ﻰﻟﺇ ﻞﻘﻨﺘﻠﻟ <kbd>Esc</kbd> ﻰﻠﻋ ﻂﻐﺿﺍ ،ﺔﻴﺒﻴ
-(splash → details → splash).
+(دفقة → تفاصيل → سبلاش).
 
 ##                                                                  ﺵﺮﻟﺍ ﻩﺮﻬﻈﻳ ﺎﻣ
 
-| Stage | Appearance |
+| المرحلة | المظهر |
 | --- | --- |
 | ﻡﺪﻘﺘﻟﺍ ﺭﺎﺴﻣ ،ﺔﻳﺭﺎﺠﺘﻟﺍ ﺔﻣﻼ﻿ﻌﻟﺍ ،ﺭﺎﻌﺸﻟﺍ :ﺓﺪﺣﺍﻭ ﺔﻴﻧﺎﺛ ﻲﻟﺍﻮﺣ ﻝﻼ﻿ﺧ ﺎًﻴﺠﻳﺭﺪﺗ ﺮﻬﻈﻳ ءﻲﺷ
      | ﻡﺪﻘﺘﻟﺍ ﻦﻋ Plymouth ﺞﻣﺎﻧﺮﺑ ﻎﻠﺒﻳ ﺎﻤﻨﻴﺑ ﺭﺎﺴﻴﻟﺍ ﻦﻣ ﻂﻳﺮﺸﻟﺍ ﺊﻠﺘﻤﻳ | ﺪﻴﻬﻤﺘﻟﺍ |
@@ -59,25 +59,25 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 ```
 
-Useful configuration files:
+ملفات التكوين المفيدة:
 
-| File | Purpose |
+| ملف | الغرض |
 | --- | --- |
-| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` written by the package |
-| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
+| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` مكتوب بواسطة الحزمة |
+| `/etc/mkinitcpio.conf` | يجب أن يتضمن `HOOKS=(... plymouth ...)` `plymouth` |
+| `/etc/plymouth/plymouthd.conf` (مرة أخرى) | `PLYMOUTH_TOGGLE_KEY` وما إلى ذلك هي عالمية وليست لكل سمة |
 
 ##                                                                 ﺮﻣﺍﻭﻷ﻿ﺍ ﺶﻏ ﺔﻗﺭﻭ
 
-| Command | Effect |
+| الأمر | تأثير |
 | --- | --- |
-| `sudo plymouth-set-default-theme argvus` | make `argvus` the default theme |
-| `sudo plymouth-update-theme` | apply the change to the running Plymouth |
-| `sudo plymouth --show-splash` | show the splash in the current session |
-| `sudo plymouth --show-details` | show verbose boot messages instead |
-| `sudo plymouthquit` | leave Plymouth and restore your session |
-| `sudo mkinitcpio -P` | rebuild the Arch initramfs |
-| `sudo dracut --regenerate-all` | rebuild the initramfs with dracut |
+| `sudo plymouth-set-default-theme argvus` | جعل `argvus` السمة الافتراضية |
+| `sudo plymouth-update-theme` | تطبيق التغيير على تشغيل بليموث |
+| `sudo plymouth --show-splash` | إظهار البداية في الجلسة الحالية |
+| `sudo plymouth --show-details` | إظهار رسائل التمهيد المطولة بدلاً من ذلك |
+| `sudo plymouthquit` | غادر بليموث واستعد جلستك |
+| `sudo mkinitcpio -P` | إعادة بناء القوس initramfs |
+| `sudo dracut --regenerate-all` | أعد بناء initramfs باستخدام dracut |
 
 ##                                                                ﺔﻴﻟﺎﺘﻟﺍ ﺕﺍﻮﻄﺨﻟﺍ
 

@@ -1,16 +1,16 @@
 ---
-title: Uninstallation
+title: Kaldırma
 description: Paketi kaldırın ve önceki önyükleme temanızı geri yükleyin.
 ---
 
-# Uninstallation
+# Kaldırma
 
 ```sh
 sudo pacman -Rns argvus-boot-splash
 ```
 
 Sonra başka bir tema seçin ve tekrar oluşturun, aksi takdirde eski açılış ekranı
-initramfs:
+initramf'lar:
 
 ```sh
 sudo plymouth-set-default-theme argonaut
@@ -19,7 +19,7 @@ sudo mkinitcpio -P        # or: sudo dracut --regenerate-all
 ```
 
 `pacman -Rns` ayrıca başka bir şey yoksa `/etc/plymouth/plymouthd.conf` öğesini de kaldırır
-created it.
+onu yarattı.
 
 Paketin kaldırma kancası yalnızca bir hatırlatıcı yazdırır — hangi temayı
 istediğinizi tahmin etmez ve initramfs’inize dokunmaz.

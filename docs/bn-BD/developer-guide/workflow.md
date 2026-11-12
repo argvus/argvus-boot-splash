@@ -11,14 +11,14 @@ description: হাউস রুলস, ডকুমেন্টেশন মা
 প্রযুক্তিগত রেফারেন্সের জন্য দেখুন [থিম আর্কিটেকচার](/docs/argvus-boot-splash/developer-guide/theme/),
 [প্যাকেজিং](/docs/argvus-boot-splash/developer-guide/packaging/)এবং [সিআই এবং রিলিজ](/docs/argvus-boot-splash/developer-guide/ci-releases/).
 
-## Conventions
+## কনভেনশন
 
 - শেল: `set -euo pipefail`, ইন্ডেন্টেশনের জন্য ট্যাব, `printf`/`error` বার্তা
 stderr, `command -v` সক্ষমতা যাচাই, shellcheck পরিষ্কার (দেখুন
   `.editorconfig`).
 - কখনো `sha256sums=('SKIP')` লিখবেন না; git-এ `sha256sums=()` খালি রাখুন।
 - build আউটপুট (`build/`), প্যাকেজ ফাইল, বা উত্পন্ন ফাইল কমিট করবেন না
-  `.PKGBUILD.local.*` copies.
+  `.PKGBUILD.local.*` কপি।
 - ঐতিহ্য অনুযায়ী ব্যবহৃত স্কোপ সহ Conventional Commits: `splash`, `layout`,
 `pkgbuild`, `release`, `chore`, `ci`, `build`, `docs`।
 - শাখার নামকরণ: `feat/…`, `fix/…`, `docs/…`, `chore/…`, `refactor/…`।
@@ -48,10 +48,10 @@ stderr, `command -v` সক্ষমতা যাচাই, shellcheck পরি
 
 ## ডকুমেন্টেশন মানচিত্র
 
-| Document | Audience | Scope |
+| দলিল | শ্রোতা | সুযোগ |
 | --- | --- | --- |
-| `README.md` | everyone | one-paragraph overview and layout |
-| `DEVELOPMENT.md` | maintainers | build, signing, release process |
+| `README.md` | সবাই | এক-অনুচ্ছেদ ওভারভিউ এবং লেআউট |
+| `DEVELOPMENT.md` | রক্ষণাবেক্ষণকারী | নির্মাণ, স্বাক্ষর, মুক্তি প্রক্রিয়া |
 | [`CONTRIBUTING.md`](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)(অর্গ `.github`) | অবদানকারীরা | গিট ফ্লো, পিআর নিয়ম, সিক্রেট নীতি |
 | [`docs/user-guide.md`](/docs/argvus-boot-splash/)| চূড়ান্ত ব্যবহারকারী | ইনস্টলেশন, ব্যবহার, সমস্যার সমাধান |
 | [`docs/developer-guide.md`](/docs/argvus-boot-splash/developer-guide/)(/docs/argvus-boot-splash/developer-guide/) | developers | theme internals, packaging, CI |

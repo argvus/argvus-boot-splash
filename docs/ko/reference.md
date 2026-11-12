@@ -65,14 +65,14 @@ description: 설치된 파일, 패키지 메타데이터 및 색상 값.
 
 ## 도움말 받기
 
-- 프로젝트의 이슈 트래커에 버그를 보고하고 기능을 요청하세요.  
-- 보안 문제: [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md)]를 따르세요 — 취약점에 대해 공개 이슈를 열지 마세요.  
-- 소스, 빌드 및 릴리스: 리포지토리 루트([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)]).  
-- 기여: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)].  
-- 라이선스: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE)].  
+- 프로젝트의 이슈 트래커에 버그를 보고하고 기능을 요청하세요.
+- 보안 문제: [SECURITY.md](https://github.com/argvus/.github/blob/main/SECURITY.md)를 따르세요 — 취약점에 대해 공개 이슈를 열지 마세요.
+- 소스, 빌드 및 릴리스: 리포지토리 루트([README](https://github.com/argvus/argvus-boot-splash/blob/main/README.md)).
+- 기여: [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md).
+- 라이선스: [GPL-3.0-only](https://github.com/argvus/argvus-boot-splash/blob/main/LICENSE).
 
 ## 다음 단계
 
-- [설치](/docs/argvus-boot-splash/installation/)]  
-- [사용법](/docs/argvus-boot-splash/usage/)]  
-- [문제 해결](/docs/argvus-boot-splash/troubleshooting/)]
+- [설치](/docs/argvus-boot-splash/installation/)
+- [사용법](/docs/argvus-boot-splash/usage/)
+- [문제 해결](/docs/argvus-boot-splash/troubleshooting/)

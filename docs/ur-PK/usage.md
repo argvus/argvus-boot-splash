@@ -1,11 +1,11 @@
 ---
-title: Usage
+title: استعمال
 description:      ۔ﮟﯾﺮﮐ ﻞﯾﺪﺒﺗ ﺰﻤﯿﮭﺗ ﺭﻭﺍ ،ﮟﯾﺮﮐ ﮦﺭﺎﻈﻧ ﺶﯿﭘ ﮯﮐ ﭦﻮﺒﯾﺭ ﺮﯿﻐﺑ ،ﮟﯾﺮﮐ ﻖﯾﺪﺼﺗ ﯽﮐ ﻝﺎﭩﺴﻧﺍ
 ---
 
-# Usage
+# استعمال
 
-۔ﮟﯾﺮﮐ ﭻﺋﻮﺳ ﺮﭘ ﻢﯿﮭﺗ ﮮﺮﺳﻭﺩ ﺮﮐ ﮌﻮﮭﭼ ﮯﺳﺍ ﺭﻭﺍ ،ﮟﯾﺮﮐ ﮦﺭﺎﻈﻧ ﺶﯿﭘ ﮯﯿﮐ ﻉﻭﺮﺷ ﮦﺭﺎﺑﻭﺩ ﺮﯿﻐﺑ 
+۔ﮟﯾﺮﮐ ﭻﺋﻮﺳ ﺮﭘ ﻢﯿﮭﺗ ﮮﺮﺳﻭﺩ ﺮﮐ ﮌﻮﮭﭼ ﮯﺳﺍ ﺭﻭﺍ ،ﮟﯾﺮﮐ ﮦﺭﺎﻈﻧ ﺶﯿﭘ ﮯﯿﮐ ﻉﻭﺮﺷ ﮦﺭﺎﺑﻭﺩ ﺮﯿﻐﺑ
                                                           ﮟﯿﮭﮑﯾﺩ ،ﮯﯿﻟ ﮯﮐ ﺐﯿﺼﻨﺗ[                                                                         ﺐﯿﺼﻨﺗ](/docs/argvus-boot-splash/installation/).
 
 ##                                                            ﺎﻧﺮﮐ ﻖﯿﺛﻮﺗ ﯽﮐ ﺐﯿﺼﻨﺗ
@@ -29,7 +29,7 @@ sudo plymouthquit             # returns to your session
 ```
 
 ۔ﮯﮨ ﺎﺘﮑﺳﺮﮐ ﺐﻠﻃ ﻖﯾﺪﺼﺗ ﭧِﮑﻟﻮﭘ ﮦﺭﺎﻈﻧ ﺶﯿﭘ ﻮﺗ ﮯﺋﺎﺟ ﺎﯾﻼ﻿ﭼ ﺮﭘ ﺭﻮﻃ ﮯﮐ ﻑﺭﺎﺻ ﻡﺎﻋ ﮏﯾﺍ ﮯﺳﺍ ﺐ
-:ﮟﯿﮨ ﮯﺘﮑﺳ ﺮﮐ ﺭﺮﻘﻣ ﯽﮭﺑ ﯽﺘﺳﺩﺮﺑﺯ ﻮﮐ ﺕﻻ﻿ﺎﺣ ﭖﺁ ؛ﮯﮨ ﯽﺘﮬﮍﺑ ﮯﮔﺁ ﮫﺗﺎﺳ ﮯﮐ ﺖﻓﺭ ﺶﯿﭘ ﯽﻋﻮﻨﺼﻣ 
+:ﮟﯿﮨ ﮯﺘﮑﺳ ﺮﮐ ﺭﺮﻘﻣ ﯽﮭﺑ ﯽﺘﺳﺩﺮﺑﺯ ﻮﮐ ﺕﻻ﻿ﺎﺣ ﭖﺁ ؛ﮯﮨ ﯽﺘﮬﮍﺑ ﮯﮔﺁ ﮫﺗﺎﺳ ﮯﮐ ﺖﻓﺭ ﺶﯿﭘ ﯽﻋﻮﻨﺼﻣ
 
 ```sh
 sudo plymouth --show-details   # verbose boot messages instead of the splash
@@ -37,11 +37,11 @@ sudo plymouth --show-splash    # back to the splash
 ```
 
 ﮟﯿﺋﺎﺑﺩ <kbd>Esc</kbd> ﮯﯿﻟ ﮯﮐ ﮯﻧﺎﺟ ﺮﭘ ﻦﯾﺮﮑﺳﺍ ﮯﻠﮔﺍ ،ﻮﮨ ﺮﭘ
-(splash → details → splash).
+(سپلیش → تفصیلات → سپلیش)۔
 
 ##                                                             ﮯﮨ ﯽﺗﺎﮭﮐﺩ ﮏﭙﮭﭼ ﺎﯿﮐ
 
-| Stage | Appearance |
+| اسٹیج | ظاہری شکل |
 | --- | --- |
 | ﮏﯾﺮﭨ ﺲﯾﺮﮔﺍﺮﭘ ،ﮎﺭﺎﻣ ﮈﺭﻭ ،ﻮﮔﻮﻟ :ﮯﮨ ﺎﺗﻮﮨ ﺮﮨﺎﻇ ﮫﭽﮐ ﺐﺳ ﮟﯿﻣ ﮉﻨﮑﯿﺳ 1 ًﺎﺒﯾﺮﻘﺗ | ﭖﺍ ﭦﺭ
 | ﮯﮨ ﯽﺗﻮﮨ ﻉﻭﺮﺷ ﺎﻧﺮﮭﺑ ﮯﺳ ﻑﺮﻃ ﮟﯿﺋﺎﺑ ﺭﺎﺑ ،ﮯﮨ ﺎﺘﯾﺩ ﻉﻼ﻿ﻃﺍ ﯽﮐ ﺖﻓﺭ ﺶﯿﭘ ﮫﺗﻮﻤﯿﻠﭘ ﯽﮨ ﮯﺴﯿﺟ
@@ -59,25 +59,25 @@ sudo plymouth-update-theme
 sudo mkinitcpio -P              # or: sudo dracut --regenerate-all
 ```
 
-Useful configuration files:
+مفید کنفیگریشن فائلیں:
 
-| File | Purpose |
+| فائل | مقصد |
 | --- | --- |
-| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` written by the package |
-| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
-| `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
+| `/etc/plymouth/plymouthd.conf` | `PLYMOUTH_THEME_NAME=argvus` پیکیج کے ذریعہ لکھا گیا |
+| `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` میں `plymouth` شامل ہونا ضروری ہے۔
+| `/etc/plymouth/plymouthd.conf` (دوبارہ) | `PLYMOUTH_TOGGLE_KEY` وغیرہ عالمی ہیں، فی تھیم نہیں |
 
 ##                                                                 ﭧﯿﺷ ﭧﯿﭼ ﺯﮉﻧﺎﻤﮐ
 
-| Command | Effect |
+| کمانڈ | اثر |
 | --- | --- |
-| `sudo plymouth-set-default-theme argvus` | make `argvus` the default theme |
-| `sudo plymouth-update-theme` | apply the change to the running Plymouth |
-| `sudo plymouth --show-splash` | show the splash in the current session |
-| `sudo plymouth --show-details` | show verbose boot messages instead |
-| `sudo plymouthquit` | leave Plymouth and restore your session |
-| `sudo mkinitcpio -P` | rebuild the Arch initramfs |
-| `sudo dracut --regenerate-all` | rebuild the initramfs with dracut |
+| `sudo plymouth-set-default-theme argvus` | `argvus` کو ڈیفالٹ تھیم بنائیں |
+| `sudo plymouth-update-theme` | تبدیلی کو چلانے والے Plymouth پر لاگو کریں۔
+| `sudo plymouth --show-splash` | موجودہ سیشن میں سپلیش دکھائیں |
+| `sudo plymouth --show-details` | اس کے بجائے وربوز بوٹ پیغامات دکھائیں |
+| `sudo plymouthquit` | Plymouth چھوڑیں اور اپنے سیشن کو بحال کریں۔
+| `sudo mkinitcpio -P` | آرک initramfs کو دوبارہ بنائیں |
+| `sudo dracut --regenerate-all` | initramfs کو dracut کے ساتھ دوبارہ بنائیں |
 
 ##                                                                   ﺕﺎﻣﺍﺪﻗﺍ ﮯﻠﮔﺍ
 

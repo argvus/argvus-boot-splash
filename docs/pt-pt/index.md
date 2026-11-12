@@ -1,9 +1,9 @@
 ---
-title: ARGVUS Boot Splash
+title: Arranque inicial ARGVUS
 description: Tema Plymouth e guia de instalação para o ambiente de desktop ARGVUS
 ---
 
-# ARGVUS Boot Splash
+# ARGVUS inicialização inicial
 
 O tema de boot Argvus é um tema [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) para o ecossistema de desktop Argvus. É o que você vê entre ligar a máquina e o momento em que sua sessão gráfica inicia.
 

@@ -73,6 +73,6 @@ El tema utiliza un fondo oscuro sólido en cualquier resolución, por lo que nun
 
 ## Próximos pasos
 
-- [Installation](/docs/argvus-boot-splash/installation/)
-- [Usage](/docs/argvus-boot-splash/usage/)
-- [Troubleshooting](/docs/argvus-boot-splash/troubleshooting/)
+- [Instalación](/docs/argvus-boot-splash/installation/)
+- [Uso](/docs/argvus-boot-splash/usage/)
+- [Solución de problemas](/docs/argvus-boot-splash/troubleshooting/)

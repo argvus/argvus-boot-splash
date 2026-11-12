@@ -12,7 +12,7 @@ initramfs.
 
 থেকে পড়া হয় না। বিটম্যাপটি Plymouth থিমে ব্যবহৃত হয় না এবং
 আপনি স্বয়ংক্রিয়ভাবে: এটি এম্বেড করা নির্ভর করে আপনি আপনার UKI কীভাবে তৈরি করেন তার উপর। সাধারণ
-consumers are:
+ভোক্তারা হল:
 
 ```sh
 # systemd: set the splash for the next boot (systemd >= 254)

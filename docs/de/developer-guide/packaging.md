@@ -39,7 +39,7 @@ replaces=('argvus-plymouth')
 `packaging/arch/common/functions.sh` stellt drei Funktionen bereit, die von beiden PKGBUILDs verwendet werden:
 
 - `arch_normalize_source_tree` (`prepare()`) — GitHub-Tag-Archive werden nach `<repo>-v<version>` extrahiert, während das lokale Tarball nach `<pkgname>-<pkgver>` extrahiert wird. Dies benennt das einzelne oberste Verzeichnis in `${srcdir}/${pkgname}-${pkgver}` um und gibt einen Fehler aus, wenn das Quellverzeichnis fehlt, mehrdeutig ist oder das Ziel bereits existiert.
-- `arch_check_splash_payload` (`check()`) — prüft, dass jede Theme-Ressource im extrahierten Quellverzeichnis vorhanden ist. Dies ist die einzige „Testsuite“ des Pakets; die Liste der erforderlichen Dateien befindet sich im [Asset-Inventar](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory)].
+- `arch_check_splash_payload` (`check()`) — prüft, dass jede Theme-Ressource im extrahierten Quellverzeichnis vorhanden ist. Dies ist die einzige „Testsuite“ des Pakets; die Liste der erforderlichen Dateien befindet sich im [Asset-Inventar](/docs/argvus-boot-splash/developer-guide/theme/#asset-inventory).
 - `arch_package_splash_payload` (`package()`) — durchläuft `src/usr` mit `find -print0` und installiert jede Datei mit `install -Dm644` nach `$pkgdir` (NUL-sicher, funktioniert mit Leerzeichen in Namen), anschließend wird `LICENSE` nach `/usr/share/licenses/argvus-boot-splash/LICENSE` installiert.
 
 Beachten Sie, dass es keinen `make install`-Aufruf innerhalb von `package()` gibt: alles ist `install -Dm*`, sodass das Paket eigenständig und rootless-build-freundlich ist. Das ist absichtlich — ein altes `package()`, das `make install` aufrief, verursachte `sudo`/`libfakeroot.so`-Fehler.

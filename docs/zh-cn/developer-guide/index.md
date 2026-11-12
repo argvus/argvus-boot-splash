@@ -16,7 +16,7 @@ make install    # sudo pacman -U that file
 ```
 在提交更改之前：`make validate && make build`，并将新技术术语添加到 `.cspell/custom-dictionary-workspace.txt`，否则拼写检查任务将失败。
 
-如果你只想*使用*该主题，请阅读 [用户指南](/docs/argvus-boot-splash/)]。有关此文件的面向流程的对应文件（git 流程、机密、发布流程），请参见 [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md)] 和 [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)]。
+如果你只想*使用*该主题，请阅读 [用户指南](/docs/argvus-boot-splash/)。有关此文件的面向流程的对应文件（git 流程、机密、发布流程），请参见 [DEVELOPMENT.md](https://github.com/argvus/argvus-boot-splash/blob/main/DEVELOPMENT.md) 和 [CONTRIBUTING.md](https://github.com/argvus/.github/blob/main/CONTRIBUTING.md)。
 
 ## 指南
 

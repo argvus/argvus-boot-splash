@@ -6,7 +6,7 @@ description: 検証、継続的インテグレーション、署名、リリー�
 
 バリデーションゲート、継続的インテグレーションジョブ、リリースパイプライン、およびバージョニングルール。
 
-パッケージ自体については [packaging](/docs/argvus-boot-splash/developer-guide/packaging/)] を参照してください。テーマについては [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/)] を参照してください。
+パッケージ自体については [packaging](/docs/argvus-boot-splash/developer-guide/packaging/) を参照してください。テーマについては [theme architecture](/docs/argvus-boot-splash/developer-guide/theme/) を参照してください。
 
 ## バリデーション
 
