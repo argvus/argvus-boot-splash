@@ -17,7 +17,7 @@ Guide all'installazione e all'uso per utenti finali e amministratori di sistema.
 | Guide | Contenuti |
 | --- | --- |
 | [Installazione](/docs/argvus-boot-splash/installation/) | Requisiti, le tre opzioni di installazione, cosa fanno gli hook del pacchetto |
-| [Utilizzo](/docs/argvus-boot-splash/usage/) | Verificare l'installazione, anteprima senza riavviare, cambiare o ripristinare i temi, cheat sheet dei comandi |
+| [Utilizzo](/docs/argvus-boot-splash/usage/) | Verificare l'installazione, anteprima senza riavviare, cambiare o ripristinare i temi, command reference dei comandi |
 | [UKI e splash di systemd-boot](/docs/argvus-boot-splash/uki-splash/) | Uso di `argvus-uki-splash.bmp` in un flusso di avvio UKI |
 | [Disinstallazione](/docs/argvus-boot-splash/uninstallation/) | Rimozione del pacchetto e ripristino del tema precedente |
 | [Risoluzione dei problemi](/docs/argvus-boot-splash/troubleshooting/) | Sintomi comuni e loro cause |

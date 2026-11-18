@@ -52,4 +52,4 @@ another virtual terminal (`Ctrl+Alt+F2`) — your session is intact.
 ## Next steps
 
 - [Installation](/docs/argvus-boot-splash/installation/) — retry with a different method.
-- [Usage](/docs/argvus-boot-splash/usage/) — commands cheat sheet.
+- [Usage](/docs/argvus-boot-splash/usage/) — commands command reference.

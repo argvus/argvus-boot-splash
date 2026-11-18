@@ -67,7 +67,7 @@ Useful configuration files:
 | `/etc/mkinitcpio.conf` | `HOOKS=(... plymouth ...)` must include `plymouth` |
 | `/etc/plymouth/plymouthd.conf` (again) | `PLYMOUTH_TOGGLE_KEY` etc. are global, not per-theme |
 
-## Commands cheat sheet
+## Commands command reference
 
 | Command | Effect |
 | --- | --- |
